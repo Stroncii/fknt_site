@@ -92,7 +92,7 @@ h1.title{
 	text-align: center;
 }
 .news-wrap{
-  padding: 10px 30px 20px 30px;
+  padding: 30px 30px 20px 30px;
 }
 .news-wrap h2{
   margin-bottom: 20px;
@@ -375,4 +375,12 @@ padding-right: 15px
 }
 .media{
   text-align: left;
+}
+.btn-fab-mini{
+  background-color: #FFFFFF;
+  color: #523A9A;
+  border: 1px solid #523A9A;
+}
+.btn-fab-mini:hover{
+  background-color: #523A9A;
 }

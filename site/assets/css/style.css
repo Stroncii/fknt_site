@@ -67,8 +67,14 @@
  }
 .colored {
 	color:#fff;
+  background: 
+    linear-gradient(
+      rgba(81, 58, 154, 0.9), 
+      rgba(81, 58, 154, 0.9)
+    ),
+    url(../img/12.jpg);
 }
-.levels p{
+.levels p, .cooperation p{
 	font-size: 16px;
 }
 h1.title{
@@ -79,47 +85,27 @@ h1.title{
 .news-wrap>div{
  	z-index: 2;
 }
+.news-wrap h4>a{
+  color: #fff;
+}
 .news-wrap,.news-wrap h2{
 	text-align: center;
 }
-.news:not(:first-child){
-	padding-top:50px;
-	padding-bottom: 10px;
+.news-wrap{
+  padding: 30px 30px 20px 30px;
 }
-.news-wrap.header {
-  height: 500px;
-  }
-
-.news{
-	display: flex;
-	justify-content: center;
-	align-items: stretch;
-}
-.news>div{
-	width:25%;
-	position:relative;
-}
-.news>div:first-child{
-	width:50%;
-}
-.news>div img{
-	width:100%;
-}
-.news>div:first-child img{
-	width: 100%;
-	position:absolute;
-	left: 0;
-	z-index: -1;
+.news-wrap h2{
+  margin-bottom: 20px;
 }
 .lead-news{
-	height: inherit;
-	display: flex;
-	justify-content: center;
-	flex-direction:column;
-	background-color:rgba(77, 60, 150, 0.8);
+	margin-bottom: 40px;
+  padding-right: 80px;
+	text-align: left;
 }
-.lead-news>div{
-	text-align: center;
+.lead-news img,.cooperation img,.science img{
+  width: 90%;
+  margin:0 auto;
+  display: block;
 }
 .timeline {
   list-style: none;
@@ -294,10 +280,12 @@ h1.title{
 .news-item h2{
   text-align: center;
 }
-.news-item p{
+.news-item p, .science p,.science li{
   text-align: justify;
   font-size: 16px;
   line-height: 170%;
+}
+.news-item p, .science p{
   text-indent: 40px;
 }
 .contacts iframe{
@@ -355,5 +343,44 @@ padding-right: 15px
     display: block;
   }
 }
+.group_center{
+  width: 50%;
+  margin: 0 auto;
+}
+.schedule .nav-tabs>li,.bachelor .nav-tabs>li{
+  float: none;
+}
+.btn-inverse{
+  color: #523A9A;
+  background-color: #ffffff;
+}
+.cooperation img{
+  margin:15px;
+}
+.cooperation p{
+  margin:20px;
+}
+.bachelor .media-left, .bachelor .media-right{
+  width:50%;
+}
+.bachelor .media-left{
+  padding-right: 25px;
+}
+.bachelor .media-right{
+  padding-left: 25px;
+}
+.bachelor img{
 
-
+  width: 100%;
+}
+.media{
+  text-align: left;
+}
+.btn-fab-mini{
+  background-color: #FFFFFF;
+  color: #523A9A;
+  border: 1px solid #523A9A;
+}
+.btn-fab-mini:hover{
+  background-color: #523A9A;
+}

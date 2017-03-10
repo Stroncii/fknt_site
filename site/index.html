@@ -158,7 +158,6 @@
 		const secretCode = 'gne';
 
 		window.addEventListener('keyup', (e) => {
-		  //console.log(String.fromCharCode(e.keyCode));
 		  pressed.push(String.fromCharCode(e.keyCode).toLowerCase());
 		  pressed.splice(-secretCode.length - 1, pressed.length - secretCode.length);
 		  if (pressed.join('').includes(secretCode)) {
@@ -166,7 +165,6 @@
 		    alert("Есть ХПИ, ХНУРЭ, КПИ, НАУ... Что вы здесь делаете, глупцы?..");
 		    // do surprise
 		  }
-		  //console.log(pressed);
 		});
 </script>
 </html>

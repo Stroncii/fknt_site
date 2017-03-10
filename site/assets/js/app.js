@@ -10,9 +10,10 @@ var app = angular.module('app', ['ngRoute'])
   .when('/news', {
     templateUrl: 'news.html'
   })
-  .otherwise({
-    redirectTo: '/'
-  });
+  .when('/admin', {
+    templateUrl: 'templates/admin.html'
+  })
+
 }]);
 
 

@@ -1099,6 +1099,36 @@ article {
   padding-left: 0;
   }
 }
+@media (max-width: 768px) {
+  .navbar-brand img{
+  width: 70px;
+  position: absolute;
+  top:10px;
+  }
+}
 #top-bar .main-menu li a{
   font-size: 16px;
+}
+.media-heading{
+  font-size: 16px;
+}
+.img-responsive{
+  margin:15px;
+}
+.history-page p{
+  text-align: justify;
+}
+.works h4{
+  color: #2DC4F3;
+}
+.overlay p{
+  color:#fff;
+  text-align: center;
+  margin: 100px auto;
+}
+.cooperation>div{
+  min-height: 270px;
+}
+.last-years p,.last-years li{
+  font-size: 18px;
 }

@@ -67,10 +67,12 @@
  }
 .colored {
 	color:#fff;
+  margin-top: 50px;
+  margin-bottom: 50px;
   background: 
     linear-gradient(
-      rgba(81, 58, 154, 0.9), 
-      rgba(81, 58, 154, 0.9)
+      rgba(81, 58, 154, 0.95), 
+      rgba(81, 58, 154, 0.95)
     ),
     url(../img/12.jpg);
 }
@@ -381,6 +383,7 @@ padding-right: 15px
   color: #523A9A;
   border: 1px solid #523A9A;
 }
-.btn-fab-mini:hover{
+.btn-fab-mini:hover,.btn-inverse:hover{
   background-color: #523A9A;
+  box-shadow: 0 14px 26px -12px rgba(255, 255, 255, 0.5), 0 4px 23px 0px rgba(255, 255, 255, 0.3), 0 8px 10px -5px rgba(255, 255, 255, 0.3);
 }

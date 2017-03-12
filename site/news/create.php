@@ -14,51 +14,24 @@ $news = new News($db);
 $data = json_decode(file_get_contents("php://input"));
  
 // set product property values
-/*$product->name = $data->name;
-$product->price = $data->price;
-$product->description = $data->description;
-$product->created = date('Y-m-d H:i:s');*/
- // create product
-function create(){
-     
-    // query to insert record
-    $query = "INSERT INTO 
-                " . $this->table_name . "
-            SET 
-                name=:name, price=:price, description=:description, created=:created";
-     
-    // prepare query
-    $stmt = $this->conn->prepare($query);
+$news->title_uk = $data['title_uk'];
+$news->title_ru = $data['title_ru'];
+$news->title_en = $data['title_en'];
+$news->full_text_uk = $data['full_text_uk'];
+$news->full_text_ru = $data['full_text_ru'];
+$news->full_text_en = $data['full_text_en'];
+$news->short_text_uk = $data['short_text_uk'];
+$news->short_text_ru = $data['short_text_ru'];
+$news->short_text_en = $data['short_text_en'];
+$news->images_nums = $data['images_nums'];
  
-    // posted values
-    $this->name=htmlspecialchars(strip_tags($this->name));
-    $this->price=htmlspecialchars(strip_tags($this->price));
-    $this->description=htmlspecialchars(strip_tags($this->description));
- 
-    // bind values
-    $stmt->bindParam(":name", $this->name);
-    $stmt->bindParam(":price", $this->price);
-    $stmt->bindParam(":description", $this->description);
-    $stmt->bindParam(":created", $this->created);
-     
-    // execute query
-    if($stmt->execute()){
-        return true;
-    }else{
-        echo "<pre>";
-            print_r($stmt->errorInfo());
-        echo "</pre>";
- 
-        return false;
-    }
-}
 // create the product
 if($news->create()){
-    echo "Product was created.";
+    echo "News was created.";
 }
  
 // if unable to create the product, tell the user
 else{
-    echo "Unable to create product.";
+    echo "Unable to create news.";
 }
 ?>

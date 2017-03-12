@@ -6,11 +6,12 @@ angular.module('app').factory ('appFactory', ['$http', function ($http) {
   fact.getNews = function () {
       $http({
             method: 'GET',
-            url: '/news/read.php'
+            url: 'http://localhost:8888/news/read.php'
         }).then(function successCallback(response) {
             console.log(response);
         }, function errorCallback(response) {
             console.log("Error!");
+            console.log(response);
         });
     return jsonA;
   };
@@ -18,11 +19,12 @@ angular.module('app').factory ('appFactory', ['$http', function ($http) {
   fact.getLastNews = function (){
       $http({
             method: 'GET',
-            url: '/news/read_last.php'
+            url: 'http://localhost:8888/news/read_last.php'
         }).then(function successCallback(response) {
             console.log(response);
         }, function errorCallback(response) {
             console.log("Error!");
+            console.log(response);
         });
     return jsonA.slice(-4);
   }

@@ -39,10 +39,15 @@ if($num>0){
             $data .= '"id":"'  . $row['id'] . '",';
             $data .= '"title":"'   . $row['title_'.$lang] . '",';
             $data .= '"synopsis":"'   . $row['short_text_'.$lang] . '",';
-            $data .= '"content":"' . $row['full_text_'.$lang] . '"';
+            $data .= '"content":"' . $row['full_text_'.$lang] . '",';
             $data .= '"images":[';
-            foreach (explode(",",$row['images_nums']) as $value) {
-                $data .= '"/assets/img/news/items/' . $row['id'] . '_'.$value.'.jpg",';
+            $l = 1;
+            $imgs = explode(",",$row['images_nums']);
+            foreach ($imgs as $value) {
+                $data .= '"/assets/img/news/items/' . $row['id'] . '_'.$value.'.jpg"';
+                $data .= $l<count($imgs) ? ',' : '';
+ 
+                $l++;
             }
             $data .= ']';
         $data .= '}';

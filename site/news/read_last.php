@@ -38,8 +38,8 @@ if($num>0){
             $data .= '"id":"'  . $row['id'] . '",';
             $data .= '"title":"'   . $row['title_'.$lang] . '",';
             $data .= '"synopsis":"'   . $row['short_text_'.$lang] . '",';
-            $data .= '"content":"' . $row['full_text_'.$lang] . '"';
-            $data .= '"cover":"/assets/img/news/covers/' . $row['id'] . '.jpg"';
+            $data .= '"content":"' . $row['full_text_'.$lang] . '",';
+            $data .= '"cover":"/assets/img/news/covers/' . $row['id'] . '.jpg",';
             $data .= '"full_cover":"/assets/img/news/covers/' . $row['id'] . '_full.jpg"';
         $data .= '}';
  

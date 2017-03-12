@@ -4,10 +4,26 @@ angular.module('app').factory ('appFactory', ['$http', function ($http) {
   fact.corp = 4;
 
   fact.getNews = function () {
+      $http({
+            method: 'GET',
+            url: '/news/read.php'
+        }).then(function successCallback(response) {
+            console.log(response);
+        }, function errorCallback(response) {
+            console.log("Error!");
+        });
     return jsonA;
   };
 
   fact.getLastNews = function (){
+      $http({
+            method: 'GET',
+            url: '/news/read_last.php'
+        }).then(function successCallback(response) {
+            console.log(response);
+        }, function errorCallback(response) {
+            console.log("Error!");
+        });
     return jsonA.slice(-4);
   }
   

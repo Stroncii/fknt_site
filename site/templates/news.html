@@ -26,47 +26,11 @@
 		                		</div>
 	                		</div>
 	                	</div>
-	                	<div class="col-md-4">
-	                		<img src="http://lorempixel.com/400/200/people/3" alt="Texto Alternativo">
-	                		<h2>Новость</h2>
-	                		<p>Краткий текст новости</p>
-	                		<a href="news-item.html" class="btn btn-primary">Дальше...</a>
-	                	</div>
-	                	<div class="col-md-4">
-	                		<img src="http://lorempixel.com/400/200/people/4" alt="Texto Alternativo">
-	                		<h2>Новость</h2>
-	                		<p>Краткий текст новости</p>
-	                		<a href="news-item.html" class="btn btn-primary">Дальше...</a>
-	                	</div>
-	                	<div class="col-md-4">
-	                		<img src="http://lorempixel.com/400/200/people/5" alt="Texto Alternativo">
-	                		<h2>Новость</h2>
-	                		<p>Краткий текст новости</p>
-	                		<a href="news-item.html" class="btn btn-primary">Дальше...</a>
-	                	</div>
-	                	<div class="col-md-4">
-	                		<img src="http://lorempixel.com/400/200/people/6" alt="Texto Alternativo">
-	                		<h2>Новость</h2>
-	                		<p>Краткий текст новости</p>
-	                		<a href="news-item.html" class="btn btn-primary">Дальше...</a>
-	                	</div>
-	                	<div class="col-md-4">
-	                		<img src="http://lorempixel.com/400/200/people/7" alt="Texto Alternativo">
-	                		<h2>Новость</h2>
-	                		<p>Краткий текст новости</p>
-	                		<a href="news-item.html" class="btn btn-primary">Дальше...</a>
-	                	</div>
-	                	<div class="col-md-4">
-	                		<img src="http://lorempixel.com/400/200/people/8" alt="Texto Alternativo">
-	                		<h2>Новость</h2>
-	                		<p>Краткий текст новости</p>
-	                		<a href="news-item.html" class="btn btn-primary">Дальше...</a>
-	                	</div>
-	                	<div class="col-md-4">
-	                		<img src="http://lorempixel.com/400/200/people/9" alt="Texto Alternativo">
-	                		<h2>Новость</h2>
-	                		<p>Краткий текст новости</p>
-	                		<a href="news-item.html" class="btn btn-primary">Дальше...</a>
+	                	<div ng-repeat="item in news"class="col-md-4">
+	                		<img src="{{item.image}}" alt="Texto Alternativo">
+	                		<h2>{{item.title}}</h2>
+	                		<p>{{item.synopsis}}</p>
+	                		<a href="#!/news/{{$index}}" class="btn btn-primary">Дальше...</a>
 	                	</div>
 	                </div>
 					<hr>

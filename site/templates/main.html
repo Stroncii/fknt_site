@@ -15,7 +15,7 @@
 					<div class="row stylish-panel">
 				      	<div class="col-md-3">
 					        <div>
-					          <a href="#"><img src="assets/img/8.jpg" alt="Texto Alternativo" width="150" class="img-circle img-thumbnail">
+					          <a href="structure/ki/"><img src="assets/img/8.jpg" alt="Texto Alternativo" width="150" class="img-circle img-thumbnail">
 					          <h3><a href="structure/ki/">Компьютерная инженерия</a><br><br></h3>
 					        </div>
 				      	</div>
@@ -52,19 +52,15 @@
 										</div>
 										<div class="col-md-4">
 											<div>
-												<h3>ШАНОВНІ АБІТУРІЄНТИ ТА БАТЬКИ!</h3>
-												<p>ДВНЗ "Донецький національний технічний університет" (м. Покровськ) 
-													ЗАПРОШУЄ вас відвідати ДЕНЬ ВІДКРИТИХ ДВЕРЕЙ, 
-													який відбудеться 25 БЕРЕЗНЯ 2017 р. о 13.00. 
-
-													У програмі: </p>
+												<h3>{{lastNews[3].title}}</h3>
+												<p ng-bind-html="lastNews[3].text"></p>
 													<ul>
 														<li>роз'яснення щодо вступної кампанії-2017;</li>
 														<li>презентація Університету (Університет очима студентів, можливості, які відкриває ДонНТУ та ін.); </li>
 														<li>презентація заходів під назвою "Сучасна наука в дії"; </li>
 														<li>підведення підсумків та нагородження учасників Всеукраїнської олімпіади - 2017. </li>
 													</ul>
-													<a href="#!/news-item" class="btn btn-inverse text-center">Подробнее...</a>
+													<a href="#!/news/{{1}}" class="btn btn-inverse text-center">Подробнее...</a>
 											</div>
 										</div>
 									</div>

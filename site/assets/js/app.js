@@ -1,4 +1,4 @@
-var app = angular.module('app', ['ngRoute'])
+var app = angular.module('app', ['ngRoute', 'ngSanitize'])
   .config( ['$routeProvider', function($routeProvider) {
   $routeProvider
   .when('/', {
@@ -55,14 +55,7 @@ var app = angular.module('app', ['ngRoute'])
   .when('/contacts', {
     templateUrl: 'templates/contacts.html'
   })
-  .when('/news-item', {
+  .when('/news/:id', {
     templateUrl: 'templates/news-item.html'
   })
-}]);
-
-
-app.controller('mainController',['$scope',function($scope){
-  $scope.homepage = "Главная";
-
-  console.log($scope);
 }]);

@@ -18,7 +18,7 @@
 	                <div class="row news-page">
 	                	<div class="col-md-12 lead">
 	                		<div class="row">
-	                			<div class="col-md-8"><img src="{{firstNews.full_cover}}" alt="Texto Alternativo"></div>
+	                			<div class="col-md-8"><img ng-src="{{firstNews.full_cover}}" alt="Texto Alternativo"></div>
 	                			<div class="col-md-4">
 		                			<h2>{{firstNews.title}}</h2>
 		                			<p ng-bind-html="firstNews.synopsis"></p>
@@ -27,7 +27,7 @@
 	                		</div>
 	                	</div>
 	                	<div ng-repeat="item in news" class="col-md-4 news-cover">
-	                		<img src="{{item.cover}}" alt="Texto Alternativo">
+	                		<img ng-src="{{item.cover}}" alt="Texto Alternativo">
 	                		<h2>{{item.title}}</h2>
 	                		<a href="#!/news/{{item.id}}" class="btn btn-primary">Дальше...</a>
 	                	</div>

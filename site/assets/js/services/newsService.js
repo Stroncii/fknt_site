@@ -7,8 +7,9 @@ angular.module('app').factory ('appFactory', ['$http', function ($http) {
       console.log(`Hey! Our Id is ${id}`);
     $http({
             method: 'GET',
-            url: 'http://localhost:8888/news/read.php/' + id
+            url: 'http://localhost:8888/news/read_one.php/' + id
         }).then(function successCallback(response) {
+            console.log("newww");
             console.log(response);
         }, function errorCallback(response) {
             console.log("Error!");

@@ -27,7 +27,7 @@
 	                		</div>
 	                	</div>
 	                	<div ng-repeat="item in news" class="col-md-4 news-cover">
-	                		<img src="{{item.cover}}" alt="Texto Alternativo">
+	                		<img ng-src="{{item.cover}}" alt="Texto Alternativo">
 	                		<h2>{{item.title}}</h2>
 	                		<a href="#!/news/{{item.id}}" class="btn btn-primary">Дальше...</a>
 	                	</div>

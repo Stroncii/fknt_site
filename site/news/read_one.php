@@ -13,7 +13,7 @@ $db = $database->getConnection();
 // initialize object
 $news = new News($db);
 $lang = 'uk';
-$id = explode('/',substr($_SERVER['PHP_SELF'],strpos($_SERVER['PHP_SELF'],'read_one')+0))[0];
+$id = explode('/',substr($_SERVER['PHP_SELF'],strpos($_SERVER['PHP_SELF'],'read_one')+13))[0];
 // query products
 $stmt = $news->readOne($lang,$id);
 $num = $stmt->rowCount();

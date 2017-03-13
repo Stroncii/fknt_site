@@ -269,16 +269,10 @@ h1.title{
   padding-right: 15px;
 }
 .news-item img{
-    width: 50%;
-    margin:15px;
-    margin-left: 20px;
+    width: 100%;
+    margin:0 auto;
 }
-.news-item img:nth-child(even){
-  float: right;
-}
-.news-item img:nth-child(odd){
-  float: left;
-}
+
 .news-item h2{
   text-align: center;
 }

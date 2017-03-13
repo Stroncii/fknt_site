@@ -14,6 +14,8 @@ angular.module('app').factory ('appFactory', ['$http', function ($http) {
             console.log("Error!");
             console.log(response);
         });
+
+        return 1;
   }
 
   fact.getNews = function () {

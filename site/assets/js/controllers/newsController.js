@@ -4,5 +4,6 @@ angular.module('app')
 
   $scope.news = appFactory.getNews();
   $scope.lastNews = appFactory.getLastNews();
+  $scope.smallLastNews = $scope.lastNews.slice(-3);
 
 }])

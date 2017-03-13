@@ -3,6 +3,19 @@ angular.module('app').factory ('appFactory', ['$http', function ($http) {
 
   fact.corp = 4;
 
+  fact.getOneNewsItem = function (id) {
+      console.log(`Hey! Our Id is ${id}`);
+    $http({
+            method: 'GET',
+            url: 'http://localhost:8888/news/read.php/' + id
+        }).then(function successCallback(response) {
+            console.log(response);
+        }, function errorCallback(response) {
+            console.log("Error!");
+            console.log(response);
+        });
+  }
+
   fact.getNews = function () {
       $http({
             method: 'GET',

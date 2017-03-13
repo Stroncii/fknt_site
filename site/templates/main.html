@@ -60,31 +60,19 @@
 														<li>презентація заходів під назвою "Сучасна наука в дії"; </li>
 														<li>підведення підсумків та нагородження учасників Всеукраїнської олімпіади - 2017. </li>
 													</ul>
-													<a href="#!/news/{{1}}" class="btn btn-inverse text-center">Подробнее...</a>
+													<a href="#!/news/{{15}}" class="btn btn-inverse text-center">Подробнее...</a>
 											</div>
 										</div>
 									</div>
 								</div>
 							
-								<div class="col-md-4">
-									<img src="http://lorempixel.com/400/200/people/2" />
+								<div ng-repeat="item in smallLastNews" class="col-md-4">
+									<img ng-src="{{item.poster}}" />
 									<div>
-										<h4><a href="#!/news-item">Старое бла-бла</a></h4>
+										<h4><a href="#!/news/{{$index}}">Старое бла-бла</a></h4>
 									</div>
 								</div>
 							
-								<div class="col-md-4">
-									<img src="http://lorempixel.com/400/200/people/3" />
-									<div>
-										<h4><a href="#!/news-item">Древнее бла-бла</a></h4>
-									</div>
-									
-								</div>
-								<div class="col-md-4">
-									<img src="http://lorempixel.com/400/200/people/5" />
-									<div>
-										<h4><a href="#!/news-item">Древнее бла-бла</a></h4>
-									</div>
 									
 								</div>
 								<div class="col-md-12">

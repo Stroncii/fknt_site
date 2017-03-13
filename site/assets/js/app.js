@@ -56,6 +56,7 @@ var app = angular.module('app', ['ngRoute', 'ngSanitize'])
     templateUrl: 'templates/contacts.html'
   })
   .when('/news/:id', {
-    templateUrl: 'templates/news-item.html'
+    templateUrl: 'templates/news-item.html',
+    controller: 'oneNewsController'
   })
 }]);

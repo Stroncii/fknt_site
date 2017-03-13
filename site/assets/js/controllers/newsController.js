@@ -4,7 +4,7 @@ angular.module('app')
 
   appFactory.getNews().then(function(data) {
     $scope.firstNews = data.news[0];
-    $scope.news = data.news;
+    $scope.news = data.news.slice(-data.news.length-1);
   });
   appFactory.getLastNews().then(function(data) {
     console.log(data);

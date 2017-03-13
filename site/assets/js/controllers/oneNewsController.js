@@ -5,7 +5,10 @@ angular.module('app')
   console.log('lalo4ka');
   console.log($routeParams);
 
-  $scope.newsItem = appFactory.getOneNewsItem($routeParams.id);
+  appFactory.getOneNewsItem($routeParams.id).then((data) => {
+      $scope.item = data;
+      console.log($scope.item);
+  });
 
 
 

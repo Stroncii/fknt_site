@@ -5,18 +5,17 @@ angular.module('app').factory ('appFactory', ['$http', function ($http) {
 
   fact.getOneNewsItem = function (id) {
       console.log(`Hey! Our Id is ${id}`);
-    $http({
+        return $http({
             method: 'GET',
             url: 'http://localhost:8888/news/read_one.php/' + id
         }).then(function successCallback(response) {
             console.log("newww");
             console.log(response);
+            return response.data;
         }, function errorCallback(response) {
             console.log("Error!");
             console.log(response);
-        });
-
-        return 1;
+        });;
   }
 
   fact.getNews = function () {

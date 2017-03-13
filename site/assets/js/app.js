@@ -59,4 +59,5 @@ var app = angular.module('app', ['ngRoute', 'ngSanitize'])
     templateUrl: 'templates/news-item.html',
     controller: 'oneNewsController'
   })
+  .otherwise('/')
 }]);

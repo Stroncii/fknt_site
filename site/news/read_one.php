@@ -51,13 +51,9 @@ if($num>0){
             }
             $data .= ']';
         $data .= '}';
- 
-        $data .= $x<$num ? ',' : '';
- 
-        $x++;
     }
 }
  
 // json format output
-echo '{"news":[' . $data . ']}';
+echo $data;
 ?>

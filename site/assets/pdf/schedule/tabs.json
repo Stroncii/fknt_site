@@ -1,0 +1,187 @@
+[
+	{
+		"tabName": {
+			"uk":"Комп'ютерна iнженерiя",
+			"ru":"Компьютерная инженерия",
+			"en":"Computer engineering"
+		},
+		"pills":[
+			{
+				"group":"КІ-16а",
+				"pdf":"ki16a.pdf"
+			},
+			{
+				"group":"КІ-15",
+				"pdf":"ki15.pdf"
+			},
+			{
+				"group":"КІ-14а",
+				"pdf":"ki14a.pdf"
+			},
+			{
+				"group":"КІ-14б",
+				"pdf":"ki14b.pdf"
+			},
+			{
+				"group":"КІ-13а",
+				"pdf":"ki13a.pdf"
+			},
+			{
+				"group":"КІ-13б",
+				"pdf":"ki13b.pdf"
+			},
+			{
+				"group":"КІм-16а",
+				"pdf":"kim16a.pdf"
+			},
+			{
+				"group":"МІКм-16а",
+				"pdf":"mikm16a.pdf"
+			}
+
+		]
+
+	},
+	{
+		"tabName": {
+			"uk":"Комп'ютерні науки",
+			"ru":"Компьютерные науки",
+			"en":"Computer sciences"
+		},
+		"pills":[
+			{
+				"group":"КН-16",
+				"pdf":"kn16.pdf"
+			},
+			{
+				"group":"КН-15",
+				"pdf":"kn15.pdf"
+			},
+			{
+				"group":"КН-14",
+				"pdf":"kn14.pdf"
+			},
+			{
+				"group":"КН-13а",
+				"pdf":"kn13a.pdf"
+			},
+			{
+				"group":"КН-13б",
+				"pdf":"kn13b.pdf"
+			},
+			{
+				"group":"КНм-16",
+				"pdf":"knm16.pdf"
+			}
+		]
+	},
+	{
+		"tabName": {
+			"uk":"Прикладна математика та інформатика",
+			"ru":"Прикладная математика и информатика",
+			"en":"Applied Mathematics and Informatics"
+		},
+		"pills":[
+			{
+				"group":"ИПЗ-16",
+				"pdf":"ipz16.pdfp"
+			},
+			{
+				"group":"ПИ-15",
+				"pdf":"pi15.pdf"
+			},
+			{
+				"group":"ПИ-14",
+				"pdf":"pi14.pdf"
+			},
+			{
+				"group":"ИПЗ-13",
+				"pdf":"ipz13.pdf"
+			},
+			{
+				"group":"ПЗС-13",
+				"pdf":"pzs13.pdf"
+			},
+			{
+				"group":"ИПЗм-16",
+				"pdf":"ipzm16.pdf"
+			}
+		]
+	},
+	{
+		"tabName": {
+			"uk":"Філософія",
+			"ru":"Философия",
+			"en":"Philosophy"
+		},
+		"pills":[
+			{
+				"group":"ФИЛ-16",
+				"pdf":"fil16.pdf"
+			},
+			{
+				"group":"ФИР-15",
+				"pdf":"fir15.pdf"
+			},
+			{
+				"group":"РЕЛм-16",
+				"pdf":"relm16.pdf"
+			}
+		]
+	},
+	{
+		"tabName": {
+			"uk":"Заочники",
+			"ru":"Заочники",
+			"en":"Extramural"
+		},
+		"pills":[
+			{
+				"group":"Установочная - осенний семестр",
+				"pdf":"remote-u-autumn.pdf"
+			},
+			{
+				"group":"Сессия - осенний семестр",
+				"pdf":"remote-s-autumn.pdf"
+			},
+			{
+				"group":"Установочная - весенний семестр",
+				"pdf":"remote-u-spring.pdf"
+			},
+			{
+				"group":"Сессия - осенний семестр",
+				"pdf":"remote-s-spring.pdf"
+			}
+		]
+	},
+	{
+		"tabName": {
+			"uk":"Викладачі",
+			"ru":"Преподаватели",
+			"en":"Teachers"
+		},
+		"pills":[
+			{
+				"group":"Дневная форма",
+				"pdf":"teacher-schedule.pdf"
+			},
+			{
+				"group":"Установочная - осенний семестр",
+				"pdf":"teacher-u-autumn.pdf"
+			},
+			{
+				"group":"Сессия - осенний семестр",
+				"pdf":"teacher-s-autumn.pdf"
+			},
+			{
+				"group":"Установочная - весенний семестр",
+				"pdf":"teacher-u-spring.pdf"
+			},{
+				"group":"Сессия - осенний семестр",
+				"pdf":"teacher-s-spring.pdf"
+			}
+		]
+	}
+]
+
+

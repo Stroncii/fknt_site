@@ -48,28 +48,22 @@
 								<div class="col-md-12 lead-news">
 									<div class="row">
 										<div class="col-md-8">
-											<img src="assets/img/news/poster.jpg" />
+											<img src="{{lastNews[0].full_cover}}" />
 										</div>
 										<div class="col-md-4">
 											<div>
 												<h3>{{lastNews[3].title}}</h3>
-												<p ng-bind-html="lastNews[3].text"></p>
-													<ul>
-														<li>роз'яснення щодо вступної кампанії-2017;</li>
-														<li>презентація Університету (Університет очима студентів, можливості, які відкриває ДонНТУ та ін.); </li>
-														<li>презентація заходів під назвою "Сучасна наука в дії"; </li>
-														<li>підведення підсумків та нагородження учасників Всеукраїнської олімпіади - 2017. </li>
-													</ul>
-													<a href="#!/news/{{15}}" class="btn btn-inverse text-center">Подробнее...</a>
+												<p ng-bind-html="lastNews[0].synopsis"></p>
+													<a href="#!/news/{{lastNews[0].id}}" class="btn btn-inverse text-center">Подробнее...</a>
 											</div>
 										</div>
 									</div>
 								</div>
 							
 								<div ng-repeat="item in smallLastNews" class="col-md-4">
-									<img ng-src="{{item.poster}}" />
+									<img ng-src="{{item.cover}}" />
 									<div>
-										<h4><a href="#!/news/{{$index}}">{{item.title }} Something will be here</a></h4>
+										<h4><a href="#!/news/{{item.id}}">{{item.title}}</a></h4>
 									</div>
 								</div>
 							

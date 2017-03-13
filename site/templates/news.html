@@ -18,16 +18,16 @@
 	                <div class="row news-page">
 	                	<div class="col-md-12 lead">
 	                		<div class="row">
-	                			<div class="col-md-8"><img src="http://lorempixel.com/400/200/people/2" alt="Texto Alternativo"></div>
+	                			<div class="col-md-8"><img src="{{firstNews.full_cover}}" alt="Texto Alternativo"></div>
 	                			<div class="col-md-4">
-		                			<h2>Новость</h2>
-		                			<p>Краткий текст новости</p>
+		                			<h2>{{firstNews.title}}</h2>
+		                			<p ng-bind-html="firstNews.synopsis"></p>
 		                			<a href="news-item.html" class="btn btn-primary">Дальше...</a>
 		                		</div>
 	                		</div>
 	                	</div>
 	                	<div ng-repeat="item in news"class="col-md-4">
-	                		<img src="{{item.image}}" alt="Texto Alternativo">
+	                		<img src="{{item.cover}}" alt="Texto Alternativo">
 	                		<h2>{{item.title}}</h2>
 	                		<p>{{item.synopsis}}</p>
 	                		<a href="#!/news/{{$index}}" class="btn btn-primary">Дальше...</a>

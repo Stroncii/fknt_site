@@ -19,30 +19,31 @@ angular.module('app').factory ('appFactory', ['$http', function ($http) {
   }
 
   fact.getNews = function () {
-      $http({
+      let news = $http({
             method: 'GET',
             url: 'http://localhost:8888/news/read.php'
         }).then(function successCallback(response) {
-            console.log(response);
+            console.log("here");
+            return response.data;
         }, function errorCallback(response) {
             console.log("Error!");
             console.log(response);
         });
-    return jsonA;
+    return news;
   };
 
   fact.getLastNews = function (){
-      $http({
+      let lastNews = $http({
             method: 'GET',
             url: 'http://localhost:8888/news/read_last.php'
         }).then(function successCallback(response) {
-            console.log(response);
+            return response.data;
         }, function errorCallback(response) {
             console.log("Error!");
             console.log(response);
         });
-    return jsonA.slice(-4);
-  }
+    return lastNews;
+  };
   
   return fact;
 }]);

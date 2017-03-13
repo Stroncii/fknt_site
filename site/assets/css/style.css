@@ -269,10 +269,12 @@ h1.title{
   padding-right: 15px;
 }
 .news-item img{
-    width: 100%;
+    height: 100% !important;
     margin:0 auto;
 }
-
+.carousel-inner>.item{
+  height: 700px;
+}
 .news-item h2{
   text-align: center;
 }
@@ -284,6 +286,7 @@ h1.title{
 .news-item p, .science p{
   text-indent: 40px;
 }
+
 .contacts iframe{
     width: 100%;
 }

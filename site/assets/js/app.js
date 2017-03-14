@@ -67,12 +67,19 @@ var app = angular.module('app', ['ngRoute', 'ngSanitize'])
   .otherwise('/error');
 
 
-    /*    // use the HTML5 History API
+ /*   // use the HTML5 History API
         $locationProvider.html5Mode({
           enabled: true,
           requireBase: false
     }); */
 }]);
 
+app.run(function($rootScope, $location, $anchorScroll) {
+  //when the route is changed scroll to the proper element.
+  $rootScope.$on('$routeChangeSuccess', function(newRoute, oldRoute) {
+    console.log("change");
+    if($location.hash()) $anchorScroll();  
+  });
+});
 
   

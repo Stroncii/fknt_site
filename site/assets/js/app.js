@@ -1,5 +1,5 @@
 var app = angular.module('app', ['ngRoute', 'ngSanitize'])
-  .config( ['$routeProvider', function($routeProvider) {
+  .config( ['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
   $routeProvider
   .when('/', {
     templateUrl: 'templates/main.html'
@@ -26,7 +26,8 @@ var app = angular.module('app', ['ngRoute', 'ngSanitize'])
     templateUrl: 'templates/philosophy.html'
   })
   .when('/schedule', {
-    templateUrl: 'templates/schedule.html'
+    templateUrl: 'templates/schedule.html',
+    controller: 'scheduleController'
   })
   .when('/consultations', {
     templateUrl: 'templates/consultations.html'
@@ -62,5 +63,12 @@ var app = angular.module('app', ['ngRoute', 'ngSanitize'])
   .when('/error', {
     templateUrl: 'templates/error.html'
   })
-  .otherwise('/error')
+  .otherwise('/error');
+
+
+    /*    // use the HTML5 History API
+        $locationProvider.html5Mode({
+          enabled: true,
+          requireBase: false
+    }); */
 }]);

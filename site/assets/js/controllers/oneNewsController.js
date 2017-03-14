@@ -8,7 +8,7 @@ angular.module('app')
   appFactory.getOneNewsItem($routeParams.id).then((data) => {
       $scope.item = data;
       if (!data) {
-          $location.path("#!/error");
+          $location.path("/error");
       }
   });
 

@@ -2,6 +2,7 @@ angular.module('app')
 .controller('mainController',['$scope', '$http', 'appFactory', '$sce' , function($scope, $http, appFactory, $sce){
   
 
+  
   appFactory.getNews().then(function(data) {
     $scope.firstNews = data.news[0];
     $scope.news = data.news;

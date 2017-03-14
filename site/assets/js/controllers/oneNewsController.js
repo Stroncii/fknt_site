@@ -7,7 +7,6 @@ angular.module('app')
 
   appFactory.getOneNewsItem($routeParams.id).then((data) => {
       $scope.item = data;
-      console.log($scope.item);
   });
 
 

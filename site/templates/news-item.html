@@ -24,7 +24,7 @@
 									<div class="carousel slide" data-ride="carousel">
 
 										<!-- Indicators -->
-										<ol class="carousel-indicators">
+										<ol class="carousel-indicators" ng-if="item.images.length  > 1">
 											<li data-target="#carousel-example-generic" ng-repeat="image in item.images" ng-class="{active:!$index}" data-slide-to="{{$index}}"></li>
 										</ol>
 

@@ -1,5 +1,5 @@
 angular.module('app')
-.controller('oneNewsController',['$scope', '$http', 'appFactory', '$routeParams' , function($scope, $http, appFactory, $routeParams){
+.controller('oneNewsController',['$scope', '$http', 'appFactory', '$routeParams', '$location' , function($scope, $http, appFactory, $routeParams, $location){
   
 
   console.log('lalo4ka');
@@ -7,6 +7,9 @@ angular.module('app')
 
   appFactory.getOneNewsItem($routeParams.id).then((data) => {
       $scope.item = data;
+      if (!data) {
+          $location.path("#!/error");
+      }
   });
 
 

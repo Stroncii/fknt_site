@@ -18,11 +18,11 @@
 				<div class="row schedule">
 						<div class="nav-align-center">
 							<ul class="nav nav-tabs">
-							  <li ng-repeat="item in works" ng-class="{active:!$index}"><a data-toggle="tab" data-target="#tab{{$index}}">{{item.tabName.uk}}</a></li>							  
+							  <li ng-repeat="item in works" ng-if="item.pills.length" ng-class="{active:!$index}"><a data-toggle="tab" data-target="#tab{{$index}}">{{item.tabName.uk}}</a></li>							  
 							</ul>
 							<br>
 							<div class="tab-content">
-							  	<div id="tab{{$index}}" ng-repeat="item in works" ng-class="{active:!$index}" class="tab-pane fade in">
+							  	<div id="tab{{$index}}" ng-if="item.pills.length" ng-repeat="item in works" ng-class="{active:!$index}" class="tab-pane fade in">
 							    	<ul class="nav nav-pills schedule" role="tablist">
 										<li ng-class="{active:!$index}" ng-repeat="unit in item.pills">
 				                            <a data-target="#{{unit.pdf.slice(0,unit.pdf.length-4)}}" role="tab" data-toggle="tab">

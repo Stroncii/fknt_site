@@ -19,7 +19,7 @@
 					<div class="row schedule">
 						<div class="nav-align-center">
 							<ul class="nav nav-tabs">
-							  <li ng-repeat="item in schedule" ng-class="{active:!$index}"><a data-toggle="tab" data-target="#tab{{$index}}">{{item.tabName.uk}}</a></li>							  
+							  <li ng-repeat="item in schedule" ng-if="item.pills.length" ng-class="{active:!$index}"><a data-toggle="tab" data-target="#tab{{$index}}">{{item.tabName.uk}}</a></li>							  
 							</ul>
 							<br>
 							<div class="tab-content">

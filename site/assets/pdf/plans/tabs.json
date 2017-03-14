@@ -8,111 +8,111 @@
 		"pills":[
 			{
 				"group":"КИ-13а",
-				"pdf":""
+				"pdf":"ki13a.pdf"
 			},
 			{
 				"group":"КИ-13б",
-				"pdf":""
+				"pdf":"ki13b.pdf"
 			},
 			{
 				"group":"КИ-14а",
-				"pdf":""
+				"pdf":"ki14a.pdf"
 			},
 			{
 				"group":"КИ-14б",
-				"pdf":""
+				"pdf":"ki14b.pdf"
 			},
 			{
 				"group":"КИ-15",
-				"pdf":""
+				"pdf":"ki15.pdf"
 			},
 			{
 				"group":"КИ-16а",
-				"pdf":""
+				"pdf":"ki16a.pdf"
 			},
 			{
 				"group":"КИ-16б",
-				"pdf":""
+				"pdf":"ki16b.pdf"
 			},
 			{
 				"group":"КИм-16а",
-				"pdf":""
+				"pdf":"kim16a.pdf"
 			},
 			{
 				"group":"КИм-16б",
-				"pdf":""
+				"pdf":"kim16b.pdf"
 			},
 			{
 				"group":"КИс-16а",
-				"pdf":""
+				"pdf":"kis16a.pdf"
 			},
 			{
 				"group":"КИс-16б",
-				"pdf":""
+				"pdf":"kis16b.pdf"
 			},
 			{
 				"group":"КСм-15",
-				"pdf":""
+				"pdf":"ksm15.pdf"
 			},
 			{
 				"group":"СПм-15",
-				"pdf":""
+				"pdf":"spm15.pdf"
 			},
 			{
 				"group":"МИКм-16а",
-				"pdf":""
+				"pdf":"mikm16a.pdf"
 			},
 			{
 				"group":"МИКм-16б",
-				"pdf":""
+				"pdf":"mikm16b.pdf"
 			},
 			{
 				"group":"КИз-15",
-				"pdf":""
+				"pdf":"kiz15.pdf"
 			},
 			{
 				"group":"КИз-16а",
-				"pdf":""
+				"pdf":"kiz16a.pdf"
 			},
 			{
 				"group":"КИз-16б",
-				"pdf":""
+				"pdf":"kiz16b.pdf"
 			},
 			{
 				"group":"КИзм-16а",
-				"pdf":""
+				"pdf":"kizm16a.pdf"
 			},
 			{
 				"group":"КИзм-16б",
-				"pdf":""
+				"pdf":"kizm16b.pdf"
 			},
 			{
 				"group":"КИзп-16",
-				"pdf":""
+				"pdf":"kizp16.pdf"
 			},
 			{
 				"group":"КИзс16а",
-				"pdf":""
+				"pdf":"kizs16a.pdf"
 			},
 			{
 				"group":"КИзс16б",
-				"pdf":""
+				"pdf":"kizs16b.pdf"
 			},
 			{
 				"group":"КСз-12",
-				"pdf":""
+				"pdf":"ksz12.pdf"
 			},
 			{
 				"group":"КСз-13",
-				"pdf":""
+				"pdf":"ksz13.pdf"
 			},
 			{
 				"group":"МИКзм-16а",
-				"pdf":""
+				"pdf":"mikzm16a.pdf"
 			},
 			{
 				"group":"МИКзм-16б",
-				"pdf":""
+				"pdf":"mikzm16b.pdf"
 			}
 		]
 
@@ -125,64 +125,64 @@
 		},
 		"pills":[
 			{
-				"group":"",
-				"pdf":""
+				"group":"КН-15",
+				"pdf":"kn15.pdf"
 			},
 			{
-				"group":"",
-				"pdf":""
+				"group":"СШИм-15",
+				"pdf":"sshim15.pdf"
 			},
 			{
-				"group":"",
-				"pdf":""
+				"group":"ИУСм-15",
+				"pdf":"iusm15.pdf"
 			},
 			{
-				"group":"",
-				"pdf":""
+				"group":"КН-14",
+				"pdf":"kn14.pdf"
 			},
 			{
-				"group":"",
-				"pdf":""
+				"group":"ИУСзск-14",
+				"pdf":"iuszsk14.pdf"
 			},
 			{
-				"group":"",
-				"pdf":""
+				"group":"КН-13а",
+				"pdf":"kn13a.pdf"
 			},
 			{
-				"group":"",
-				"pdf":""
+				"group":"КН-13б",
+				"pdf":"kn13b.pdf"
 			},
 			{
-				"group":"",
-				"pdf":""
+				"group":"КНм-16",
+				"pdf":"knm16.pdf"
 			},
 			{
-				"group":"",
-				"pdf":""
+				"group":"КНс-16",
+				"pdf":"kns16.pdf"
 			},
 			{
-				"group":"",
-				"pdf":""
+				"group":"КНзс-16",
+				"pdf":"knzs16.pdf"
 			},
 			{
-				"group":"",
-				"pdf":""
+				"group":"КНзм-16",
+				"pdf":"knzm16.pdf"
 			},
 			{
-				"group":"",
-				"pdf":""
+				"group":"КНз-16",
+				"pdf":"knz16.pdf"
 			},
 			{
-				"group":"",
-				"pdf":""
+				"group":"КН-16",
+				"pdf":"kn16.pdf"
 			},
 			{
-				"group":"",
-				"pdf":""
+				"group":"ИУСзск-15 1 курс",
+				"pdf":"iuszsk15-1.pdf"
 			},
 			{
-				"group":"",
-				"pdf":""
+				"group":"ИУСзск-15 2 курс",
+				"pdf":"iuszsk15-2.pdf"
 			}
 		]
 	},
@@ -194,44 +194,28 @@
 		},
 		"pills":[
 			{
-				"group":"",
-				"pdf":""
+				"group":"ИПЗм-15",
+				"pdf":"ipzm15.pdf"
 			},
 			{
-				"group":"",
-				"pdf":""
+				"group":"ПИ-15 ИПЗа",
+				"pdf":"pi15ipza.pdf"
 			},
 			{
-				"group":"",
-				"pdf":""
+				"group":"ПИ-15 ИПЗб",
+				"pdf":"pi15ipzb.pdf"
 			},
 			{
-				"group":"",
-				"pdf":""
+				"group":"ПИ-14",
+				"pdf":"pi14.pdf"
 			},
 			{
-				"group":"",
-				"pdf":""
+				"group":"ПЗС-13",
+				"pdf":"pzs13.pdf"
 			},
 			{
-				"group":"",
-				"pdf":""
-			},
-			{
-				"group":"",
-				"pdf":""
-			},
-			{
-				"group":"",
-				"pdf":""
-			},
-			{
-				"group":"",
-				"pdf":""
-			},
-			{
-				"group":"",
-				"pdf":""
+				"group":"ИПЗ-13",
+				"pdf":"ipz13.pdf"
 			}
 		]
 	},
@@ -242,36 +226,7 @@
 			"en":"Philosophy"
 		},
 		"pills":[
-			{
-				"group":"",
-				"pdf":""
-			}
-		]
-	},
-	{
-		"tabName": {
-			"uk":"Заочники",
-			"ru":"Заочники",
-			"en":"Extramural"
-		},
-		"pills":[
-			{
-				"group":"",
-				"pdf":""
-			}
-		]
-	},
-	{
-		"tabName": {
-			"uk":"Викладачі",
-			"ru":"Преподаватели",
-			"en":"Teachers"
-		},
-		"pills":[
-			{
-				"group":"",
-				"pdf":""
-			}
+			
 		]
 	}
 ]

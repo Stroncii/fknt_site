@@ -36,7 +36,8 @@ var app = angular.module('app', ['ngRoute', 'ngSanitize'])
     templateUrl: 'templates/process.html'
   })
   .when('/plans', {
-    templateUrl: 'templates/plans.html'
+    templateUrl: 'templates/plans.html',
+    controller: 'worksController'
   })
   .when('/organizations', {
     templateUrl: 'templates/organizations.html'

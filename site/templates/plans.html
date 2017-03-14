@@ -15,142 +15,41 @@
 
 
 
+				<div class="row schedule">
+						<div class="nav-align-center">
+							<ul class="nav nav-tabs">
+							  <li ng-repeat="item in works" ng-class="{active:!$index}"><a data-toggle="tab" data-target="#tab{{$index}}">{{item.tabName.uk}}</a></li>							  
+							</ul>
+							<br>
+							<div class="tab-content">
+							  	<div id="tab{{$index}}" ng-repeat="item in works" ng-class="{active:!$index}" class="tab-pane fade in">
+							    	<ul class="nav nav-pills schedule" role="tablist">
+										<li ng-class="{active:!$index}" ng-repeat="unit in item.pills">
+				                            <a data-target="#{{unit.pdf.slice(0,unit.pdf.length-4)}}" role="tab" data-toggle="tab">
+				                                {{unit.group}}
+				                            </a>
+				                        </li>
+									</ul>
+									<div class="tab-content gallery">
+										<div  ng-repeat="unit in item.pills" ng-class="{active:!$index}" class="tab-pane" id="{{unit.pdf.slice(0,unit.pdf.length-4)}}">
+				                            <div class="row">
+												<object data="{{'/assets/pdf/plans/' + unit.pdf}}" type="application/pdf" width="100%" height="800px">
+												  <p>Alternative text - include a link <a ng-href="{{unit.pdf}}">to the PDF!</a></p>
+												</object>
+				                            </div>
+				                            <a href="../assets/pdf/schedule/ki13a.pdf" class="btn btn-primary"><i class="material-icons">&#xE2C4;</i> Скачать</a>
+				                        </div>
+									
+				                    </div>
+								</div>
+								<!--       -->
+							  	</div>
+							</div>
+									
+										
 
-					<div class="row">
-						<div class="col-md-6">
-							<table class="table">
-							    <thead>
-							        <tr>
-							            <th></th>
-							            <th>Дневная форма</th>
-							        </tr>
-							    </thead>
-							    <tbody>
-							        <tr>
-							            <td class="text-center"><a href="../assets/pdf/plans/ki13a.pdf" class="btn btn-fab btn-fab-mini btn-round"><i class="material-icons">&#xE2C4;</i></a></td>
-							            <td>КИ-13а</td>
-							        </tr>
-							        <tr>
-							            <td class="text-center"><a href="../assets/pdf/plans/ki13b.pdf" class="btn btn-fab btn-fab-mini btn-round"><i class="material-icons">&#xE2C4;</i></a></td>
-							            <td>КИ-13б</td>
-							        </tr>
-							        <tr>
-							            <td class="text-center"><a href="../assets/pdf/plans/ki14a.pdf" class="btn btn-fab btn-fab-mini btn-round"><i class="material-icons">&#xE2C4;</i></a></td>
-							            <td>КИ-14а</td>
-							        </tr>
-							        <tr>
-							            <td class="text-center"><a href="../assets/pdf/plans/ki14b.pdf" class="btn btn-fab btn-fab-mini btn-round"><i class="material-icons">&#xE2C4;</i></a></td>
-							            <td>КИ-14б</td>
-							        </tr>
-							        <tr>
-							            <td class="text-center"><a href="../assets/pdf/plans/ki15.pdf" class="btn btn-fab btn-fab-mini btn-round"><i class="material-icons">&#xE2C4;</i></a></td>
-							            <td>КИ-15</td>
-							        </tr>
-							        <tr>
-							            <td class="text-center"><a href="../assets/pdf/plans/ki16a.pdf" class="btn btn-fab btn-fab-mini btn-round"><i class="material-icons">&#xE2C4;</i></a></td>
-							            <td>КИ-16а</td>
-							        </tr>
-							        <tr>
-							            <td class="text-center"><a href="../assets/pdf/plans/ki16b.pdf" class="btn btn-fab btn-fab-mini btn-round"><i class="material-icons">&#xE2C4;</i></a></td>
-							            <td>КИ-16б</td>
-							        </tr>
-							        <tr>
-							            <td class="text-center"><a href="../assets/pdf/plans/kim16a.pdf" class="btn btn-fab btn-fab-mini btn-round"><i class="material-icons">&#xE2C4;</i></a></td>
-							            <td>КИм-16а</td>
-							        </tr>
-							        <tr>
-							            <td class="text-center"><a href="../assets/pdf/plans/kim16b.pdf" class="btn btn-fab btn-fab-mini btn-round"><i class="material-icons">&#xE2C4;</i></a></td>
-							            <td>КИм-16б</td>
-							        </tr>
-							        <tr>
-							            <td class="text-center"><a href="../assets/pdf/plans/kis16a.pdf" class="btn btn-fab btn-fab-mini btn-round"><i class="material-icons">&#xE2C4;</i></a></td>
-							            <td>КИс-16а</td>
-							        </tr>
-							        <tr>
-							            <td class="text-center"><a href="../assets/pdf/plans/kis16b.pdf" class="btn btn-fab btn-fab-mini btn-round"><i class="material-icons">&#xE2C4;</i></a></td>
-							            <td>КИс-16б</td>
-							        </tr>
-							        <tr>
-							            <td class="text-center"><a href="../assets/pdf/plans/ksm15.pdf" class="btn btn-fab btn-fab-mini btn-round"><i class="material-icons">&#xE2C4;</i></a></td>
-							            <td>КСм-15</td>
-							        </tr>
-							        <tr>
-							            <td class="text-center"><a href="../assets/pdf/plans/spm15.pdf" class="btn btn-fab btn-fab-mini btn-round"><i class="material-icons">&#xE2C4;</i></a></td>
-							            <td>СПм-15</td>
-							        </tr>
-							        <tr>
-							            <td class="text-center"><a href="../assets/pdf/plans/mikm16a.pdf" class="btn btn-fab btn-fab-mini btn-round"><i class="material-icons">&#xE2C4;</i></a></td>
-							            <td>МИКм-16а</td>
-							        </tr>
-							        <tr>
-							            <td class="text-center"><a href="../assets/pdf/plans/mikm16b.pdf" class="btn btn-fab btn-fab-mini btn-round"><i class="material-icons">&#xE2C4;</i></a></td>
-							            <td>МИКм-16б</td>
-							        </tr>
-							    </tbody>
-							</table>
+				                    
 						</div>
-						<div class="col-md-6">
-							<table class="table">
-							    <thead>
-							        <tr>
-							            <th></th>
-							            <th>Заочная форма</th>
-							        </tr>
-							    </thead>
-							    <tbody>
-							        <tr>
-							            <td class="text-center"><a href="../assets/pdf/plans/kiz15.pdf" class="btn btn-fab btn-fab-mini btn-round"><i class="material-icons">&#xE2C4;</i></a></td>
-							            <td>КИз-15</td>
-							        </tr>
-							        <tr>
-							            <td class="text-center"><a href="../assets/pdf/plans/kiz16a.pdf" class="btn btn-fab btn-fab-mini btn-round"><i class="material-icons">&#xE2C4;</i></a></td>
-							            <td>КИз-16а</td>
-							        </tr>
-							        <tr>
-							            <td class="text-center"><a href="../assets/pdf/plans/kiz16b.pdf" class="btn btn-fab btn-fab-mini btn-round"><i class="material-icons">&#xE2C4;</i></a></td>
-							            <td>КИз-16б</td>
-							        </tr>
-							        <tr>
-							            <td class="text-center"><a href="../assets/pdf/plans/kizm16a.pdf" class="btn btn-fab btn-fab-mini btn-round"><i class="material-icons">&#xE2C4;</i></a></td>
-							            <td>КИзм-16а</td>
-							        </tr>
-							        <tr>
-							            <td class="text-center"><a href="../assets/pdf/plans/kizm16b.pdf" class="btn btn-fab btn-fab-mini btn-round"><i class="material-icons">&#xE2C4;</i></a></td>
-							            <td>КИзм-16б</td>
-							        </tr>
-							        <tr>
-							            <td class="text-center"><a href="../assets/pdf/plans/kizp16.pdf" class="btn btn-fab btn-fab-mini btn-round"><i class="material-icons">&#xE2C4;</i></a></td>
-							            <td>КИзп-16</td>
-							        </tr>
-							        <tr>
-							            <td class="text-center"><a href="../assets/pdf/plans/kizs16a.pdf" class="btn btn-fab btn-fab-mini btn-round"><i class="material-icons">&#xE2C4;</i></a></td>
-							            <td>КИзс16а</td>
-							        </tr>
-							        <tr>
-							            <td class="text-center"><a href="../assets/pdf/plans/kizs16b.pdf" class="btn btn-fab btn-fab-mini btn-round"><i class="material-icons">&#xE2C4;</i></a></td>
-							            <td>КИзс16б</td>
-							        </tr>
-							        <tr>
-							            <td class="text-center"><a href="../assets/pdf/plans/ksz12.pdf" class="btn btn-fab btn-fab-mini btn-round"><i class="material-icons">&#xE2C4;</i></a></td>
-							            <td>КСз-12</td>
-							        </tr>
-							        <tr>
-							            <td class="text-center"><a href="../assets/pdf/plans/ksz13.pdf" class="btn btn-fab btn-fab-mini btn-round"><i class="material-icons">&#xE2C4;</i></a></td>
-							            <td>КСз-13</td>
-							        </tr>
-							        <tr>
-							            <td class="text-center"><a href="../assets/pdf/plans/mikzm16a.pdf" class="btn btn-fab btn-fab-mini btn-round"><i class="material-icons">&#xE2C4;</i></a></td>
-							            <td>МИКзм-16а</td>
-							        </tr>
-							        <tr>
-							            <td class="text-center"><a href="../assets/pdf/plans/mikzm16b.pdf" class="btn btn-fab btn-fab-mini btn-round"><i class="material-icons">&#xE2C4;</i></a></td>
-							            <td>МИКзм-16б</td>
-							        </tr>
-							    </tbody>
-							</table>
-						</div>
-
-					</div>
 
 	            </div>
 	        </div>

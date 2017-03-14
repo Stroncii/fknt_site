@@ -1,9 +1,9 @@
 angular.module('app')
-.controller('scheduleController',['$scope', '$http', 'scheduleFactory', '$sce' , function($scope, $http, scheduleFactory, $sce){
+.controller('scheduleController',['$scope', '$http', 'pdfFactory', '$sce' , function($scope, $http, pdfFactory, $sce){
   
-    
 
-  scheduleFactory.getSchedule().then((data) => {
+
+  pdfFactory.getSchedule().then((data) => {
       $scope.schedule = data;
       console.log($scope.schedule);
   });

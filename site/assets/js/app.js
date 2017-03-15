@@ -78,7 +78,7 @@ app.run(function($rootScope, $location, $anchorScroll) {
   //when the route is changed scroll to the proper element.
   $rootScope.$on('$routeChangeSuccess', function(newRoute, oldRoute) {
     console.log("change");
-    if($location.hash()) $anchorScroll();  
+   // if($location.hash()) $anchorScroll();  
   });
 });
 

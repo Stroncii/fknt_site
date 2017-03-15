@@ -396,3 +396,7 @@ padding-right: 15px
 .news-page .lead p,.news-page .lead ul{
   font-size: 16px;
 }
+
+a[data-target], ul.nav li {
+  cursor: pointer;
+}

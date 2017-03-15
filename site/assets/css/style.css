@@ -397,6 +397,10 @@ padding-right: 15px
   font-size: 16px;
 }
 
+<<<<<<< HEAD
 a[data-target], ul.nav li {
   cursor: pointer;
 }
+=======
+a[data-target] { cursor:pointer }
+>>>>>>> 12f42eee0584e7c4e7a79e7f9e6b2b86f633ce89

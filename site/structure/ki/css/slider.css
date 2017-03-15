@@ -47,6 +47,7 @@ xslide
 .cd-headline.slide b.is-visible {
   top: 0;
   opacity: 1;
+  padding: 5px;
   -webkit-animation: slide-in 0.6s;
   -moz-animation: slide-in 0.6s;
   animation: slide-in 0.6s;

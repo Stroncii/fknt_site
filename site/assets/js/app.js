@@ -22,6 +22,12 @@ var app = angular.module('app', ['ngRoute', 'ngSanitize'])
   .when('/kn', {
     templateUrl: 'templates/kn.html'
   })
+  .when('/ki',{
+    controller : function(){
+        window.location.replace('/structure/ki/');
+    }, 
+    template : "<div></div>"
+  })
   .when('/philosophy', {
     templateUrl: 'templates/philosophy.html'
   })
@@ -67,11 +73,11 @@ var app = angular.module('app', ['ngRoute', 'ngSanitize'])
   .otherwise('/error');
 
 
- /*   // use the HTML5 History API
+    // use the HTML5 History API
         $locationProvider.html5Mode({
           enabled: true,
           requireBase: false
-    }); */
+    }); 
 }]);
 
 app.run(function($rootScope, $location, $anchorScroll) {

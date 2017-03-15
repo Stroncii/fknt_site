@@ -54,6 +54,10 @@ var app = angular.module('app', ['ngRoute', 'ngSanitize'])
   .when('/specialties', {
     templateUrl: 'templates/specialties.html'
   })
+  .when('/specialties/:type', {
+    templateUrl: 'templates/specialties.html',
+    controller: 'specialitiesController'
+  })
   .when('/cooperation', {
     templateUrl: 'templates/cooperation.html'
   })
@@ -69,12 +73,12 @@ var app = angular.module('app', ['ngRoute', 'ngSanitize'])
   })
   .when('/error', {
     templateUrl: 'templates/error.html'
-  })
-  .otherwise('/error');
+  });
+  //.otherwise('/error');
 
 
     // use the HTML5 History API
-      $locationProvider.html5Mode({
+    $locationProvider.html5Mode({
           enabled: true,
           requireBase: false
     }); 

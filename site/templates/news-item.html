@@ -4,7 +4,7 @@
 	            	<div class="row">
 	                    <div class="profile">
 	                        <div class="avatar">
-	                            <a href="/"><img src="/assets/img/logo.png" alt="Circle Image" class="img-circle img-responsive img-raised" ></a>
+	                            <a href="/"><img src="/assets/img/logo.png" alt="Link to main page" class="img-circle img-responsive img-raised" ></a>
 	                        </div>
 	                        <div class="name">
 	                            <h1 class="title">Новина</h1>
@@ -31,7 +31,7 @@
 										<!-- Wrapper for slides -->
 										<div class="carousel-inner">
 											<div class="item" ng-class="{active:!$index}" ng-repeat="image in item.images">
-												<img ng-src="{{image}}" alt="Texto Alternativo">
+												<img ng-src="{{image}}" alt="{{item.title}}">
 												<div class="carousel-caption">
 													<h4></h4>
 												</div>

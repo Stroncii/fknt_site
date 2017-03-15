@@ -101,7 +101,7 @@
     <div class="wrapper">
 		<div class="header header-filter" style="background-image: url('assets/img/12.jpg');"></div>
 
-		<div ng-view>111</div>
+		<div ng-view autoscroll="true"></div>
 
     </div>
     <footer class="footer">
@@ -131,6 +131,7 @@
 	<script src="assets/js/controllers/specialitiesController.js"></script>
 	<script src="assets/js/controllers/scheduleController.js"></script>
 	<script src="assets/js/controllers/worksController.js"></script>
+	<script src="assets/js/directives/video.js"></script>	
 
 	<!-- Angular sanitize doesnt work
 	-->
@@ -147,9 +148,7 @@
 	<script type="text/javascript" src="//vk.com/js/api/openapi.js?141"></script>
 <script>
 
-
 		$().ready(function(){
-
 			$(window).on('scroll', materialKit.checkScrollForTransparentNavbar);
 			$(".dropdown").on("mouseover",function(){
 				if(window.innerWidth>767){
@@ -162,11 +161,6 @@
 				}
 			});
 		});
-		const video = document.querySelector('video');
-		function togglePlay() {
-		  const method = video.paused ? 'play' : 'pause';
-		  video[method]();
-		}
 		const pressed = [];
 		const secretCode = 'gne';
 

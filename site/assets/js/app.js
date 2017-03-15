@@ -73,8 +73,8 @@ var app = angular.module('app', ['ngRoute', 'ngSanitize'])
   })
   .when('/error', {
     templateUrl: 'templates/error.html'
-  });
-  //.otherwise('/error');
+  })
+  .otherwise('/error');
 
 
     // use the HTML5 History API

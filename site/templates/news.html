@@ -22,14 +22,14 @@
 	                			<div class="col-md-5">
 		                			<h2>{{firstNews.title}}</h2>
 		                			<p ng-bind-html="firstNews.synopsis"></p>
-		                			<a href="/news/{{firstNews.id}}" class="btn btn-primary">Далі</a>
+		                			<a ng-href="/news/{{firstNews.id}}" class="btn btn-primary">Далі</a>
 		                		</div>
 	                		</div>
 	                	</div>
 	                	<div ng-repeat="item in news" class="col-md-4 news-cover">
 	                		<img ng-src="{{item.cover}}" alt="Texto Alternativo">
 	                		<h2>{{item.title}}</h2>
-	                		<a href="/news/{{item.id}}" class="btn btn-primary">Далі</a>
+	                		<a ng-href="/news/{{item.id}}" class="btn btn-primary">Далі</a>
 	                	</div>
 	                </div>
 					<hr>

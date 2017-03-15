@@ -74,7 +74,7 @@ var app = angular.module('app', ['ngRoute', 'ngSanitize'])
 
 
     // use the HTML5 History API
-        $locationProvider.html5Mode({
+      $locationProvider.html5Mode({
           enabled: true,
           requireBase: false
     }); 

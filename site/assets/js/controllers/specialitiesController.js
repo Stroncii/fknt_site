@@ -5,5 +5,7 @@ angular.module('app')
   console.log('specialo4ka');
   console.log($routeParams);
 
+  $scope.activeTab = $routeParams.type;
+
 
 }])

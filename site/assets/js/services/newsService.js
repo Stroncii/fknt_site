@@ -7,7 +7,7 @@ angular.module('app').factory ('appFactory', ['$http', function ($http) {
       //console.log(`Hey! Our Id is ${id}`);
         return $http({
             method: 'GET',
-            url: 'http://fknt.donntu.edu.ua/news-item/read_one.php/' + id
+            url: '/news-item/read_one.php/' + id
         }).then(function successCallback(response) {
             //console.log("newww");
             //console.log(response);
@@ -21,7 +21,7 @@ angular.module('app').factory ('appFactory', ['$http', function ($http) {
   fact.getNews = function () {
       let news = $http({
             method: 'GET',
-            url: 'http://fknt.donntu.edu.ua/news-item/read.php'
+            url: '/news-item/read.php'
         }).then(function successCallback(response) {
             //console.log("here");
             return response.data;
@@ -35,7 +35,7 @@ angular.module('app').factory ('appFactory', ['$http', function ($http) {
   fact.getLastNews = function (){
       let lastNews = $http({
             method: 'GET',
-            url: 'http://fknt.donntu.edu.ua/news-item/read_last.php'
+            url: '/news-item/read_last.php'
         }).then(function successCallback(response) {
             return response.data;
         }, function errorCallback(response) {

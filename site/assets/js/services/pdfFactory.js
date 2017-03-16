@@ -4,7 +4,7 @@ angular.module('app').factory ('pdfFactory', ['$http', function ($http) {
   fact.getSchedule = function () {
       let schedule = $http({
             method: 'GET',
-            url: 'http://fknt.donntu.edu.ua/assets/pdf/schedule/tabs.json'
+            url: '/assets/pdf/schedule/tabs.json'
         }).then(function successCallback(response) {
             return response.data;
         }, function errorCallback(response) {
@@ -17,7 +17,7 @@ angular.module('app').factory ('pdfFactory', ['$http', function ($http) {
   fact.getWorks = function () {
       let works = $http({
             method: 'GET',
-            url: 'http://fknt.donntu.edu.ua/assets/pdf/plans/tabs.json'
+            url: '/assets/pdf/plans/tabs.json'
         }).then(function successCallback(response) {
             return response.data;
         }, function errorCallback(response) {

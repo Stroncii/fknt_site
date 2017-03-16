@@ -24,7 +24,7 @@ var app = angular.module('app', ['ngRoute', 'ngSanitize'])
   })
   .when('/ki',{
     controller : function(){
-        window.location.replace('/structure/ki/');
+        window.location.replace('/ki/');
     }, 
     template : "<div></div>"
   })

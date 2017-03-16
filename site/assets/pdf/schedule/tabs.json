@@ -131,31 +131,6 @@
 	},
 	{
 		"tabName": {
-			"uk":"Заочники",
-			"ru":"Заочники",
-			"en":"Extramural"
-		},
-		"pills":[
-			{
-				"group":"Установочная - осенний семестр",
-				"pdf":"remote-u-autumn.pdf"
-			},
-			{
-				"group":"Сессия - осенний семестр",
-				"pdf":"remote-s-autumn.pdf"
-			},
-			{
-				"group":"Установочная - весенний семестр",
-				"pdf":"remote-u-spring.pdf"
-			},
-			{
-				"group":"Сессия - осенний семестр",
-				"pdf":"remote-s-spring.pdf"
-			}
-		]
-	},
-	{
-		"tabName": {
 			"uk":"Викладачі",
 			"ru":"Преподаватели",
 			"en":"Teachers"
@@ -164,21 +139,6 @@
 			{
 				"group":"Дневная форма",
 				"pdf":"teacher-schedule.pdf"
-			},
-			{
-				"group":"Установочная - осенний семестр",
-				"pdf":"teacher-u-autumn.pdf"
-			},
-			{
-				"group":"Сессия - осенний семестр",
-				"pdf":"teacher-s-autumn.pdf"
-			},
-			{
-				"group":"Установочная - весенний семестр",
-				"pdf":"teacher-u-spring.pdf"
-			},{
-				"group":"Сессия - осенний семестр",
-				"pdf":"teacher-s-spring.pdf"
 			}
 		]
 	}

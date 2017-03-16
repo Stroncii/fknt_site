@@ -4,30 +4,30 @@ angular.module('app').factory ('appFactory', ['$http', function ($http) {
   fact.corp = 4;
 
   fact.getOneNewsItem = function (id) {
-      console.log(`Hey! Our Id is ${id}`);
+      //console.log(`Hey! Our Id is ${id}`);
         return $http({
             method: 'GET',
-            url: 'http://localhost:8888/news/read_one.php/' + id
+            url: 'http://fknt.donntu.edu.ua/news-item/read_one.php/' + id
         }).then(function successCallback(response) {
-            console.log("newww");
-            console.log(response);
+            //console.log("newww");
+            //console.log(response);
             return response.data;
         }, function errorCallback(response) {
-            console.log("Error!");
-            console.log(response);
+            //console.log("Error!");
+            //console.log(response);
         });;
   }
 
   fact.getNews = function () {
       let news = $http({
             method: 'GET',
-            url: 'http://localhost:8888/news/read.php'
+            url: 'http://fknt.donntu.edu.ua/news-item/read.php'
         }).then(function successCallback(response) {
-            console.log("here");
+            //console.log("here");
             return response.data;
         }, function errorCallback(response) {
-            console.log("Error!");
-            console.log(response);
+            //console.log("Error!");
+            //console.log(response);
         });
     return news;
   };
@@ -35,31 +35,15 @@ angular.module('app').factory ('appFactory', ['$http', function ($http) {
   fact.getLastNews = function (){
       let lastNews = $http({
             method: 'GET',
-            url: 'http://localhost:8888/news/read_last.php'
+            url: 'http://fknt.donntu.edu.ua/news-item/read_last.php'
         }).then(function successCallback(response) {
             return response.data;
         }, function errorCallback(response) {
-            console.log("Error!");
-            console.log(response);
+            //console.log("Error!");
+            //console.log(response);
         });
     return lastNews;
   };
   
   return fact;
 }]);
-
-
-var jsonA = [{
-    "title": "<h3>Some Title</h3>",
-    "synopsis": "<ul><li>blah-blah</li></ul>",
-    "text": "blah-blah-blah"
-}, {
-    "title": "some title",
-    "text": "news 1"
-}, {
-    "title": "some title",
-    "text": "news 2"
-}, {
-    "title": "some title",
-    "text": "news 3"
-}];

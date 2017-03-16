@@ -260,10 +260,6 @@ h1.title{
 .timeline-body > p + p {
   margin-top: 5px;
 }
-
-.news-page img{
-    width: 100%;
-}
 .news-item{
   padding-left: 15px;
   padding-right: 15px;
@@ -384,8 +380,28 @@ padding-right: 15px
   background-color: #523A9A;
   box-shadow: 0 14px 26px -12px rgba(255, 255, 255, 0.5), 0 4px 23px 0px rgba(255, 255, 255, 0.3), 0 8px 10px -5px rgba(255, 255, 255, 0.3);
 }
-.news-cover{
+.news-page .news-cover{
   height: 350px;
+}
+.news-cover, .lead p{
+  padding-right: 30px;
+}
+.news-page .lead img{
+      width: 100%;
+  }
+
+@media (min-width: 992px) {
+  .news-page img{
+      width: 100%;
+  }
+  .news-cover img{
+    width: 90%;
+  }
+}
+@media (max-width: 450px) {
+  .news-cover img{
+    width: 90%;
+  }
 }
 .news-cover h2{
   font-size: 20px;

@@ -45,9 +45,6 @@
     						Історія
     					</a>
     				</li>
-					<li>
-							<a href="/admin" > Admin </a>
-						</li>	
     				<li>
     					<a href="/news">
     						Новини
@@ -107,7 +104,7 @@
     <footer class="footer">
         <div class="container">
             <div class="text-center">
-            	<p>Деканат ФКНТ, <i class="fa fa-phone" aria-hidden="true"></i> +38 (066) 837 46 00, <a href="mailto:fknt.donntu@gmail.com"><i class="fa fa-envelope" aria-hidden="true"></i> fknt.dekanat@donntu.edu.ua</a></p>
+            	<p>Деканат ФКНТ, <i class="fa fa-phone" aria-hidden="true"></i> +38 (066) 837 46 00, <a href="mailto:fknt.donntu@gmail.com"><i class="fa fa-envelope" aria-hidden="true"></i> fknt@donntu.edu.ua</a></p>
             </div>
             
         </div>
@@ -168,7 +165,7 @@
 		  pressed.push(String.fromCharCode(e.keyCode).toLowerCase());
 		  pressed.splice(-secretCode.length - 1, pressed.length - secretCode.length);
 		  if (pressed.join('').includes(secretCode)) {
-		    console.log('DING DING!');
+		    //console.log('DING DING!');
 		    alert("Есть ХПИ, ХНУРЭ, КПИ, НАУ... Что вы здесь делаете, глупцы?..");
 		    // do surprise
 		  }

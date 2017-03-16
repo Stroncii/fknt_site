@@ -7,7 +7,7 @@
 	                            <a href="/"><img src="/assets/img/logo.png" alt="Link to main page" class="img-circle img-responsive img-raised" ></a>
 	                        </div>
 	                        <div class="name">
-	                            <h1 class="title">Факультет комп'ютернах наук та технологій</h1>
+	                            <h1 class="title">Факультет комп'ютерних наук і технологій</h1>
 								<h6></h6>
 	                        </div>
 	                    </div>
@@ -52,7 +52,7 @@
 										</div>
 										<div class="col-md-4">
 											<div>
-												<h3>{{lastNews[3].title}}</h3>
+												<h3>{{lastNews[0].title}}</h3>
 												<p ng-bind-html="lastNews[0].synopsis"></p>
 													<a href="/news/{{lastNews[0].id}}" class="btn btn-inverse text-center">Докладніше...</a>
 											</div>
@@ -60,7 +60,7 @@
 									</div>
 								</div>
 							
-								<div ng-repeat="item in smallLastNews" class="col-md-4">
+								<div ng-repeat="item in smallLastNews" class="col-md-4 news-cover">
 									<img ng-src="{{item.cover}}" />
 									<div>
 										<h4><a href="/news/{{item.id}}">{{item.title}}</a></h4>

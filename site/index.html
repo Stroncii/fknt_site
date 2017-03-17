@@ -42,54 +42,55 @@
         		<ul class="nav navbar-nav">
     				<li>
     					<a href="/history">
-    						Історія
+    						{{'HISTORY'  | translate}}
     					</a>
     				</li>
     				<li>
     					<a href="/news">
-    						Новини
+    						{{'NEWS'  | translate}}
     					</a>
     				</li>
     				<li class="dropdown">
-    					<a class="dropdown-toggle" data-toggle="dropdown">Структура <span class="caret"></span></a>
+    					<a class="dropdown-toggle" data-toggle="dropdown">{{'STRUCTURE'  | translate}} <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="/dean">Деканат</a></li>
-                                <li><a href="/ki">Кафедра комп'ютерної інженерії</a></li>
-                                <li><a href="/pmi">Кафедра прикладної математики і інформатики</a></li>
-                                <li><a href="/kn">Кафедра комп'ютерных наук</a></li>
-                                <li><a href="/philosophy">Кафедра філософії</a></li>
+                                <li><a href="/dean">{{'DEAN'  | translate }}</a></li>
+                                <li><a href="/ki">{{'KI_FACULTY'  | translate}}</a></li>
+                                <li><a href="/pmi">{{'PMI_FACULTY'  | translate}}</a></li>
+                                <li><a href="/kn">{{'KN_FACULTY'  | translate}}</a></li>
+                                <li><a href="/philosophy">{{'PHILOSOPHY_FACULTY'  | translate}}</a></li>
                             </ul>
                     </li>
 					<li class="dropdown">
-    					<a class="dropdown-toggle" data-toggle="dropdown">Студенту <span class="caret"></span></a>
+    					<a class="dropdown-toggle" data-toggle="dropdown">{{'STUDENTS'  | translate }} <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="/schedule">Розклад занять</a></li>
-                                <li><a href="/consultations">Консультації</a></li>
-                                <li><a href="/process">График навчального процесу</a></li>
-                                <li><a href="/plans">Робочі плани</a></li>
-                                <li><a href="/organizations">Студентські організації</a></li>
-                                <li><a href="/documents">Документи</a></li>
+                                <li><a href="/schedule">{{'SCHEDULE'  | translate }}</a></li>
+                                <li><a href="/consultations">{{'CONSULTATIONS'  | translate}}</a></li>
+                                <li><a href="/process">{{'GRAPHICS'  | translate }}</a></li>
+                                <li><a href="/plans">{{'PLANS'  | translate}}</a></li>
+                                <li><a href="/organizations">{{'ORGANIZATIONS'  | translate}}</a></li>
+                                <li><a href="/documents">{{'DOCUMENTS'  | translate}}</a></li>
                             </ul>
                     </li>
     				<li class="dropdown">
-    					<a class="dropdown-toggle" data-toggle="dropdown">Абітурієнту <span class="caret"></span></a>
+    					<a class="dropdown-toggle" data-toggle="dropdown">{{'ABITURIENTS'  | translate}} <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                            	<li><a href="http://abit.donntu.edu.ua">Портал абітуриєнта</a></li>
-                                <li><a href="/specialties">Спеціальності</a></li>
+                            	<li><a href="http://abit.donntu.edu.ua">{{'PORTAL'  | translate}}</a></li>
+                                <li><a href="/specialties">{{'SPECIALTIES'  | translate}}</a></li>
                             </ul>
                     </li>
     				<li class="dropdown">
-    					<a class="dropdown-toggle" data-toggle="dropdown">Наука та співробітництво <span class="caret"></span></a>
+    					<a class="dropdown-toggle" data-toggle="dropdown">{{'SCIENCE'  | translate}} <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="/aspirantur">Аспірантура</a></li>
-                                <li><a href="/cooperation">Міжнародна співпраця</a></li>
+                                <li><a href="/aspirantur">{{'ASPIRANTUR_TITLE'  | translate}}</a></li>
+                                <li><a href="/cooperation">{{'INTERNATIONAL'  | translate}}</a></li>
                             </ul>
                     </li>
     				<li>
     					<a href="/contacts">
-    						Контакти
+    						{{'CONTACTS'  | translate}}
     					</a>
     				</li>
+					<li><button class="btn btn-inverse" ng-click="changeLanguage()">Сменить язык</button></li>
         		</ul>
         	</div>
     	</div>

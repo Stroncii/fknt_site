@@ -1,6 +1,10 @@
 angular.module('app')
-.controller('mainController',['$scope', '$http', 'appFactory', '$sce' , function($scope, $http, appFactory, $sce){
-  
+.controller('mainController',['$scope', '$http', 'appFactory', '$sce', '$translate' , function($scope, $http, appFactory, $sce, $translate){
+  console.log('buuu');
+  $scope.changeLanguage = function() {
+    $translate.use() == 'ua' ? $translate.use('ru') : $translate.use('ua');
+
+  };
 
   
   appFactory.getNews().then(function(data) {

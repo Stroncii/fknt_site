@@ -9,7 +9,7 @@
 	                            <a href="/"><img src="assets/img/logo.png" alt="Link to main page" class="img-circle img-responsive img-raised" ></a>
 	                        </div>
 	                        <div class="name">
-	                            <h1 class="title">Новини</h1>
+	                            <h1 class="title">{{'NEWS' | translate}}</h1>
 								<h6></h6>
 	                        </div>
 	                    </div>
@@ -22,14 +22,14 @@
 	                			<div class="col-md-5">
 		                			<h2>{{firstNews.title}}</h2>
 		                			<p ng-bind-html="firstNews.synopsis"></p>
-		                			<a ng-href="/news/{{firstNews.id}}" class="btn btn-primary">Далі</a>
+		                			<a ng-href="/news/{{firstNews.id}}" class="btn btn-primary">{{'NEWS_BUTTON' | translate}}</a>
 		                		</div>
 	                		</div>
 	                	</div>
 	                	<div ng-repeat="item in news" class="col-md-4 news-cover">
 	                		<img ng-src="{{item.cover}}" alt="{{item.title}}">
 	                		<h2>{{item.title}}</h2>
-	                		<a ng-href="/news/{{item.id}}" class="btn btn-primary">Далі</a>
+	                		<a ng-href="/news/{{item.id}}" class="btn btn-primary">{{'NEWS_BUTTON' | translate}}</a>
 	                	</div>
 	                </div>
 					<hr>

@@ -357,6 +357,10 @@ var app = angular.module('app', ['ngRoute', 'ngSanitize', 'pascalprecht.translat
     'PHMD4': 'практическая и теоретическая философия;',
     'PHMD5': 'логика (традиционная, классическая и неклассическая);',
     'PHMD6': 'история религий',
+
+    //SCHEDULE
+    'DOWNLOAD': 'Загрузить',
+    'PDF_ERROR': 'Файл не не может отобразиться, смотрите '
   });
 
   $translateProvider.preferredLanguage('ua');

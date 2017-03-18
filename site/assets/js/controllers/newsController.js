@@ -4,7 +4,6 @@ angular.module('app')
   $scope.changeLanguage = function() {
     $translate.use() == 'ua' ? $translate.use('ru') : $translate.use('ua');
     $rootScope.language = $translate.use();
-    console.log($rootScope.language);
 
   };
 

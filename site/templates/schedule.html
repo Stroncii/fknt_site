@@ -7,7 +7,7 @@
 	                            <a href="/"><img src="../assets/img/logo.png" alt="Link to main page" class="img-circle img-responsive img-raised" ></a>
 	                        </div>
 	                        <div class="name">
-	                            <h1 class="title">Розклад занять</h1>
+	                            <h1 class="title">{{'SCHEDULE' | translate}}</h1>
 								<h6></h6>
 	                        </div>
 	                    </div>
@@ -19,7 +19,7 @@
 					<div class="row schedule">
 						<div class="nav-align-center">
 							<ul class="nav nav-tabs">
-							  <li ng-repeat="item in schedule" ng-if="item.pills.length" ng-class="{active:!$index}"><a data-toggle="tab" data-target="#tab{{$index}}">{{item.tabName.uk}}</a></li>							  
+							  <li ng-repeat="item in schedule" ng-if="item.pills.length" ng-class="{active:!$index}"><a data-toggle="tab" data-target="#tab{{$index}}">{{item.tabName[language]}}</a></li>							  
 							</ul>
 							<br>
 							<div class="tab-content">
@@ -35,7 +35,7 @@
 										<div  ng-repeat="unit in item.pills" ng-if="item.pills.length" ng-class="{active:!$index}" class="tab-pane" id="{{unit.pdf.slice(0,unit.pdf.length-4)}}">
 				                            <div class="row">
 												<object data="{{'/assets/pdf/schedule/' + unit.pdf}}" type="application/pdf" width="100%" height="800px">
-												  <p>Файл не може відобразитися, дивіться <a ng-href="{{unit.pdf}}">PDF!</a></p>
+												  <p><a ng-href="{{unit.pdf}}">PDF!</a></p>
 												</object>
 				                            </div>
 				                            <a href="../assets/pdf/schedule/ki13a.pdf" class="btn btn-primary"><i class="material-icons">&#xE2C4;</i> Завантажити</a>

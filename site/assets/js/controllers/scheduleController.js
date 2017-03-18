@@ -5,7 +5,6 @@ angular.module('app')
 
   pdfFactory.getSchedule().then((data) => {
       $scope.schedule = data;
-      //console.log($scope.schedule);
   });
 
 

@@ -1,8 +1,7 @@
 angular.module('app')
 .controller('mainController',['$scope', '$http', 'appFactory', '$sce', '$translate', '$rootScope' , function($scope, $http, appFactory, $sce, $translate, $rootScope){
-  console.log('buuu');
   $scope.changeLanguage = function() {
-    $translate.use() == 'ua' ? $translate.use('ru') : $translate.use('ua');
+    $translate.use() == 'uk' ? $translate.use('ru') : $translate.use('uk');
     $rootScope.language = $translate.use();
 
   };

@@ -82,7 +82,7 @@ var app = angular.module('app', ['ngRoute', 'ngSanitize', 'pascalprecht.translat
 
 
 
-  $translateProvider.translations('ua', {
+  $translateProvider.translations('uk', {
     // HEADERS
 
     'TITLE': 'Факультет комп\'ютерних наук і технологій',
@@ -432,7 +432,7 @@ var app = angular.module('app', ['ngRoute', 'ngSanitize', 'pascalprecht.translat
     "DI10": "Квитанция на оплату обучения",
   });
 
-  $translateProvider.preferredLanguage('ua');
+  $translateProvider.preferredLanguage('ru');
 
 
     // use the HTML5 History API
@@ -448,7 +448,7 @@ app.run(function($rootScope, $location, $anchorScroll) {
     console.log("change");
    // if($location.hash()) $anchorScroll();  
   });
-  $rootScope.language = 'ua';
+  $rootScope.language = 'uk';
 });
 
   

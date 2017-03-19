@@ -442,13 +442,13 @@ var app = angular.module('app', ['ngRoute', 'ngSanitize', 'pascalprecht.translat
     }); 
 }]);
 
-app.run(function($rootScope, $location, $anchorScroll) {
+app.run(function($rootScope, $location, $anchorScroll, $translate) {
   //when the route is changed scroll to the proper element.
   $rootScope.$on('$routeChangeSuccess', function(newRoute, oldRoute) {
     console.log("change");
    // if($location.hash()) $anchorScroll();  
   });
-  $rootScope.language = 'uk';
+  $rootScope.language = $translate.use() || 'uk';
 });
 
   

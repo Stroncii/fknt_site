@@ -1,18 +1,20 @@
 <?php
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
- 
+header("Cache-control: public");
+header("Expires: " . gmdate("D, d M Y H:i:s", time() + 14*60*60*24) . " GMT"); 
 // include database and object files
-include_once '../config/database.php';
+include_once '../../config/database.php';
 include_once 'news.php';
- 
+
+
 // instantiate database and product object
 $database = new Database();
 $db = $database->getConnection();
- 
+
 // initialize object
 $news = new News($db);
-$lang = 'uk';
+$lang = substr($_SERVER['PHP_SELF'],strpos($_SERVER['PHP_SELF'],'read')+9); 
 // query products
 $stmt = $news->readAll($lang);
 $num = $stmt->rowCount();

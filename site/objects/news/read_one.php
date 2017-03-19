@@ -3,7 +3,7 @@ header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
  
 // include database and object files
-include_once '../config/database.php';
+include_once '../../config/database.php';
 include_once 'news.php';
  
 // instantiate database and product object
@@ -12,13 +12,15 @@ $db = $database->getConnection();
  
 // initialize object
 $news = new News($db);
-$lang = 'uk';
+$params = explode('/',substr($_SERVER['PHP_SELF'],strpos($_SERVER['PHP_SELF'],'read_one')+13));
 // query products
-$stmt = $news->readLast($lang);
+$lang = $params[0]; 
+$id = $params[1]; 
+$stmt = $news->readOne($lang,$id);
 $num = $stmt->rowCount();
  
 $data="";
- 
+
 // check if more than 0 record found
 if($num>0){
  
@@ -39,16 +41,20 @@ if($num>0){
             $data .= '"title":"'   . $row['title_'.$lang] . '",';
             $data .= '"synopsis":"'   . $row['short_text_'.$lang] . '",';
             $data .= '"content":"' . $row['full_text_'.$lang] . '",';
-            $data .= '"cover":"/assets/img/news/covers/' . $row['id'] . '.jpg",';
-            $data .= '"full_cover":"/assets/img/news/covers/' . $row['id'] . '_full.jpg"';
+            $data .= '"images":[';
+            $l = 1;
+            $imgs = explode(",",$row['images_nums']);
+            foreach ($imgs as $value) {
+                $data .= '"/assets/img/news/items/' . $row['id'] . '_'.$value.'.jpg"';
+                $data .= $l<count($imgs) ? ',' : '';
+ 
+                $l++;
+            }
+            $data .= ']';
         $data .= '}';
- 
-        $data .= $x<$num ? ',' : '';
- 
-        $x++;
     }
 }
  
 // json format output
-echo '{"news":[' . $data . ']}';
+echo $data;
 ?>

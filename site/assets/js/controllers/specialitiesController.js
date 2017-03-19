@@ -2,10 +2,11 @@ angular.module('app')
 .controller('specialitiesController',['$scope', '$http', 'appFactory', '$routeParams', '$location' , function($scope, $http, appFactory, $routeParams, $location){
   
 
-  //console.log('specialo4ka');
-  //console.log($routeParams);
+  $scope.type = $location.type || 'bachelor';
+  $scope.activeTab = $scope.type || $routeParams.type;
 
-  $scope.activeTab = $routeParams.type;
-
+  $scope.setActive = function (type) {
+    $scope.activeTab = type;
+  };
 
 }])

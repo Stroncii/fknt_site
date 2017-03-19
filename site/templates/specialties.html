@@ -17,8 +17,8 @@
 						<div class="nav-align-center">
 							<ul class="nav nav-tabs">
 
-							  <li ng-class="{active: !activeTab || activeTab == 'bachelor'}"><a data-toggle="tab" data-target="#bachelor">Бакалавріат</a></li>
-							  <li ng-class="{active: activeTab == 'master'}"><a data-toggle="tab" data-target="#master">Магістратура</a></li>
+							  <li ng-class="{active: !activeTab || activeTab == 'bachelor'}"><a data-toggle="tab" data-target="#bachelor" ng-click="setActive('bachelor')">{{'BACHELOR_TITLE' | translate}}</a></li>
+							  <li ng-class="{active: activeTab == 'master'}"><a data-toggle="tab" data-target="#master" ng-click="setActive('master')">{{'MASTER_TITLE' | translate}}</a></li>
 							</ul>
 							<br>
 							<div ng-include src="'/templates/translates/specialties_' + language + '.html'"></div>

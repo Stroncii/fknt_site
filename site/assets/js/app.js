@@ -52,7 +52,8 @@ var app = angular.module('app', ['ngRoute', 'ngSanitize', 'pascalprecht.translat
     templateUrl: 'templates/documents.html'
   })
   .when('/specialties', {
-    templateUrl: 'templates/specialties.html'
+    templateUrl: 'templates/specialties.html',
+    controller: 'specialitiesController'
   })
   .when('/specialties/:type', {
     templateUrl: 'templates/specialties.html',

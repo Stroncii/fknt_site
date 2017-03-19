@@ -12,7 +12,7 @@ $db = $database->getConnection();
  
 // initialize object
 $news = new News($db);
-$lang = 'uk';
+$lang = substr($_SERVER['PHP_SELF'],strpos($_SERVER['PHP_SELF'],'read_last')+14); 
 // query products
 $stmt = $news->readLast($lang);
 $num = $stmt->rowCount();

@@ -14,9 +14,7 @@ $db = $database->getConnection();
 
 // initialize object
 $news = new News($db);
-//$id = substr($_SERVER['PHP_SELF'],strpos($_SERVER['PHP_SELF'],'read')+8); 
-//echo $id;
-$lang = 'uk';
+$lang = substr($_SERVER['PHP_SELF'],strpos($_SERVER['PHP_SELF'],'read')+9); 
 // query products
 $stmt = $news->readAll($lang);
 $num = $stmt->rowCount();

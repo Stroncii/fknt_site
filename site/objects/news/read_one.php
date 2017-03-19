@@ -12,11 +12,10 @@ $db = $database->getConnection();
  
 // initialize object
 $news = new News($db);
-$lang = 'uk';
-
-$id = substr($_SERVER['PHP_SELF'],strpos($_SERVER['PHP_SELF'],'read_one')+13); 
-//$id = explode('/',substr($_SERVER['PHP_SELF'],strpos($_SERVER['PHP_SELF'],'read_one')+13))[0];
+$params = explode('/',substr($_SERVER['PHP_SELF'],strpos($_SERVER['PHP_SELF'],'read_one')+13));
 // query products
+$lang = $params[0]; 
+$id = $params[1]; 
 $stmt = $news->readOne($lang,$id);
 $num = $stmt->rowCount();
  

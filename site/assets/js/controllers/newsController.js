@@ -8,12 +8,12 @@ angular.module('app')
   };
 
   
-  appFactory.getNews().then(function(data) {
+  appFactory.getNews($rootScope.language).then(function(data) {
     $scope.firstNews = data.news[0];
     $scope.news = data.news;
     $scope.news = $scope.news.slice(-($scope.news.length-1));
   });
-  appFactory.getLastNews().then(function(data) {
+  appFactory.getLastNews($rootScope.language).then(function(data) {
     $scope.lastNews = data.news;
     $scope.smallLastNews = $scope.lastNews.slice(-3);
   });

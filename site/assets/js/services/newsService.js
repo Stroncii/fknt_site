@@ -3,11 +3,11 @@ angular.module('app').factory ('appFactory', ['$http', function ($http) {
 
   fact.corp = 4;
 
-  fact.getOneNewsItem = function (id) {
+  fact.getOneNewsItem = function (id, language) {
       //console.log(`Hey! Our Id is ${id}`);
         return $http({
             method: 'GET',
-            url: '/objects/news/read_one.php/' + id
+            url: '/objects/news/read_one.php/' + language + '/' + id
         }).then(function successCallback(response) {
             //console.log("newww");
             //console.log(response);
@@ -18,10 +18,10 @@ angular.module('app').factory ('appFactory', ['$http', function ($http) {
         });;
   }
 
-  fact.getNews = function () {
+  fact.getNews = function (language) {
       let news = $http({
             method: 'GET',
-            url: '/objects/news/read.php'
+            url: '/objects/news/read.php/' + language
         }).then(function successCallback(response) {
             //console.log("here");
             return response.data;
@@ -32,10 +32,10 @@ angular.module('app').factory ('appFactory', ['$http', function ($http) {
     return news;
   };
 
-  fact.getLastNews = function (){
+  fact.getLastNews = function (language){
       let lastNews = $http({
             method: 'GET',
-            url: '/objects/news/read_last.php'
+            url: '/objects/news/read_last.php/' + language
         }).then(function successCallback(response) {
             return response.data;
         }, function errorCallback(response) {

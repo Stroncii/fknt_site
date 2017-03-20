@@ -1,4 +1,4 @@
-var app = angular.module('app', ['ngRoute', 'ngSanitize', 'pascalprecht.translate'])
+var app = angular.module('app', ['ngRoute', 'ngSanitize', 'pascalprecht.translate', 'textAngular'])
   .config( ['$routeProvider', '$locationProvider', '$translateProvider', function($routeProvider, $locationProvider, $translateProvider) {
   $routeProvider
   .when('/', {
@@ -11,7 +11,8 @@ var app = angular.module('app', ['ngRoute', 'ngSanitize', 'pascalprecht.translat
     templateUrl: 'templates/news.html'
   })
   .when('/admin', {
-    templateUrl: 'templates/admin.html'
+    templateUrl: 'templates/admin.html',
+    controller: 'adminController'
   })
   .when('/dean', {
     templateUrl: 'templates/dean.html'

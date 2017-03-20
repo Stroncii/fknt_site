@@ -1,20 +1,17 @@
-<?php 
-// include database and object files 
-include_once '../../config/database.php';
-include_once 'news.php';
+<?php
+// include database and object file
+include_once '/config/database.php';
+include_once '/news/news.php';
  
-// get database connection 
-$database = new Database(); 
+// get database connection
+$database = new Database();
 $db = $database->getConnection();
  
-// prepare product object
+// instantiate product object
 $news = new News($db);
  
-// get id of product to be edited
-$data = json_decode(file_get_contents("php://input"));     
- 
-// set ID property of product to be edited
-$news->id = $data->id;
+// get posted data
+$data = json_decode(file_get_contents("php://input"));
  
 // set product property values
 $news->title_uk = $data['title_uk'];
@@ -28,13 +25,13 @@ $news->short_text_ru = $data['short_text_ru'];
 $news->short_text_en = $data['short_text_en'];
 $news->images_nums = $data['images_nums'];
  
-// update the product
-if($product->update()){
-    echo "News was updated.";
+// create the product
+if($news->create()){
+    echo "News was created.";
 }
  
-// if unable to update the product, tell the user
+// if unable to create the product, tell the user
 else{
-    echo "Unable to update news.";
+    echo "Unable to create news.";
 }
 ?>

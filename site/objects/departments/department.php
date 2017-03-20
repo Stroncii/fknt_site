@@ -1,23 +1,14 @@
 <?php 
-class News{ 
+class Department{ 
     // database connection and table name 
     private $conn; 
-    private $table_name = "news"; 
+    private $table_name = "departments"; 
  
     // object properties 
     public $id;
-    public $title_uk;
-    public $title_ru;
-    public $title_en;
-    public $full_text_uk;
-    public $full_text_ru;
-    public $full_text_en;
-    public $short_text_uk;
-    public $short_text_ru;
-    public $short_text_en;
-    public $images_nums;
-    public $created;
-    public $modified;
+    public $name_uk;
+    public $name_ru;
+    public $name_en;
  
     // constructor with $db as database connection 
     public function __construct($db){ 
@@ -31,34 +22,20 @@ function create(){
     $query = "INSERT INTO 
                 " . $this->table_name . "
             SET 
-                title_uk=:title_uk, title_ru=:title_ru, title_en=:title_en, full_text_uk=:full_text_uk, full_text_ru=:full_text_ru, full_text_en=:full_text_en, short_text_uk=:short_text_uk, short_text_ru=:short_text_ru, short_text_en=:short_text_en, images_nums=:images_nums";
+                name_uk=:name_uk, name_ru=:name_ru, name_en=:name_en";
      
     // prepare query
     $stmt = $this->conn->prepare($query);
  
     // posted values
-    $this->title_uk=$this->title_uk;
-    $this->title_ru=$this->title_ru;
-    $this->title_en=$this->title_en;
-    $this->full_text_uk=$this->full_text_uk;
-    $this->full_text_ru=$this->full_text_ru;
-    $this->full_text_en=$this->full_text_en;
-    $this->short_text_uk=$this->short_text_uk;
-    $this->short_text_ru=$this->short_text_ru;
-    $this->short_text_en=$this->short_text_en;
-    $this->images_nums=$this->images_nums;
+    $this->name_uk=htmlspecialchars(strip_tags($this->name_uk));
+    $this->name_ru=htmlspecialchars(strip_tags($this->name_ru));
+    $this->name_en=htmlspecialchars(strip_tags($this->name_en));
  
     // bind values
-    $stmt->bindParam(":title_uk", $this->title_uk);
-    $stmt->bindParam(":title_ru", $this->title_ru);
-    $stmt->bindParam(":title_en", $this->title_en);
-    $stmt->bindParam(":full_text_uk", $this->full_text_uk);
-    $stmt->bindParam(":full_text_ru", $this->full_text_ru);
-    $stmt->bindParam(":full_text_en", $this->full_text_en);
-    $stmt->bindParam(":short_text_uk", $this->short_text_uk);
-    $stmt->bindParam(":short_text_ru", $this->short_text_ru);
-    $stmt->bindParam(":short_text_en", $this->short_text_en);
-    $stmt->bindParam(":images_nums", $this->images_nums);
+    $stmt->bindParam(":name_uk", $this->name_uk);
+    $stmt->bindParam(":name_ru", $this->name_ru);
+    $stmt->bindParam(":name_en", $this->name_en);
      
     // execute query
     if($stmt->execute()){
@@ -132,7 +109,7 @@ function create(){
     $query = "UPDATE
                 " . $this->table_name . "
             SET
-                title_uk=:title_uk, title_ru=:title_ru, title_en=:title_en, full_text_uk=:full_text_uk, full_text_ru=:full_text_ru, full_text_en=:full_text_en, short_text_uk=:short_text_uk, short_text_ru=:short_text_ru, short_text_en=:short_text_en, images_nums=:images_nums
+                name_uk=:name_uk, name_ru=:name_ru, name_en=:name_en
             WHERE
                 id = :id";
  
@@ -140,28 +117,14 @@ function create(){
     $stmt = $this->conn->prepare($query);
  
     // sanitize
-    $this->title_uk=$this->title_uk;
-    $this->title_ru=$this->title_ru;
-    $this->title_en=$this->title_en;
-    $this->full_text_uk=$this->full_text_uk;
-    $this->full_text_ru=$this->full_text_ru;
-    $this->full_text_en=$this->full_text_en;
-    $this->short_text_uk=$this->short_text_uk;
-    $this->short_text_ru=$this->short_text_ru;
-    $this->short_text_en=$this->short_text_en;
-    $this->images_nums=$this->images_nums;
+    $this->name_uk=htmlspecialchars(strip_tags($this->name_uk));
+    $this->name_ru=htmlspecialchars(strip_tags($this->name_ru));
+    $this->name_en=htmlspecialchars(strip_tags($this->name_en));
  
     // bind new values
-    $stmt->bindParam(":title_uk", $this->title_uk);
-    $stmt->bindParam(":title_ru", $this->title_ru);
-    $stmt->bindParam(":title_en", $this->title_en);
-    $stmt->bindParam(":full_text_uk", $this->full_text_uk);
-    $stmt->bindParam(":full_text_ru", $this->full_text_ru);
-    $stmt->bindParam(":full_text_en", $this->full_text_en);
-    $stmt->bindParam(":short_text_uk", $this->short_text_uk);
-    $stmt->bindParam(":short_text_ru", $this->short_text_ru);
-    $stmt->bindParam(":short_text_en", $this->short_text_en);
-    $stmt->bindParam(":images_nums", $this->images_nums);
+    $stmt->bindParam(":name_uk", $this->name_uk);
+    $stmt->bindParam(":name_ru", $this->name_ru);
+    $stmt->bindParam(":name_en", $this->name_en);
     $stmt->bindParam(':id', $this->id);
  
     // execute the query

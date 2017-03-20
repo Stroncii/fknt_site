@@ -88,7 +88,62 @@ function create_news($data,$db){
         return false;
     }
 }
+function create_department($data,$db){
+  $query = "INSERT INTO 
+                " . 'departments' . "
+            SET 
+                name_uk=:name_uk, name_ru=:name_ru, name_en=:name_en";
+    
+    // prepare query
+    $stmt = $db->prepare($query);
 
+    // posted values
+    $name_uk=htmlspecialchars(strip_tags($data['name_uk']));
+    $name_ru=htmlspecialchars(strip_tags($data['name_ru']));
+    $name_en=htmlspecialchars(strip_tags($data['name_en']));
+ 
+    // bind values
+    $stmt->bindParam(":name_uk", $name_uk);
+    $stmt->bindParam(":name_ru", $name_ru);
+    $stmt->bindParam(":name_en", $name_en);
+
+    if($stmt->execute()){
+        return true;
+    }else{
+        echo "<pre>";
+            print_r($stmt->errorInfo());
+        echo "</pre>";
+        return false;
+    }
+}
+function create_group($data,$table,$db){
+  $query = "INSERT INTO 
+                " . $table . "
+            SET 
+                name_uk=:name_uk, name_ru=:name_ru, name_en=:name_en";
+    
+    // prepare query
+    $stmt = $db->prepare($query);
+
+    // posted values
+    $name_uk=htmlspecialchars(strip_tags($data['name_uk']));
+    $name_ru=htmlspecialchars(strip_tags($data['name_ru']));
+    $name_en=htmlspecialchars(strip_tags($data['name_en']));
+ 
+    // bind values
+    $stmt->bindParam(":name_uk", $name_uk);
+    $stmt->bindParam(":name_ru", $name_ru);
+    $stmt->bindParam(":name_en", $name_en);
+
+    if($stmt->execute()){
+        return true;
+    }else{
+        echo "<pre>";
+            print_r($stmt->errorInfo());
+        echo "</pre>";
+        return false;
+    }
+}
 $success = true;
 $database = new Database();
 $db = $database->getConnection();
@@ -125,6 +180,36 @@ if(!execute_query($query,$db)){
 if(!create_user(array('username'=>'administrator','email'=>'daniella.brovkina@donntu.edu.ua','level'=>'0','password'=>'fKnT74-AdmiN09'),$db,'users')){
 	$success = false;
 }
+
+$query = "DROP TABLE IF EXISTS departments; CREATE TABLE IF NOT EXISTS `departments` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name_uk` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `name_ru` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `name_en` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1;";
+
+if(!execute_query($query,$db)){
+  $success = false;
+}
+
+if(!create_user(array('name_uk'=>'Комп\'ютерна iнженерiя','name_ru'=>'Компьютерная инженерия','name_en'=>'Computer engineering'),$db,'departments')){
+  $success = false;
+}
+if(!create_user(array('name_uk'=>'Комп\'ютерні науки','name_ru'=>'Компьютерные науки','name_en'=>'Computer sciences'),$db,'departments')){
+  $success = false;
+}
+if(!create_user(array('name_uk'=>'Прикладна математика та інформатика','name_ru'=>'Прикладная математика и информатика','name_en'=>'Applied Mathematics and Informatics'),$db,'departments')){
+  $success = false;
+}
+if(!create_user(array('name_uk'=>'Філософія','name_ru'=>'Философия','name_en'=>'Philosophy'),$db,'departments')){
+  $success = false;
+}
+if(!create_user(array('name_uk'=>'Викладачі','name_ru'=>'Преподаватели','name_en'=>'Teachers'),$db,'departments')){
+  $success = false;
+}
+
+
 
 $query = "DROP TABLE IF EXISTS news; CREATE TABLE IF NOT EXISTS `news` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,

@@ -8,5 +8,5 @@ angular.module('app')
   
   
   $scope.type = $routeParams.type || 'bachelor';
-  $scope.activeTab = $routeParams.type;
+  $scope.activeTab = $scope.type;
 }]);

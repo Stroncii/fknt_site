@@ -416,3 +416,18 @@ padding-right: 15px
 a[data-target], ul.nav li {
   cursor: pointer;
 }
+
+.ta-toolbar{
+
+}
+.ta-toolbar .btn,.ta-toolbar .btn i{
+  font-size: 14px;
+}
+.ta-toolbar .btn{
+  padding: 10px;
+}
+
+.ta-text{
+  border: 1px solid #aaa;
+  border-radius: 5px;
+}

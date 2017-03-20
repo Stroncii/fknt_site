@@ -37,16 +37,16 @@ function create(){
     $stmt = $this->conn->prepare($query);
  
     // posted values
-    $this->title_uk=$this->title_uk;
-    $this->title_ru=$this->title_ru;
-    $this->title_en=$this->title_en;
-    $this->full_text_uk=$this->full_text_uk;
-    $this->full_text_ru=$this->full_text_ru;
-    $this->full_text_en=$this->full_text_en;
-    $this->short_text_uk=$this->short_text_uk;
-    $this->short_text_ru=$this->short_text_ru;
-    $this->short_text_en=$this->short_text_en;
-    $this->images_nums=$this->images_nums;
+    $this->title_uk=htmlspecialchars(strip_tags($this->title_uk));
+    $this->title_ru=htmlspecialchars(strip_tags($this->title_ru));
+    $this->title_en=htmlspecialchars(strip_tags($this->title_en));
+    $this->full_text_uk=htmlspecialchars(strip_tags($this->full_text_uk));
+    $this->full_text_ru=htmlspecialchars(strip_tags($this->full_text_ru));
+    $this->full_text_en=htmlspecialchars(strip_tags($this->full_text_en));
+    $this->short_text_uk=htmlspecialchars(strip_tags($this->short_text_uk));
+    $this->short_text_ru=htmlspecialchars(strip_tags($this->short_text_ru));
+    $this->short_text_en=htmlspecialchars(strip_tags($this->short_text_en));
+    $this->images_nums=htmlspecialchars(strip_tags($this->images_nums));
  
     // bind values
     $stmt->bindParam(":title_uk", $this->title_uk);
@@ -140,16 +140,17 @@ function create(){
     $stmt = $this->conn->prepare($query);
  
     // sanitize
-    $this->title_uk=$this->title_uk;
-    $this->title_ru=$this->title_ru;
-    $this->title_en=$this->title_en;
-    $this->full_text_uk=$this->full_text_uk;
-    $this->full_text_ru=$this->full_text_ru;
-    $this->full_text_en=$this->full_text_en;
-    $this->short_text_uk=$this->short_text_uk;
-    $this->short_text_ru=$this->short_text_ru;
-    $this->short_text_en=$this->short_text_en;
-    $this->images_nums=$this->images_nums;
+    $this->title_uk=htmlspecialchars(strip_tags($this->title_uk));
+    $this->title_ru=htmlspecialchars(strip_tags($this->title_ru));
+    $this->title_en=htmlspecialchars(strip_tags($this->title_en));
+    $this->full_text_uk=htmlspecialchars(strip_tags($this->full_text_uk));
+    $this->full_text_ru=htmlspecialchars(strip_tags($this->full_text_ru));
+    $this->full_text_en=htmlspecialchars(strip_tags($this->full_text_en));
+    $this->short_text_uk=htmlspecialchars(strip_tags($this->short_text_uk));
+    $this->short_text_ru=htmlspecialchars(strip_tags($this->short_text_ru));
+    $this->short_text_en=htmlspecialchars(strip_tags($this->short_text_en));
+    $this->images_nums=htmlspecialchars(strip_tags($this->images_nums));
+    $this->id=htmlspecialchars(strip_tags($this->id));
  
     // bind new values
     $stmt->bindParam(":title_uk", $this->title_uk);

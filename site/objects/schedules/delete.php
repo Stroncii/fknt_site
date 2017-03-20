@@ -1,7 +1,7 @@
 <?php 
 // include database and object file 
-include_once '../../config/database.php';
-include_once 'news.php';
+include_once '/config/database.php';
+include_once '/news/news.php';
  
 // get database connection 
 $database = new Database(); 

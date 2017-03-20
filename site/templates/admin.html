@@ -25,6 +25,12 @@
                                 <h3>News</h3>
                                 <div text-angular ta-text-editor-class="form-content border-around clearfix" ta-html-editor-class="clearfix form-content border-around" ta-focussed-class="focussed" ng-model="htmlVariable"></div>
                                 <button class="btn btn-default">Добавить новость</button>
+
+                                <table>
+                                    <tr ng-repeat="item in allNews">
+                                        <td> {{ item.title }}</td>
+                                    </tr>
+                                </table>
                             </div>
 
                             <div role="tabpanel" id="users" class="tab-pane fade">

@@ -20,6 +20,7 @@ angular.module('app')
   $rootScope.$watch('language', function(newValue, oldValue) {
      if (oldValue && oldValue != newValue) {
        getOneNews();
+       console.log($scope.item);
      }
   });
 

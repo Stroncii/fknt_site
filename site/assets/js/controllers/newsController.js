@@ -11,6 +11,7 @@ angular.module('app')
         $scope.firstNews = data.news[0];
         $scope.news = data.news;
         $scope.news = $scope.news.slice(-($scope.news.length-1));
+        $scope.allNews = data.news;
     });
     appFactory.getLastNews($rootScope.language).then(function(data) {
         $scope.lastNews = data.news;

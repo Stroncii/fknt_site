@@ -12,13 +12,15 @@ $db = $database->getConnection();
  
 // initialize object
 $news = new News($db);
+
 $id = substr($_SERVER['PHP_SELF'],strpos($_SERVER['PHP_SELF'],'read_full')+14);
+
 // query products 
 $stmt = $news->readAllLang($id);
 $num = $stmt->rowCount();
  
 $data="";
-
+$langs = array("uk","ru","en");
 // check if more than 0 record found
 if($num>0){
  
@@ -36,9 +38,17 @@ if($num>0){
         
         $data .= '{';
             $data .= '"id":"'  . $row['id'] . '",';
+            foreach ($langs as $lang) {
+                $lang_info = "{";
+                $lang_info .= '"title":"'   . $row['title_'.$lang] . '",';
+                $lang_info .= '"synopsis":"'   . $row['short_text_'.$lang] . '",';
+                $lang_info .= '"content":"' . $row['full_text_'.$lang] . '"}';
+                $data .= '"'.$lang.'":"'  . $lang_info . '",';
+            }
             $data .= '"title":"'   . $row['title_'.$lang] . '",';
             $data .= '"synopsis":"'   . $row['short_text_'.$lang] . '",';
             $data .= '"content":"' . $row['full_text_'.$lang] . '",';
+
             $data .= '"images":[';
             $l = 1;
             $imgs = explode(",",$row['images_nums']);

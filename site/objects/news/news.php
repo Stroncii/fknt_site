@@ -71,6 +71,24 @@ function create(){
         return false;
     }
 }
+    function readAllLang($id){
+     
+        // select all query
+        $query = "SELECT
+                    id,title_uk,title_ru,title_en,full_text_uk,full_text_ru,full_text_en,short_text_uk,short_text_ru,short_text_en, images_nums
+                FROM
+                    " . $this->table_name . "
+                WHERE 
+                    id = ".$id."";
+     
+        // prepare query statement
+        $stmt = $this->conn->prepare( $query );
+     
+        // execute query
+        $stmt->execute();
+     
+        return $stmt;
+    }
 	function readAll($lang){
 	 
 	    // select all query

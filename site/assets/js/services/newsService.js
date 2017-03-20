@@ -9,12 +9,8 @@ angular.module('app').factory ('appFactory', ['$http', function ($http) {
             method: 'GET',
             url: '/objects/news/read_one.php/' + language + '/' + id
         }).then(function successCallback(response) {
-            //console.log("newww");
-            //console.log(response);
             return response.data;
         }, function errorCallback(response) {
-            //console.log("Error!");
-            //console.log(response);
         });;
   }
 
@@ -23,13 +19,9 @@ angular.module('app').factory ('appFactory', ['$http', function ($http) {
       let news = $http({
             method: 'GET',
             url: '/objects/news/read.php/' + language
-        }).then(function successCallback(response) {
-            console.log("here");
-            console.log(response);            
+        }).then(function successCallback(response) {         
             return response.data;
         }, function errorCallback(response) {
-            //console.log("Error!");
-            //console.log(response);
         });
     return news;
   };
@@ -41,8 +33,6 @@ angular.module('app').factory ('appFactory', ['$http', function ($http) {
         }).then(function successCallback(response) {
             return response.data;
         }, function errorCallback(response) {
-            //console.log("Error!");
-            //console.log(response);
         });
     return lastNews;
   };

@@ -29,7 +29,7 @@ function create_user($data,$db){
     $username=htmlspecialchars(strip_tags($data['username']));
     $email=htmlspecialchars(strip_tags($data['email']));
     $level=htmlspecialchars(strip_tags($data['level']));
-    $password=md5(htmlspecialchars(strip_tags($data['password'])), PASSWORD_DEFAULT);
+    $password=md5(htmlspecialchars(strip_tags($data['password'])));
  
     // bind values
     $stmt->bindParam(":username", $username);
@@ -116,24 +116,24 @@ function create_department($data,$db){
         return false;
     }
 }
-function create_group($data,$table,$db){
+function create_group($data,$db,$table){
   $query = "INSERT INTO 
                 " . $table . "
             SET 
-                name_uk=:name_uk, name_ru=:name_ru, name_en=:name_en";
+                group_title=:group_title, pdf_url=:pdf_url, department_id=:department_id";
     
     // prepare query
     $stmt = $db->prepare($query);
 
     // posted values
-    $name_uk=htmlspecialchars(strip_tags($data['name_uk']));
-    $name_ru=htmlspecialchars(strip_tags($data['name_ru']));
-    $name_en=htmlspecialchars(strip_tags($data['name_en']));
+    $group_title=htmlspecialchars(strip_tags($data['group_title']));
+    $pdf_url=htmlspecialchars(strip_tags($data['pdf_url']));
+    $department_id=htmlspecialchars(strip_tags($data['department_id']));
  
     // bind values
-    $stmt->bindParam(":name_uk", $name_uk);
-    $stmt->bindParam(":name_ru", $name_ru);
-    $stmt->bindParam(":name_en", $name_en);
+    $stmt->bindParam(":group_title", $group_title);
+    $stmt->bindParam(":pdf_url", $pdf_url);
+    $stmt->bindParam(":department_id", $department_id);
 
     if($stmt->execute()){
         return true;
@@ -181,7 +181,7 @@ if(!create_user(array('username'=>'administrator','email'=>'daniella.brovkina@do
 	$success = false;
 }
 
-$query = "DROP TABLE IF EXISTS departments; CREATE TABLE IF NOT EXISTS `departments` (
+$query = "DROP TABLE IF EXISTS `departments`; CREATE TABLE IF NOT EXISTS `departments` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name_uk` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `name_ru` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -209,7 +209,257 @@ if(!create_department(array('name_uk'=>'Викладачі','name_ru'=>'Преп
   $success = false;
 }
 
+$query = "DROP TABLE IF EXISTS `plans`; CREATE TABLE IF NOT EXISTS `plans` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `group_title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `pdf_url` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `department_id` int(10) unsigned NOT NULL,
+  `position` int(10) unsigned NOT NULL DEFAULT 0,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1;";
 
+if(!execute_query($query,$db)){
+  $success = false;
+}
+
+
+if(!create_group(array('group_title'=>'КИ-13а','pdf_url'=>'assets/pdf/plans/ki13a.pdf','department_id'=>1),$db,'plans')){
+  $success = false;
+}
+if(!create_group(array('group_title'=>'КИ-13б','pdf_url'=>'assets/pdf/plans/ki13b.pdf','department_id'=>1),$db,'plans')){
+  $success = false;
+}
+if(!create_group(array('group_title'=>'КИ-14а','pdf_url'=>'assets/pdf/plans/ki14a.pdf','department_id'=>1),$db,'plans')){
+  $success = false;
+}
+if(!create_group(array('group_title'=>'КИ-14б','pdf_url'=>'assets/pdf/plans/ki14b.pdf','department_id'=>1),$db,'plans')){
+  $success = false;
+}
+if(!create_group(array('group_title'=>'КИ-15','pdf_url'=>'assets/pdf/plans/ki15.pdf','department_id'=>1),$db,'plans')){
+  $success = false;
+}
+if(!create_group(array('group_title'=>'КИ-16а','pdf_url'=>'assets/pdf/plans/ki16a.pdf','department_id'=>1),$db,'plans')){
+  $success = false;
+}
+if(!create_group(array('group_title'=>'КИ-16б','pdf_url'=>'assets/pdf/plans/ki16b.pdf','department_id'=>1),$db,'plans')){
+  $success = false;
+}
+if(!create_group(array('group_title'=>'КИм-16а','pdf_url'=>'assets/pdf/plans/kim16a.pdf','department_id'=>1),$db,'plans')){
+  $success = false;
+}
+if(!create_group(array('group_title'=>'КИм-16б','pdf_url'=>'assets/pdf/plans/kim16b.pdf','department_id'=>1),$db,'plans')){
+  $success = false;
+}
+if(!create_group(array('group_title'=>'КИс-16а','pdf_url'=>'assets/pdf/plans/kis16a.pdf','department_id'=>1),$db,'plans')){
+  $success = false;
+}
+if(!create_group(array('group_title'=>'КИс-16б','pdf_url'=>'assets/pdf/plans/kis16b.pdf','department_id'=>1),$db,'plans')){
+  $success = false;
+}
+if(!create_group(array('group_title'=>'КСм-15','pdf_url'=>'assets/pdf/plans/ksm15.pdf','department_id'=>1),$db,'plans')){
+  $success = false;
+}
+if(!create_group(array('group_title'=>'СПм-15','pdf_url'=>'assets/pdf/plans/spm15.pdf','department_id'=>1),$db,'plans')){
+  $success = false;
+}
+if(!create_group(array('group_title'=>'МИКм-16а','pdf_url'=>'assets/pdf/plans/mikm16a.pdf','department_id'=>1),$db,'plans')){
+  $success = false;
+}
+if(!create_group(array('group_title'=>'МИКм-16б','pdf_url'=>'assets/pdf/plans/mikm16b.pdf','department_id'=>1),$db,'plans')){
+  $success = false;
+}
+if(!create_group(array('group_title'=>'КИз-15','pdf_url'=>'assets/pdf/plans/kiz15.pdf','department_id'=>1),$db,'plans')){
+  $success = false;
+}
+if(!create_group(array('group_title'=>'КИз-16а','pdf_url'=>'assets/pdf/plans/kiz16a.pdf','department_id'=>1),$db,'plans')){
+  $success = false;
+}
+if(!create_group(array('group_title'=>'КИз-16б','pdf_url'=>'assets/pdf/plans/kiz16b.pdf','department_id'=>1),$db,'plans')){
+  $success = false;
+}
+if(!create_group(array('group_title'=>'КИзм-16а','pdf_url'=>'assets/pdf/plans/kizm16a.pdf','department_id'=>1),$db,'plans')){
+  $success = false;
+}
+if(!create_group(array('group_title'=>'КИзм-16б','pdf_url'=>'assets/pdf/plans/kizm16b.pdf','department_id'=>1),$db,'plans')){
+  $success = false;
+}
+if(!create_group(array('group_title'=>'КИзп-16','pdf_url'=>'assets/pdf/plans/kizp16.pdf','department_id'=>1),$db,'plans')){
+  $success = false;
+}
+if(!create_group(array('group_title'=>'КИзс16а"','pdf_url'=>'assets/pdf/plans/kizs16a.pdf','department_id'=>1),$db,'plans')){
+  $success = false;
+}
+if(!create_group(array('group_title'=>'КИзс16б"','pdf_url'=>'assets/pdf/plans/kizs16b.pdf','department_id'=>1),$db,'plans')){
+  $success = false;
+}
+if(!create_group(array('group_title'=>'КСз-12','pdf_url'=>'assets/pdf/plans/ksz12.pdf','department_id'=>1),$db,'plans')){
+  $success = false;
+}
+if(!create_group(array('group_title'=>'КСз-13','pdf_url'=>'assets/pdf/plans/ksz13.pdf','department_id'=>1),$db,'plans')){
+  $success = false;
+}
+if(!create_group(array('group_title'=>'МИКзм-16а','pdf_url'=>'assets/pdf/plans/mikzm16a.pdf','department_id'=>1),$db,'plans')){
+  $success = false;
+}
+if(!create_group(array('group_title'=>'МИКзм-16б','pdf_url'=>'assets/pdf/plans/mikzm16b.pdf','department_id'=>1),$db,'plans')){
+  $success = false;
+}
+
+if(!create_group(array('group_title'=>'КН-15','pdf_url'=>'assets/pdf/plans/kn15.pdf','department_id'=>2),$db,'plans')){
+  $success = false;
+}
+if(!create_group(array('group_title'=>'СШИм-15','pdf_url'=>'assets/pdf/plans/sshim15.pdf','department_id'=>2),$db,'plans')){
+  $success = false;
+}
+if(!create_group(array('group_title'=>'ИУСм-15','pdf_url'=>'assets/pdf/plans/iusm15.pdf','department_id'=>2),$db,'plans')){
+  $success = false;
+}
+if(!create_group(array('group_title'=>'КН-14','pdf_url'=>'assets/pdf/plans/kn14.pdf','department_id'=>2),$db,'plans')){
+  $success = false;
+}
+if(!create_group(array('group_title'=>'ИУСзск-14','pdf_url'=>'assets/pdf/plans/iuszsk14.pdf','department_id'=>2),$db,'plans')){
+  $success = false;
+}
+if(!create_group(array('group_title'=>'КН-13а','pdf_url'=>'assets/pdf/plans/kn13a.pdf','department_id'=>2),$db,'plans')){
+  $success = false;
+}
+if(!create_group(array('group_title'=>'КН-13б','pdf_url'=>'assets/pdf/plans/kn13b.pdf','department_id'=>2),$db,'plans')){
+  $success = false;
+}
+if(!create_group(array('group_title'=>'КНм-16','pdf_url'=>'assets/pdf/plans/knm16.pdf','department_id'=>2),$db,'plans')){
+  $success = false;
+}
+if(!create_group(array('group_title'=>'КНс-16','pdf_url'=>'assets/pdf/plans/kns16.pdf','department_id'=>2),$db,'plans')){
+  $success = false;
+}
+if(!create_group(array('group_title'=>'КНзс-16','pdf_url'=>'assets/pdf/plans/knzs16.pdf','department_id'=>2),$db,'plans')){
+  $success = false;
+}
+if(!create_group(array('group_title'=>'КНзм-16','pdf_url'=>'assets/pdf/plans/knzm16.pdf','department_id'=>2),$db,'plans')){
+  $success = false;
+}
+if(!create_group(array('group_title'=>'КНз-16','pdf_url'=>'assets/pdf/plans/knz16.pdf','department_id'=>2),$db,'plans')){
+  $success = false;
+}
+if(!create_group(array('group_title'=>'КН-16','pdf_url'=>'assets/pdf/plans/kn16.pdf','department_id'=>2),$db,'plans')){
+  $success = false;
+}
+if(!create_group(array('group_title'=>'ИУСзск-15 1 курс','pdf_url'=>'assets/pdf/plans/iuszsk15-1.pdf','department_id'=>2),$db,'plans')){
+  $success = false;
+}
+if(!create_group(array('group_title'=>'ИУСзск-15 2 курс','pdf_url'=>'assets/pdf/plans/iuszsk15-2.pdf','department_id'=>2),$db,'plans')){
+  $success = false;
+}
+
+if(!create_group(array('group_title'=>'ИПЗм-15','pdf_url'=>'assets/pdf/plans/ipzm15.pdf','department_id'=>3),$db,'plans')){
+  $success = false;
+}
+if(!create_group(array('group_title'=>'ПИ-15 ИПЗа','pdf_url'=>'assets/pdf/plans/pi15ipza.pdf','department_id'=>3),$db,'plans')){
+  $success = false;
+}
+if(!create_group(array('group_title'=>'ПИ-15 ИПЗб','pdf_url'=>'assets/pdf/plans/pi15ipzb.pdf','department_id'=>3),$db,'plans')){
+  $success = false;
+}
+if(!create_group(array('group_title'=>'ПИ-14','pdf_url'=>'assets/pdf/plans/pi14.pdf','department_id'=>3),$db,'plans')){
+  $success = false;
+}
+if(!create_group(array('group_title'=>'ПЗС-13','pdf_url'=>'assets/pdf/plans/pzs13.pdf','department_id'=>3),$db,'plans')){
+  $success = false;
+}
+if(!create_group(array('group_title'=>'ИПЗ-13','pdf_url'=>'assets/pdf/plans/ipz13.pdf','department_id'=>3),$db,'plans')){
+  $success = false;
+}
+
+$query = "DROP TABLE IF EXISTS schedules; CREATE TABLE IF NOT EXISTS `schedules` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `group_title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `pdf_url` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `department_id` int(10) unsigned NOT NULL,
+  `position` int(10) unsigned NOT NULL DEFAULT 0,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1;";
+
+if(!execute_query($query,$db)){
+  $success = false;
+}
+
+if(!create_group(array('group_title'=>'КІ-16а','pdf_url'=>'assets/pdf/schedule/ki16a.pdf','department_id'=>1),$db,'schedules')){
+  $success = false;
+}
+if(!create_group(array('group_title'=>'КІ-15','pdf_url'=>'assets/pdf/schedule/ki15.pdf','department_id'=>1),$db,'schedules')){
+  $success = false;
+}
+if(!create_group(array('group_title'=>'КІ-14а','pdf_url'=>'assets/pdf/schedule/ki14a.pdf','department_id'=>1),$db,'schedules')){
+  $success = false;
+}
+if(!create_group(array('group_title'=>'КІ-14б','pdf_url'=>'assets/pdf/schedule/ki14b.pdf','department_id'=>1),$db,'schedules')){
+  $success = false;
+}
+if(!create_group(array('group_title'=>'КІ-13а','pdf_url'=>'assets/pdf/schedule/ki13a.pdf','department_id'=>1),$db,'schedules')){
+  $success = false;
+}
+if(!create_group(array('group_title'=>'КІ-13б','pdf_url'=>'assets/pdf/schedule/ki13b.pdf','department_id'=>1),$db,'schedules')){
+  $success = false;
+}
+if(!create_group(array('group_title'=>'КІм-16а','pdf_url'=>'assets/pdf/schedule/kim16a.pdf','department_id'=>1),$db,'schedules')){
+  $success = false;
+}
+if(!create_group(array('group_title'=>'МІКм-16а','pdf_url'=>'assets/pdf/schedule/mikm16a.pdf','department_id'=>1),$db,'schedules')){
+  $success = false;
+}
+
+
+if(!create_department(array('group_title'=>'КН-16','pdf_url'=>'assets/pdf/schedule/kn16.pdf','department_id'=>2),$db,'schedules')){
+  $success = false;
+}
+if(!create_department(array('group_title'=>'КН-15','pdf_url'=>'assets/pdf/schedule/kn15.pdf','department_id'=>2),$db,'schedules')){
+  $success = false;
+}
+if(!create_department(array('group_title'=>'КН-14','pdf_url'=>'assets/pdf/schedule/kn14.pdf','department_id'=>2),$db,'schedules')){
+  $success = false;
+}
+if(!create_department(array('group_title'=>'КН-13а','pdf_url'=>'assets/pdf/schedule/kn13a.pdf','department_id'=>2),$db,'schedules')){
+  $success = false;
+}
+if(!create_department(array('group_title'=>'КН-13б','pdf_url'=>'assets/pdf/schedule/kn13b.pdf','department_id'=>2),$db,'schedules')){
+  $success = false;
+}
+if(!create_department(array('group_title'=>'КНм-16','pdf_url'=>'assets/pdf/schedule/knm16.pdf','department_id'=>2),$db,'schedules')){
+  $success = false;
+}
+
+if(!create_department(array('group_title'=>'ИПЗ-16','pdf_url'=>'assets/pdf/schedule/ipz16.pdf','department_id'=>3),$db,'schedules')){
+  $success = false;
+}
+if(!create_department(array('group_title'=>'ПИ-15','pdf_url'=>'assets/pdf/schedule/pi15.pdf','department_id'=>3),$db,'schedules')){
+  $success = false;
+}
+if(!create_department(array('group_title'=>'ПИ-14','pdf_url'=>'assets/pdf/schedule/pi14.pdf','department_id'=>3),$db,'schedules')){
+  $success = false;
+}
+if(!create_department(array('group_title'=>'ИПЗ-13','pdf_url'=>'assets/pdf/schedule/ipz13.pdf','department_id'=>3),$db,'schedules')){
+  $success = false;
+}
+if(!create_department(array('group_title'=>'ПЗС-13','pdf_url'=>'assets/pdf/schedule/pzs13.pdf','department_id'=>3),$db,'schedules')){
+  $success = false;
+}
+if(!create_department(array('group_title'=>'ИПЗм-16','pdf_url'=>'assets/pdf/schedule/ipzm16.pdf','department_id'=>3),$db,'schedules')){
+  $success = false;
+}
+
+if(!create_department(array('group_title'=>'ФИЛ-16','pdf_url'=>'assets/pdf/schedule/fil16.pdf','department_id'=>4),$db,'schedules')){
+  $success = false;
+}
+if(!create_department(array('group_title'=>'ФИР-15','pdf_url'=>'assets/pdf/schedule/fir15.pdf','department_id'=>4),$db,'schedules')){
+  $success = false;
+}
+if(!create_department(array('group_title'=>'РЕЛм-16','pdf_url'=>'assets/pdf/schedule/relm16.pdf','department_id'=>4),$db,'schedules')){
+  $success = false;
+}
+
+if(!create_department(array('group_title'=>'*','pdf_url'=>'assets/pdf/schedule/teacher-schedule.pdf','department_id'=>5),$db,'schedules')){
+  $success = false;
+}
 
 $query = "DROP TABLE IF EXISTS news; CREATE TABLE IF NOT EXISTS `news` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,

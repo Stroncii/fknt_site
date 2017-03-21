@@ -1,23 +1,15 @@
 <?php 
-class News{ 
+class Plan{ 
     // database connection and table name 
     private $conn; 
     private $table_name = "news"; 
  
     // object properties 
     public $id;
-    public $title_uk;
-    public $title_ru;
-    public $title_en;
-    public $full_text_uk;
-    public $full_text_ru;
-    public $full_text_en;
-    public $short_text_uk;
-    public $short_text_ru;
-    public $short_text_en;
-    public $images_nums;
-    public $created;
-    public $modified;
+    public $group_title;
+    public $pdf_url;
+    public $department_id;
+    public $position;
  
     // constructor with $db as database connection 
     public function __construct($db){ 

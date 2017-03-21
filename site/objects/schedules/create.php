@@ -14,9 +14,9 @@ $news = new News($db);
 $data = json_decode(file_get_contents("php://input"));
  
 // set product property values
-$news->title_uk = $data['title_uk'];
-$news->title_ru = $data['title_ru'];
-$news->title_en = $data['title_en'];
+$news->group_title = $data['group_title'];
+$news->pdf_url = $data['pdf_url'];
+$news->department_id = $data['department_id'];
 $news->full_text_uk = $data['full_text_uk'];
 $news->full_text_ru = $data['full_text_ru'];
 $news->full_text_en = $data['full_text_en'];

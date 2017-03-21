@@ -1,23 +1,15 @@
 <?php 
-class News{ 
+class Schedule{ 
     // database connection and table name 
     private $conn; 
-    private $table_name = "news"; 
+    private $table_name = "schedules"; 
  
     // object properties 
     public $id;
-    public $title_uk;
-    public $title_ru;
-    public $title_en;
-    public $full_text_uk;
-    public $full_text_ru;
-    public $full_text_en;
-    public $short_text_uk;
-    public $short_text_ru;
-    public $short_text_en;
-    public $images_nums;
-    public $created;
-    public $modified;
+    public $group_title;
+    public $pdf_url;
+    public $department_id;
+    public $position;
  
     // constructor with $db as database connection 
     public function __construct($db){ 
@@ -31,34 +23,20 @@ function create(){
     $query = "INSERT INTO 
                 " . $this->table_name . "
             SET 
-                title_uk=:title_uk, title_ru=:title_ru, title_en=:title_en, full_text_uk=:full_text_uk, full_text_ru=:full_text_ru, full_text_en=:full_text_en, short_text_uk=:short_text_uk, short_text_ru=:short_text_ru, short_text_en=:short_text_en, images_nums=:images_nums";
+                group_title=:group_title, pdf_url=:pdf_url, department_id=:department_id";
      
     // prepare query
     $stmt = $this->conn->prepare($query);
  
     // posted values
-    $this->title_uk=htmlspecialchars(strip_tags($this->title_uk));
-    $this->title_ru=htmlspecialchars(strip_tags($this->title_ru));
-    $this->title_en=htmlspecialchars(strip_tags($this->title_en));
-    $this->full_text_uk=htmlspecialchars(strip_tags($this->full_text_uk));
-    $this->full_text_ru=htmlspecialchars(strip_tags($this->full_text_ru));
-    $this->full_text_en=htmlspecialchars(strip_tags($this->full_text_en));
-    $this->short_text_uk=htmlspecialchars(strip_tags($this->short_text_uk));
-    $this->short_text_ru=htmlspecialchars(strip_tags($this->short_text_ru));
-    $this->short_text_en=htmlspecialchars(strip_tags($this->short_text_en));
-    $this->images_nums=htmlspecialchars(strip_tags($this->images_nums));
+    $this->group_title=htmlspecialchars(strip_tags($this->group_title));
+    $this->pdf_url=htmlspecialchars(strip_tags($this->pdf_url));
+    $this->department_id=htmlspecialchars(strip_tags($this->department_id));
  
     // bind values
-    $stmt->bindParam(":title_uk", $this->title_uk);
-    $stmt->bindParam(":title_ru", $this->title_ru);
-    $stmt->bindParam(":title_en", $this->title_en);
-    $stmt->bindParam(":full_text_uk", $this->full_text_uk);
-    $stmt->bindParam(":full_text_ru", $this->full_text_ru);
-    $stmt->bindParam(":full_text_en", $this->full_text_en);
-    $stmt->bindParam(":short_text_uk", $this->short_text_uk);
-    $stmt->bindParam(":short_text_ru", $this->short_text_ru);
-    $stmt->bindParam(":short_text_en", $this->short_text_en);
-    $stmt->bindParam(":images_nums", $this->images_nums);
+    $stmt->bindParam(":group_title", $this->group_title);
+    $stmt->bindParam(":pdf_url", $this->pdf_url);
+    $stmt->bindParam(":department_id", $this->department_id);
      
     // execute query
     if($stmt->execute()){
@@ -71,68 +49,32 @@ function create(){
         return false;
     }
 }
-	function readAll($lang){
-	 
-	    // select all query
-	    $query = "SELECT
-	                id, title_".$lang.", short_text_".$lang.", full_text_".$lang.", images_nums
-	            FROM
-	                " . $this->table_name . "
-	            ORDER BY
-	                id DESC";
-	 
-	    // prepare query statement
-	    $stmt = $this->conn->prepare( $query );
-	 
-	    // execute query
-	    $stmt->execute();
-	 
-	    return $stmt;
-	}
-	function readLast($lang){
-	 
-	    // select all query
-	    $query = "SELECT
-	                id, title_".$lang.", short_text_".$lang.", full_text_".$lang.", images_nums
-	            FROM
-	                " . $this->table_name . "
-	            ORDER BY
-	                id DESC
-	            LIMIT 0,4";
-	 
-	    // prepare query statement
-	    $stmt = $this->conn->prepare( $query );
-	 
-	    // execute query
-	    $stmt->execute();
-	 
-	    return $stmt;
-	}
-	function readOne($lang,$id){
-	 
-	    // select all query
-	    $query = "SELECT
-	                id, title_".$lang.", short_text_".$lang.", full_text_".$lang.", images_nums
-	            FROM
-	                " . $this->table_name . "
-	            WHERE 
-                	id = ".$id."";
-	 
-	    // prepare query statement
-	    $stmt = $this->conn->prepare( $query );
+    function read(){
+     
+        // select all query
+        $query = "SELECT
+                    id, group_title,pdf_url,department_id, position
+                FROM
+                    " . $this->table_name . "
+                ORDER BY
+                    id DESC";
+     
+        // prepare query statement
+        $stmt = $this->conn->prepare( $query );
+     
+        // execute query
+        $stmt->execute();
+     
+        return $stmt;
+    }
     
-	    // execute query
-	    $stmt->execute();
-	 
-	    return $stmt;
-	}
-	function update(){
+    function update(){
  
     // update query
     $query = "UPDATE
                 " . $this->table_name . "
             SET
-                title_uk=:title_uk, title_ru=:title_ru, title_en=:title_en, full_text_uk=:full_text_uk, full_text_ru=:full_text_ru, full_text_en=:full_text_en, short_text_uk=:short_text_uk, short_text_ru=:short_text_ru, short_text_en=:short_text_en, images_nums=:images_nums
+                group_title,pdf_url,department_id
             WHERE
                 id = :id";
  
@@ -140,29 +82,14 @@ function create(){
     $stmt = $this->conn->prepare($query);
  
     // sanitize
-    $this->title_uk=htmlspecialchars(strip_tags($this->title_uk));
-    $this->title_ru=htmlspecialchars(strip_tags($this->title_ru));
-    $this->title_en=htmlspecialchars(strip_tags($this->title_en));
-    $this->full_text_uk=htmlspecialchars(strip_tags($this->full_text_uk));
-    $this->full_text_ru=htmlspecialchars(strip_tags($this->full_text_ru));
-    $this->full_text_en=htmlspecialchars(strip_tags($this->full_text_en));
-    $this->short_text_uk=htmlspecialchars(strip_tags($this->short_text_uk));
-    $this->short_text_ru=htmlspecialchars(strip_tags($this->short_text_ru));
-    $this->short_text_en=htmlspecialchars(strip_tags($this->short_text_en));
-    $this->images_nums=htmlspecialchars(strip_tags($this->images_nums));
-    $this->id=htmlspecialchars(strip_tags($this->id));
+    $this->group_title=htmlspecialchars(strip_tags($this->group_title));
+    $this->pdf_url=htmlspecialchars(strip_tags($this->pdf_url));
+    $this->department_id=htmlspecialchars(strip_tags($this->department_id));
  
     // bind new values
-    $stmt->bindParam(":title_uk", $this->title_uk);
-    $stmt->bindParam(":title_ru", $this->title_ru);
-    $stmt->bindParam(":title_en", $this->title_en);
-    $stmt->bindParam(":full_text_uk", $this->full_text_uk);
-    $stmt->bindParam(":full_text_ru", $this->full_text_ru);
-    $stmt->bindParam(":full_text_en", $this->full_text_en);
-    $stmt->bindParam(":short_text_uk", $this->short_text_uk);
-    $stmt->bindParam(":short_text_ru", $this->short_text_ru);
-    $stmt->bindParam(":short_text_en", $this->short_text_en);
-    $stmt->bindParam(":images_nums", $this->images_nums);
+    $stmt->bindParam(":group_title", $this->group_title);
+    $stmt->bindParam(":pdf_url", $this->pdf_url);
+    $stmt->bindParam(":department_id", $this->department_id);
     $stmt->bindParam(':id', $this->id);
  
     // execute the query

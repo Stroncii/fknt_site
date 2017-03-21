@@ -12,10 +12,11 @@ $db = $database->getConnection();
  
 // initialize object
 $news = new News($db);
-$params = explode('/',substr($_SERVER['PHP_SELF'],strpos($_SERVER['PHP_SELF'],'read_one')+13));
+//$params = explode('/',substr($_SERVER['PHP_SELF'],strpos($_SERVER['PHP_SELF'],'read_one')+13));
+
 // query products
-$lang = $params[0]; 
-$id = $params[1]; 
+$lang = $_GET['language']; 
+$id = $_GET['id']; 
 $stmt = $news->readOne($lang,$id);
 $num = $stmt->rowCount();
  
@@ -37,6 +38,7 @@ if($num>0){
         extract($row);
         
         $data .= '{';
+            $data .= '"req_data":"'  . count($_GET) . '",';
             $data .= '"id":"'  . $row['id'] . '",';
             $data .= '"title":"'   . $row['title_'.$lang] . '",';
             $data .= '"synopsis":"'   . $row['short_text_'.$lang] . '",';

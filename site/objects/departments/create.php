@@ -1,29 +1,22 @@
 <?php
 // include database and object file
 include_once '../../config/database.php';
-include_once 'departments.php';
+include_once 'department.php';
  
 // get database connection
 $database = new Database();
 $db = $database->getConnection();
  
 // instantiate product object
-$news = new News($db);
+$news = new Department($db);
  
 // get posted data
 $data = json_decode(file_get_contents("php://input"));
  
 // set product property values
-$news->title_uk = $data['title_uk'];
-$news->title_ru = $data['title_ru'];
-$news->title_en = $data['title_en'];
-$news->full_text_uk = $data['full_text_uk'];
-$news->full_text_ru = $data['full_text_ru'];
-$news->full_text_en = $data['full_text_en'];
-$news->short_text_uk = $data['short_text_uk'];
-$news->short_text_ru = $data['short_text_ru'];
-$news->short_text_en = $data['short_text_en'];
-$news->images_nums = $data['images_nums'];
+$news->name_uk = $data['name_uk'];
+$news->name_ru = $data['name_ru'];
+$news->name_en = $data['name_en'];
  
 // create the product
 if($news->create()){

@@ -7,7 +7,7 @@ angular.module('app').factory ('appFactory', ['$http', function ($http) {
       //console.log(`Hey! Our Id is ${id}`);
         return $http({
             method: 'GET',
-            url: '/objects/news/read_one.php/' + language + '/' + id
+            url: '/objects/news/read_one.php?language=' + language + '&id=' + id
         }).then(function successCallback(response) {
             return response.data;
         }, function errorCallback(response) {
@@ -18,7 +18,7 @@ angular.module('app').factory ('appFactory', ['$http', function ($http) {
       console.log(`What language is it ${language}`);
       let news = $http({
             method: 'GET',
-            url: '/objects/news/read.php/' + language
+            url: '/objects/news/read.php?language=' + language
         }).then(function successCallback(response) {         
             return response.data;
         }, function errorCallback(response) {
@@ -29,7 +29,7 @@ angular.module('app').factory ('appFactory', ['$http', function ($http) {
   fact.getLastNews = function (language){
       let lastNews = $http({
             method: 'GET',
-            url: '/objects/news/read_last.php/' + language
+            url: '/objects/news/read_last.php?language=' + language
         }).then(function successCallback(response) {
             return response.data;
         }, function errorCallback(response) {

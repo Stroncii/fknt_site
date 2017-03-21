@@ -12,7 +12,6 @@ $news = new News($db);
  
 // get id of product to be edited
 $data = json_decode(file_get_contents("php://input"));     
- 
 // set ID property of product to be edited
 $news->id = $data->id;
  

@@ -19,13 +19,15 @@ angular.module('app')
 
   $scope.updateNewsItem = (id) => {
     appFactory.getFullNews(id).then(function(data) {
-        
-        console.log(data);
+        console.log(data)
+        $scope.fullNews = data;
     });
   };
 
   $scope.deleteNewsItem = (id) => {
-    console.log('DELETE EPTA ' + id);
+     appFactory.deleteItem(id).then(function(data){
+         console.log('deleted');
+     })
   };
 
 

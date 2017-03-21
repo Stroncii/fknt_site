@@ -28,6 +28,20 @@ angular.module('app').factory ('appFactory', ['$http', function ($http) {
     return news;
   };
 
+  fact.deleteItem = function (id) {
+    let news = $http({
+            method: 'DELETE',
+            url: '/objects/news/delete.php',
+            data: JSON.stringify({
+                id: id
+            })
+        }).then(function successCallback(response) {       
+            return response.data;
+        }, function errorCallback(response) {
+        });
+    return news;
+  };
+
   fact.getNews = function (language) {
       console.log(`What language is it ${language}`);
       let news = $http({

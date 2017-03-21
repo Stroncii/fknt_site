@@ -193,19 +193,19 @@ if(!execute_query($query,$db)){
   $success = false;
 }
 
-if(!create_user(array('name_uk'=>'Комп\'ютерна iнженерiя','name_ru'=>'Компьютерная инженерия','name_en'=>'Computer engineering'),$db,'departments')){
+if(!create_department(array('name_uk'=>'Комп\'ютерна iнженерiя','name_ru'=>'Компьютерная инженерия','name_en'=>'Computer engineering'),$db)){
   $success = false;
 }
-if(!create_user(array('name_uk'=>'Комп\'ютерні науки','name_ru'=>'Компьютерные науки','name_en'=>'Computer sciences'),$db,'departments')){
+if(!create_department(array('name_uk'=>'Комп\'ютерні науки','name_ru'=>'Компьютерные науки','name_en'=>'Computer sciences'),$db)){
   $success = false;
 }
-if(!create_user(array('name_uk'=>'Прикладна математика та інформатика','name_ru'=>'Прикладная математика и информатика','name_en'=>'Applied Mathematics and Informatics'),$db,'departments')){
+if(!create_department(array('name_uk'=>'Прикладна математика та інформатика','name_ru'=>'Прикладная математика и информатика','name_en'=>'Applied Mathematics and Informatics'),$db)){
   $success = false;
 }
-if(!create_user(array('name_uk'=>'Філософія','name_ru'=>'Философия','name_en'=>'Philosophy'),$db,'departments')){
+if(!create_department(array('name_uk'=>'Філософія','name_ru'=>'Философия','name_en'=>'Philosophy'),$db)){
   $success = false;
 }
-if(!create_user(array('name_uk'=>'Викладачі','name_ru'=>'Преподаватели','name_en'=>'Teachers'),$db,'departments')){
+if(!create_department(array('name_uk'=>'Викладачі','name_ru'=>'Преподаватели','name_en'=>'Teachers'),$db)){
   $success = false;
 }
 

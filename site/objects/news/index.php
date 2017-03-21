@@ -1,6 +1,6 @@
 <?php
 
-	header("location: /#!/news");
+	header("location: /news");
 
 
 ?>

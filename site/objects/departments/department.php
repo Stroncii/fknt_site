@@ -48,11 +48,11 @@ function create(){
         return false;
     }
 }
-	function readAll($lang){
+	function read(){
 	 
 	    // select all query
 	    $query = "SELECT
-	                id, title_".$lang.", short_text_".$lang.", full_text_".$lang.", images_nums
+	                id, name_uk,name_ru,name_en
 	            FROM
 	                " . $this->table_name . "
 	            ORDER BY
@@ -61,43 +61,6 @@ function create(){
 	    // prepare query statement
 	    $stmt = $this->conn->prepare( $query );
 	 
-	    // execute query
-	    $stmt->execute();
-	 
-	    return $stmt;
-	}
-	function readLast($lang){
-	 
-	    // select all query
-	    $query = "SELECT
-	                id, title_".$lang.", short_text_".$lang.", full_text_".$lang.", images_nums
-	            FROM
-	                " . $this->table_name . "
-	            ORDER BY
-	                id DESC
-	            LIMIT 0,4";
-	 
-	    // prepare query statement
-	    $stmt = $this->conn->prepare( $query );
-	 
-	    // execute query
-	    $stmt->execute();
-	 
-	    return $stmt;
-	}
-	function readOne($lang,$id){
-	 
-	    // select all query
-	    $query = "SELECT
-	                id, title_".$lang.", short_text_".$lang.", full_text_".$lang.", images_nums
-	            FROM
-	                " . $this->table_name . "
-	            WHERE 
-                	id = ".$id."";
-	 
-	    // prepare query statement
-	    $stmt = $this->conn->prepare( $query );
-    
 	    // execute query
 	    $stmt->execute();
 	 

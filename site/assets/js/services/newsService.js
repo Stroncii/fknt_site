@@ -11,8 +11,24 @@ angular.module('app').factory ('appFactory', ['$http', function ($http) {
         }).then(function successCallback(response) {
             return response.data;
         }, function errorCallback(response) {
-        });;
+        });
   }
+
+  fact.getFullNews = function (id) {
+      let news = $http({
+            method: 'GET',
+            url: '/objects/news/read_full.php?id=' + id
+        }).then(function successCallback(response) { 
+            console.log(`What does we have here? Id is ${id}`);
+            console.log(response);
+            console.log(response.data);  
+            return response.data;
+        }, function errorCallback(response) {
+            console.log('ERROR!');
+            console.log(response);
+        });
+    return news;
+  };
 
   fact.getNews = function (language) {
       console.log(`What language is it ${language}`);

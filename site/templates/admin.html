@@ -23,25 +23,39 @@
                         <div class="tab-content">
                             <div role="tabpanel" id="news" class="tab-pane fade in active">
                                 <h3>News</h3>
-                                <div text-angular ta-text-editor-class="form-content border-around clearfix" ta-html-editor-class="clearfix form-content border-around" ta-focussed-class="focussed" ng-model="htmlVariable"></div>
-                                <button class="btn btn-default">Добавить новость</button>
+                                <form action="">
+                                        <label >
+                                            <input type="radio" name="options" ng-model="lang" ng-change="changeLanguage()" value="uk" > Ukr
+                                        </label>
+                                        <label >
+                                            <input type="radio" name="options" ng-model="lang" value="ru"  ng-change="changeLanguage()" > Rus
+                                        </label>
+                                        <label >
+                                            <input type="radio" name="options" ng-model="lang" value="en" ng-change="changeLanguage()"> Eng
+                                        </label>
+                                    </div>
+                                    <div text-angular ta-text-editor-class="form-content border-around clearfix" ta-html-editor-class="clearfix form-content border-around" ta-focussed-class="focussed" ng-model="htmlVariable"></div>
+                                    <button class="btn btn-default">Добавить часть новости</button>
+                                    <button class="btn btn-default">Отмена</button>
+                                    <button class="btn">Добавить новость</button>
 
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <td>Заголовок</td>
-                                            <td>Изменить</td>
-                                            <td>Удалить</td>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr ng-repeat="item in allNews">
-                                            <td> {{ item.title }}</td>
-                                            <td><button ng-click="updateNewsItem(item.id)" class="btn btn-warning">Изменить</button></td>
-                                            <td><button ng-click="deleteNewsItem(item.id)" class="btn btn-danger">Удалить</button></td>                                        
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <td>Заголовок</td>
+                                                <td>Изменить</td>
+                                                <td>Удалить</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr ng-repeat="item in allNews">
+                                                <td> {{ item.title }}</td>
+                                                <td><button ng-click="updateNewsItem(item.id)" class="btn btn-warning">Изменить</button></td>
+                                                <td><button ng-click="deleteNewsItem(item.id)" class="btn btn-danger">Удалить</button></td>                                        
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </form>
                             </div>
                             
 

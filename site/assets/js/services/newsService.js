@@ -19,9 +19,7 @@ angular.module('app').factory ('appFactory', ['$http', function ($http) {
             method: 'GET',
             url: '/objects/news/read_full.php?id=' + id
         }).then(function successCallback(response) { 
-            console.log(`What does we have here? Id is ${id}`);
-            console.log(response);
-            console.log(response.data);  
+            console.log(`What does we have here? Id is ${id}`); 
             return response.data;
         }, function errorCallback(response) {
             console.log('ERROR!');

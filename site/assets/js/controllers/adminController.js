@@ -14,7 +14,7 @@ angular.module('app')
   };
 
   $scope.changeLanguage = function () {
-    console.log('change langggg');
+    console.log('change langggg ' + $scope.lang);
   };
 
   $scope.updateNewsItem = (id) => {

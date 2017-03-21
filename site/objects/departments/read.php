@@ -5,7 +5,7 @@ header("Cache-control: public");
 header("Expires: " . gmdate("D, d M Y H:i:s", time() + 14*60*60*24) . " GMT"); 
 // include database and object files
 include_once '../../config/database.php';
-include_once 'news.php';
+include_once 'department.php';
 
 
 // instantiate database and product object
@@ -13,10 +13,9 @@ $database = new Database();
 $db = $database->getConnection();
 
 // initialize object
-$news = new News($db);
-$lang = substr($_SERVER['PHP_SELF'],strpos($_SERVER['PHP_SELF'],'read')+9); 
+$deps = new Department($db);
 // query products
-$stmt = $news->readAll($lang);
+$stmt = $deps->read();
 $num = $stmt->rowCount();
  
 $data="";
@@ -38,11 +37,9 @@ if($num>0){
         
         $data .= '{';
             $data .= '"id":"'  . $row['id'] . '",';
-            $data .= '"title":"'   . $row['title_'.$lang] . '",';
-            $data .= '"synopsis":"'   . $row['short_text_'.$lang] . '",';
-            $data .= '"content":"' . $row['full_text_'.$lang] . '",';
-            $data .= '"cover":"/assets/img/news/covers/' . $row['id'] . '.jpg",';
-            $data .= '"full_cover":"/assets/img/news/covers/' . $row['id'] . '_full.jpg"';
+            $data .= '"name_uk":"'   . $row['name_uk'] . '",';
+            $data .= '"name_ru":"'   . $row['name_ru'] . '",';
+            $data .= '"name_en":"'   . $row['name_en'] . '"';
         $data .= '}';
  
         $data .= $x<$num ? ',' : '';
@@ -52,5 +49,5 @@ if($num>0){
 }
  
 // json format output
-echo '{"news":[' . $data . ']}';
+echo '{"departments":[' . $data . ']}';
 ?>

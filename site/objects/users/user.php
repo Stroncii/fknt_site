@@ -1,14 +1,15 @@
 <?php 
-class Department{ 
+class User{ 
     // database connection and table name 
     private $conn; 
-    private $table_name = "departments"; 
+    private $table_name = "users"; 
  
     // object properties 
     public $id;
-    public $name_uk;
-    public $name_ru;
-    public $name_en;
+    public $username;
+    public $email;
+    public $level;
+    public $password;
  
     // constructor with $db as database connection 
     public function __construct($db){ 
@@ -22,20 +23,22 @@ function create(){
     $query = "INSERT INTO 
                 " . $this->table_name . "
             SET 
-                name_uk=:name_uk, name_ru=:name_ru, name_en=:name_en";
+                username=:username, email=:email, level=:level, password=:password";
      
     // prepare query
     $stmt = $this->conn->prepare($query);
  
     // posted values
-    $this->name_uk=htmlspecialchars(strip_tags($this->name_uk));
-    $this->name_ru=htmlspecialchars(strip_tags($this->name_ru));
-    $this->name_en=htmlspecialchars(strip_tags($this->name_en));
+    $this->username=htmlspecialchars(strip_tags($this->username));
+    $this->email=htmlspecialchars(strip_tags($this->email));
+    $this->level=htmlspecialchars(strip_tags($this->level));
+    $this->password=htmlspecialchars(strip_tags($this->password));
  
     // bind values
-    $stmt->bindParam(":name_uk", $this->name_uk);
-    $stmt->bindParam(":name_ru", $this->name_ru);
-    $stmt->bindParam(":name_en", $this->name_en);
+    $stmt->bindParam(":username", $this->username);
+    $stmt->bindParam(":email", $this->email);
+    $stmt->bindParam(":level", $this->level);
+    $stmt->bindParam(":password", $this->password);
      
     // execute query
     if($stmt->execute()){
@@ -52,7 +55,7 @@ function create(){
 	 
 	    // select all query
 	    $query = "SELECT
-	                id, name_uk,name_ru,name_en
+	                id, username, email, level
 	            FROM
 	                " . $this->table_name . "
 	            ORDER BY
@@ -72,7 +75,7 @@ function create(){
     $query = "UPDATE
                 " . $this->table_name . "
             SET
-                name_uk=:name_uk, name_ru=:name_ru, name_en=:name_en
+                username=:username, email=:email, level=:level, password=:password
             WHERE
                 id = :id";
  
@@ -80,14 +83,17 @@ function create(){
     $stmt = $this->conn->prepare($query);
  
     // sanitize
-    $this->name_uk=htmlspecialchars(strip_tags($this->name_uk));
-    $this->name_ru=htmlspecialchars(strip_tags($this->name_ru));
-    $this->name_en=htmlspecialchars(strip_tags($this->name_en));
+    $this->username=htmlspecialchars(strip_tags($this->username));
+    $this->email=htmlspecialchars(strip_tags($this->email));
+    $this->level=htmlspecialchars(strip_tags($this->level));
+    $this->password=htmlspecialchars(strip_tags($this->password));
+    $this->id=htmlspecialchars(strip_tags($this->id));
  
     // bind new values
-    $stmt->bindParam(":name_uk", $this->name_uk);
-    $stmt->bindParam(":name_ru", $this->name_ru);
-    $stmt->bindParam(":name_en", $this->name_en);
+    $stmt->bindParam(":username", $this->username);
+    $stmt->bindParam(":email", $this->email);
+    $stmt->bindParam(":level", $this->level);
+    $stmt->bindParam(":password", $this->password);
     $stmt->bindParam(':id', $this->id);
  
     // execute the query

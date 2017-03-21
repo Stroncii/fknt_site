@@ -425,6 +425,12 @@ a[data-target], ul.nav li {
 }
 
 .ta-text{
+  width:100%;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+}
+.ta-editor.ta-html{
+  width:100%;
   border: 1px solid #aaa;
   border-radius: 5px;
 }

@@ -26,18 +26,34 @@
                                 <div text-angular ta-text-editor-class="form-content border-around clearfix" ta-html-editor-class="clearfix form-content border-around" ta-focussed-class="focussed" ng-model="htmlVariable"></div>
                                 <button class="btn btn-default">Добавить новость</button>
 
-                                <table>
-                                    <tr ng-repeat="item in allNews">
-                                        <td> {{ item.title }}</td>
-                                    </tr>
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <td>Заголовок</td>
+                                            <td>Изменить</td>
+                                            <td>Удалить</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="item in allNews">
+                                            <td> {{ item.title }}</td>
+                                            <td><button ng-click="updateNewsItem(item.id)" class="btn btn-warning">Изменить</button></td>
+                                            <td><button ng-click="deleteNewsItem(item.id)" class="btn btn-danger">Удалить</button></td>                                        
+                                        </tr>
+                                    </tbody>
                                 </table>
                             </div>
+                            
 
+                            <!--ПОЛЬЗОВАТЕЛИ!-->
                             <div role="tabpanel" id="users" class="tab-pane fade">
                                 <h3>Users</h3>
                                 <p>Some content in menu 1.</p>
                             </div>
 
+
+
+                            <!--ГРУППЫ!-->
                             <div role="tabpanel" id="groups" class="tab-pane fade">
                                 <h3>Groups</h3>
                                 <p>Some content in groups.</p>

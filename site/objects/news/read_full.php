@@ -43,11 +43,8 @@ if($num>0){
                 $lang_info .= '"title":"'   . $row['title_'.$lang] . '",';
                 $lang_info .= '"synopsis":"'   . $row['short_text_'.$lang] . '",';
                 $lang_info .= '"content":"' . $row['full_text_'.$lang] . '"}';
-                $data .= '"'.$lang.'":"'  . $lang_info . '",';
+                $data .= '"'.$lang.'":'  . $lang_info . ',';
             }
-            $data .= '"title":"'   . $row['title_'.$lang] . '",';
-            $data .= '"synopsis":"'   . $row['short_text_'.$lang] . '",';
-            $data .= '"content":"' . $row['full_text_'.$lang] . '",';
 
             $data .= '"images":[';
             $l = 1;

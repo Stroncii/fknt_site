@@ -15,8 +15,8 @@ $news = new News($db);
 //$params = explode('/',substr($_SERVER['PHP_SELF'],strpos($_SERVER['PHP_SELF'],'read_one')+13));
 
 // query products
-$lang = $_GET['language']; 
-$id = $_GET['id']; 
+$lang = htmlspecialchars(strip_tags($_GET['language']));  
+$id = htmlspecialchars(strip_tags($_GET['id'])); 
 $stmt = $news->readOne($lang,$id);
 $num = $stmt->rowCount();
  

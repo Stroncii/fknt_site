@@ -13,7 +13,7 @@ $db = $database->getConnection();
 // initialize object
 $news = new News($db);
 
-$id = $_GET['id']; 
+$id = htmlspecialchars(strip_tags($_GET['id']));  
 
 // query products 
 $stmt = $news->readAllLang($id);

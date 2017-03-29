@@ -1,8 +1,8 @@
 <?php
 header("Access-Control-Allow-Origin: *");
-/*header("Content-Type: application/json; charset=UTF-8");
+header("Content-Type: application/json; charset=UTF-8");
 header("Cache-control: public");
-header("Expires: " . gmdate("D, d M Y H:i:s", time() + 14*60*60*24) . " GMT"); */
+header("Expires: " . gmdate("D, d M Y H:i:s", time() + 14*60*60*24) . " GMT"); 
 // include database and object files
 include_once '../../config/database.php';
 include_once 'plan.php';

@@ -23,26 +23,33 @@
                         <div class="tab-content">
                             <div role="tabpanel" id="news" class="tab-pane fade in active">
                                 <h3>News</h3>
-                                <form>
-                                        <label><input type="radio" name="options" ng-model="lang" ng-change="changeLanguage()" value="uk" > Ukr
+                                        <label >
+                                            <input type="radio" name="type" ng-model="mode" value="add" ng-disabled="isEditable"  ng-change="changeType()" > Add
                                         </label>
                                         <label >
-                                            <input type="radio" name="options" ng-model="lang" value="ru"  ng-change="changeLanguage()" > Rus
+                                            <input type="radio" name="type" ng-model="mode" value="edit" ng-disabled="isEditable" ng-change="changeType()"> Edit
+                                        </label>
+                                    <form>
+                                        <label><input type="radio" name="options" ng-model="lang" ng-disabled="isEditable" ng-change="changeLanguage()" value="uk" > Ukr
                                         </label>
                                         <label >
-                                            <input type="radio" name="options" ng-model="lang" value="en" ng-change="changeLanguage()"> Eng
+                                            <input type="radio" name="options" ng-model="lang" value="ru" ng-disabled="isEditable"  ng-change="changeLanguage()" > Rus
+                                        </label>
+                                        <label >
+                                            <input type="radio" name="options" ng-model="lang" value="en" ng-disabled="isEditable" ng-change="changeLanguage()"> Eng
                                         </label>
                                         <div class="form-group col-lg-10">
                                             <label for="title">Титул:</label>
-                                                <input type="text" id="title" class="form-control " required ng-model="item.title">
+                                                <input type="text" id="title" class="form-control " ng-change="setEditableStatus(true)" ng-model="item.title">
                                             <label for="synopsis">Краткое описание:</label>
-                                                <input type="textarea" id="synopsis" maxlength="150" class="form-control" required ng-model="item.synopsis">
+                                                <input type="textarea" id="synopsis" maxlength="150" ng-change="setEditableStatus(true)" class="form-control" ng-model="item.synopsis">
                                         </div>
                                     <span class="label label-info pull-right">{{mode}}</span>
-                                    <div text-angular ta-text-editor-class="form-content border-around clearfix" ta-html-editor-class="clearfix form-content border-around" ta-focussed-class="focussed" ng-model="item.content"></div>
+                                    <div text-angular ta-text-editor-class="form-content border-around clearfix" ng-change="setEditableStatus(true)" ta-html-editor-class="clearfix form-content border-around" ta-focussed-class="focussed" ng-model="item.content"></div>
                                     <button class="btn btn-default" ng-click="addPart()">Добавить часть новости</button>
                                     <button class="btn btn-danger" ng-click="cancel()">Отмена</button>
-                                    <button class="btn btn-success" ng-click="addNews()">Добавить новость</button>
+                                    <button ng-show="mode === 'add'" class="btn btn-success" ng-click="addNews()">Добавить новость</button>
+                                    <button ng-show="mode === 'edit'" class="btn btn-success" ng-click="update()">Обновить новость</button>                                    
                                     <table ng-if="mode === 'edit'" class="table">
                                         <thead>
                                             <tr>
@@ -54,7 +61,7 @@
                                         <tbody>
                                             <tr ng-repeat="item in allNews">
                                                 <td> {{ item.title }}</td>
-                                                <td><button ng-click="updateNewsItem(item.id)" class="btn btn-warning">Изменить</button></td>
+                                                <td><button ng-click="updateNewsItem(item.id)" ng-disabled="isEditable" class="btn btn-warning">Изменить</button></td>
                                                 <td><button ng-click="deleteNewsItem(item.id)" class="btn btn-danger">Удалить</button></td>                                        
                                             </tr>
                                         </tbody>

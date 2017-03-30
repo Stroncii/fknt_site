@@ -35,6 +35,7 @@ angular.module('app')
             synopsis: '',
             title: ''
         },
+        images_nums: '1'
     }
 
     }
@@ -43,15 +44,22 @@ angular.module('app')
     $scope.setEditableStatus = (status) => {
         $scope.isEditable = status;
     };
+
   $scope.changeLanguage = function () {
     $scope.item = $scope.currentItem[$scope.lang];
   };
 
   $scope.updateNewsItem = (id) => {
     appFactory.getFullNews(id).then(function(data) {
-        $scope.mode = 'edit';
         setEditable(data);
     });
+  };
+
+  $scope.update = () => {
+    appFactory.updateNews($scope.currentItem).then(function(data){
+         console.log('updated');
+         console.log(data);
+     })
   };
 
   $scope.deleteNewsItem = (id) => {
@@ -65,11 +73,10 @@ angular.module('app')
      setDefaults (item);
   };
 
-  function setDefaults () {
-     $scope.htmlVariable = $scope.currentItem[$scope.lang].content;
-     $scope.item.content = $scope.currentItem[$scope.lang].content;
-     $scope.item.title = $scope.currentItem[$scope.lang].title;
-     $scope.item.synopsis = $scope.currentItem[$scope.lang].synopsis;
+  function setDefaults () { 
+     console.log($scope.currentItem);
+     $scope.isEditable = false;
+     $scope.item = $scope.currentItem[$scope.lang];
   }
 
   $scope.cancel = function () {
@@ -82,14 +89,23 @@ angular.module('app')
 
   $scope.addPart = function () {
     $scope.currentItem[$scope.lang] = $scope.item;
+    $scope.setEditableStatus(false);
     console.log($scope.currentItem);
   };
+  
 
   $scope.addNews = function () {
       appFactory.addNewsItem($scope.currentItem).then(function(data){
-          console.log("yaaaa");
+            console.log("yaaaa");
+            $scope.setEditableStatus(false);
+            init();
       });
-  }
+  };
+
+  $scope.changeType = (state) => {
+    $scope.setEditableStatus(false);
+    init();
+  };
 
 
 

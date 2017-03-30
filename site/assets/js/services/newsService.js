@@ -44,6 +44,21 @@ angular.module('app').factory ('appFactory', ['$http', function ($http) {
     return news;
   };
 
+  fact.updateNews = function (item) {
+      console.log('add news');
+    let news = $http({
+            method: 'PUT',
+            url: '/objects/news/update.php',
+            data: JSON.stringify(item)
+        }).then(function successCallback(response) {
+            console.log(response);       
+            return response.data;
+        }, function errorCallback(response) {
+            console.log(response);
+        });
+    return news;
+  };
+
   fact.deleteItem = function (id) {
     let news = $http({
             method: 'DELETE',

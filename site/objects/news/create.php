@@ -11,8 +11,8 @@ $db = $database->getConnection();
 $news = new News($db);
  
 // get posted data
-$data = json_decode(file_get_contents("php://input"));
- 
+$data = json_decode(file_get_contents("php://input"),true);
+
 // set product property values
 $news->title_uk = $data['title_uk'];
 $news->title_ru = $data['title_ru'];

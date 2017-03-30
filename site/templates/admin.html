@@ -23,9 +23,8 @@
                         <div class="tab-content">
                             <div role="tabpanel" id="news" class="tab-pane fade in active">
                                 <h3>News</h3>
-                                <form action="">
-                                        <label >
-                                            <input type="radio" name="options" ng-model="lang" ng-change="changeLanguage()" value="uk" > Ukr
+                                <form>
+                                        <input type="radio" name="options" ng-model="lang" ng-change="changeLanguage()" value="uk" > Ukr
                                         </label>
                                         <label >
                                             <input type="radio" name="options" ng-model="lang" value="ru"  ng-change="changeLanguage()" > Rus
@@ -33,13 +32,18 @@
                                         <label >
                                             <input type="radio" name="options" ng-model="lang" value="en" ng-change="changeLanguage()"> Eng
                                         </label>
-                                    </div>
-                                    <div text-angular ta-text-editor-class="form-content border-around clearfix" ta-html-editor-class="clearfix form-content border-around" ta-focussed-class="focussed" ng-model="htmlVariable"></div>
-                                    <button class="btn btn-default">Добавить часть новости</button>
-                                    <button class="btn btn-danger">Отмена</button>
-                                    <button class="btn btn-success">Добавить новость</button>
-
-                                    <table class="table">
+                                        <div class="form-group col-lg-10">
+                                            <label for="title">Титул:</label>
+                                                <input type="text" id="title" class="form-control " ng-model="item.title">
+                                            <label for="synopsis">Краткое описание:</label>
+                                                <input type="textarea" id="synopsis" maxlength="150" class="form-control " ng-model="item.synopsis">
+                                        </div>
+                                    <span class="label label-info pull-right">{{mode}}</span>
+                                    <div text-angular ta-text-editor-class="form-content border-around clearfix" ta-html-editor-class="clearfix form-content border-around" ta-focussed-class="focussed" ng-model="item.content"></div>
+                                    <button class="btn btn-default" ng-click="addPart()">Добавить часть новости</button>
+                                    <button class="btn btn-danger" ng-click="cancel()">Отмена</button>
+                                    <button class="btn btn-success" ng-click="addNews()">Добавить новость</button>
+                                    <table ng-if="mode === 'edit'" class="table">
                                         <thead>
                                             <tr>
                                                 <td>Заголовок</td>

@@ -434,3 +434,13 @@ a[data-target], ul.nav li {
   border: 1px solid #aaa;
   border-radius: 5px;
 }
+
+  input[type="date"]:before {
+    content: attr(placeholder) !important;
+    color: #aaa;
+    margin-right: 0.5em;
+  }
+  input[type="date"]:focus:before,
+  input[type="date"]:valid:before {
+    content: "" !important;
+  }

@@ -20,10 +20,27 @@ angular.module('app').factory ('appFactory', ['$http', function ($http) {
             url: '/objects/news/read_full.php?id=' + id
         }).then(function successCallback(response) { 
             console.log(`What does we have here? Id is ${id}`); 
+            console.log(response)
             return response.data;
         }, function errorCallback(response) {
             console.log('ERROR!');
             console.log(response);
+        });
+    return news;
+  };
+
+  fact.addNewsItem = function (item) {
+      console.log('add news');
+    let news = $http({
+            method: 'POST',
+            url: '/objects/news/add.php',
+            data: JSON.stringify({
+                item: item
+            })
+        }).then(function successCallback(response) {
+            console.log(response);       
+            return response.data;
+        }, function errorCallback(response) {
         });
     return news;
   };

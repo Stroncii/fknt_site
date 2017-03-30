@@ -11,7 +11,7 @@ $db = $database->getConnection();
 $plan = new Plan($db);
  
 // get posted data
-$data = json_decode(file_get_contents("php://input"));
+$data = json_decode(file_get_contents("php://input"),true);
  
 // set product property values
 $plan->group_title = $data['group_title'];

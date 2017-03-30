@@ -11,7 +11,7 @@ $db = $database->getConnection();
 $dep = new Department($db);
  
 // get posted data
-$data = json_decode(file_get_contents("php://input"));
+$data = json_decode(file_get_contents("php://input"),true);
  
 // set product property values
 $dep->name_uk = $data['name_uk'];

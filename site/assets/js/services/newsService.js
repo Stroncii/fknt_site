@@ -33,14 +33,15 @@ angular.module('app').factory ('appFactory', ['$http', function ($http) {
       console.log('add news');
     let news = $http({
             method: 'POST',
-            url: '/objects/news/add.php',
+            url: '/objects/news/create.php',
             data: JSON.stringify({
-                item: item
+                item
             })
         }).then(function successCallback(response) {
             console.log(response);       
             return response.data;
         }, function errorCallback(response) {
+            console.log(response);
         });
     return news;
   };

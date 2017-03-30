@@ -34,9 +34,7 @@ angular.module('app').factory ('appFactory', ['$http', function ($http) {
     let news = $http({
             method: 'POST',
             url: '/objects/news/create.php',
-            data: JSON.stringify({
-                item
-            })
+            data: JSON.stringify(item)
         }).then(function successCallback(response) {
             console.log(response);       
             return response.data;

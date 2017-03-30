@@ -109,6 +109,10 @@ h1.title{
   margin:0 auto;
   display: block;
 }
+.lead-news p>a{
+  text-decoration: underline;
+  color: #fff;
+}
 .timeline {
   list-style: none;
   padding: 20px 0 20px;

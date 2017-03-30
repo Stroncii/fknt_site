@@ -14,11 +14,21 @@ $db = $database->getConnection();
 
 // initialize object
 $plan = new Plan($db);
-$lang = substr($_SERVER['PHP_SELF'],strpos($_SERVER['PHP_SELF'],'read')+9); 
+$department = new Department($db);
 // query products
-$stmt = $news->readAll($lang);
-$num = $stmt->rowCount();
- 
+$deps = $department->read();
+//$dep = $deps->fetch(PDO::FETCH_ASSOC);
+//$stmt = $plan->read();
+$num = $deps->rowCount();
+$stmt = $plan->read();
+$p_num = $stmt->rowCount();
+if($p_num>0){
+    $plan_info = [];
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+        extract($row);
+        array_push($plan_info,$row);
+    }
+}
 $data="";
  
 // check if more than 0 record found
@@ -30,20 +40,38 @@ if($num>0){
     // retrieve our table contents
     // fetch() is faster than fetchAll()
     // http://stackoverflow.com/questions/2770630/pdofetchall-vs-pdofetch-in-a-loop
-    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+    while ($row = $deps->fetch(PDO::FETCH_ASSOC)){
         // extract row
         // this will make $row['name'] to
         // just $name only
         extract($row);
-        
-        $data .= '{';
-            $data .= '"id":"'  . $row['id'] . '",';
-            $data .= '"title":"'   . $row['title_'.$lang] . '",';
-            $data .= '"synopsis":"'   . $row['short_text_'.$lang] . '",';
-            $data .= '"content":"' . $row['full_text_'.$lang] . '",';
-            $data .= '"cover":"/assets/img/news/covers/' . $row['id'] . '.jpg",';
-            $data .= '"full_cover":"/assets/img/news/covers/' . $row['id'] . '_full.jpg"';
-        $data .= '}';
+        //$dep_data = 
+        $data .= '{ "tabname":{';
+        $data .= '"uk":"'.$row['name_uk'].'",';
+        $data .= '"ru":"'.$row['name_ru'].'",';
+        $data .= '"en":"'.$row['name_en'].'"';
+        $data .= '},';
+        $data .= '"pills":[';
+        $y=1;
+        $first = true;
+        foreach ($plan_info as $pi) {
+            if ($pi['department_id']==$row['id']) {
+                $data .= !$first ? ',' : '';
+                $data .= '{';
+                $data .= '"group_title":"'  . $pi['group_title'] . '",';
+                $data .= '"pdf_url":"'   . $pi['pdf_url'] . '"';
+                $data .= '}';
+                $first = false;
+            }
+            $y++;
+        }
+
+        $data .= ']}';
+        /*$data .= '{';
+            $data .= '"group_title":"'  . $row['group_title'] . '",';
+            $data .= '"pdf_url":"'   . $row['pdf_url'] . '",';
+            $data .= '"department_id":"'   . $row['department_id'] . '"';
+        $data .= '}';*/
  
         $data .= $x<$num ? ',' : '';
  
@@ -52,5 +80,5 @@ if($num>0){
 }
  
 // json format output
-echo '{"news":[' . $data . ']}';
+echo '[' . $data . ']';
 ?>

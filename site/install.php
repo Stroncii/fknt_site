@@ -286,10 +286,10 @@ if(!create_group(array('group_title'=>'КИзм-16б','pdf_url'=>'assets/pdf/pla
 if(!create_group(array('group_title'=>'КИзп-16','pdf_url'=>'assets/pdf/plans/kizp16.pdf','department_id'=>1),$db,'plans')){
   $success = false;
 }
-if(!create_group(array('group_title'=>'КИзс16а"','pdf_url'=>'assets/pdf/plans/kizs16a.pdf','department_id'=>1),$db,'plans')){
+if(!create_group(array('group_title'=>'КИзс16а','pdf_url'=>'assets/pdf/plans/kizs16a.pdf','department_id'=>1),$db,'plans')){
   $success = false;
 }
-if(!create_group(array('group_title'=>'КИзс16б"','pdf_url'=>'assets/pdf/plans/kizs16b.pdf','department_id'=>1),$db,'plans')){
+if(!create_group(array('group_title'=>'КИзс16б','pdf_url'=>'assets/pdf/plans/kizs16b.pdf','department_id'=>1),$db,'plans')){
   $success = false;
 }
 if(!create_group(array('group_title'=>'КСз-12','pdf_url'=>'assets/pdf/plans/ksz12.pdf','department_id'=>1),$db,'plans')){
@@ -409,55 +409,55 @@ if(!create_group(array('group_title'=>'МІКм-16а','pdf_url'=>'assets/pdf/sch
 }
 
 
-if(!create_department(array('group_title'=>'КН-16','pdf_url'=>'assets/pdf/schedule/kn16.pdf','department_id'=>2),$db,'schedules')){
+if(!create_group(array('group_title'=>'КН-16','pdf_url'=>'assets/pdf/schedule/kn16.pdf','department_id'=>2),$db,'schedules')){
   $success = false;
 }
-if(!create_department(array('group_title'=>'КН-15','pdf_url'=>'assets/pdf/schedule/kn15.pdf','department_id'=>2),$db,'schedules')){
+if(!create_group(array('group_title'=>'КН-15','pdf_url'=>'assets/pdf/schedule/kn15.pdf','department_id'=>2),$db,'schedules')){
   $success = false;
 }
-if(!create_department(array('group_title'=>'КН-14','pdf_url'=>'assets/pdf/schedule/kn14.pdf','department_id'=>2),$db,'schedules')){
+if(!create_group(array('group_title'=>'КН-14','pdf_url'=>'assets/pdf/schedule/kn14.pdf','department_id'=>2),$db,'schedules')){
   $success = false;
 }
-if(!create_department(array('group_title'=>'КН-13а','pdf_url'=>'assets/pdf/schedule/kn13a.pdf','department_id'=>2),$db,'schedules')){
+if(!create_group(array('group_title'=>'КН-13а','pdf_url'=>'assets/pdf/schedule/kn13a.pdf','department_id'=>2),$db,'schedules')){
   $success = false;
 }
-if(!create_department(array('group_title'=>'КН-13б','pdf_url'=>'assets/pdf/schedule/kn13b.pdf','department_id'=>2),$db,'schedules')){
+if(!create_group(array('group_title'=>'КН-13б','pdf_url'=>'assets/pdf/schedule/kn13b.pdf','department_id'=>2),$db,'schedules')){
   $success = false;
 }
-if(!create_department(array('group_title'=>'КНм-16','pdf_url'=>'assets/pdf/schedule/knm16.pdf','department_id'=>2),$db,'schedules')){
-  $success = false;
-}
-
-if(!create_department(array('group_title'=>'ИПЗ-16','pdf_url'=>'assets/pdf/schedule/ipz16.pdf','department_id'=>3),$db,'schedules')){
-  $success = false;
-}
-if(!create_department(array('group_title'=>'ПИ-15','pdf_url'=>'assets/pdf/schedule/pi15.pdf','department_id'=>3),$db,'schedules')){
-  $success = false;
-}
-if(!create_department(array('group_title'=>'ПИ-14','pdf_url'=>'assets/pdf/schedule/pi14.pdf','department_id'=>3),$db,'schedules')){
-  $success = false;
-}
-if(!create_department(array('group_title'=>'ИПЗ-13','pdf_url'=>'assets/pdf/schedule/ipz13.pdf','department_id'=>3),$db,'schedules')){
-  $success = false;
-}
-if(!create_department(array('group_title'=>'ПЗС-13','pdf_url'=>'assets/pdf/schedule/pzs13.pdf','department_id'=>3),$db,'schedules')){
-  $success = false;
-}
-if(!create_department(array('group_title'=>'ИПЗм-16','pdf_url'=>'assets/pdf/schedule/ipzm16.pdf','department_id'=>3),$db,'schedules')){
+if(!create_group(array('group_title'=>'КНм-16','pdf_url'=>'assets/pdf/schedule/knm16.pdf','department_id'=>2),$db,'schedules')){
   $success = false;
 }
 
-if(!create_department(array('group_title'=>'ФИЛ-16','pdf_url'=>'assets/pdf/schedule/fil16.pdf','department_id'=>4),$db,'schedules')){
+if(!create_group(array('group_title'=>'ИПЗ-16','pdf_url'=>'assets/pdf/schedule/ipz16.pdf','department_id'=>3),$db,'schedules')){
   $success = false;
 }
-if(!create_department(array('group_title'=>'ФИР-15','pdf_url'=>'assets/pdf/schedule/fir15.pdf','department_id'=>4),$db,'schedules')){
+if(!create_group(array('group_title'=>'ПИ-15','pdf_url'=>'assets/pdf/schedule/pi15.pdf','department_id'=>3),$db,'schedules')){
   $success = false;
 }
-if(!create_department(array('group_title'=>'РЕЛм-16','pdf_url'=>'assets/pdf/schedule/relm16.pdf','department_id'=>4),$db,'schedules')){
+if(!create_group(array('group_title'=>'ПИ-14','pdf_url'=>'assets/pdf/schedule/pi14.pdf','department_id'=>3),$db,'schedules')){
+  $success = false;
+}
+if(!create_group(array('group_title'=>'ИПЗ-13','pdf_url'=>'assets/pdf/schedule/ipz13.pdf','department_id'=>3),$db,'schedules')){
+  $success = false;
+}
+if(!create_group(array('group_title'=>'ПЗС-13','pdf_url'=>'assets/pdf/schedule/pzs13.pdf','department_id'=>3),$db,'schedules')){
+  $success = false;
+}
+if(!create_group(array('group_title'=>'ИПЗм-16','pdf_url'=>'assets/pdf/schedule/ipzm16.pdf','department_id'=>3),$db,'schedules')){
   $success = false;
 }
 
-if(!create_department(array('group_title'=>'*','pdf_url'=>'assets/pdf/schedule/teacher-schedule.pdf','department_id'=>5),$db,'schedules')){
+if(!create_group(array('group_title'=>'ФИЛ-16','pdf_url'=>'assets/pdf/schedule/fil16.pdf','department_id'=>4),$db,'schedules')){
+  $success = false;
+}
+if(!create_group(array('group_title'=>'ФИР-15','pdf_url'=>'assets/pdf/schedule/fir15.pdf','department_id'=>4),$db,'schedules')){
+  $success = false;
+}
+if(!create_group(array('group_title'=>'РЕЛм-16','pdf_url'=>'assets/pdf/schedule/relm16.pdf','department_id'=>4),$db,'schedules')){
+  $success = false;
+}
+
+if(!create_group(array('group_title'=>'*','pdf_url'=>'assets/pdf/schedule/teacher-schedule.pdf','department_id'=>5),$db,'schedules')){
   $success = false;
 }
 
@@ -577,18 +577,46 @@ if(!create_news(array(
 	$success = false;
 }
 
-if(!create_news(array( 'title_uk'=>'ШАНОВНІ АБІТУРІЄНТИ ТА БАТЬКИ!','title_ru'=>'УВАЖАЕМЫЕ АБИТУРИЕНТЫ И РОДИТЕЛИ!','title_en'=>'DEAR ENROLLEES AND PARENTS!', 'full_text_uk'=>'<p>ДВНЗ &quot;Донецький національний технічний університет&quot; (м.&nbsp;Покровськ) ЗАПРОШУЄ вас відвідати ДЕНЬ ВІДКРИТИХ ДВЕРЕЙ, який відбудеться 25 БЕРЕЗНЯ 2017&nbsp;р. о 13.00. У програмі: </p><ul><li>роз\'яснення щодо вступної кампанії-2017;</li><li>презентація Університету (Університет очима студентів, можливості, які відкриває ДонНТУ та ін.); </li><li>презентація заходів під назвою &quot;Сучасна наука в дії&quot;; </li><li>підведення підсумків та нагородження учасників Всеукраїнської олімпіади&nbsp;-&nbsp;2017. </li></ul></p><p>АДРЕСА ПРОВЕДЕННЯ І КОНТАКТИ: м.&nbsp;Покровськ (Красноармійськ), пл.&nbsp;Шибанкова,&nbsp;2, тел.: (06239)2-51-99, 066-185-74-31, 093-049-69-89</p><p>Зустрічаємо в холі 1-го корпусу. </p><p>ЧЕКАЄМО НА ВАС!</p>',
-	'full_text_ru'=>'<p>ГВУЗ &quot;Донецкий национальный технический университет&quot; (г.&nbsp;Покровск) ПРИГЛАШАЕТ вас посетить ДЕНЬ ОТКРЫТЫХ ДВЕРЕЙ, который будет проводиться 25 МАРТА 2017&nbsp;г. в 13.00. В программе: </p><ul><li>разъяснения по вступительной кампании-2017;</li><li>презентация Университета (Университет глазами студентов, возможности, которые открывает ДонНТУ и др.); </li><li>презентация мероприятий под названием &quot;Современная наука в действии&quot; </li><li>подведение итогов и награждение участников Всеукраинской олимпиады - 2017. </li></ul></p><p>АДРЕС ПРОВЕДЕНИЯ И КОНТАКТЫ: г.&nbsp;Покровск (Красноармейск), пл.&nbsp;Шибанкова,&nbsp;2, тел.: (06239)2-51-99, 066-185-74-31, 093-049-69-89</p><p>Встречаем в холле 1-го корпуса. </p><p>ЖДЕМ ВАС!</p>',
-	'full_text_en'=>'<p>SHEE &quot;Donetsk National Technical University&quot; (Pokrovsk) INVITES you to THE OPEN DAY that will be held on 25th of March, 2017 at 13.00. The program includes: </p><ul><li>clarification on the admission campaign-2017;</li><li>University presentation (University in students\' eyes, the possibilities offered by the of DonNTU and others); </li><li>presentation of activities titled &quot;Modern science in action&quot; </li><li>summarizing and awarding participants of All-Ukrainian competition&nbsp;-&nbsp;2017. </li></ul></p><p>ADDRESS AND CONTACTS: Pokrovsk (Krasnoarmeysk), Shybankova Square,&nbsp;2, phone: (06239)2-51-99, 066-185-74-31, 093-049-69-89</p><p>We meet you in the lobby of the 1st Corps. </p><p>WE ARE WAITING FOR YOU!</p>',
-	'short_text_uk'=>'<p>ДВНЗ &quot;Донецький національний технічний університет&quot; (м.&nbsp;Покровськ) ЗАПРОШУЄ вас відвідати ДЕНЬ ВІДКРИТИХ ДВЕРЕЙ, який відбудеться 25 БЕРЕЗНЯ 2017&nbsp;р. о 13.00. У програмі: </p><ul><li>роз\'яснення щодо вступної кампанії-2017;</li><li>презентація Університету (Університет очима студентів, можливості, які відкриває ДонНТУ та ін.); </li><li>презентація заходів під назвою &quot;Сучасна наука в дії&quot;; </li><li>підведення підсумків та нагородження учасників Всеукраїнської олімпіади&nbsp;-&nbsp;2017. </li></ul></p><p>АДРЕСА ПРОВЕДЕННЯ І КОНТАКТИ: м.&nbsp;Покровськ (Красноармійськ), пл.&nbsp;Шибанкова,&nbsp;2, тел.: (06239)2-51-99, 066-185-74-31, 093-049-69-89</p><p>Зустрічаємо в холі 1-го корпусу. </p><p>ЧЕКАЄМО НА ВАС!</p>',
-	'short_text_ru'=>'<p>ГВУЗ &quot;Донецкий национальный технический университет&quot; (г.&nbsp;Покровск) ПРИГЛАШАЕТ вас посетить ДЕНЬ ОТКРЫТЫХ ДВЕРЕЙ, который будет проводиться 25 МАРТА 2017&nbsp;г. в 13.00. В программе: </p><ul><li>разъяснения по вступительной кампании-2017;</li><li>презентация Университета (Университет глазами студентов, возможности, которые открывает ДонНТУ и др.); </li><li>презентация мероприятий под названием &quot;Современная наука в действии&quot; </li><li>подведение итогов и награждение участников Всеукраинской олимпиады&nbsp;-&nbsp;2017. </li></ul></p><p>АДРЕС ПРОВЕДЕНИЯ И КОНТАКТЫ: г.&nbsp;Покровск (Красноармейск), пл.&nbsp;Шибанкова,&nbsp;2, тел.: (06239)2-51-99, 066-185-74-31, 093-049-69-89</p><p>Встречаем в холле 1-го корпуса. </p><p>ЖДЕМ ВАС!</p>',
-	'short_text_en'=>'<p>SHEE &quot;Donetsk National Technical University&quot; (Pokrovsk) INVITES you to THE OPEN DAY that will be held on 25th of March, 2017 at 13.00. The program includes: </p><ul><li>clarification on the admission campaign-2017;</li><li>University presentation (University in students\' eyes, the possibilities offered by the of DonNTU and others); </li><li>presentation of activities titled &quot;Modern science in action&quot; </li><li>summarizing and awarding participants of All-Ukrainian competition&nbsp;-&nbsp;2017. </li></ul></p><p>ADDRESS AND CONTACTS: Pokrovsk (Krasnoarmeysk), Shybankova Square,&nbsp;2, phone: (06239)2-51-99, 066-185-74-31, 093-049-69-89</p><p>We meet you in the lobby of the 1st Corps. </p><p>WE ARE WAITING FOR YOU!</p>',
-	'images_nums'=>'1',
+if(!create_news(array( 'title_uk'=>'День відкритих дверей','title_ru'=>'День открытых дверей','title_en'=>'Open Doors Day', 
+  'full_text_uk'=>'<p>25 березня в ДонНТУ пройшов день відкритих дверей. Університет з неймовірною щирістю зустрів майбутніх випускників, їх батьків та гостей. Незважаючи на похмуру і холодну погоду, у нас було по-гостинному тепло та затишно.</p><p>З 11-ої години ранку в холі головного корпусу працювали  опергрупи всіх факультетів, які з задоволенням представляли відвідувачам свої проекти. Студенти факультету КНТ презентували гостям працюючу модель 3D-принтеру. Відвідувачі на власні очі змогли побачити, як працює такий пристрій, що викликало неабиякий інтерес кожного.</p><p>О 13.00 всіх було запрошено до аудиторії 2.204, де майбутнім абітурієнтам розповіли про ВНЗ та його спеціальності. Представник приймальної комісії надала потрібну для вступу інформацію, провела інструктаж щодо вступної кампанії 2017. Сьогоднішні студенти висловлювали свої враження про навчання та студентське життя в стінах університету, розповіли про заходи, які відбуваються протягом навчального року. </p><p>Після цього всі запрошені розійшлися по окремих аудиторіях, де кожен факультет представив свої спеціальності. Завідувачі кафедр розповіли гостям про особливості факультету, основні спеціальності та специфіку їх роботи. Особливу увагу приділили можливостям стажування за кордоном, поділилися інформацією щодо програм обміну студентами та перспектив на майбутнє. Після цього школярі змогли задати запитання, які їх цікавили та поспілкуватися зі студентами, які навчаються у ДонНТУ.</p><p>Факультет КНТ зацікавив багатьох школярів. Сподіваємося, що у вересні наш навчальний заклад відкриє двері багатьом талановитим студентам та майбутнім висококваліфікованим спеціалістам. Чекаємо на вас!</p>',
+	'full_text_ru'=>'<p>25 марта в ДонНТУ прошел день открытых дверей. Университет с невероятной искренностью встретил будущих выпускников, их родителей и гостей. Несмотря на пасмурную и холодную погоду, у нас было по-гостеприимному тепло и уютно.</p><p>С 11 утра в холле главного корпуса работали опергруппы всех факультетов, с удовольствием представляли посетителям свои проекты. Студенты факультета КНТ представили гостям работающую модель 3D-принтера. Посетители воочию смогли увидеть, как работает такое устройство, которое вызвало большой интерес каждого.</p><p>В 13.00 всех пригласили в аудиторию 2.204, где будущим абитуриентам рассказали о вузе и его специальности. Представитель приемной комиссии предоставила необходимую для вступления информацию, провела инструктаж по вступительной кампании 2017. Сегодняшние студенты высказывали свои впечатления об учебе и студенческой жизни в стенах университета, рассказали о мероприятиях, которые проходят в течение учебного года. </p><p>После этого все приглашенные разошлись по отдельным аудиториям, где каждый факультет представил свои специальности. Заведующие кафедр рассказали гостям об особенностях факультета, основных специальностях и о специфике их работы. Особое внимание уделили возможностям стажировки за рубежом, поделились информацией о программах обмена студентами и перспективами на будущее. После этого школьники смогли задать интересующие их вопросы и пообщаться со студентами, которые учатся в ДонНТУ.</p><p>Факультет КНТ заинтересовал многих школьников. Надеемся, что в сентябре наше учебное заведение откроет двери многим талантливым студентам и будущим высококвалифицированным специалистам. Ждем вас!</p>',
+	'full_text_en'=>'<p>March 25 in DonNTU was the day of open doors. University with incredible sincerity met future graduates, their parents and guests. Despite cloudy and cold weather, in our university it was warm and cozy.</p><p>From 11 a.m. in the lobby of the main building there were task forces from with all faculties, who were happy to show their projects. Students of the CST faculty presented to visitors a working model of a 3D-printer. Visitors were able to see with their own eyes how such a device, which caused considerable interest from everyone, works.</p><p>At 13.00 everyone was invited to the room 2.204, where future applicants were told about the university and its specialties. The representative of admission provided future applicants with all the necessary information, held a briefing about the opening of the campaign in 2017. Today\'s students expressed their impressions about studying and student life at the University, spoke about the events that occur during the school year. </p><p>After that, all the invited guests went to a separate classroom where each Department presented their specialty. Heads of departments told the guests about the peculiarities of the faculty, the main specialties and specifics of their work. Special attention was paid to opportunities of internships abroad, shared information about programs of exchange of students and future prospects. After that, students were able to ask questions and socialize with students who are studying in DonNTU.</p><p>The CST faculty interested many students. We hope that in September our University will open doors for many talented students and future highly qualified specialists. We are waiting for you!</p>',
+	'short_text_uk'=>'<p>25 березня в ДонНТУ пройшов день відкритих дверей. Університет з неймовірною щирістю зустрів майбутніх випускників, їх батьків та гостей. Незважаючи на похмуру і холодну погоду, у нас було по-гостинному тепло та затишно.</p>',
+	'short_text_ru'=>'<p>25 марта в ДонНТУ прошел день открытых дверей. Университет с невероятной искренностью встретил будущих выпускников, их родителей и гостей. Несмотря на пасмурную и холодную погоду, у нас было по-гостеприимному тепло и уютно.</p>',
+	'short_text_en'=>'<p>25 березня в ДонНТУ пройшов день відкритих дверей. Університет з неймовірною щирістю зустрів майбутніх випускників, їх батьків та гостей. Незважаючи на похмуру і холодну погоду, у нас було по-гостинному тепло та затишно.</p>',
+	'images_nums'=>'1,2,3,4,5,6,7,8,9,10,11',
 	),$db)){
 
 	$success = false;
 }
 
+if(!create_news(array( 'title_uk'=>'Міжнародна олімпіада «The ACM-ICPC International Collegiate Programming Contest 2017»','title_ru'=>'Міжнародна олімпіада «The ACM-ICPC International Collegiate Programming Contest 2017»','title_en'=>'Міжнародна олімпіада «The ACM-ICPC International Collegiate Programming Contest 2017»', 
+  'full_text_uk'=>'<p>25 березня 2017 року в ДВНЗ «Донецький національний технічний університет» пройшов 1-й етап міжнародної олімпіади «The ACM-ICPC International Collegiate Programming Contest 2017». Змагання проводяться під егідою Асоціації обчислювальної техніки (ACM) за участі університета Бейлора (<a href=\"https://icpc.baylor.edu\">https://icpc.baylor.edu</a>).</p><p>Головною особливістю змагань є формат проведення. Команди отримують від 8 до 15 завдань, пишуть рішення обраною мовою програмування і надсилають їх на тестовий сервер. Програми тестуються на вхідних тестах, що є невідомими учасникам. Якщо програма видала неправильну відповідь або не вклалася в обмеження за часом / пам\'яттю, то команда отримує повідомлення про це і може послати виправлену версію. Завдання вважається вирішеним, якщо програма видала правильні відповіді на всіх тестах. Перемагає команда, яка вирішила правильно найбільше число завдань.</p><p>В 2017 році в 1-му етапі олімпіади в ДВНЗ «ДонНТУ» прийняли участь сім команд, кожна з яких складалася з трьох студентів факультету комп’ютерних наук і технологій. За результатами змагань команда DonNTU_CSTF_United у складі Мінь Ань - Нгуєн, Ярослава Сафронова та Андрія Кузьменко (тренер – Оксана Золотухіна) посіла перше місце серед команд Донецької області. Колектив викладачів та студентів факультету комп’ютерних наук і технологій щиро вітає команду DonNTU_CSTF_United з перемогою та бажає успіхів у подальших виступах на наступних етапах олімпіади.</p><p style=\" text-align:right;\"><i>Відповідальний за проведення олімпіади у ДВНЗ «ДонНТУ»</i><br><i>доц. кафедри комп’ютерної інженерії Цололо С. О.</i></p>',
+  'full_text_ru'=>'<p>25 березня 2017 року в ДВНЗ «Донецький національний технічний університет» пройшов 1-й етап міжнародної олімпіади «The ACM-ICPC International Collegiate Programming Contest 2017». Змагання проводяться під егідою Асоціації обчислювальної техніки (ACM) за участі університета Бейлора (<a href=\"https://icpc.baylor.edu\">https://icpc.baylor.edu</a>).</p><p>Головною особливістю змагань є формат проведення. Команди отримують від 8 до 15 завдань, пишуть рішення обраною мовою програмування і надсилають їх на тестовий сервер. Програми тестуються на вхідних тестах, що є невідомими учасникам. Якщо програма видала неправильну відповідь або не вклалася в обмеження за часом / пам\'яттю, то команда отримує повідомлення про це і може послати виправлену версію. Завдання вважається вирішеним, якщо програма видала правильні відповіді на всіх тестах. Перемагає команда, яка вирішила правильно найбільше число завдань.</p><p>В 2017 році в 1-му етапі олімпіади в ДВНЗ «ДонНТУ» прийняли участь сім команд, кожна з яких складалася з трьох студентів факультету комп’ютерних наук і технологій. За результатами змагань команда DonNTU_CSTF_United у складі Мінь Ань - Нгуєн, Ярослава Сафронова та Андрія Кузьменко (тренер – Оксана Золотухіна) посіла перше місце серед команд Донецької області. Колектив викладачів та студентів факультету комп’ютерних наук і технологій щиро вітає команду DonNTU_CSTF_United з перемогою та бажає успіхів у подальших виступах на наступних етапах олімпіади.</p><p style=\" text-align:right;\"><i>Відповідальний за проведення олімпіади у ДВНЗ «ДонНТУ»</i><br><i>доц. кафедри комп’ютерної інженерії Цололо С. О.</i></p>',
+  'full_text_en'=>'<p>25 березня 2017 року в ДВНЗ «Донецький національний технічний університет» пройшов 1-й етап міжнародної олімпіади «The ACM-ICPC International Collegiate Programming Contest 2017». Змагання проводяться під егідою Асоціації обчислювальної техніки (ACM) за участі університета Бейлора (<a href=\"https://icpc.baylor.edu\">https://icpc.baylor.edu</a>).</p><p>Головною особливістю змагань є формат проведення. Команди отримують від 8 до 15 завдань, пишуть рішення обраною мовою програмування і надсилають їх на тестовий сервер. Програми тестуються на вхідних тестах, що є невідомими учасникам. Якщо програма видала неправильну відповідь або не вклалася в обмеження за часом / пам\'яттю, то команда отримує повідомлення про це і може послати виправлену версію. Завдання вважається вирішеним, якщо програма видала правильні відповіді на всіх тестах. Перемагає команда, яка вирішила правильно найбільше число завдань.</p><p>В 2017 році в 1-му етапі олімпіади в ДВНЗ «ДонНТУ» прийняли участь сім команд, кожна з яких складалася з трьох студентів факультету комп’ютерних наук і технологій. За результатами змагань команда DonNTU_CSTF_United у складі Мінь Ань - Нгуєн, Ярослава Сафронова та Андрія Кузьменко (тренер – Оксана Золотухіна) посіла перше місце серед команд Донецької області. Колектив викладачів та студентів факультету комп’ютерних наук і технологій щиро вітає команду DonNTU_CSTF_United з перемогою та бажає успіхів у подальших виступах на наступних етапах олімпіади.</p><p style=\" text-align:right;\"><i>Відповідальний за проведення олімпіади у ДВНЗ «ДонНТУ»</i><br><i>доц. кафедри комп’ютерної інженерії Цололо С. О.</i></p>',
+  'short_text_uk'=>'<p>25 березня 2017 року в ДВНЗ «Донецький національний технічний університет» пройшов 1-й етап міжнародної олімпіади «The ACM-ICPC International Collegiate Programming Contest 2017». Змагання проводяться під егідою Асоціації обчислювальної техніки (ACM) за участі університета Бейлора (<a href=\"https://icpc.baylor.edu\">https://icpc.baylor.edu</a>).</p>',
+  'short_text_ru'=>'<p>25 березня 2017 року в ДВНЗ «Донецький національний технічний університет» пройшов 1-й етап міжнародної олімпіади «The ACM-ICPC International Collegiate Programming Contest 2017». Змагання проводяться під егідою Асоціації обчислювальної техніки (ACM) за участі університета Бейлора (<a href=\"https://icpc.baylor.edu\">https://icpc.baylor.edu</a>).</p>',
+  'short_text_en'=>'<p>25 березня 2017 року в ДВНЗ «Донецький національний технічний університет» пройшов 1-й етап міжнародної олімпіади «The ACM-ICPC International Collegiate Programming Contest 2017». Змагання проводяться під егідою Асоціації обчислювальної техніки (ACM) за участі університета Бейлора (<a href=\"https://icpc.baylor.edu\">https://icpc.baylor.edu</a>).</p>',
+  'images_nums'=>'1,2,3,4,5,6,7',
+  ),$db)){
+
+  $success = false;
+}
+
+/*
+if(!create_news(array( 'title_uk'=>'','title_ru'=>'','title_en'=>'', 
+  'full_text_uk'=>'<p></p>',
+  'full_text_ru'=>'<p></p>',
+  'full_text_en'=>'<p></p>',
+  'short_text_uk'=>'<p></p>',
+  'short_text_ru'=>'<p></p>',
+  'short_text_en'=>'<p></p>',
+  'images_nums'=>'1,2,3,4,5,6,7',
+  ),$db)){
+
+  $success = false;
+}
+*/
 
 if($success){
 	echo "<p>Your database was successfully installed!</p>";

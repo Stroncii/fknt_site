@@ -60,12 +60,30 @@ function create(){
 	 
 	    // prepare query statement
 	    $stmt = $this->conn->prepare( $query );
-	 
+	
 	    // execute query
 	    $stmt->execute();
 	 
 	    return $stmt;
 	}
+    function readOne($id){
+     
+        // select all query
+        $query = "SELECT
+                    id, name_uk,name_ru,name_en
+                FROM
+                    " . $this->table_name . "
+                WHERE
+                    id = ".$id;
+     
+        // prepare query statement
+        $stmt = $this->conn->prepare( $query );
+     
+        // execute query
+        $stmt->execute();
+     
+        return $stmt;
+    }
 	function update(){
  
     // update query

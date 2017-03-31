@@ -13,7 +13,7 @@ $news = new News($db);
 // get id of product to be edited
 $data = json_decode(file_get_contents("php://input"),true);     
 // set ID property of product to be edited
-$news->id = $data->id;
+$news->id = $data['id'];
  
 // set product property values
 $news->title_uk = $data['uk']['title'];
@@ -29,14 +29,17 @@ $paths = $data['images'];
 $i_nums = '';
 foreach ($paths as $path) {
 	$c = explode('/',$path);
-	$n = explode('_',$path[count($path)-1]);
-	$i_nums .= $n[1];
+    $n = explode('_',$c[count($c)-1]);
+    if($i_nums!==''){
+    	$i_nums .= ',';
+    }
+    $i_nums .= $n[1][0];
 }
 $news->images_nums = $i_nums;
  
 // update the product
 if($news->update()){
-    echo "News was updated.";
+    echo "News was updated." ;
 }
  
 // if unable to update the product, tell the user

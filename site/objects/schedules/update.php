@@ -22,7 +22,7 @@ $schedule->pdf_url = $data['pdf_url'];
 $schedule->department_id = $data['department_id'];
  
 // update the product
-if($product->update()){
+if($schedule->update()){
     echo "Schedule was updated.";
 }
  

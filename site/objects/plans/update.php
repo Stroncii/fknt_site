@@ -22,7 +22,7 @@ $plan->pdf_url = $data['pdf_url'];
 $plan->department_id = $data['department_id'];
  
 // update the product
-if($product->update()){
+if($plan->update()){
     echo "Plan was updated.";
 }
  

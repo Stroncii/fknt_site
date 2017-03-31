@@ -22,7 +22,7 @@ $dep->name_ru = $data['name_ru'];
 $dep->name_en = $data['name_en'];
  
 // update the product
-if($product->update()){
+if($dep->update()){
     echo "Department was updated.";
 }
  

@@ -23,7 +23,7 @@ $user->level = $data['level'];
 $user->password = md5($data['password']);
  
 // update the product
-if($product->update()){
+if($user->update()){
     echo "User was updated.";
 }
  

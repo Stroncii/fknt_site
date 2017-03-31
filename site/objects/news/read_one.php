@@ -38,7 +38,6 @@ if($num>0){
         extract($row);
         
         $data .= '{';
-            $data .= '"req_data":"'  . count($_GET) . '",';
             $data .= '"id":"'  . $row['id'] . '",';
             $data .= '"title":"'   . $row['title_'.$lang] . '",';
             $data .= '"synopsis":"'   . $row['short_text_'.$lang] . '",';

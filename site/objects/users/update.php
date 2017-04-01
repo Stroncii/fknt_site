@@ -11,10 +11,10 @@ $db = $database->getConnection();
 $user = new User($db);
  
 // get id of product to be edited
-$data = json_decode(file_get_contents("php://input"));     
+$data = json_decode(file_get_contents("php://input"),true);     
  
 // set ID property of product to be edited
-$user->id = $data->id;
+$user->id = $data['id'];
  
 // set product property values
 $user->username = $data['username'];

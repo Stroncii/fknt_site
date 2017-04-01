@@ -1,6 +1,6 @@
 <?php 
 // include database and object file 
-include_once '/config/database.php';
+include_once '../../config/database.php';
 include_once 'user.php';
  
 // get database connection 
@@ -11,10 +11,10 @@ $db = $database->getConnection();
 $user = new User($db);
  
 // get product id
-$data = json_decode(file_get_contents("php://input"));     
+$data = json_decode(file_get_contents("php://input"),true);     
  
 // set product id to be deleted
-$user->id = $data->id;
+$user->id = $data['id'];
  
 // delete the product
 if($user->delete()){

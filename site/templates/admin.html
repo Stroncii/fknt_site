@@ -48,8 +48,9 @@
                                     <div text-angular ta-text-editor-class="form-content border-around clearfix" ng-change="setEditableStatus(true)" ta-html-editor-class="clearfix form-content border-around" ta-focussed-class="focussed" ng-model="item.content"></div>
                                     <button class="btn btn-default" ng-click="addPart()">Добавить часть новости</button>
                                     <button class="btn btn-danger" ng-click="cancel()">Отмена</button>
-                                    <button ng-show="mode === 'add'" class="btn btn-success" ng-click="addNews()">Добавить новость</button>
-                                    <button ng-show="mode === 'edit'" class="btn btn-success" ng-click="update()">Обновить новость</button>                                    
+                                    <button type="submit"ng-show="mode === 'add'" class="btn btn-success" ng-click="addNews()">Добавить новость</button>
+                                    <button ng-show="mode === 'edit'" class="btn btn-success" ng-click="update()">Обновить новость</button>        
+                                    <input type="file" name="photo" multiple accept="image/*,image/jpeg"/><br/>                     
                                     <table ng-if="mode === 'edit'" class="table">
                                         <thead>
                                             <tr>
@@ -73,7 +74,42 @@
                             <!--ПОЛЬЗОВАТЕЛИ!-->
                             <div role="tabpanel" id="users" class="tab-pane fade">
                                 <h3>Users</h3>
-                                <p>Some content in menu 1.</p>
+
+                                <form class="form">
+                                    <label for="username">Username<input class="form-control" name="username" ng-model="newUser.username" type="text"></label>
+                                    <label for="password">Password<input class="form-control" type="password" ng-model="newUser.password" name="password"></label>
+                                    <label for="email">Email<input type="email" ng-model="newUser.email" class="form-control" ></label>
+                                    
+                                    <label >
+                                            <input type="radio" name="level" ng-model="newUser.level" value="0" > Administrator
+                                        </label>
+                                        <label >
+                                            <input type="radio" name="level" ng-model="newUser.level" value="1"> Moderator
+                                        </label>
+
+                                        <button class="btn btn-success" type="submit" ng-click="addUser()"> Добавить пользователя </button>
+                                </form>
+                                <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <td>Username</td>
+                                                <td>Email</td>
+                                                <td>Level</td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr ng-repeat="user in users">
+                                                <td> {{ user.username }}</td>
+                                                <td>{{  user.email  }}</td>
+                                                <td>{{  user.level  }}</td>
+                                                <td><button ng-click="updateUser(user)" class="btn btn-warning">Изменить</button></td>
+                                                <td><button ng-click="deleteUser(user.id)" class="btn btn-danger">Удалить</button></td>                                        
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                
                             </div>
 
 

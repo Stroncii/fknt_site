@@ -1,5 +1,5 @@
 angular.module('app')
-.controller('adminController',['$scope', '$rootScope', 'appFactory', function($scope, $rootScope, appFactory){
+.controller('adminController',['$scope', '$rootScope', 'appFactory', 'usersFactory', function($scope, $rootScope, appFactory, usersFactory){
 
 
     // item - текущие рабочие куски одного языка.
@@ -19,6 +19,12 @@ angular.module('app')
             synopsis: '',
             title: ''
     };
+    $scope.newUser = {
+        username: 'Some values',
+        level: '',
+        username: '',
+        password: ''
+    };
     $scope.currentItem = {
         ru: {
             content: '',
@@ -36,9 +42,14 @@ angular.module('app')
             title: ''
         },
         images_nums: '1'
-    }
+    };
 
-    }
+    usersFactory.getUsers().then((data) => {
+        console.log(data);
+        $scope.users = data.users;
+    });
+
+    };
 
 
     $scope.setEditableStatus = (status) => {
@@ -106,6 +117,17 @@ angular.module('app')
     $scope.setEditableStatus(false);
     init();
   };
+
+  $scope.deleteUser = function (id) {
+      console.log('delete ' + id);
+    usersFactory.deleteUser(id).then((data) => {
+        console.log('deleted')
+    });
+  };
+
+  $scope.addUser = function () {
+      usersFactory.addUser($scope.newUser);
+  }
 
 
 

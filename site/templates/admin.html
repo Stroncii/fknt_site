@@ -75,19 +75,27 @@
                             <div role="tabpanel" id="users" class="tab-pane fade">
                                 <h3>Users</h3>
 
+                                <label >
+                                            <input type="radio" name="level" ng-change="setUserMode('add')" ng-model="userMode" value="add" > Add
+                                        </label>
+                                        <label >
+                                            <input type="radio" name="level" ng-change="setUserMode('edit')" ng-model="userMode" value="edit"> Edit
+                                </label>
+
                                 <form class="form">
-                                    <label for="username">Username<input class="form-control" name="username" ng-model="newUser.username" type="text"></label>
-                                    <label for="password">Password<input class="form-control" type="password" ng-model="newUser.password" name="password"></label>
-                                    <label for="email">Email<input type="email" ng-model="newUser.email" class="form-control" ></label>
+                                    <label for="username">Username<input class="form-control" ng-change="isUserEditable = true" name="username" ng-model="newUser.username" type="text"></label>
+                                    <label for="password">Password<input class="form-control" ng-change="isUserEditable = true" type="password" ng-model="newUser.password" name="password"></label>
+                                    <label for="email">Email<input type="email" formnovalidate ng-model="newUser.email" class="form-control" ></label>
                                     
-                                    <label >
+                                        <label >
                                             <input type="radio" name="level" ng-model="newUser.level" value="0" > Administrator
                                         </label>
                                         <label >
                                             <input type="radio" name="level" ng-model="newUser.level" value="1"> Moderator
                                         </label>
 
-                                        <button class="btn btn-success" type="submit" ng-click="addUser()"> Добавить пользователя </button>
+                                        <button class="btn btn-success" type="submit" ng-if="userMode === 'add'" ng-click="addUser()"> Добавить пользователя </button>
+                                        <button class="btn btn-success" type="submit" ng-if="userMode === 'edit'" ng-click="changeUser()"> Изменить пользователя </button>
                                 </form>
                                 <table class="table">
                                         <thead>
@@ -104,8 +112,12 @@
                                                 <td> {{ user.username }}</td>
                                                 <td>{{  user.email  }}</td>
                                                 <td>{{  user.level  }}</td>
-                                                <td><button ng-click="updateUser(user)" class="btn btn-warning">Изменить</button></td>
-                                                <td><button ng-click="deleteUser(user.id)" class="btn btn-danger">Удалить</button></td>                                        
+                                                <td>
+                                                    <button ng-click="updateUser(user)" ng-disabled="(userMode == 'add' && !isUserEditable)" class="btn btn-warning">Изменить</button>
+                                                </td>
+                                                <td>
+                                                    <button ng-click="deleteUser(user.id)" class="btn btn-danger">Удалить</button>
+                                                </td>                                        
                                             </tr>
                                         </tbody>
                                     </table>

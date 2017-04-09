@@ -11,12 +11,13 @@ $db = $database->getConnection();
 $image = new Image($db);
  
 if ( !empty( $_FILES ) ) {
-	if($image->create()){
+	$id = $image->create();
+	if($id){
 		$tempPath = $_FILES[ 'file' ][ 'tmp_name' ];
-	    $uploadPath = '/assets/img/news/items/' . $image->id.'.jpg';
+	    $uploadPath = $_SERVER['DOCUMENT_ROOT'] .'/assets/img/news/items/' . $id.'.jpg';
 
 	    move_uploaded_file( $tempPath, $uploadPath );
-	    $answer = array( 'answer' => 'Image was created.' );
+	    $answer = array( 'answer' => 'Image was created.');
     	$json = json_encode( $answer );
 
     	echo $json;

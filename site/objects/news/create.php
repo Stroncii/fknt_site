@@ -23,7 +23,6 @@ $news->full_text_en = $data['en']['content'];
 $news->short_text_uk = $data['uk']['synopsis'];
 $news->short_text_ru = $data['ru']['synopsis'];
 $news->short_text_en = $data['en']['synopsis'];
-$news->images_nums = $data['images_nums'];
  
 // create the product
 if($news->create()){

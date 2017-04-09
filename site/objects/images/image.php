@@ -18,15 +18,18 @@ function create(){
      
     // query to insert record
     $query = "INSERT INTO 
-                " . $this->table_name . "";
-     
+                " . $this->table_name. "
+                SET 
+                    news_id=:news_id";
+    $this->news_id = null;
+
     // prepare query
     $stmt = $this->conn->prepare($query);
- 
+    $stmt->bindParam(":news_id", $this->news_id);
      
     // execute query
     if($stmt->execute()){
-        return true;
+        return $this->conn->lastInsertId();
     }else{
         echo "<pre>";
             print_r($stmt->errorInfo());

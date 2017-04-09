@@ -38,21 +38,13 @@ if($num>0){
         
         $data .= '{';
             $data .= '"id":"'  . $row['id'] . '",';
+            $l = 1;
             foreach ($langs as $lang) {
                 $lang_info = "{";
                 $lang_info .= '"title":"'   . $row['title_'.$lang] . '",';
                 $lang_info .= '"synopsis":"'   . $row['short_text_'.$lang] . '",';
                 $lang_info .= '"content":"' . $row['full_text_'.$lang] . '"}';
-                $data .= '"'.$lang.'":'  . $lang_info . ',';
-            }
-
-            $data .= '"images":[';
-            $l = 1;
-            $imgs = explode(",",$row['images_nums']);
-            foreach ($imgs as $value) {
-                $data .= '"/assets/img/news/items/' . $row['id'] . '_'.$value.'.jpg"';
-                $data .= $l<count($imgs) ? ',' : '';
- 
+                $data .= '"'.$lang.'":'  . $lang_info . $l<count($langs) ? ',' : '';
                 $l++;
             }
             $data .= ']';

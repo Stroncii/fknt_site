@@ -25,18 +25,6 @@ $news->full_text_en = $data['en']['content'];
 $news->short_text_uk = $data['uk']['synopsis'];
 $news->short_text_ru = $data['ru']['synopsis'];
 $news->short_text_en = $data['en']['synopsis'];
-$paths = $data['images'];
-$i_nums = '';
-foreach ($paths as $path) {
-	$c = explode('/',$path);
-    $n = explode('_',$c[count($c)-1]);
-    if($i_nums!==''){
-    	$i_nums .= ',';
-    }
-    $i_nums .= $n[1][0];
-}
-$news->images_nums = $i_nums;
- 
 // update the product
 if($news->update()){
     echo "News was updated." ;

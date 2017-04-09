@@ -15,7 +15,6 @@ class News{
     public $short_text_uk;
     public $short_text_ru;
     public $short_text_en;
-    public $images_nums;
     public $created;
     public $modified;
  
@@ -31,7 +30,7 @@ function create(){
     $query = "INSERT INTO 
                 " . $this->table_name . "
             SET 
-                title_uk=:title_uk, title_ru=:title_ru, title_en=:title_en, full_text_uk=:full_text_uk, full_text_ru=:full_text_ru, full_text_en=:full_text_en, short_text_uk=:short_text_uk, short_text_ru=:short_text_ru, short_text_en=:short_text_en, images_nums=:images_nums";
+                title_uk=:title_uk, title_ru=:title_ru, title_en=:title_en, full_text_uk=:full_text_uk, full_text_ru=:full_text_ru, full_text_en=:full_text_en, short_text_uk=:short_text_uk, short_text_ru=:short_text_ru, short_text_en=:short_text_en";
      
     // prepare query
     $stmt = $this->conn->prepare($query);
@@ -46,7 +45,6 @@ function create(){
     $this->short_text_uk=$this->short_text_uk;
     $this->short_text_ru=$this->short_text_ru;
     $this->short_text_en=$this->short_text_en;
-    $this->images_nums=$this->images_nums;
  
     // bind values
     $stmt->bindParam(":title_uk", $this->title_uk);
@@ -58,7 +56,6 @@ function create(){
     $stmt->bindParam(":short_text_uk", $this->short_text_uk);
     $stmt->bindParam(":short_text_ru", $this->short_text_ru);
     $stmt->bindParam(":short_text_en", $this->short_text_en);
-    $stmt->bindParam(":images_nums", $this->images_nums);
      
     // execute query
     if($stmt->execute()){
@@ -93,7 +90,7 @@ function create(){
 	 
 	    // select all query
 	    $query = "SELECT
-	                id, title_".$lang.", short_text_".$lang.", full_text_".$lang.", images_nums
+	                id, title_".$lang.", short_text_".$lang.", full_text_".$lang."
 	            FROM
 	                " . $this->table_name . "
 	            ORDER BY
@@ -111,7 +108,7 @@ function create(){
 	 
 	    // select all query
 	    $query = "SELECT
-	                id, title_".$lang.", short_text_".$lang.", full_text_".$lang.", images_nums
+	                id, title_".$lang.", short_text_".$lang.", full_text_".$lang."
 	            FROM
 	                " . $this->table_name . "
 	            ORDER BY
@@ -130,7 +127,7 @@ function create(){
 	 
 	    // select all query
 	    $query = "SELECT
-	                id, title_".$lang.", short_text_".$lang.", full_text_".$lang.", images_nums
+	                id, title_".$lang.", short_text_".$lang.", full_text_".$lang."
 	            FROM
 	                " . $this->table_name . "
 	            WHERE 
@@ -150,7 +147,7 @@ function create(){
     $query = "UPDATE
                 " . $this->table_name . "
             SET
-                title_uk=:title_uk, title_ru=:title_ru, title_en=:title_en, full_text_uk=:full_text_uk, full_text_ru=:full_text_ru, full_text_en=:full_text_en, short_text_uk=:short_text_uk, short_text_ru=:short_text_ru, short_text_en=:short_text_en, images_nums=:images_nums
+                title_uk=:title_uk, title_ru=:title_ru, title_en=:title_en, full_text_uk=:full_text_uk, full_text_ru=:full_text_ru, full_text_en=:full_text_en, short_text_uk=:short_text_uk, short_text_ru=:short_text_ru, short_text_en=:short_text_en
             WHERE
                 id = :id";
  
@@ -167,7 +164,6 @@ function create(){
     $this->short_text_uk=$this->short_text_uk;
     $this->short_text_ru=$this->short_text_ru;
     $this->short_text_en=$this->short_text_en;
-    $this->images_nums=$this->images_nums;
  
     // bind new values
     $stmt->bindParam(":title_uk", $this->title_uk);
@@ -179,7 +175,6 @@ function create(){
     $stmt->bindParam(":short_text_uk", $this->short_text_uk);
     $stmt->bindParam(":short_text_ru", $this->short_text_ru);
     $stmt->bindParam(":short_text_en", $this->short_text_en);
-    $stmt->bindParam(":images_nums", $this->images_nums);
     $stmt->bindParam(':id', $this->id);
  
     // execute the query

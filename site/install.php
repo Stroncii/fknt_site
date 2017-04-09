@@ -50,7 +50,7 @@ function create_news($data,$db){
 	$query = "INSERT INTO 
                 " . 'news' . "
             SET 
-                title_uk=:title_uk, title_ru=:title_ru, title_en=:title_en, full_text_uk=:full_text_uk, full_text_ru=:full_text_ru, full_text_en=:full_text_en, short_text_uk=:short_text_uk, short_text_ru=:short_text_ru, short_text_en=:short_text_en, images_nums=:images_nums";
+                title_uk=:title_uk, title_ru=:title_ru, title_en=:title_en, full_text_uk=:full_text_uk, full_text_ru=:full_text_ru, full_text_en=:full_text_en, short_text_uk=:short_text_uk, short_text_ru=:short_text_ru, short_text_en=:short_text_en";
     
     // prepare query
     $stmt = $db->prepare($query);
@@ -65,7 +65,6 @@ function create_news($data,$db){
     $short_text_uk=(($data['short_text_uk']));
     $short_text_ru=(($data['short_text_ru']));
     $short_text_en=(($data['short_text_en']));
-    $images_nums=(($data['images_nums']));
  
     // bind values
     $stmt->bindParam(":title_uk", $title_uk);
@@ -77,7 +76,6 @@ function create_news($data,$db){
     $stmt->bindParam(":short_text_uk", $short_text_uk);
     $stmt->bindParam(":short_text_ru", $short_text_ru);
     $stmt->bindParam(":short_text_en", $short_text_en);
-    $stmt->bindParam(":images_nums", $images_nums);
 
     if($stmt->execute()){
         return true;
@@ -517,7 +515,6 @@ $query = "DROP TABLE IF EXISTS news; CREATE TABLE IF NOT EXISTS `news` (
   `short_text_uk` text COLLATE utf8_unicode_ci NOT NULL,
   `short_text_ru` text COLLATE utf8_unicode_ci NOT NULL,
   `short_text_en` text COLLATE utf8_unicode_ci NOT NULL,
-  `images_nums` text COLLATE utf8_unicode_ci NOT NULL,
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
@@ -537,7 +534,6 @@ if(!create_news(array(
 	'short_text_uk'=>'<p>В олімпіаді прийняли участь 28 студентів із 14 міст України. Донецький національний технічний університет представила Галина Нещадіна, студентка факультету комп’ютерних наук і технологій.</p>',
 	'short_text_ru'=>'<p>В олимпиаде приняли участие 28 студентов из 14 городов Украины. Донецкий национальный технический университет представила Галина Нещадина, студентка факультета компьютерных наук и технологий.</p>',
 	'short_text_en'=>'<p>The competition was attended by 28 students from 14 cities of Ukraine. Donetsk National Technical University was represented by Galina Neshchadina, a student of the Faculty of Computer Sciences and Technologies.</p>',
-	'images_nums'=>'1,2',
 	),$db)){
 
 	$success = false;
@@ -558,7 +554,6 @@ if(!create_news(array(
 	'short_text_uk'=>'<p>З 15 по 18 березня на базі Кременчуцького національного університету імені Михайла Остроградського відбувся II тур Всеукраїнської студентської олімпіади за напрямом підготовки «Комп’ютернаінженерія» для спеціальності «Комп’ютерні системи та мережі».</p>',
 	'short_text_ru'=>'<p>С 15 по 18 марта на базе Кременчугского национального университета имени Михаила Остроградского состоялся II тур Всеукраинской студенческой олимпиады по направлению «Компьютерная инженерия» для специальности «Компьютерные системы и сети».</p>',
 	'short_text_en'=>'<p>From March 15 to 18, the II round of the All-Ukrainian student\'s competition in сomputer engineering for the specialty &quot;Computer systems and networks&quot; was held at the Kremenchug National University named after Mikhail Ostrogradsky.</p>',
-	'images_nums'=>'1,2',
 	),$db)){
 
 	$success = false;
@@ -579,7 +574,6 @@ if(!create_news(array(
 	'short_text_uk'=>'<p>19 квітня 2016 року команда факультету комп\'ютерних наук і технологій ДонНТУ DonNTU_CUBE у складі Костянтина Ольмезова, Івана Верещаги та Артема Любимова (тренер – Оксана Золотухіна) посіла перше місце серед команд Східного регіону.</p>',
 	'short_text_ru'=>'<p>19 апреля 2016 команда факультета компьютерных наук и технологий ДонНТУ DonNTU_CUBE в составе Константина Ольмезова, Ивана Верещаги и Артема Любимова (тренер - Оксана Золотухина) заняла первое место среди команд Восточного региона.</p>',
 	'short_text_en'=>'<p>On April 19, 2016 a team of the Faculty of Computer Sciences and Technologies of DonNTU called DonNTU_CUBE consisting of Konstantin Olmezov, Ivan Vereshchaga and Artem Lyubimov (coach Oksana Zolotukhina) took the first place among the teams of the Eastern region.</p>',
-	'images_nums'=>'1',
 	),$db)){
 
 	$success = false;
@@ -597,7 +591,6 @@ if(!create_news(array(
 	'short_text_uk'=>'<p>28 квітня 2016 року відбулось засідання спеціалізованої вченої ради К 73.052.04 Черкаського державного технологічного університету, на якій було розглянуто дисертаційну роботу Чикунова Павла Олександровича.</p>',
 	'short_text_ru'=>'<p>28 апреля 2016 состоялось заседание диссертационного совета К 73.052.04 Черкасского государственного технологического университета, на котором была рассмотрена диссертационная работа Чикунова Павла Александровича.</p>',
 	'short_text_en'=>'<p>On April 28, 2016 the meeting of the Dissertation Council K 73.052.04 of the Cherkassy State Technological University took place, where the thesis of Pavel Aleksandrovich Chikunov.</p>',
-	'images_nums'=>'1',
 	),$db)){
 
 	$success = false;
@@ -615,7 +608,6 @@ if(!create_news(array(
 	'short_text_uk'=>'<p>8 червня відбувся захист кваліфікаційних робіт бакалаврів в групі КІ-12. У цей день захищались 5 студентів: Васильченко С.В., Волга А.О., Гайдук К.С., Грабчук С.П., Емексузян А.В.</p>',
 	'short_text_ru'=>'<p>8 июня состоялась защита квалификационных работ бакалавров в группе КИ-12. В этот день защищались 5 студентов: Васильченко С.В., Волга А.А., Гайдук К.С., Грабчук С.П., Емексузян А.В.</p>',
 	'short_text_en'=>'<p>On June 8, the defense of the qualification works of bachelors in the KI-12 group was held. On this day, five students defended their works: S.V. Vasilchenko, A.A. Volga, K.S. Gaiduk, S.P. Grabchuk, A.V. Emeksuzyan.</p>',
-	'images_nums'=>'1,2,3,4,5,6,7,8',
 	),$db)){
 
 	$success = false;
@@ -654,7 +646,6 @@ if(!create_news(array(
 	'short_text_uk'=>'<p>10 червня відбувся захист кваліфікаційних робіт бакалаврів в групі КІ-12. У цей день захищались 8 студентів:  Коваленко О.М., Лаврищев О.В., Любимов А.С., Нестеров А.В., Осадчук О.М.,  Філатов І.А.,  Шендрик М.В.,  Щипанов М.В.</p>',
 	'short_text_ru'=>'<p>10 июня состоялась защита квалификационных работ бакалавров в группе КИ-12. В этот день защищались 8 студентов: Коваленко А. Н., Лаврищев О.В., Любимов А.С., Нестеров А.В., Осадчук А.М., Филатов И.А., Шендрик М.В., Щипанов М.В.</p>',
 	'short_text_en'=>'<p>On June 10, the defense of the qualification works of bachelors in the KI-12 group was held. On this day, eight students defended their works: A.N. Kovalenko, O.V. Lavrishcheva, A.S. Lyubimov, A.V. Nesterov, O.M. Osadchyk, I.A. Filatov, M.V. Shendryk, M.V. Shchypanov.</p>',
-	'images_nums'=>'1,2,3,4,5,6,7',
 	),$db)){
 
 	$success = false;
@@ -687,7 +678,6 @@ if(!create_news(array( 'title_uk'=>'День відкритих дверей','t
 	'short_text_uk'=>'<p>25 березня в ДонНТУ пройшов день відкритих дверей. Університет з неймовірною щирістю зустрів майбутніх випускників, їх батьків та гостей. Незважаючи на похмуру і холодну погоду, у нас було по-гостинному тепло та затишно.</p>',
 	'short_text_ru'=>'<p>25 марта в ДонНТУ прошел день открытых дверей. Университет с невероятной искренностью встретил будущих выпускников, их родителей и гостей. Несмотря на пасмурную и холодную погоду, у нас было по-гостеприимному тепло и уютно.</p>',
 	'short_text_en'=>'<p>25 березня в ДонНТУ пройшов день відкритих дверей. Університет з неймовірною щирістю зустрів майбутніх випускників, їх батьків та гостей. Незважаючи на похмуру і холодну погоду, у нас було по-гостинному тепло та затишно.</p>',
-	'images_nums'=>'1,2,3,4,5,6,7,8,9,10,11',
 	),$db)){
 
 	$success = false;
@@ -732,7 +722,6 @@ if(!create_news(array( 'title_uk'=>'Міжнародна олімпіада «Th
   'short_text_uk'=>'<p>25 березня 2017 року в ДВНЗ «Донецький національний технічний університет» пройшов 1-й етап міжнародної олімпіади «The ACM-ICPC International Collegiate Programming Contest 2017». Змагання проводяться під егідою Асоціації обчислювальної техніки (ACM) за участі університета Бейлора (<a href=\"https://icpc.baylor.edu\">https://icpc.baylor.edu</a>).</p>',
   'short_text_ru'=>'<p>25 березня 2017 року в ДВНЗ «Донецький національний технічний університет» пройшов 1-й етап міжнародної олімпіади «The ACM-ICPC International Collegiate Programming Contest 2017». Змагання проводяться під егідою Асоціації обчислювальної техніки (ACM) за участі університета Бейлора (<a href=\"https://icpc.baylor.edu\">https://icpc.baylor.edu</a>).</p>',
   'short_text_en'=>'<p>25 березня 2017 року в ДВНЗ «Донецький національний технічний університет» пройшов 1-й етап міжнародної олімпіади «The ACM-ICPC International Collegiate Programming Contest 2017». Змагання проводяться під егідою Асоціації обчислювальної техніки (ACM) за участі університета Бейлора (<a href=\"https://icpc.baylor.edu\">https://icpc.baylor.edu</a>).</p>',
-  'images_nums'=>'1,2,3,4,5,6,7,8,9,10,11',
   ),$db)){
 
   $success = false;

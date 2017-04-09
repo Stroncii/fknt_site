@@ -10,17 +10,12 @@ angular.module('app')
 
  function getImages () {
      imagesFactory.getImages().then((data) => {
+        console.log(data);
         $scope.images = data.images;
      });
  };
 
 
- $scope.filesChanged = function (elm) {
-    console.log('changed');
- };
- $scope.addImage = function () {
-    console.log('submit')
- };
 
  $scope.deleteImage = function (image) {
     imagesFactory.deleteImage(image.path).then((data)=> {
@@ -32,7 +27,6 @@ angular.module('app')
  }
 
  init();
- console.log(FileUploader);
 
  var uploader = $scope.uploader = new FileUploader({
             url: '/objects/images/create.php'

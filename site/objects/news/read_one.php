@@ -4,6 +4,7 @@ header("Content-Type: application/json; charset=UTF-8");
  
 // include database and object files
 include_once '../../config/database.php';
+include_once '../images/image.php';
 include_once 'news.php';
  
 // instantiate database and product object
@@ -19,7 +20,8 @@ $lang = htmlspecialchars(strip_tags($_GET['language']));
 $id = htmlspecialchars(strip_tags($_GET['id'])); 
 $stmt = $news->readOne($lang,$id);
 $num = $stmt->rowCount();
- 
+$images = new Image($db);
+$imgs = $images->read($id);
 $data="";
 
 // check if more than 0 record found
@@ -44,10 +46,10 @@ if($num>0){
             $data .= '"content":"' . $row['full_text_'.$lang] . '",';
             $data .= '"images":[';
             $l = 1;
-            $imgs = explode(",",$row['images_nums']);
-            foreach ($imgs as $value) {
-                $data .= '"/assets/img/news/items/' . $row['id'] . '_'.$value.'.jpg"';
-                $data .= $l<count($imgs) ? ',' : '';
+            $i_num = $imgs->rowCount();
+            while ($im = $imgs->fetch(PDO::FETCH_ASSOC)){
+                $data .= '"/assets/img/news/items/' . $im['id'] . '.jpg"';
+                $data .= $l<$i_num? ',' : '';
  
                 $l++;
             }

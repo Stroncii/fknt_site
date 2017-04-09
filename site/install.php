@@ -144,6 +144,30 @@ function create_group($data,$db,$table){
         return false;
     }
 }
+function create_image($data,$db){
+  $query = "INSERT INTO 
+                " . 'images' . "
+            SET 
+                news_id=:news_id";
+    
+    // prepare query
+    $stmt = $db->prepare($query);
+
+    // posted values
+    $news_id=htmlspecialchars(strip_tags($data['news_id']));
+ 
+    // bind values
+    $stmt->bindParam(":news_id", $news_id);
+
+    if($stmt->execute()){
+        return true;
+    }else{
+        echo "<pre>";
+            print_r($stmt->errorInfo());
+        echo "</pre>";
+        return false;
+    }
+}
 $success = true;
 $database = new Database();
 $db = $database->getConnection();
@@ -208,6 +232,9 @@ if(!create_department(array('name_uk'=>'Філософія','name_ru'=>'Фило
 if(!create_department(array('name_uk'=>'Викладачі','name_ru'=>'Преподаватели','name_en'=>'Teachers'),$db)){
   $success = false;
 }
+if(!create_department(array('name_uk'=>'Сесія','name_ru'=>'Сессия','name_en'=>'Session'),$db)){
+  $success = false;
+}
 
 $query = "DROP TABLE IF EXISTS `plans`; CREATE TABLE IF NOT EXISTS `plans` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -215,6 +242,15 @@ $query = "DROP TABLE IF EXISTS `plans`; CREATE TABLE IF NOT EXISTS `plans` (
   `pdf_url` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `department_id` int(10) unsigned NOT NULL,
   `position` int(10) unsigned NOT NULL DEFAULT 0,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1;";
+
+if(!execute_query($query,$db)){
+  $success = false;
+}
+$query = "DROP TABLE IF EXISTS `images`; CREATE TABLE IF NOT EXISTS `images` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `news_id` int(10) unsigned DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1;";
 
@@ -456,8 +492,17 @@ if(!create_group(array('group_title'=>'ФИР-15','pdf_url'=>'assets/pdf/schedul
 if(!create_group(array('group_title'=>'РЕЛм-16','pdf_url'=>'assets/pdf/schedule/relm16.pdf','department_id'=>4),$db,'schedules')){
   $success = false;
 }
+if(!create_group(array('group_title'=>'Денна форма','pdf_url'=>'assets/pdf/schedule/session-main.pdf','department_id'=>6),$db,'schedules')){
+  $success = false;
+}
+if(!create_group(array('group_title'=>'Заочна форма','pdf_url'=>'assets/pdf/schedule/session-remote.pdf','department_id'=>6),$db,'schedules')){
+  $success = false;
+}
 
-if(!create_group(array('group_title'=>'*','pdf_url'=>'assets/pdf/schedule/teacher-schedule.pdf','department_id'=>5),$db,'schedules')){
+if(!create_group(array('group_title'=>'Денна форма','pdf_url'=>'assets/pdf/schedule/teacher-schedule.pdf','department_id'=>5),$db,'schedules')){
+  $success = false;
+}
+if(!create_group(array('group_title'=>'Сесія','pdf_url'=>'assets/pdf/schedule/teacher-session.pdf','department_id'=>5),$db,'schedules')){
   $success = false;
 }
 
@@ -497,6 +542,12 @@ if(!create_news(array(
 
 	$success = false;
 }
+if(!create_image(array('news_id'=>1),$db)){
+  $success = false;
+}
+if(!create_image(array('news_id'=>1),$db)){
+  $success = false;
+}
 if(!create_news(array(
 	'title_uk'=>'Олімпіада з комп\'ютерної інженерії',
 	'title_ru'=>'Олимпиада по компьютерной инженерии',
@@ -512,7 +563,12 @@ if(!create_news(array(
 
 	$success = false;
 }
-
+if(!create_image(array('news_id'=>2),$db)){
+  $success = false;
+}
+if(!create_image(array('news_id'=>2),$db)){
+  $success = false;
+}
 if(!create_news(array(
 	'title_uk'=>'Про участь в олімпіаді',
 	'title_ru'=>'Про участие в олимпиаде',
@@ -528,7 +584,9 @@ if(!create_news(array(
 
 	$success = false;
 }
-
+if(!create_image(array('news_id'=>3),$db)){
+  $success = false;
+}
 if(!create_news(array(
 	'title_uk'=>'Про опонування дисертації',
 	'title_ru'=>'Об оппонировании диссертации',
@@ -544,7 +602,9 @@ if(!create_news(array(
 
 	$success = false;
 }
-
+if(!create_image(array('news_id'=>4),$db)){
+  $success = false;
+}
 if(!create_news(array(
 	'title_uk'=>'Захист бакалаврських робіт 8 червня',
 	'title_ru'=>'Защита бакалаврских работ 8 июня',
@@ -560,7 +620,30 @@ if(!create_news(array(
 
 	$success = false;
 }
-
+if(!create_image(array('news_id'=>5),$db)){
+  $success = false;
+}
+if(!create_image(array('news_id'=>5),$db)){
+  $success = false;
+}
+if(!create_image(array('news_id'=>5),$db)){
+  $success = false;
+}
+if(!create_image(array('news_id'=>5),$db)){
+  $success = false;
+}
+if(!create_image(array('news_id'=>5),$db)){
+  $success = false;
+}
+if(!create_image(array('news_id'=>5),$db)){
+  $success = false;
+}
+if(!create_image(array('news_id'=>5),$db)){
+  $success = false;
+}
+if(!create_image(array('news_id'=>5),$db)){
+  $success = false;
+}
 if(!create_news(array(
 	'title_uk'=>'Захист бакалаврських робіт 10 червня',
 	'title_ru'=>'Защита бакалаврских работ 10 июня',
@@ -576,7 +659,27 @@ if(!create_news(array(
 
 	$success = false;
 }
-
+if(!create_image(array('news_id'=>6),$db)){
+  $success = false;
+}
+if(!create_image(array('news_id'=>6),$db)){
+  $success = false;
+}
+if(!create_image(array('news_id'=>6),$db)){
+  $success = false;
+}
+if(!create_image(array('news_id'=>6),$db)){
+  $success = false;
+}
+if(!create_image(array('news_id'=>6),$db)){
+  $success = false;
+}
+if(!create_image(array('news_id'=>6),$db)){
+  $success = false;
+}
+if(!create_image(array('news_id'=>6),$db)){
+  $success = false;
+}
 if(!create_news(array( 'title_uk'=>'День відкритих дверей','title_ru'=>'День открытых дверей','title_en'=>'Open Doors Day', 
   'full_text_uk'=>'<p>25 березня в ДонНТУ пройшов день відкритих дверей. Університет з неймовірною щирістю зустрів майбутніх випускників, їх батьків та гостей. Незважаючи на похмуру і холодну погоду, у нас було по-гостинному тепло та затишно.</p><p>З 11-ої години ранку в холі головного корпусу працювали  опергрупи всіх факультетів, які з задоволенням представляли відвідувачам свої проекти. Студенти факультету КНТ презентували гостям працюючу модель 3D-принтеру. Відвідувачі на власні очі змогли побачити, як працює такий пристрій, що викликало неабиякий інтерес кожного.</p><p>О 13.00 всіх було запрошено до аудиторії 2.204, де майбутнім абітурієнтам розповіли про ВНЗ та його спеціальності. Представник приймальної комісії надала потрібну для вступу інформацію, провела інструктаж щодо вступної кампанії 2017. Сьогоднішні студенти висловлювали свої враження про навчання та студентське життя в стінах університету, розповіли про заходи, які відбуваються протягом навчального року. </p><p>Після цього всі запрошені розійшлися по окремих аудиторіях, де кожен факультет представив свої спеціальності. Завідувачі кафедр розповіли гостям про особливості факультету, основні спеціальності та специфіку їх роботи. Особливу увагу приділили можливостям стажування за кордоном, поділилися інформацією щодо програм обміну студентами та перспектив на майбутнє. Після цього школярі змогли задати запитання, які їх цікавили та поспілкуватися зі студентами, які навчаються у ДонНТУ.</p><p>Факультет КНТ зацікавив багатьох школярів. Сподіваємося, що у вересні наш навчальний заклад відкриє двері багатьом талановитим студентам та майбутнім висококваліфікованим спеціалістам. Чекаємо на вас!</p>',
 	'full_text_ru'=>'<p>25 марта в ДонНТУ прошел день открытых дверей. Университет с невероятной искренностью встретил будущих выпускников, их родителей и гостей. Несмотря на пасмурную и холодную погоду, у нас было по-гостеприимному тепло и уютно.</p><p>С 11 утра в холле главного корпуса работали опергруппы всех факультетов, с удовольствием представляли посетителям свои проекты. Студенты факультета КНТ представили гостям работающую модель 3D-принтера. Посетители воочию смогли увидеть, как работает такое устройство, которое вызвало большой интерес каждого.</p><p>В 13.00 всех пригласили в аудиторию 2.204, где будущим абитуриентам рассказали о вузе и его специальности. Представитель приемной комиссии предоставила необходимую для вступления информацию, провела инструктаж по вступительной кампании 2017. Сегодняшние студенты высказывали свои впечатления об учебе и студенческой жизни в стенах университета, рассказали о мероприятиях, которые проходят в течение учебного года. </p><p>После этого все приглашенные разошлись по отдельным аудиториям, где каждый факультет представил свои специальности. Заведующие кафедр рассказали гостям об особенностях факультета, основных специальностях и о специфике их работы. Особое внимание уделили возможностям стажировки за рубежом, поделились информацией о программах обмена студентами и перспективами на будущее. После этого школьники смогли задать интересующие их вопросы и пообщаться со студентами, которые учатся в ДонНТУ.</p><p>Факультет КНТ заинтересовал многих школьников. Надеемся, что в сентябре наше учебное заведение откроет двери многим талантливым студентам и будущим высококвалифицированным специалистам. Ждем вас!</p>',
@@ -589,7 +692,39 @@ if(!create_news(array( 'title_uk'=>'День відкритих дверей','t
 
 	$success = false;
 }
-
+if(!create_image(array('news_id'=>7),$db)){
+  $success = false;
+}
+if(!create_image(array('news_id'=>7),$db)){
+  $success = false;
+}
+if(!create_image(array('news_id'=>7),$db)){
+  $success = false;
+}
+if(!create_image(array('news_id'=>7),$db)){
+  $success = false;
+}
+if(!create_image(array('news_id'=>7),$db)){
+  $success = false;
+}
+if(!create_image(array('news_id'=>7),$db)){
+  $success = false;
+}
+if(!create_image(array('news_id'=>7),$db)){
+  $success = false;
+}
+if(!create_image(array('news_id'=>7),$db)){
+  $success = false;
+}
+if(!create_image(array('news_id'=>7),$db)){
+  $success = false;
+}
+if(!create_image(array('news_id'=>7),$db)){
+  $success = false;
+}
+if(!create_image(array('news_id'=>7),$db)){
+  $success = false;
+}
 if(!create_news(array( 'title_uk'=>'Міжнародна олімпіада «The ACM-ICPC International Collegiate Programming Contest 2017»','title_ru'=>'Міжнародна олімпіада «The ACM-ICPC International Collegiate Programming Contest 2017»','title_en'=>'Міжнародна олімпіада «The ACM-ICPC International Collegiate Programming Contest 2017»', 
   'full_text_uk'=>'<p>25 березня 2017 року в ДВНЗ «Донецький національний технічний університет» пройшов 1-й етап міжнародної олімпіади «The ACM-ICPC International Collegiate Programming Contest 2017». Змагання проводяться під егідою Асоціації обчислювальної техніки (ACM) за участі університета Бейлора (<a href=\"https://icpc.baylor.edu\">https://icpc.baylor.edu</a>).</p><p>Головною особливістю змагань є формат проведення. Команди отримують від 8 до 15 завдань, пишуть рішення обраною мовою програмування і надсилають їх на тестовий сервер. Програми тестуються на вхідних тестах, що є невідомими учасникам. Якщо програма видала неправильну відповідь або не вклалася в обмеження за часом / пам\'яттю, то команда отримує повідомлення про це і може послати виправлену версію. Завдання вважається вирішеним, якщо програма видала правильні відповіді на всіх тестах. Перемагає команда, яка вирішила правильно найбільше число завдань.</p><p>В 2017 році в 1-му етапі олімпіади в ДВНЗ «ДонНТУ» прийняли участь сім команд, кожна з яких складалася з трьох студентів факультету комп’ютерних наук і технологій. За результатами змагань команда DonNTU_CSTF_United у складі Мінь Ань - Нгуєн, Ярослава Сафронова та Андрія Кузьменко (тренер – Оксана Золотухіна) посіла перше місце серед команд Донецької області. Колектив викладачів та студентів факультету комп’ютерних наук і технологій щиро вітає команду DonNTU_CSTF_United з перемогою та бажає успіхів у подальших виступах на наступних етапах олімпіади.</p><p style=\" text-align:right;\"><i>Відповідальний за проведення олімпіади у ДВНЗ «ДонНТУ»</i><br><i>доц. кафедри комп’ютерної інженерії Цололо С. О.</i></p>',
   'full_text_ru'=>'<p>25 березня 2017 року в ДВНЗ «Донецький національний технічний університет» пройшов 1-й етап міжнародної олімпіади «The ACM-ICPC International Collegiate Programming Contest 2017». Змагання проводяться під егідою Асоціації обчислювальної техніки (ACM) за участі університета Бейлора (<a href=\"https://icpc.baylor.edu\">https://icpc.baylor.edu</a>).</p><p>Головною особливістю змагань є формат проведення. Команди отримують від 8 до 15 завдань, пишуть рішення обраною мовою програмування і надсилають їх на тестовий сервер. Програми тестуються на вхідних тестах, що є невідомими учасникам. Якщо програма видала неправильну відповідь або не вклалася в обмеження за часом / пам\'яттю, то команда отримує повідомлення про це і може послати виправлену версію. Завдання вважається вирішеним, якщо програма видала правильні відповіді на всіх тестах. Перемагає команда, яка вирішила правильно найбільше число завдань.</p><p>В 2017 році в 1-му етапі олімпіади в ДВНЗ «ДонНТУ» прийняли участь сім команд, кожна з яких складалася з трьох студентів факультету комп’ютерних наук і технологій. За результатами змагань команда DonNTU_CSTF_United у складі Мінь Ань - Нгуєн, Ярослава Сафронова та Андрія Кузьменко (тренер – Оксана Золотухіна) посіла перше місце серед команд Донецької області. Колектив викладачів та студентів факультету комп’ютерних наук і технологій щиро вітає команду DonNTU_CSTF_United з перемогою та бажає успіхів у подальших виступах на наступних етапах олімпіади.</p><p style=\" text-align:right;\"><i>Відповідальний за проведення олімпіади у ДВНЗ «ДонНТУ»</i><br><i>доц. кафедри комп’ютерної інженерії Цололо С. О.</i></p>',
@@ -597,12 +732,44 @@ if(!create_news(array( 'title_uk'=>'Міжнародна олімпіада «Th
   'short_text_uk'=>'<p>25 березня 2017 року в ДВНЗ «Донецький національний технічний університет» пройшов 1-й етап міжнародної олімпіади «The ACM-ICPC International Collegiate Programming Contest 2017». Змагання проводяться під егідою Асоціації обчислювальної техніки (ACM) за участі університета Бейлора (<a href=\"https://icpc.baylor.edu\">https://icpc.baylor.edu</a>).</p>',
   'short_text_ru'=>'<p>25 березня 2017 року в ДВНЗ «Донецький національний технічний університет» пройшов 1-й етап міжнародної олімпіади «The ACM-ICPC International Collegiate Programming Contest 2017». Змагання проводяться під егідою Асоціації обчислювальної техніки (ACM) за участі університета Бейлора (<a href=\"https://icpc.baylor.edu\">https://icpc.baylor.edu</a>).</p>',
   'short_text_en'=>'<p>25 березня 2017 року в ДВНЗ «Донецький національний технічний університет» пройшов 1-й етап міжнародної олімпіади «The ACM-ICPC International Collegiate Programming Contest 2017». Змагання проводяться під егідою Асоціації обчислювальної техніки (ACM) за участі університета Бейлора (<a href=\"https://icpc.baylor.edu\">https://icpc.baylor.edu</a>).</p>',
-  'images_nums'=>'1,2,3,4,5,6,7',
+  'images_nums'=>'1,2,3,4,5,6,7,8,9,10,11',
   ),$db)){
 
   $success = false;
 }
-
+if(!create_image(array('news_id'=>8),$db)){
+  $success = false;
+}
+if(!create_image(array('news_id'=>8),$db)){
+  $success = false;
+}
+if(!create_image(array('news_id'=>8),$db)){
+  $success = false;
+}
+if(!create_image(array('news_id'=>8),$db)){
+  $success = false;
+}
+if(!create_image(array('news_id'=>8),$db)){
+  $success = false;
+}
+if(!create_image(array('news_id'=>8),$db)){
+  $success = false;
+}
+if(!create_image(array('news_id'=>8),$db)){
+  $success = false;
+}
+if(!create_image(array('news_id'=>8),$db)){
+  $success = false;
+}
+if(!create_image(array('news_id'=>8),$db)){
+  $success = false;
+}
+if(!create_image(array('news_id'=>8),$db)){
+  $success = false;
+}
+if(!create_image(array('news_id'=>8),$db)){
+  $success = false;
+}
 /*
 if(!create_news(array( 'title_uk'=>'','title_ru'=>'','title_en'=>'', 
   'full_text_uk'=>'<p></p>',

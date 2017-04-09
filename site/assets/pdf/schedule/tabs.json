@@ -137,8 +137,29 @@
 		},
 		"pills":[
 			{
-				"group":"Дневная форма",
+				"group":"Дневна форма",
 				"pdf":"teacher-schedule.pdf"
+			},
+			{
+				"group":"Сесія",
+				"pdf":"teacher-session.pdf"
+			}
+		]
+	},
+	{
+		"tabName": {
+			"uk":"Сесія",
+			"ru":"Сессия",
+			"en":"Session"
+		},
+		"pills":[
+			{
+				"group":"Дневна форма",
+				"pdf":"session-main.pdf"
+			},
+			{
+				"group":"Заочна форма",
+				"pdf":"session-remote.pdf"
 			}
 		]
 	}

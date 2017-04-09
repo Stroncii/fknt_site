@@ -49,8 +49,7 @@
                                     <button class="btn btn-default" ng-click="addPart()">Добавить часть новости</button>
                                     <button class="btn btn-danger" ng-click="cancel()">Отмена</button>
                                     <button type="submit"ng-show="mode === 'add'" class="btn btn-success" ng-click="addNews()">Добавить новость</button>
-                                    <button ng-show="mode === 'edit'" class="btn btn-success" ng-click="update()">Обновить новость</button>        
-                                    <input type="file" name="photo" multiple accept="image/*,image/jpeg"/><br/>                     
+                                    <button ng-show="mode === 'edit'" class="btn btn-success" ng-click="update()">Обновить новость</button>                         
                                     <table ng-if="mode === 'edit'" class="table">
                                         <thead>
                                             <tr>
@@ -126,10 +125,30 @@
 
 
 
-                            <!--ГРУППЫ!-->
-                            <div role="tabpanel" id="groups" ng-controller="groupsController" class="tab-pane fade">
-                                <h3>Groups</h3>
-                                <p>Some content in groups.</p>
+                            <!--КАРТИНКИ!!!!!!-->
+                            <div role="tabpanel" id="groups" ng-controller="imagesController" class="tab-pane fade">
+                                <h3>Images</h3>
+                                <fotm action="'/objects/images/create.php'">
+                                    <input type="file" name="photo" ng-model="files" multiple accept="image/*,image/jpeg"/><br/>    
+                                    <button type="submit" class="btn btn-success" onsubmit="addImage()">Add image</button>
+                                </fotm>
+                                <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <td>Image</td>
+                                                <td></td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr ng-repeat="image in images">
+                                                
+                                                <td><img class="image-preview" ng-src="{{image.path}}" alt="lalka"></td>
+                                                <td>
+                                                    <button ng-click="deleteImage(image)" class="btn btn-danger">Удалить</button>
+                                                </td>                                        
+                                            </tr>
+                                        </tbody>
+                                    </table>
                             </div>
                         </div>
                     </div>

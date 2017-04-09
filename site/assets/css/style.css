@@ -448,3 +448,9 @@ a[data-target], ul.nav li {
   input[type="date"]:valid:before {
     content: "" !important;
   }
+
+
+
+  .image-preview {
+    max-width: 200px;
+  }

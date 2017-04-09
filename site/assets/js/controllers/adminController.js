@@ -14,16 +14,13 @@ angular.module('app')
 
   function init () {
     $scope.isEditable = false;
+    $scope.isUserEditable = false;
+    $scope.userMode = 'add';
+    userInit();
     $scope.item = {
             content: 'lalalalalalalala',
             synopsis: '',
             title: ''
-    };
-    $scope.newUser = {
-        username: 'Some values',
-        level: '',
-        username: '',
-        password: ''
     };
     $scope.currentItem = {
         ru: {
@@ -49,7 +46,15 @@ angular.module('app')
         $scope.users = data.users;
     });
 
-    };
+};
+
+function userInit () {
+    $scope.newUser = {
+            level: '',
+            username: 'hohoho',
+            password: ''
+        };
+};
 
 
     $scope.setEditableStatus = (status) => {
@@ -126,9 +131,30 @@ angular.module('app')
   };
 
   $scope.addUser = function () {
-      usersFactory.addUser($scope.newUser);
+      usersFactory.addUser($scope.newUser).then(() => {
+          $scope.isUserEditable = false;
+      });
+  };
+
+  $scope.changeUser = function () {
+      usersFactory.updateUser($scope.newUser).then(() => {
+          $scope.isUserEditable = false;
+      });
   }
 
+  $scope.updateUser = function (user) {
+    $scope.newUser.id = user.id;
+    $scope.newUser.username = user.username;
+    $scope.newUser.level = user.level;
+    $scope.newUser.email = user.email;
+  };
+
+  $scope.setUserMode = () => {
+      console.log('dauni');
+      userInit();
+  };
+
+  $
 
 
 

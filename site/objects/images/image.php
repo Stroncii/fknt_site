@@ -110,12 +110,13 @@ function delete(){
  
     // sanitize
     $this->id=htmlspecialchars(strip_tags($this->id));
- 
+    $id = $this->id;
     // bind id of record to delete
     $stmt->bindParam(1, $this->id);
  
     // execute query
     if($stmt->execute()){
+        unlink('/assets/img/news/items/'.$id.'.jpg');
         return true;
     }
  

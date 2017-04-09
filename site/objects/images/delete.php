@@ -1,24 +1,25 @@
 <?php 
 // include database and object file 
 include_once '../../config/database.php';
-include_once 'user.php';
+include_once 'image.php';
  
 // get database connection 
 $database = new Database(); 
 $db = $database->getConnection();
  
 // prepare product object
-$user = new User($db);
+$image = new Image($db);
  
 // get product id
 $data = json_decode(file_get_contents("php://input"),true);     
  
 // set product id to be deleted
-$user->id = $data['id'];
+
+$image->id = explode('.',explode('/',$data['path'])[5])[0];
  
 // delete the product
-if($user->delete()){
-    echo "User was deleted.";
+if($image->delete()){
+    echo "Image was deleted.";
 }
  
 // if unable to delete the product

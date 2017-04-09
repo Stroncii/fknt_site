@@ -16,13 +16,18 @@ if ( !empty( $_FILES ) ) {
 	    $uploadPath = '/assets/img/news/items/' . $image->id.'.jpg';
 
 	    move_uploaded_file( $tempPath, $uploadPath );
+	    $answer = array( 'answer' => 'Image was created.' );
+    	$json = json_encode( $answer );
 
-	    echo "Image was created.";
+    	echo $json;
 	}
 	 
 	// if unable to create the product, tell the user
 	else{
-	    echo "Unable to create image.";
+		$answer = array( 'answer' => 'Unable to create image.' );
+    	$json = json_encode( $answer );
+
+    	echo $json;
 	}
     
 

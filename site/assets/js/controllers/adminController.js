@@ -15,6 +15,7 @@ angular.module('app')
   init();
 
   function init () {
+      $scope.user = 'lalka';
     $scope.isEditable = false;
     $scope.isUserEditable = false;
     $scope.userMode = 'add';

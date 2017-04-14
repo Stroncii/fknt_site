@@ -127,6 +127,7 @@ var app = angular.module('app', ['ngRoute', 'ngSanitize', 'pascalprecht.translat
     'ONE_NEWS_BUTTON': 'Докладніше',
     'ALL_NEWS': 'Усі новини',
     'FOO': 'Деканат ФКНТ',
+    'LANGUAGE': 'Змінити мову',
 
 
      // HISTORY
@@ -338,6 +339,7 @@ var app = angular.module('app', ['ngRoute', 'ngSanitize', 'pascalprecht.translat
     'ONE_NEWS_BUTTON': 'Подробнее...',
     'ALL_NEWS': 'Все новости',
     'FOO': 'Деканат ФКНТ',
+    'LANGUAGE': 'Поменять язык',
 
     // HISTORY
     'ET_FACULTY_TITLE': 'Электротехнический факультет',
@@ -735,13 +737,12 @@ app.run(function($rootScope, $location, $anchorScroll, $translate) {
     console.log('change');
    // if($location.hash()) $anchorScroll();  
   });
-  $rootScope.language = $translate.use() || 'uk';
-
-  $rootScope.changeLanguage = function () {
-
-  };
-  if (sessionStorage.getItem('user')) {
+  $rootScope.language = 'uk';
+  
+  if (sessionStorage.getItem('user') != '') {
     $rootScope.logged = true;
+    $rootScope.user = sessionStorage.getItem('user');
+    console.log($rootScope.user);
   }
 });
 

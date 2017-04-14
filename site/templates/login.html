@@ -1,0 +1,39 @@
+        <div class="main main-raised">
+            <div class="profile-content">
+                <div class="container">
+                    <div class="row">
+                        <div class="profile">
+                            <div class="avatar">
+                                <a href="/"><img src="/assets/img/logo.png" alt="Link to main page" class="img-circle img-responsive img-raised" ></a>
+                            </div>
+                            <div class="name">
+                                <h1 class="title">Login</h1>
+                                <h6></h6>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="row">
+                        <form name="login" class="form-signin">
+                        <h2 class="form-signin-heading">Please sign in</h2>
+                        <label for="inputEmail" class="sr-only">Email address</label>
+                        <input type="text" ng-model="user.user" class="form-control" novalidate placeholder="Email address">
+                        <label for="inputPassword" ng-model="user.password" class="sr-only">Password</label>
+                        <input type="password" class="form-control" placeholder="Password">
+                        <button class="btn btn-lg btn-primary btn-block" ng-click="loginE()">Sign in</button>
+                    </form>
+                    <div class="alert alert-success" ng-if="error == 'noerror'">
+                        <strong>Все верно</strong> 
+                    </div>
+
+                    <div class="alert alert-danger" ng-if="error == 'error'">
+                        <strong>Info!</strong> Ошибка!
+                    </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>

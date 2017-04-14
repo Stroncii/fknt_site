@@ -1,10 +1,25 @@
 angular.module('app')
-.controller('imagesController',['$scope', '$http', 'imagesFactory', '$sce', '$translate', '$rootScope', 'FileUploader' , function($scope, $http, imagesFactory, $sce, $translate, $rootScope, FileUploader){
+.controller('imagesController',['$scope', '$http', 'imagesFactory', '$sce', '$translate', '$rootScope', 'FileUploader', 'appFactory', function($scope, $http, imagesFactory, $sce, $translate, $rootScope, FileUploader, appFactory){
   
  function init () {
      console.log('initialization group');
      getImages();
-     $scope.files = [];
+     getUnusedImages();
+     $scope.mode = 'add';
+     $scope.choose = {
+         mode: 'choose',
+         id: "" 
+     };
+     appFactory.getNews($rootScope.language).then(function(data) {
+        console.log(data);
+        $scope.news = data.news;
+        
+    });
+ }
+
+ $scope.changeMode = function(type) {
+     console.log('change');
+     $scope.mode = type;
  }
 
 
@@ -15,7 +30,44 @@ angular.module('app')
      });
  };
 
+ function getUnusedImages () {
+     imagesFactory.getUnusedImages().then((data) => {
+         console.log('unused');
+         console.log(data);
+        $scope.unused = data.images;
+     });
+ };
 
+ $scope.editNewsImages = function (id) {
+     console.log(id);
+     $scope.choose.mode = 'edit';
+     $scope.choose.id = id;
+     getUnusedImages();
+     appFactory.getOneNewsItem(id, 'ru').then((data) => {
+        $scope.choose.item = data;
+        console.log(data);
+     });
+ };
+
+ $scope.deleteImageFromNews = function (path) {
+   imagesFactory.updateImage(path, "").then((data)=> {
+        console.log('deleted from news');
+        console.log(data);
+    }, () => {
+        console.log('error')
+    });
+
+ };
+
+ $scope.addImageToNews = function (image) {
+     console.log(image);
+   imagesFactory.updateImage(image.path, $scope.choose.id).then((data)=> {
+        console.log('deleted from news');
+        console.log(data);
+    }, () => {
+        console.log('error')
+    });
+};
 
  $scope.deleteImage = function (image) {
     imagesFactory.deleteImage(image.path).then((data)=> {
@@ -23,8 +75,12 @@ angular.module('app')
         console.log(data);
     }, () => {
         console.log('error')
-    })
- }
+    });
+ };
+
+ $scope.cancelNewsImageEdit = function () {
+    $scope.choose.mode = 'choose';
+ };
 
  init();
 

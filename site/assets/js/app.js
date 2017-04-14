@@ -76,6 +76,10 @@ var app = angular.module('app', ['ngRoute', 'ngSanitize', 'pascalprecht.translat
   .when('/error', {
     templateUrl: 'templates/error.html'
   })
+  .when('/login', {
+    templateUrl: 'templates/login.html',
+    controller: 'loginController'
+  })
   .otherwise('/error');
 
 
@@ -732,6 +736,10 @@ app.run(function($rootScope, $location, $anchorScroll, $translate) {
    // if($location.hash()) $anchorScroll();  
   });
   $rootScope.language = $translate.use() || 'uk';
+
+  if (sessionStorage.getItem('user')) {
+    $rootScope.logged = true;
+  }
 });
 
   

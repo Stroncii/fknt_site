@@ -1,5 +1,5 @@
 angular.module('app')
-.controller('adminController',['$scope', '$rootScope', 'appFactory', 'usersFactory', function($scope, $rootScope, appFactory, usersFactory){
+.controller('adminController',['$scope', '$rootScope', 'appFactory', 'usersFactory', '$location', function($scope, $rootScope, appFactory, usersFactory, $location){
 
 
     // item - текущие рабочие куски одного языка.
@@ -9,7 +9,9 @@ angular.module('app')
 
   $scope.mode = 'add';
   $scope.lang="ru";
-
+  if (!$rootScope.logged) {
+      $location.path('/login')
+  }
   init();
 
   function init () {

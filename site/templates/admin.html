@@ -17,7 +17,7 @@
                         <ul class="nav nav-tabs">
                             <li class="active"><a data-target="#news" role="tab" data-toggle="tab">News</a></li>
                             <li><a data-toggle="tab" role="tab" data-target="#users">Users</a></li>
-                            <li><a data-toggle="tab" role="tab" data-target="#groups">Groups</a></li>
+                            <li><a data-toggle="tab" role="tab" data-target="#images">Images</a></li>
                         </ul>
 
                         <div class="tab-content">
@@ -126,9 +126,17 @@
 
 
                             <!--КАРТИНКИ!!!!!!-->
-                    <div role="tabpanel" id="groups" ng-controller="imagesController" class="tab-pane fade">
-                                <h3>Images</h3>
-                                <input type="file" nv-file-select="" uploader="uploader" multiple  /><br/>
+                    <div role="tabpanel" id="images" ng-controller="imagesController" class="tab-pane fade">
+                    <h3>Images</h3>
+                    <label >
+                        <input type="radio" name="level" ng-change="changeMode('add')" ng-model="userMode" value="add" > Add
+                    </label>
+                    <label>
+                        <input type="radio" name="level" ng-model="userMode" ng-change="changeMode('edit')" value="edit"> Edit
+                    </label>
+
+                    <div ng-if="mode=='add'">
+                    <input type="file" nv-file-select="" uploader="uploader" multiple  /><br/>
                     <div class="col-md-9" style="margin-bottom: 40px">
                     <h2>Uploads only images (with canvas preview)</h2>
                     <h3>The queue</h3>
@@ -201,24 +209,67 @@
                     </div>
 
                 </div>
-                <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <td>Image</td>
-                                                <td></td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr ng-repeat="image in images">
-                                                
-                                                <td><img class="image-preview" ng-src="{{image.path}}" alt="lalka"></td>
-                                                <td>
-                                                    <button ng-click="deleteImage(image)" class="btn btn-danger">Удалить</button>
-                                                </td>                                        
-                                            </tr>
-                                        </tbody>
-                                    </table>
 
+                <div ng-repeat="image in images" class="col-md-4 news-cover image-container">
+	                		<img ng-src="{{image.path}}" class="image" alt="{{item.title}}">
+	                		<div class="overlay">
+                                <button ng-click="deleteImage(image)" class="btn btn-danger text">Удалить</button>                                
+                            </div>
+	            </div>
+                </div>
+                <div ng-if="mode=='edit'">
+                    <div ng-if="choose.mode == 'choose'">
+                        <table class="table table-contested">
+                            <thead>
+                                <tr>
+                                    <th>Заголовок</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="item in news">
+                                    <td>{{item.title}}</td>
+                                    <td>
+                                        <button type="button" ng-click="editNewsImages(item.id)" class="btn btn-success btn-s">
+                                            Изменить
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+
+
+                    <div ng-if="choose.mode == 'edit'">
+                        <h2>{{choose.item.title}}</h2>
+
+                        <div class="col-md-12">
+                            <h3>Картинки в новости</h3>
+                            <div ng-repeat="image in choose.item.images" class="col-md-2 news-cover image-container">
+                                <img ng-src="{{image}}" class="image" alt="{{choose.item.title}}">
+                                <div class="overlay">
+                                    <button ng-click="deleteImageFromNews(image)" class="btn btn-danger text">Удалить</button>                                
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="col-md-12">
+                            <h3>Неиспользуемые картинки</h3>
+                        <div ng-repeat="image in unused" class="col-md-2 news-cover image-container">
+	                		<img ng-src="{{image.path}}" class="image">
+	                		<div class="overlay">
+                                <button ng-click="addImageToNews(image)" class="btn btn-danger text">Добавить</button>                                
+                            </div>
+	                    </div>
+                        </div>
+
+
+                        <button ng-click="cancelNewsImageEdit()" class="btn btn-default">
+                            Отмена
+                        </button>
+                    </div>
+                </div>
             </div>
                                 
                             </div>

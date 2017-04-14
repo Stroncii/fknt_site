@@ -69,6 +69,23 @@ function create(){
 	 
 	    return $stmt;
 	}
+    function check($username,$password){
+     
+        // select all query
+        $query = "SELECT
+                    id, username, email, level
+                FROM
+                    " . $this->table_name . "
+                WHERE
+                    username = '".$username."' AND password = '".$password."'
+                ";
+        // prepare query statement
+        $stmt = $this->conn->prepare( $query );
+        // execute query
+        $stmt->execute();
+     
+        return $stmt;
+    }
 	function update(){
  
     // update query

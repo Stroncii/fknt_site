@@ -47,5 +47,5 @@ else{
 }
  
 // json format output
-echo '{"login":' . $data . '}';
+echo '{"login":"' . $data . '"}';
 ?>

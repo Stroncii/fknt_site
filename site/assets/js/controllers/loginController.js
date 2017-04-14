@@ -10,6 +10,8 @@ angular.module('app')
             if (data.login === 'success') {
                 $rootScope.logged = true;
                 $location.path('/admin');
+                $rootScope.user = $scope.user.user;
+                sessionStorage.setItem('user', $scope.user.user);
             } else {
                 $scope.error = 'error';
             }

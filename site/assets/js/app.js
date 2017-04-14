@@ -737,6 +737,9 @@ app.run(function($rootScope, $location, $anchorScroll, $translate) {
   });
   $rootScope.language = $translate.use() || 'uk';
 
+  $rootScope.changeLanguage = function () {
+
+  };
   if (sessionStorage.getItem('user')) {
     $rootScope.logged = true;
   }

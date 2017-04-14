@@ -7,8 +7,12 @@ angular.module('app')
   };
     $scope.loginE = function () {
         var log = loginFactory.logIn($scope.user).then((data) => {
-            console.log('data')
-            console.log(data);
+            if (data.login === 'success') {
+                $rootScope.logged = true;
+                $location.path('/admin');
+            } else {
+                $scope.error = 'error';
+            }
         }, () => {
             console.log('naaahooooooooy');
         });

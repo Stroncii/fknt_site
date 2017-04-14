@@ -6,13 +6,12 @@ angular.module('app')
       password: ''
   };
     $scope.loginE = function () {
-        var log = loginFactory.logIn($scope.user);
-        if (log) {
-            $scope.error = 'noerror';
-            sessionStorage.setItem('user', $scope.user.user);
-            $location.path('/admin');
-        } else {
-            $scope.error = 'error';
-        }
+        var log = loginFactory.logIn($scope.user).then((data) => {
+            console.log('data')
+            console.log(data);
+        }, () => {
+            console.log('naaahooooooooy');
+        });
+
     }
 }]);

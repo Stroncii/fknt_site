@@ -15,16 +15,16 @@ $db = $database->getConnection();
 // initialize object
 $image = new Image($db);
 // query products
-$stmt = $image->readAll();
+$stmt = $image->readUnused();
 $num = $stmt->rowCount();
- 
+
 $data="";
  
 // check if more than 0 record found
 if($num>0){
  
      
-    $x=0;
+    $x=1;
  
     // retrieve our table contents
     // fetch() is faster than fetchAll()
@@ -34,14 +34,14 @@ if($num>0){
         // this will make $row['name'] to
         // just $name only
         extract($row);
-        if(!isset($row['news_id'])){
-            $data .= $x>0 ? ',' : '';
+        
+            
             $data .= '{';
-                $data .= '"path":"/assets/img/news/items/'  . $row['id'] . '.jpg",';
-                $data .= '"news_id":"'   . $row['news_id'] . '"';
+                $data .= '"path":"/assets/img/news/items/'  . $row['id'] . '.jpg"';
             $data .= '}';
+            $data .= $x<$num ? ',' : '';
             $x++;
-        }
+        
     }
 }
  

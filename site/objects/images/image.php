@@ -56,6 +56,26 @@ function create(){
 	 
 	    return $stmt;
 	}
+    function readUnused(){
+     
+        // select all query
+        $query = "SELECT
+                    id, news_id
+                FROM
+                    " . $this->table_name . "
+                WHERE
+                    news_id = NULL OR news_id = 0
+                ORDER BY
+                    id ASC";
+        
+        // prepare query statement
+        $stmt = $this->conn->prepare( $query );
+     
+        // execute query
+        $stmt->execute();
+     
+        return $stmt;
+    }
     function read($n_id){
         // select all query
         $query = "SELECT

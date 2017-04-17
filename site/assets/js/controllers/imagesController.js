@@ -10,10 +10,8 @@ angular.module('app')
          mode: 'choose',
          id: "" 
      };
-     appFactory.getNews($rootScope.language).then(function(data) {
-        console.log(data);
+    appFactory.getNews($rootScope.language).then(function(data) {
         $scope.news = data.news;
-        
     });
  }
 
@@ -55,9 +53,8 @@ angular.module('app')
  };
 
  $scope.addImageToNews = function (image) {
-
    imagesFactory.updateImage(image.path, $scope.choose.id).then((data)=> {
-        
+        $scope.editNewsImages($scope.choose.id);
     }, () => {
     });
 };

@@ -4,10 +4,9 @@ angular.module('app')
   $scope.changeLanguage = function(language) {
     $translate.use(language);
     $rootScope.language = language;
-    console.log($rootScope.user);
   };
 
-  getNews = function () {
+  function getNews () {
      appFactory.getNews($rootScope.language).then(function(data) {
         $scope.firstNews = data.news[0];
         $scope.news = data.news;
@@ -21,6 +20,12 @@ angular.module('app')
   };
 
   getNews();
+
+
+  $rootScope.$on('updateNews', function () {
+    console.log('smthn');
+    getNews();
+  });
 
   $rootScope.$watch('language', function(newValue, oldValue) {
      if (oldValue && oldValue != newValue) {

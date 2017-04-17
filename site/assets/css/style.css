@@ -495,3 +495,8 @@ a[data-target], ul.nav li {
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
 }
+
+
+.isUsed {
+  border: 5px yellow solid;
+}

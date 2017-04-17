@@ -15,7 +15,7 @@ angular.module('app')
   init();
 
   function init () {
-      $scope.user = 'lalka';
+    $scope.user = 'lalka';
     $scope.isEditable = false;
     $scope.isUserEditable = false;
     $scope.userMode = 'add';
@@ -44,10 +44,7 @@ angular.module('app')
         images_nums: '1'
     };
 
-    usersFactory.getUsers().then((data) => {
-        console.log(data);
-        $scope.users = data.users;
-    });
+    getUsers();
 
 };
 
@@ -58,6 +55,12 @@ function userInit () {
             password: ''
         };
 };
+
+function getUsers () {
+       usersFactory.getUsers().then((data) => {
+           $scope.users = data.users;
+       });
+    }
 
 
     $scope.setEditableStatus = (status) => {
@@ -71,19 +74,19 @@ function userInit () {
   $scope.updateNewsItem = (id) => {
     appFactory.getFullNews(id).then(function(data) {
         setEditable(data);
+        $rootScope.$broadcast('updateNews');
     });
   };
 
   $scope.update = () => {
     appFactory.updateNews($scope.currentItem).then(function(data){
-         console.log('updated');
-         console.log(data);
+         $rootScope.$broadcast('updateNews');
      })
   };
 
   $scope.deleteNewsItem = (id) => {
      appFactory.deleteItem(id).then(function(data){
-         console.log('deleted');
+         $rootScope.$broadcast('updateNews');
      })
   };
 
@@ -115,9 +118,9 @@ function userInit () {
 
   $scope.addNews = function () {
       appFactory.addNewsItem($scope.currentItem).then(function(data){
-            console.log("yaaaa");
             $scope.setEditableStatus(false);
             init();
+            $rootScope.$broadcast('updateNews');
       });
   };
 
@@ -127,21 +130,22 @@ function userInit () {
   };
 
   $scope.deleteUser = function (id) {
-      console.log('delete ' + id);
     usersFactory.deleteUser(id).then((data) => {
-        console.log('deleted')
+        $rootScope.$broadcast('updateUser');
     });
   };
 
   $scope.addUser = function () {
       usersFactory.addUser($scope.newUser).then(() => {
           $scope.isUserEditable = false;
+          $rootScope.$broadcast('updateUser');         
       });
   };
 
   $scope.changeUser = function () {
       usersFactory.updateUser($scope.newUser).then(() => {
           $scope.isUserEditable = false;
+          $rootScope.$broadcast('updateUser');          
       });
   }
 
@@ -157,7 +161,10 @@ function userInit () {
       userInit();
   };
 
-  $
+
+$rootScope.$on('updateUser', function () {
+    getUsers();
+});
 
 
 

@@ -25,34 +25,29 @@ angular.module('app')
 
  function getImages () {
      imagesFactory.getImages().then((data) => {
-        console.log(data);
         $scope.images = data.images;
      });
  };
 
  function getUnusedImages () {
      imagesFactory.getUnusedImages().then((data) => {
-         console.log('unused');
-         console.log(data);
         $scope.unused = data.images;
      });
  };
 
  $scope.editNewsImages = function (id) {
-     console.log(id);
+     console.log('lalka');
      $scope.choose.mode = 'edit';
      $scope.choose.id = id;
      getUnusedImages();
      appFactory.getOneNewsItem(id, 'ru').then((data) => {
         $scope.choose.item = data;
-        console.log(data);
      });
  };
 
  $scope.deleteImageFromNews = function (path) {
    imagesFactory.updateImage(path, "").then((data)=> {
-        console.log('deleted from news');
-        console.log(data);
+        $scope.editNewsImages($scope.choose.id);
     }, () => {
         console.log('error')
     });
@@ -60,21 +55,17 @@ angular.module('app')
  };
 
  $scope.addImageToNews = function (image) {
-     console.log(image);
+
    imagesFactory.updateImage(image.path, $scope.choose.id).then((data)=> {
-        console.log('deleted from news');
-        console.log(data);
+        
     }, () => {
-        console.log('error')
     });
 };
 
  $scope.deleteImage = function (image) {
     imagesFactory.deleteImage(image.path).then((data)=> {
-        console.log('deleted');
-        console.log(data);
+        getImages();
     }, () => {
-        console.log('error')
     });
  };
 

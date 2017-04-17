@@ -739,7 +739,7 @@ app.run(function($rootScope, $location, $anchorScroll, $translate) {
   });
   $rootScope.language = 'uk';
   
-  if (sessionStorage.getItem('user') != '') {
+  if (sessionStorage.getItem('user')) {
     $rootScope.logged = true;
     $rootScope.user = sessionStorage.getItem('user');
     console.log($rootScope.user);

@@ -1,9 +1,15 @@
 angular.module('app')
-.controller('mainController',['$scope', '$http', 'appFactory', '$sce', '$translate', '$rootScope', function($scope, $http, appFactory, $sce, $translate, $rootScope){
+.controller('mainController',['$scope', '$http', 'appFactory', '$sce', '$translate', '$rootScope', '$location', function($scope, $http, appFactory, $sce, $translate, $rootScope, $location){
   
   $scope.changeLanguage = function(language) {
     $translate.use(language);
     $rootScope.language = language;
+  };
+
+  $scope.logout = function () {
+    $rootScope.logged = false;
+    $rootScope.$broadcast ('logout');
+    $location.path('/login');
   };
 
   function getNews () {
@@ -23,7 +29,6 @@ angular.module('app')
 
 
   $rootScope.$on('updateNews', function () {
-    console.log('smthn');
     getNews();
   });
 

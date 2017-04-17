@@ -5,6 +5,12 @@ angular.module('app')
       user: '',
       password: ''
   };
+
+   $rootScope.$on('logout', function () {
+         sessionStorage.removeItem('user');
+         $location.path('/login');
+   });
+
     $scope.loginE = function () {
         var log = loginFactory.logIn($scope.user).then((data) => {
             if (data.login === 'success') {

@@ -64,7 +64,7 @@ function create(){
                 FROM
                     " . $this->table_name . "
                 WHERE
-                    news_id = NULL OR news_id = 0
+                    news_id IS NULL OR news_id = 0
                 ORDER BY
                     id ASC";
         

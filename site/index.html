@@ -92,10 +92,10 @@
     					</a>
     				</li>
 					<li>
-						<a class="dropdown-toggle" data-toggle="dropdown">{{'LANGUAGE' | translate}} <span class="caret"></span></a>
+						<a class="dropdown-toggle" data-toggle="dropdown"> <img src="assets/img/flags/{{language}}.png" alt=""> {{fullLanguage[language]}} <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a ng-click="changeLanguage('uk')">Украинский</a></li>
-                                <li><a ng-click="changeLanguage('ru')">Русский</a></li>
+                                <li><a ng-click="changeLanguage('uk')" ng-if="language != 'uk'"> <img src="assets/img/flags/uk.png" alt="">  Українська</a></li>
+                                <li><a ng-click="changeLanguage('ru')" ng-if="language != 'ru'"> <img src="assets/img/flags/ru.png" alt="">  Русский</a></li>
                             </ul>
 					</li>
 					<li class="dropdown" ng-show="logged">

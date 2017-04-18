@@ -1,6 +1,12 @@
 angular.module('app')
 .controller('mainController',['$scope', '$http', 'appFactory', '$sce', '$translate', '$rootScope', '$location', function($scope, $http, appFactory, $sce, $translate, $rootScope, $location){
   
+  $scope.fullLanguage = {
+    ru: 'Русский',
+    uk: 'Українська',
+    en: 'English',
+    de: 'Deutch'
+  }
   $scope.changeLanguage = function(language) {
     $translate.use(language);
     $rootScope.language = language;

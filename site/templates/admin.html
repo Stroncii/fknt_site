@@ -211,7 +211,7 @@
                 </div>
 
                 <div ng-repeat="image in images" class="col-md-4 news-cover image-container">
-	                		<img ng-src="{{image.path}}" ng-class="{isUsed: image.id != null}" class="image" alt="{{item.title}}">
+	                		<img ng-src="{{image.path}}" ng-class="{isUsed: image.id == null}" class="image" alt="{{item.title}}">
 	                		<div class="overlay">
                                 <button ng-click="deleteImage(image)" class="btn btn-danger text">Удалить</button>                                
                             </div>

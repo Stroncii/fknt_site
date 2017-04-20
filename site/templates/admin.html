@@ -18,6 +18,7 @@
                             <li class="active"><a data-target="#news" role="tab" data-toggle="tab">News</a></li>
                             <li><a data-toggle="tab" role="tab" data-target="#users">Users</a></li>
                             <li><a data-toggle="tab" role="tab" data-target="#images">Images</a></li>
+                            <li><a data-toggle="tab" role="tab" data-target="#departments">DEpartments</a></li>
                         </ul>
 
                         <div class="tab-content">
@@ -271,7 +272,56 @@
                     </div>
                 </div>
             </div>
-                                
+
+
+            <!-- DEPARTMENTS -->
+                    <div role="tabpanel" ng-controller="departmentsController" id="departments" class="tab-pane fade">
+                        <h2>Departments</h2>
+                            <label class="col-md-3" for="dep_en">Русский<input ng-model="department.name_ru" class="form-control" type="text" name="dep_ru"></label>
+                            <label class="col-md-3" for="dep_ru">Английский<input ng-model="department.name_en" class="form-control" type="text" name="dep_en"></label>
+                            <label class="col-md-3" for="dep_uk">Украинский<input ng-model="department.name_uk" class="form-control" type="text" name="dep_uk"></label>
+                            <div class="row">
+                                <button type="button" ng-click="addDepartment()" class="btn btn-success btn-s" ng-if="mode == 'add'">  Добавить </button>  
+                                <button type="button" ng-click="changeDepartment()" class="btn btn-success btn-s" ng-if="mode == 'edit'">  Обновить </button>  
+                                <button type="button" ng-click="cancelDepartment()" class="btn btn-default btn-s">   Отмена </button>
+                            </div>                                                      
+                        <table class="table table-concested">
+                            <thead>
+                                <tr>
+                                    <td>
+                                        Id
+                                    </td>
+                                    <td>Название</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="item in deps">
+                                    <td>{{item.id}}</td>
+                                    <td>{{item.name_ru}}</td>
+                                    <td>
+                                        <button type="button" ng-click="editDepartment(item)" class="btn btn-success btn-s">
+                                            Изменить
+                                        </button>
+                                    </td>
+                                    <td>
+                                        <button type="button" ng-click="deleteDepartment(item.id)" class="btn btn-danger btn-s">
+                                            Удалить
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+
+            <!--  PLANS  -->  
+
+
+
+
+            <!-- SCHEDULES -->         
                             </div>
                         </div>
                     </div>

@@ -26,6 +26,19 @@ angular.module('app').factory ('pdfFactory', ['$http', function ($http) {
         });
     return works;
   };
+
+  fact.getDepartments = function () {
+      let deps = $http({
+            method: 'GET',
+            url: '/objects/departments/read.php'
+        }).then(function successCallback(response) {
+            return response.data;
+        }, function errorCallback(response) {
+            //console.log("Error!");
+            //console.log(response);
+        });
+    return deps;
+  }
   
   return fact;
 }]);

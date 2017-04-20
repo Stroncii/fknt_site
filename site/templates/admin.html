@@ -19,6 +19,7 @@
                             <li><a data-toggle="tab" role="tab" data-target="#users">Users</a></li>
                             <li><a data-toggle="tab" role="tab" data-target="#images">Images</a></li>
                             <li><a data-toggle="tab" role="tab" data-target="#departments">DEpartments</a></li>
+                            <li><a data-toggle="tab" role="tab" data-target="#plans">Plans</a></li>                            
                         </ul>
 
                         <div class="tab-content">
@@ -317,7 +318,33 @@
 
 
             <!--  PLANS  -->  
-
+                <div role="tabpanel" ng-controller="plansController" id="plans" class="tab-pane fade">
+                        <h2>Plans</h2>                                             
+                        <table class="table table-concested">
+                            <thead>
+                                <tr>
+                                    <td>Название</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="item in plans">
+                                    <td>{{item.tabname.ru}}</td>
+                                    <td>
+                                        <button type="button" class="btn btn-success btn-s">
+                                            Изменить
+                                        </button>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-danger btn-s">
+                                            Удалить
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
 
 

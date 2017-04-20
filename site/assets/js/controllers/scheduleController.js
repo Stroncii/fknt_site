@@ -3,9 +3,17 @@ angular.module('app')
   
 
 
-  pdfFactory.getSchedule().then((data) => {
+  function getSchedules () {
+    pdfFactory.getSchedule().then((data) => {
+      console.log('schedule.data');
+      console.log(data);
       $scope.schedule = data;
-  });
+    });
+  };
+
+  getSchedules();
+
+
 
 
 }])

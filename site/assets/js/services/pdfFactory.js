@@ -14,6 +14,20 @@ angular.module('app').factory ('pdfFactory', ['$http', function ($http) {
     return schedule;
   };
 
+
+
+
+
+
+
+
+
+
+
+
+
+  // PDF-s
+
   fact.getWorks = function () {
       let works = $http({
             method: 'GET',

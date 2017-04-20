@@ -23,7 +23,7 @@ var app = angular.module('app', ['ngRoute', 'ngSanitize', 'pascalprecht.translat
   .when('/kn', {
     templateUrl: 'templates/kn.html'
   })
-  .when('/ki',{
+  .when('/ki/',{
     controller : function(){
         window.location.replace('/ki/');
     }, 

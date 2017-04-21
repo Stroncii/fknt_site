@@ -11,10 +11,10 @@ $db = $database->getConnection();
 $dep = new Department($db);
  
 // get id of product to be edited
-$data = json_decode(file_get_contents("php://input"));     
+$data = json_decode(file_get_contents("php://input"),true);     
  
 // set ID property of product to be edited
-$dep->id = $data->id;
+$dep->id = $data['id'];
  
 // set product property values
 $dep->name_uk = $data['name_uk'];

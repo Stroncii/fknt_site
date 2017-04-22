@@ -11,7 +11,6 @@ include_once '../departments/department.php';
 // instantiate database and product object
 $database = new Database();
 $db = $database->getConnection();
-$lang = htmlspecialchars(strip_tags($_GET['language'])); 
 // initialize object
 $plan = new Schedule($db);
 $department = new Department($db);
@@ -58,7 +57,11 @@ if($num>0){
             if ($pi['department_id']==$row['id']) {
                 $data .= !$first ? ',' : '';
                 $data .= '{';
-                $data .= '"group":"'  . $pi['group_title_'.$lang] . '",';
+                $data .= '"group":{';
+                $data .= '"uk":"'.$pi['group_title_uk'].'",';
+                $data .= '"ru":"'.$pi['group_title_ru'].'",';
+                $data .= '"en":"'.$pi['group_title_en'].'"';
+                $data .= '},';
                 $data .= '"pdf":"'   . $pi['pdf_name'] . '"';
                 $data .= '}';
                 $first = false;

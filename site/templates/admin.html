@@ -18,7 +18,8 @@
                             <li class="active"><a data-target="#news" role="tab" data-toggle="tab">News</a></li>
                             <li><a data-toggle="tab" role="tab" data-target="#users">Users</a></li>
                             <li><a data-toggle="tab" role="tab" data-target="#images">Images</a></li>
-                            <li><a data-toggle="tab" role="tab" data-target="#departments">DEpartments</a></li>
+                            <li><a data-toggle="tab" role="tab" data-target="#departments">Departments</a></li>
+                            <li><a data-toggle="tab" role="tab" data-target="#covers">Covers</a></li>                                                        
                             <li><a data-toggle="tab" role="tab" data-target="#plans">Plans</a></li>                            
                         </ul>
 
@@ -315,6 +316,151 @@
                             </tbody>
                         </table>
                     </div>
+
+
+
+                    <!--    COVERS   -->
+                    <div role="tabpanel" ng-controller="coversController" id="covers" class="tab-pane fade">
+                        <h2>Covers</h2>
+                        <table ng-if="mode == 'choose'" class="table table-contested">
+                            <thead>
+                                <tr>
+                                    <td>Title</td>
+                                    <td></td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="item in news">
+                                    <td>{{item.title}}</td>
+                                    <td>
+                                         <button type="button" ng-click="editNewsItem(item)" class="btn btn-danger btn-s">
+                                            Изменить
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div ng-if="mode == 'edit'">
+                            <h3>{{editedItem.title}}</h3>
+                            <h4>Full cover</h4>
+                            <div class="col-md-5 news-cover image-container">
+                                <img ng-src="{{editedItem.full_cover}}" class="image" alt="{{item.title}}">
+                                <div class="overlay">
+                                    <button ng-click="deleteFullCover()" class="btn btn-danger text">Удалить</button>                                
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <h4>Cover</h4>
+                                <div class="news-cover col-md-3 image-container">
+                                    <img ng-src="{{editedItem.cover}}" class="image" alt="{{item.title}}">
+                                    <div class="overlay">
+                                        <button ng-click="deleteSmallCover()" class="btn btn-danger text">Удалить</button>                                
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <label >
+                                         <input type="radio" name="cover" ng-model="cover_type" ng-change="changeType('full')" value="full" > Full Cover
+                                </label>
+                                <label >
+                                        <input type="radio" name="cover" ng-model="cover_type" ng-change="changeType('cover')" value="cover"> Cover
+                                </label>
+                                <input type="file" nv-file-select="" uploader="uploader" /><br/>
+                                <div class="col-md-9" style="margin-bottom: 40px">
+                                <h2>Uploads only images (with canvas preview)</h2>
+                                <h3>The queue</h3>
+                                <p>Queue length: {{ uploader.queue.length }}</p>
+
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th width="50%">Name</th>
+                                            <th ng-show="uploader.isHTML5">Size</th>
+                                            <th ng-show="uploader.isHTML5">Progress</th>
+                                            <th>Status</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="item in uploader.queue">
+                                            <td>
+                                            <strong>{{ item.file.name }}</strong>
+                                            <!-- Image preview -->
+                                            <!--auto height-->
+                                            <!--<div ng-thumb="{ file: item.file, width: 100 }"></div>-->
+                                            <!--auto width-->
+                                            <div ng-show="uploader.isHTML5" ng-thumb="{ file: item._file, height: 100 }"></div>
+                                            <!--fixed width and height -->
+                                            <!--<div ng-thumb="{ file: item.file, width: 100, height: 100 }"></div>-->
+                                            </td>
+                                            <td ng-show="uploader.isHTML5" nowrap>{{ item.file.size/1024/1024|number:2 }} MB</td>
+                                            <td ng-show="uploader.isHTML5">
+                                                <div class="progress" style="margin-bottom: 0;">
+                                                        <div class="progress-bar" role="progressbar" ng-style="{ 'width': item.progress + '%' }"></div>
+                                                    </div>
+                                                </td>
+                                                <td class="text-center">
+                                                    <span ng-show="item.isSuccess"><i class="glyphicon glyphicon-ok"></i></span>
+                                                    <span ng-show="item.isCancel"><i class="glyphicon glyphicon-ban-circle"></i></span>
+                                                    <span ng-show="item.isError"><i class="glyphicon glyphicon-remove"></i></span>
+                                                </td>
+                                                <td nowrap>
+                                                    <button type="button" class="btn btn-success btn-xs" ng-click="item.upload()" ng-disabled="item.isReady || item.isUploading || item.isSuccess">
+                                                        <span class="glyphicon glyphicon-upload"></span> Upload
+                                                    </button>
+                                                    <button type="button" class="btn btn-warning btn-xs" ng-click="item.cancel()" ng-disabled="!item.isUploading">
+                                                        <span class="glyphicon glyphicon-ban-circle"></span> Cancel
+                                                    </button>
+                                                    <button type="button" class="btn btn-danger btn-xs" ng-click="item.remove()">
+                                                        <span class="glyphicon glyphicon-trash"></span> Remove
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                </table>
+
+                                <div>
+                                    <div>
+                                        Queue progress:
+                                        <div class="progress" style="">
+                                            <div class="progress-bar" role="progressbar" ng-style="{ 'width': uploader.progress + '%' }"></div>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-success btn-s" ng-click="uploader.uploadAll()" ng-disabled="!uploader.getNotUploadedItems().length">
+                                        <span class="glyphicon glyphicon-upload"></span> Upload all
+                                    </button>
+                                    <button type="button" class="btn btn-warning btn-s" ng-click="uploader.cancelAll()" ng-disabled="!uploader.isUploading">
+                                        <span class="glyphicon glyphicon-ban-circle"></span> Cancel all
+                                    </button>
+                                    <button type="button" class="btn btn-danger btn-s" ng-click="uploader.clearQueue()" ng-disabled="!uploader.queue.length">
+                                        <span class="glyphicon glyphicon-trash"></span> Remove all
+                                    </button>
+                                </div>
+
+                            </div>
+
+                                </div>
+                        
+
+                            
+
+
+                            <button class="btn btn-default"ng-click="cancel()">Отмена</button>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
 
 
             <!--  PLANS  -->  

@@ -1,19 +1,27 @@
 <?php
+header("Access-Control-Allow-Origin: *");
+header("Content-Type: multipart/form-data\n; charset=UTF-8");
+    
+// set ID property of product to be edited
+if(isset($_POST['news_id'])){
+	$news_id = $_POST['news_id'];
+	$strr = 'set.';
+}
+
 if ( !empty( $_FILES ) ) {
-	$news_id = 0;
-	if($image->create()){
-		$tempPath = $_FILES[ 'file' ][ 'tmp_name' ];
-	    $uploadPath = '/assets/img/news/covers/' . $news_id.'.jpg';
-
-	    move_uploaded_file( $tempPath, $uploadPath );
-
-	    echo "Image was created.";
+	if(!isset($news_id)){
+		$news_id = 0;
+		$strr = 'not set.';
 	}
-	 
-	// if unable to create the product, tell the user
-	else{
-	    echo "Unable to create image.";
-	}
+	
+	$tempPath = $_FILES[ 'file' ][ 'tmp_name' ];
+	$uploadPath = $_SERVER['DOCUMENT_ROOT'] .'/assets/img/news/covers/' . $news_id.'.jpg';
+
+	move_uploaded_file( $tempPath, $uploadPath );
+
+	echo "Image was uploaded and news id was ".$strr;
+	
+	
     
 
 } else {

@@ -1,13 +1,12 @@
 <?php
-
-
-$data = json_decode(file_get_contents("php://input"),true);     
+header("Access-Control-Allow-Origin: *");
+header("Content-Type: multipart/form-data\n; charset=UTF-8");
+    
 // set ID property of product to be edited
-if(isset($data['id'])){
-	$news_id = $data['id'];
+if(isset($_POST['news_id'])){
+	$news_id = $_POST['news_id'];
 	$strr = 'set.';
 }
-
 
 if ( !empty( $_FILES ) ) {
 	if(!isset($news_id)){
@@ -16,7 +15,7 @@ if ( !empty( $_FILES ) ) {
 	}
 	
 	$tempPath = $_FILES[ 'file' ][ 'tmp_name' ];
-	$uploadPath = '/assets/img/news/covers/' . $news_id.'_full.jpg';
+	$uploadPath = $_SERVER['DOCUMENT_ROOT'] .'/assets/img/news/covers/' . $news_id.'_full.jpg';
 
 	move_uploaded_file( $tempPath, $uploadPath );
 

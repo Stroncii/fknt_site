@@ -6,8 +6,10 @@ class Schedule{
  
     // object properties 
     public $id;
-    public $group_title;
-    public $pdf_url;
+    public $group_title_uk;
+    public $group_title_ru;
+    public $group_title_en;
+    public $pdf_name;
     public $department_id;
     public $position;
  
@@ -23,7 +25,7 @@ function create(){
     $query = "INSERT INTO 
                 " . $this->table_name . "
             SET 
-                group_title=:group_title, pdf_url=:pdf_url, department_id=:department_id";
+                group_title_uk=:group_title_uk, group_title_ru=:group_title_ru, group_title_en=:group_title_en, pdf_name=:pdf_name";
      
     // prepare query
     $stmt = $this->conn->prepare($query);

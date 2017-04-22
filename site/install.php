@@ -118,19 +118,23 @@ function create_group($data,$db,$table){
   $query = "INSERT INTO 
                 " . $table . "
             SET 
-                group_title=:group_title, pdf_url=:pdf_url, department_id=:department_id";
+                group_title_uk=:group_title_uk, group_title_ru=:group_title_ru, group_title_en=:group_title_en, pdf_name=:pdf_name, department_id=:department_id";
     
     // prepare query
     $stmt = $db->prepare($query);
 
     // posted values
-    $group_title=htmlspecialchars(strip_tags($data['group_title']));
-    $pdf_url=htmlspecialchars(strip_tags($data['pdf_url']));
+    $group_title_uk=htmlspecialchars(strip_tags($data['group_title_uk']));
+    $group_title_ru=htmlspecialchars(strip_tags($data['group_title_ru']));
+    $group_title_en=htmlspecialchars(strip_tags($data['group_title_en']));
+    $pdf_name=htmlspecialchars(strip_tags($data['pdf_name']));
     $department_id=htmlspecialchars(strip_tags($data['department_id']));
  
     // bind values
-    $stmt->bindParam(":group_title", $group_title);
-    $stmt->bindParam(":pdf_url", $pdf_url);
+    $stmt->bindParam(":group_title_uk", $group_title_uk);
+    $stmt->bindParam(":group_title_ru", $group_title_ru);
+    $stmt->bindParam(":group_title_en", $group_title_en);
+    $stmt->bindParam(":pdf_name", $pdf_name);
     $stmt->bindParam(":department_id", $department_id);
 
     if($stmt->execute()){
@@ -236,8 +240,10 @@ if(!create_department(array('name_uk'=>'Сесія','name_ru'=>'Сессия','n
 
 $query = "DROP TABLE IF EXISTS `plans`; CREATE TABLE IF NOT EXISTS `plans` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `group_title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `pdf_url` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `group_title_uk` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `group_title_ru` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `group_title_en` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `pdf_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `department_id` int(10) unsigned NOT NULL,
   `position` int(10) unsigned NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`)
@@ -674,7 +680,7 @@ if(!create_image(array('news_id'=>6),$db)){
 if(!create_news(array( 'title_uk'=>'День відкритих дверей','title_ru'=>'День открытых дверей','title_en'=>'Open Doors Day', 
   'full_text_uk'=>'<p>25 березня в ДонНТУ пройшов день відкритих дверей. Університет з неймовірною щирістю зустрів майбутніх випускників, їх батьків та гостей. Незважаючи на похмуру і холодну погоду, у нас було по-гостинному тепло та затишно.</p><p>З 11-ої години ранку в холі головного корпусу працювали  опергрупи всіх факультетів, які з задоволенням представляли відвідувачам свої проекти. Студенти факультету КНТ презентували гостям працюючу модель 3D-принтеру. Відвідувачі на власні очі змогли побачити, як працює такий пристрій, що викликало неабиякий інтерес кожного.</p><p>О 13.00 всіх було запрошено до аудиторії 2.204, де майбутнім абітурієнтам розповіли про ВНЗ та його спеціальності. Представник приймальної комісії надала потрібну для вступу інформацію, провела інструктаж щодо вступної кампанії 2017. Сьогоднішні студенти висловлювали свої враження про навчання та студентське життя в стінах університету, розповіли про заходи, які відбуваються протягом навчального року. </p><p>Після цього всі запрошені розійшлися по окремих аудиторіях, де кожен факультет представив свої спеціальності. Завідувачі кафедр розповіли гостям про особливості факультету, основні спеціальності та специфіку їх роботи. Особливу увагу приділили можливостям стажування за кордоном, поділилися інформацією щодо програм обміну студентами та перспектив на майбутнє. Після цього школярі змогли задати запитання, які їх цікавили та поспілкуватися зі студентами, які навчаються у ДонНТУ.</p><p>Факультет КНТ зацікавив багатьох школярів. Сподіваємося, що у вересні наш навчальний заклад відкриє двері багатьом талановитим студентам та майбутнім висококваліфікованим спеціалістам. Чекаємо на вас!</p>',
 	'full_text_ru'=>'<p>25 марта в ДонНТУ прошел день открытых дверей. Университет с невероятной искренностью встретил будущих выпускников, их родителей и гостей. Несмотря на пасмурную и холодную погоду, у нас было по-гостеприимному тепло и уютно.</p><p>С 11 утра в холле главного корпуса работали опергруппы всех факультетов, с удовольствием представляли посетителям свои проекты. Студенты факультета КНТ представили гостям работающую модель 3D-принтера. Посетители воочию смогли увидеть, как работает такое устройство, которое вызвало большой интерес каждого.</p><p>В 13.00 всех пригласили в аудиторию 2.204, где будущим абитуриентам рассказали о вузе и его специальности. Представитель приемной комиссии предоставила необходимую для вступления информацию, провела инструктаж по вступительной кампании 2017. Сегодняшние студенты высказывали свои впечатления об учебе и студенческой жизни в стенах университета, рассказали о мероприятиях, которые проходят в течение учебного года. </p><p>После этого все приглашенные разошлись по отдельным аудиториям, где каждый факультет представил свои специальности. Заведующие кафедр рассказали гостям об особенностях факультета, основных специальностях и о специфике их работы. Особое внимание уделили возможностям стажировки за рубежом, поделились информацией о программах обмена студентами и перспективами на будущее. После этого школьники смогли задать интересующие их вопросы и пообщаться со студентами, которые учатся в ДонНТУ.</p><p>Факультет КНТ заинтересовал многих школьников. Надеемся, что в сентябре наше учебное заведение откроет двери многим талантливым студентам и будущим высококвалифицированным специалистам. Ждем вас!</p>',
-	'full_text_en'=>'<p>March 25 in DonNTU was the day of open doors. University with incredible sincerity met future graduates, their parents and guests. Despite cloudy and cold weather, in our university it was warm and cozy.</p><p>From 11 a.m. in the lobby of the main building there were task forces from with all faculties, who were happy to show their projects. Students of the CST faculty presented to visitors a working model of a 3D-printer. Visitors were able to see with their own eyes how such a device, which caused considerable interest from everyone, works.</p><p>At 13.00 everyone was invited to the room 2.204, where future applicants were told about the university and its specialties. The representative of admission provided future applicants with all the necessary information, held a briefing about the opening of the campaign in 2017. Today\'s students expressed their impressions about studying and student life at the University, spoke about the events that occur during the school year. </p><p>After that, all the invited guests went to a separate classroom where each Department presented their specialty. Heads of departments told the guests about the peculiarities of the faculty, the main specialties and specifics of their work. Special attention was paid to opportunities of internships abroad, shared information about programs of exchange of students and future prospects. After that, students were able to ask questions and socialize with students who are studying in DonNTU.</p><p>The CST faculty interested many students. We hope that in September our University will open doors for many talented students and future highly qualified specialists. We are waiting for you!</p>',
+	'full_text_en'=>'<p>March 25 in DonNTU was the day of open doors. University with incredible sincerity met future graduates, their parents and guests. Despite cloudy and cold weather, in our university it was warm and cozy.</p><p>From 11 a.m. in the lobby of the main building there were task forces from with all faculties, who were happy to show their projects. Students of the CST faculty presented to visitors a working model of a 3D-printer. Visitors were able to see with their own eyes how such a device, which caused considerable interest from everyone, works.</p><p>At 13.00 everyone was invited to the room 2.204, where future applicants were told about the university and its specialties. The representative of admission committee provided future applicants with all the necessary information, held a briefing about the opening of the campaign in 2017. Current students expressed their feelings about studying and student life at the University, spoke about the events that occur during the academic year. </p><p>After that, all the invited guests went to a separate classrooms where each Department presented their specialties. Heads of departments told the guests about the peculiarities of the faculty, the main specialties and specifics of their work. Special attention was paid to opportunities of internships abroad, information about exchange programs for students and future prospects. After that, students were able to ask questions and socialize with students who are studying in DonNTU.</p><p>The CST faculty interested many students. We hope that in September our University will open doors for many talented students and future highly qualified specialists. We are waiting for you!</p>',
 	'short_text_uk'=>'<p>25 березня в ДонНТУ пройшов день відкритих дверей. Університет з неймовірною щирістю зустрів майбутніх випускників, їх батьків та гостей. Незважаючи на похмуру і холодну погоду, у нас було по-гостинному тепло та затишно.</p>',
 	'short_text_ru'=>'<p>25 марта в ДонНТУ прошел день открытых дверей. Университет с невероятной искренностью встретил будущих выпускников, их родителей и гостей. Несмотря на пасмурную и холодную погоду, у нас было по-гостеприимному тепло и уютно.</p>',
 	'short_text_en'=>'<p>25 березня в ДонНТУ пройшов день відкритих дверей. Університет з неймовірною щирістю зустрів майбутніх випускників, їх батьків та гостей. Незважаючи на похмуру і холодну погоду, у нас було по-гостинному тепло та затишно.</p>',

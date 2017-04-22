@@ -91,11 +91,11 @@
     						{{'CONTACTS'  | translate}}
     					</a>
     				</li>
-					<li>
-						<a class="dropdown-toggle" data-toggle="dropdown"> <img src="assets/img/flags/{{language}}.png" alt=""> {{fullLanguage[language]}} <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a ng-click="changeLanguage('uk')" ng-if="language != 'uk'"> <img src="assets/img/flags/uk.png" alt="">  Українська</a></li>
-                                <li><a ng-click="changeLanguage('ru')" ng-if="language != 'ru'"> <img src="assets/img/flags/ru.png" alt="">  Русский</a></li>
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown"> <img src="assets/img/flags/{{language}}.png" alt="">  <span class="caret"></span></a>
+                            <ul class="dropdown-menu language-dropdown">
+                                <li><a ng-click="changeLanguage('uk')" ng-if="language != 'uk'"> <img src="assets/img/flags/uk.png" alt=""> </a></li>
+                                <li><a ng-click="changeLanguage('ru')" ng-if="language != 'ru'"> <img src="assets/img/flags/ru.png" alt=""> </a></li>
                             </ul>
 					</li>
 					<li class="dropdown" ng-show="logged">

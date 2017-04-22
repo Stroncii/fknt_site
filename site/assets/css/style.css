@@ -500,3 +500,7 @@ a[data-target], ul.nav li {
 .isUsed {
   border: 5px yellow solid;
 }
+
+.language-dropdown, .language-dropdown li {
+  min-width: 50px !important;
+}

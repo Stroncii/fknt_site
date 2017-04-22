@@ -148,7 +148,7 @@ var app = angular.module('app', ['ngRoute', 'ngSanitize', 'pascalprecht.translat
     'CST_FACULTY': 'Факультет ОТІ перейменований у факультет комп’ютерних наук і технологій.',
 
     // NEWS
-    'NEWS_BUTTON': 'Далі',
+    'NEWS_BUTTON': 'Детальніше',
 
     // DEAN'S OFFICE
     'DEAN_TITLE': 'В.о. декана',
@@ -336,7 +336,7 @@ var app = angular.module('app', ['ngRoute', 'ngSanitize', 'pascalprecht.translat
     'ASPIRANTUR': 'Аспирантура - выбор людей, которые никогда не останавливаются на достигнутом! Ведь нет предела совершенству',
     'LEVELS_TITLE': 'Уровни образования',
     'LEVELS': 'Уровни образования, которых могут достичь студенты, обучающиеся на факультете компьютерных наук и технологий',
-    'ONE_NEWS_BUTTON': 'Подробнее...',
+    'ONE_NEWS_BUTTON': 'Подробнее',
     'ALL_NEWS': 'Все новости',
     'FOO': 'Деканат ФКНТ',
     'LANGUAGE': 'Поменять язык',
@@ -359,7 +359,7 @@ var app = angular.module('app', ['ngRoute', 'ngSanitize', 'pascalprecht.translat
     'CST_FACULTY': 'Факультет ВТИ переименован в факультет компьютерных наук и технологий.',
 
     // NEWS
-    'NEWS_BUTTON': 'Дальше',
+    'NEWS_BUTTON': 'Детальнее',
 
     // DEAN
     'DEAN_TITLE': 'И.о. декана',

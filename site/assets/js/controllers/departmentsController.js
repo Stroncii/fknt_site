@@ -33,7 +33,7 @@ angular.module('app')
 
   $scope.editDepartment = function (dep) {
     $scope.mode = 'edit';
-    $scope.department = dep;
+    $scope.department = angular.copy(dep);
   }
   
   $scope.changeDepartment = function () {

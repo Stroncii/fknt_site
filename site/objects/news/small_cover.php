@@ -1,6 +1,6 @@
 <?php
 header("Access-Control-Allow-Origin: *");
-header("Content-Type: multipart/form-data\n; charset=UTF-8");
+header("Content-Type: multipart/form-data; charset=UTF-8");
     
 // set ID property of product to be edited
 if(isset($_POST['news_id'])){

@@ -56,7 +56,7 @@ function create(){
 	            FROM
 	                " . $this->table_name . "
 	            ORDER BY
-	                id DESC";
+	                id ASC";
 	 
 	    // prepare query statement
 	    $stmt = $this->conn->prepare( $query );

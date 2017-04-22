@@ -1,37 +1,64 @@
 <?php
+header("Access-Control-Allow-Origin: *");
+header("Content-Type: multipart/form-data\n; charset=UTF-8");
 // include database and object file
-include_once '/config/database.php';
-include_once '/news/news.php';
+include_once '../../config/database.php';
+include_once 'schedule.php';
  
 // get database connection
 $database = new Database();
 $db = $database->getConnection();
  
 // instantiate product object
-$news = new News($db);
+$plan = new Schedule($db);
  
-// get posted data
-$data = json_decode(file_get_contents("php://input"),true);
- 
-// set product property values
-$news->group_title = $data['group_title'];
-$news->pdf_url = $data['pdf_url'];
-$news->department_id = $data['department_id'];
-$news->full_text_uk = $data['full_text_uk'];
-$news->full_text_ru = $data['full_text_ru'];
-$news->full_text_en = $data['full_text_en'];
-$news->short_text_uk = $data['short_text_uk'];
-$news->short_text_ru = $data['short_text_ru'];
-$news->short_text_en = $data['short_text_en'];
-$news->images_nums = $data['images_nums'];
- 
-// create the product
-if($news->create()){
-    echo "News was created.";
+if(isset($_POST['department_id'])){
+	$department_id = $_POST['department_id'];
 }
+if(isset($_POST['group_title_uk'])){
+	$group_title_uk = $_POST['title_uk'];
+}
+if(isset($_POST['group_title_ru'])){
+	$group_title_ru = $_POST['title_ru'];
+}
+if(isset($_POST['group_title_en'])){
+	$group_title_en = $_POST['title_en'];
+}
+
+
+if ( !empty( $_FILES ) ) {
+
+	$pdf_name = $_FILES[ 'file' ][ 'name' ];
+	$tempPath = $_FILES[ 'file' ][ 'tmp_name' ];
+	$uploadPath = $_SERVER['DOCUMENT_ROOT'] .'/assets/pdf/schedule/' . $pdf_name;
+
+	move_uploaded_file( $tempPath, $uploadPath );
+
+	echo "PDF was uploaded. ";
+
+	$plan->group_title_uk = $group_title_uk;
+	$plan->group_title_ru = $group_title_ru;
+	$plan->group_title_en = $group_title_en;
+	$plan->pdf_name = $pdf_name;
+	$plan->department_id = $department_id;
+	 
+	// create the product
+	if($plan->create()){
+	    echo "Schedule was created.";
+	}
  
 // if unable to create the product, tell the user
 else{
-    echo "Unable to create news.";
+    echo "Unable to create plan.";
 }
+	
+    
+
+} else {
+
+    echo 'No files uploaded';
+
+}
+// set product property values
+
 ?>

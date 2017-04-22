@@ -59,7 +59,7 @@ function create(){
 	 
 	    // select all query
 	    $query = "SELECT
-	                id, group_title,pdf_url,department_id, position
+	                id, group_title_uk,group_title_ru,group_title_en,pdf_name,department_id, position
 	            FROM
 	                " . $this->table_name . "
 	            ORDER BY
@@ -80,7 +80,7 @@ function create(){
     $query = "UPDATE
                 " . $this->table_name . "
             SET
-                group_title,pdf_url,department_id
+                group_title_uk,group_title_ru,group_title_en,pdf_name,department_id
             WHERE
                 id = :id";
  
@@ -88,13 +88,17 @@ function create(){
     $stmt = $this->conn->prepare($query);
  
     // sanitize
-    $this->group_title=htmlspecialchars(strip_tags($this->group_title));
-    $this->pdf_url=htmlspecialchars(strip_tags($this->pdf_url));
+    $this->group_title_uk=htmlspecialchars(strip_tags($this->group_title_uk));
+    $this->group_title_ru=htmlspecialchars(strip_tags($this->group_title_ru));
+    $this->group_title_en=htmlspecialchars(strip_tags($this->group_title_en));
+    $this->pdf_name=htmlspecialchars(strip_tags($this->pdf_name));
     $this->department_id=htmlspecialchars(strip_tags($this->department_id));
  
     // bind new values
-    $stmt->bindParam(":group_title", $this->group_title);
-    $stmt->bindParam(":pdf_url", $this->pdf_url);
+    $stmt->bindParam(":group_title_uk", $this->group_title_uk);
+    $stmt->bindParam(":group_title_ru", $this->group_title_ru);
+    $stmt->bindParam(":group_title_en", $this->group_title_en);
+    $stmt->bindParam(":pdf_name", $this->pdf_name);
     $stmt->bindParam(":department_id", $this->department_id);
     $stmt->bindParam(':id', $this->id);
  

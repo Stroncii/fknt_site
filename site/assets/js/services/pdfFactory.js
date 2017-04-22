@@ -32,7 +32,7 @@ angular.module('app').factory ('pdfFactory', ['$http', '$rootScope', function ($
   fact.getWorks = function () {
       let works = $http({
             method: 'GET',
-            url: '/object/plans/read.php?language=' + $rootScope.language
+            url: '/objects/plans/read.php?language=' + $rootScope.language
         }).then(function successCallback(response) {
             return response.data;
         }, function errorCallback(response) {

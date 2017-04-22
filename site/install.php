@@ -263,157 +263,159 @@ if(!execute_query($query,$db)){
 }
 
 
-if(!create_group(array('group_title'=>'КИ-13а','pdf_url'=>'assets/pdf/plans/ki13a.pdf','department_id'=>1),$db,'plans')){
+if(!create_group(array('group_title_uk'=>'КІ-13а','group_title_ru'=>'КИ-13а','group_title_en'=>'КI-13а','pdf_name'=>'ki13a.pdf','department_id'=>1),$db,'plans')){
   $success = false;
 }
-if(!create_group(array('group_title'=>'КИ-13б','pdf_url'=>'assets/pdf/plans/ki13b.pdf','department_id'=>1),$db,'plans')){
+if(!create_group(array('group_title_uk'=>'КІ-13б','group_title_ru'=>'КИ-13б','group_title_en'=>'КI-13b','pdf_name'=>'ki13b.pdf','department_id'=>1),$db,'plans')){
   $success = false;
 }
-if(!create_group(array('group_title'=>'КИ-14а','pdf_url'=>'assets/pdf/plans/ki14a.pdf','department_id'=>1),$db,'plans')){
+if(!create_group(array('group_title_uk'=>'КІ-14а','group_title_ru'=>'КИ-14а','group_title_en'=>'КИ-14а','pdf_name'=>'ki14a.pdf','department_id'=>1),$db,'plans')){
   $success = false;
 }
-if(!create_group(array('group_title'=>'КИ-14б','pdf_url'=>'assets/pdf/plans/ki14b.pdf','department_id'=>1),$db,'plans')){
+if(!create_group(array('group_title_uk'=>'КІ-14б','group_title_ru'=>'КИ-14б','group_title_en'=>'КИ-14б','pdf_name'=>'ki14b.pdf','department_id'=>1),$db,'plans')){
   $success = false;
 }
-if(!create_group(array('group_title'=>'КИ-15','pdf_url'=>'assets/pdf/plans/ki15.pdf','department_id'=>1),$db,'plans')){
+if(!create_group(array('group_title_uk'=>'КІ-15','group_title_ru'=>'КИ-15','group_title_en'=>'КИ-15','pdf_name'=>'ki15.pdf','department_id'=>1),$db,'plans')){
   $success = false;
 }
-if(!create_group(array('group_title'=>'КИ-16а','pdf_url'=>'assets/pdf/plans/ki16a.pdf','department_id'=>1),$db,'plans')){
+if(!create_group(array('group_title_uk'=>'КІ-16а','group_title_ru'=>'КИ-16а','group_title_en'=>'КИ-16а','pdf_name'=>'ki16a.pdf','department_id'=>1),$db,'plans')){
   $success = false;
 }
-if(!create_group(array('group_title'=>'КИ-16б','pdf_url'=>'assets/pdf/plans/ki16b.pdf','department_id'=>1),$db,'plans')){
+if(!create_group(array('group_title_uk'=>'КІ-16б','group_title_ru'=>'КИ-16б','group_title_en'=>'КИ-16б','pdf_name'=>'ki16b.pdf','department_id'=>1),$db,'plans')){
   $success = false;
 }
-if(!create_group(array('group_title'=>'КИм-16а','pdf_url'=>'assets/pdf/plans/kim16a.pdf','department_id'=>1),$db,'plans')){
+if(!create_group(array('group_title_uk'=>'КІм-16а','group_title_ru'=>'КИм-16а','group_title_en'=>'КИм-16а','pdf_name'=>'kim16a.pdf','department_id'=>1),$db,'plans')){
   $success = false;
 }
-if(!create_group(array('group_title'=>'КИм-16б','pdf_url'=>'assets/pdf/plans/kim16b.pdf','department_id'=>1),$db,'plans')){
+if(!create_group(array('group_title_uk'=>'КІм-16б','group_title_ru'=>'КИм-16б','group_title_en'=>'КИм-16б','pdf_name'=>'kim16b.pdf','department_id'=>1),$db,'plans')){
   $success = false;
 }
-if(!create_group(array('group_title'=>'КИс-16а','pdf_url'=>'assets/pdf/plans/kis16a.pdf','department_id'=>1),$db,'plans')){
+if(!create_group(array('group_title_uk'=>'КІс-16а','group_title_ru'=>'КИс-16а','group_title_en'=>'КИс-16а','pdf_name'=>'kis16a.pdf','department_id'=>1),$db,'plans')){
   $success = false;
 }
-if(!create_group(array('group_title'=>'КИс-16б','pdf_url'=>'assets/pdf/plans/kis16b.pdf','department_id'=>1),$db,'plans')){
+if(!create_group(array('group_title_uk'=>'КІс-16б','group_title_ru'=>'КИс-16б','group_title_en'=>'КИс-16б','pdf_name'=>'kis16b.pdf','department_id'=>1),$db,'plans')){
   $success = false;
 }
-if(!create_group(array('group_title'=>'КСм-15','pdf_url'=>'assets/pdf/plans/ksm15.pdf','department_id'=>1),$db,'plans')){
+if(!create_group(array('group_title_uk'=>'КСм-15','group_title_ru'=>'КСм-15','group_title_en'=>'КСм-15','pdf_name'=>'ksm15.pdf','department_id'=>1),$db,'plans')){
   $success = false;
 }
-if(!create_group(array('group_title'=>'СПм-15','pdf_url'=>'assets/pdf/plans/spm15.pdf','department_id'=>1),$db,'plans')){
+if(!create_group(array('group_title_uk'=>'СПм-15','group_title_ru'=>'СПм-15','group_title_en'=>'СПм-15','pdf_name'=>'spm15.pdf','department_id'=>1),$db,'plans')){
   $success = false;
 }
-if(!create_group(array('group_title'=>'МИКм-16а','pdf_url'=>'assets/pdf/plans/mikm16a.pdf','department_id'=>1),$db,'plans')){
+if(!create_group(array('group_title_uk'=>'МІКм-16а','group_title_ru'=>'МИКм-16а','group_title_en'=>'МИКм-16а','pdf_name'=>'mikm16a.pdf','department_id'=>1),$db,'plans')){
   $success = false;
 }
-if(!create_group(array('group_title'=>'МИКм-16б','pdf_url'=>'assets/pdf/plans/mikm16b.pdf','department_id'=>1),$db,'plans')){
+if(!create_group(array('group_title_uk'=>'МІКм-16б','group_title_ru'=>'МИКм-16б','group_title_en'=>'МИКм-16б','pdf_name'=>'mikm16b.pdf','department_id'=>1),$db,'plans')){
   $success = false;
 }
-if(!create_group(array('group_title'=>'КИз-15','pdf_url'=>'assets/pdf/plans/kiz15.pdf','department_id'=>1),$db,'plans')){
+if(!create_group(array('group_title_uk'=>'КІз-15','group_title_ru'=>'КИз-15','group_title_en'=>'КИз-15','pdf_name'=>'kiz15.pdf','department_id'=>1),$db,'plans')){
   $success = false;
 }
-if(!create_group(array('group_title'=>'КИз-16а','pdf_url'=>'assets/pdf/plans/kiz16a.pdf','department_id'=>1),$db,'plans')){
+if(!create_group(array('group_title_uk'=>'КІз-16а','group_title_ru'=>'КИз-16а','group_title_en'=>'КИз-16а','pdf_name'=>'kiz16a.pdf','department_id'=>1),$db,'plans')){
   $success = false;
 }
-if(!create_group(array('group_title'=>'КИз-16б','pdf_url'=>'assets/pdf/plans/kiz16b.pdf','department_id'=>1),$db,'plans')){
+if(!create_group(array('group_title_uk'=>'КІз-16б','group_title_ru'=>'КИз-16б','group_title_en'=>'КИз-16б','pdf_name'=>'kiz16b.pdf','department_id'=>1),$db,'plans')){
   $success = false;
 }
-if(!create_group(array('group_title'=>'КИзм-16а','pdf_url'=>'assets/pdf/plans/kizm16a.pdf','department_id'=>1),$db,'plans')){
+if(!create_group(array('group_title_uk'=>'КІзм-16а','group_title_ru'=>'КИзм-16а','group_title_en'=>'КИзм-16а','pdf_name'=>'kizm16a.pdf','department_id'=>1),$db,'plans')){
   $success = false;
 }
-if(!create_group(array('group_title'=>'КИзм-16б','pdf_url'=>'assets/pdf/plans/kizm16b.pdf','department_id'=>1),$db,'plans')){
+if(!create_group(array('group_title_uk'=>'КІзм-16б','group_title_ru'=>'КИзм-16б','group_title_en'=>'КИзм-16б','pdf_name'=>'kizm16b.pdf','department_id'=>1),$db,'plans')){
   $success = false;
 }
-if(!create_group(array('group_title'=>'КИзп-16','pdf_url'=>'assets/pdf/plans/kizp16.pdf','department_id'=>1),$db,'plans')){
+if(!create_group(array('group_title_uk'=>'КІзп-16','group_title_ru'=>'КИзп-16','group_title_en'=>'КИзп-16','pdf_name'=>'kizp16.pdf','department_id'=>1),$db,'plans')){
   $success = false;
 }
-if(!create_group(array('group_title'=>'КИзс16а','pdf_url'=>'assets/pdf/plans/kizs16a.pdf','department_id'=>1),$db,'plans')){
+if(!create_group(array('group_title_uk'=>'КІзс16а','group_title_ru'=>'КИзс16а','group_title_en'=>'КИзс16а','pdf_name'=>'kizs16a.pdf','department_id'=>1),$db,'plans')){
   $success = false;
 }
-if(!create_group(array('group_title'=>'КИзс16б','pdf_url'=>'assets/pdf/plans/kizs16b.pdf','department_id'=>1),$db,'plans')){
+if(!create_group(array('group_title_uk'=>'КІзс16б','group_title_ru'=>'КИзс16б','group_title_en'=>'КИзс16б','pdf_name'=>'kizs16b.pdf','department_id'=>1),$db,'plans')){
   $success = false;
 }
-if(!create_group(array('group_title'=>'КСз-12','pdf_url'=>'assets/pdf/plans/ksz12.pdf','department_id'=>1),$db,'plans')){
+if(!create_group(array('group_title_uk'=>'КСз-12','group_title_ru'=>'КСз-12','group_title_en'=>'КСз-12','pdf_name'=>'ksz12.pdf','department_id'=>1),$db,'plans')){
   $success = false;
 }
-if(!create_group(array('group_title'=>'КСз-13','pdf_url'=>'assets/pdf/plans/ksz13.pdf','department_id'=>1),$db,'plans')){
+if(!create_group(array('group_title_uk'=>'КСз-13','group_title_ru'=>'КСз-13','group_title_en'=>'КСз-13','pdf_name'=>'ksz13.pdf','department_id'=>1),$db,'plans')){
   $success = false;
 }
-if(!create_group(array('group_title'=>'МИКзм-16а','pdf_url'=>'assets/pdf/plans/mikzm16a.pdf','department_id'=>1),$db,'plans')){
+if(!create_group(array('group_title_uk'=>'МІКзм-16а','group_title_ru'=>'МИКзм-16а','group_title_en'=>'МИКзм-16а','pdf_name'=>'mikzm16a.pdf','department_id'=>1),$db,'plans')){
   $success = false;
 }
-if(!create_group(array('group_title'=>'МИКзм-16б','pdf_url'=>'assets/pdf/plans/mikzm16b.pdf','department_id'=>1),$db,'plans')){
-  $success = false;
-}
-
-if(!create_group(array('group_title'=>'КН-15','pdf_url'=>'assets/pdf/plans/kn15.pdf','department_id'=>2),$db,'plans')){
-  $success = false;
-}
-if(!create_group(array('group_title'=>'СШИм-15','pdf_url'=>'assets/pdf/plans/sshim15.pdf','department_id'=>2),$db,'plans')){
-  $success = false;
-}
-if(!create_group(array('group_title'=>'ИУСм-15','pdf_url'=>'assets/pdf/plans/iusm15.pdf','department_id'=>2),$db,'plans')){
-  $success = false;
-}
-if(!create_group(array('group_title'=>'КН-14','pdf_url'=>'assets/pdf/plans/kn14.pdf','department_id'=>2),$db,'plans')){
-  $success = false;
-}
-if(!create_group(array('group_title'=>'ИУСзск-14','pdf_url'=>'assets/pdf/plans/iuszsk14.pdf','department_id'=>2),$db,'plans')){
-  $success = false;
-}
-if(!create_group(array('group_title'=>'КН-13а','pdf_url'=>'assets/pdf/plans/kn13a.pdf','department_id'=>2),$db,'plans')){
-  $success = false;
-}
-if(!create_group(array('group_title'=>'КН-13б','pdf_url'=>'assets/pdf/plans/kn13b.pdf','department_id'=>2),$db,'plans')){
-  $success = false;
-}
-if(!create_group(array('group_title'=>'КНм-16','pdf_url'=>'assets/pdf/plans/knm16.pdf','department_id'=>2),$db,'plans')){
-  $success = false;
-}
-if(!create_group(array('group_title'=>'КНс-16','pdf_url'=>'assets/pdf/plans/kns16.pdf','department_id'=>2),$db,'plans')){
-  $success = false;
-}
-if(!create_group(array('group_title'=>'КНзс-16','pdf_url'=>'assets/pdf/plans/knzs16.pdf','department_id'=>2),$db,'plans')){
-  $success = false;
-}
-if(!create_group(array('group_title'=>'КНзм-16','pdf_url'=>'assets/pdf/plans/knzm16.pdf','department_id'=>2),$db,'plans')){
-  $success = false;
-}
-if(!create_group(array('group_title'=>'КНз-16','pdf_url'=>'assets/pdf/plans/knz16.pdf','department_id'=>2),$db,'plans')){
-  $success = false;
-}
-if(!create_group(array('group_title'=>'КН-16','pdf_url'=>'assets/pdf/plans/kn16.pdf','department_id'=>2),$db,'plans')){
-  $success = false;
-}
-if(!create_group(array('group_title'=>'ИУСзск-15 1 курс','pdf_url'=>'assets/pdf/plans/iuszsk15-1.pdf','department_id'=>2),$db,'plans')){
-  $success = false;
-}
-if(!create_group(array('group_title'=>'ИУСзск-15 2 курс','pdf_url'=>'assets/pdf/plans/iuszsk15-2.pdf','department_id'=>2),$db,'plans')){
+if(!create_group(array('group_title_uk'=>'МІКзм-16б','group_title_ru'=>'МИКзм-16б','group_title_en'=>'МИКзм-16б','pdf_name'=>'mikzm16b.pdf','department_id'=>1),$db,'plans')){
   $success = false;
 }
 
-if(!create_group(array('group_title'=>'ИПЗм-15','pdf_url'=>'assets/pdf/plans/ipzm15.pdf','department_id'=>3),$db,'plans')){
+if(!create_group(array('group_title_uk'=>'КН-15','group_title_ru'=>'КН-15','group_title_en'=>'КН-15','pdf_name'=>'kn15.pdf','department_id'=>2),$db,'plans')){
   $success = false;
 }
-if(!create_group(array('group_title'=>'ПИ-15 ИПЗа','pdf_url'=>'assets/pdf/plans/pi15ipza.pdf','department_id'=>3),$db,'plans')){
+if(!create_group(array('group_title_uk'=>'СШІм-15','group_title_ru'=>'СШИм-15','group_title_en'=>'СШИм-15','pdf_name'=>'sshim15.pdf','department_id'=>2),$db,'plans')){
   $success = false;
 }
-if(!create_group(array('group_title'=>'ПИ-15 ИПЗб','pdf_url'=>'assets/pdf/plans/pi15ipzb.pdf','department_id'=>3),$db,'plans')){
+if(!create_group(array('group_title_uk'=>'ІУСм-15','group_title_ru'=>'ИУСм-15','group_title_en'=>'ИУСм-15','pdf_name'=>'iusm15.pdf','department_id'=>2),$db,'plans')){
   $success = false;
 }
-if(!create_group(array('group_title'=>'ПИ-14','pdf_url'=>'assets/pdf/plans/pi14.pdf','department_id'=>3),$db,'plans')){
+if(!create_group(array('group_title_uk'=>'КН-14','group_title_ru'=>'КН-14','group_title_en'=>'КН-14','pdf_name'=>'kn14.pdf','department_id'=>2),$db,'plans')){
   $success = false;
 }
-if(!create_group(array('group_title'=>'ПЗС-13','pdf_url'=>'assets/pdf/plans/pzs13.pdf','department_id'=>3),$db,'plans')){
+if(!create_group(array('group_title_uk'=>'ІУСзск-14','group_title_ru'=>'ИУСзск-14','group_title_en'=>'ИУСзск-14','pdf_name'=>'iuszsk14.pdf','department_id'=>2),$db,'plans')){
   $success = false;
 }
-if(!create_group(array('group_title'=>'ИПЗ-13','pdf_url'=>'assets/pdf/plans/ipz13.pdf','department_id'=>3),$db,'plans')){
+if(!create_group(array('group_title_uk'=>'КН-13а','group_title_ru'=>'КН-13а','group_title_en'=>'КН-13а','pdf_name'=>'kn13a.pdf','department_id'=>2),$db,'plans')){
+  $success = false;
+}
+if(!create_group(array('group_title_uk'=>'КН-13б','group_title_ru'=>'КН-13б','group_title_en'=>'КН-13б','pdf_name'=>'kn13b.pdf','department_id'=>2),$db,'plans')){
+  $success = false;
+}
+if(!create_group(array('group_title_uk'=>'КНм-16','group_title_ru'=>'КНм-16','group_title_en'=>'КНм-16','pdf_name'=>'knm16.pdf','department_id'=>2),$db,'plans')){
+  $success = false;
+}
+if(!create_group(array('group_title_uk'=>'КНс-16','group_title_ru'=>'КНс-16','group_title_en'=>'КНс-16','pdf_name'=>'kns16.pdf','department_id'=>2),$db,'plans')){
+  $success = false;
+}
+if(!create_group(array('group_title_uk'=>'КНзс-16','group_title_ru'=>'КНзс-16','group_title_en'=>'КНзс-16','pdf_name'=>'knzs16.pdf','department_id'=>2),$db,'plans')){
+  $success = false;
+}
+if(!create_group(array('group_title_uk'=>'КНзм-16','group_title_ru'=>'КНзм-16','group_title_en'=>'КНзм-16','pdf_name'=>'knzm16.pdf','department_id'=>2),$db,'plans')){
+  $success = false;
+}
+if(!create_group(array('group_title_uk'=>'КНз-16','group_title_ru'=>'КНз-16','group_title_en'=>'КНз-16','pdf_name'=>'knz16.pdf','department_id'=>2),$db,'plans')){
+  $success = false;
+}
+if(!create_group(array('group_title_uk'=>'КН-16','group_title_ru'=>'КН-16','group_title_en'=>'КН-16','pdf_name'=>'kn16.pdf','department_id'=>2),$db,'plans')){
+  $success = false;
+}
+if(!create_group(array('group_title_uk'=>'ІУСзск-15 1 курс','group_title_ru'=>'ИУСзск-15 1 курс','group_title_en'=>'ИУСзск-15 1 курс','pdf_name'=>'iuszsk15-1.pdf','department_id'=>2),$db,'plans')){
+  $success = false;
+}
+if(!create_group(array('group_title_uk'=>'ІУСзск-15 2 курс','group_title_ru'=>'ИУСзск-15 2 курс','group_title_en'=>'ИУСзск-15 2 курс','pdf_name'=>'iuszsk15-2.pdf','department_id'=>2),$db,'plans')){
+  $success = false;
+}
+
+if(!create_group(array('group_title_uk'=>'ІПЗм-15','group_title_ru'=>'ИПЗм-15','group_title_en'=>'ИПЗм-15','pdf_name'=>'ipzm15.pdf','department_id'=>3),$db,'plans')){
+  $success = false;
+}
+if(!create_group(array('group_title_uk'=>'ПІ-15 ИПЗа','group_title_ru'=>'ПИ-15 ИПЗа','group_title_en'=>'ПИ-15 ИПЗа','pdf_name'=>'pi15ipza.pdf','department_id'=>3),$db,'plans')){
+  $success = false;
+}
+if(!create_group(array('group_title_uk'=>'ПІ-15 ИПЗб','group_title_ru'=>'ПИ-15 ИПЗб','group_title_en'=>'ПИ-15 ИПЗб','pdf_name'=>'pi15ipzb.pdf','department_id'=>3),$db,'plans')){
+  $success = false;
+}
+if(!create_group(array('group_title_uk'=>'ПІ-14','group_title_ru'=>'ПИ-14','group_title_en'=>'ПИ-14','pdf_name'=>'pi14.pdf','department_id'=>3),$db,'plans')){
+  $success = false;
+}
+if(!create_group(array('group_title_uk'=>'ПЗС-13','group_title_ru'=>'ПЗС-13','group_title_en'=>'ПЗС-13','pdf_name'=>'pzs13.pdf','department_id'=>3),$db,'plans')){
+  $success = false;
+}
+if(!create_group(array('group_title_uk'=>'ІПЗ-13','group_title_ru'=>'ИПЗ-13','group_title_en'=>'ИПЗ-13','pdf_name'=>'ipz13.pdf','department_id'=>3),$db,'plans')){
   $success = false;
 }
 
 $query = "DROP TABLE IF EXISTS schedules; CREATE TABLE IF NOT EXISTS `schedules` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `group_title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `pdf_url` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `group_title_uk` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `group_title_ru` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `group_title_en` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `pdf_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `department_id` int(10) unsigned NOT NULL,
   `position` int(10) unsigned NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`)
@@ -423,90 +425,90 @@ if(!execute_query($query,$db)){
   $success = false;
 }
 
-if(!create_group(array('group_title'=>'КІ-16а','pdf_url'=>'assets/pdf/schedule/ki16a.pdf','department_id'=>1),$db,'schedules')){
+if(!create_group(array('group_title_uk'=>'КІ-16а','group_title_ru'=>'КИ-16а','group_title_en'=>'КІ-16а','pdf_name'=>'ki16a.pdf','department_id'=>1),$db,'schedules')){
   $success = false;
 }
-if(!create_group(array('group_title'=>'КІ-15','pdf_url'=>'assets/pdf/schedule/ki15.pdf','department_id'=>1),$db,'schedules')){
+if(!create_group(array('group_title_uk'=>'КІ-15','group_title_ru'=>'КИ-15','group_title_en'=>'КІ-15','pdf_name'=>'ki15.pdf','department_id'=>1),$db,'schedules')){
   $success = false;
 }
-if(!create_group(array('group_title'=>'КІ-14а','pdf_url'=>'assets/pdf/schedule/ki14a.pdf','department_id'=>1),$db,'schedules')){
+if(!create_group(array('group_title_uk'=>'КІ-14а','group_title_ru'=>'КИ-14а','group_title_en'=>'КІ-14а','pdf_name'=>'ki14a.pdf','department_id'=>1),$db,'schedules')){
   $success = false;
 }
-if(!create_group(array('group_title'=>'КІ-14б','pdf_url'=>'assets/pdf/schedule/ki14b.pdf','department_id'=>1),$db,'schedules')){
+if(!create_group(array('group_title_uk'=>'КІ-14б','group_title_ru'=>'КИ-14б','group_title_en'=>'КІ-14б','pdf_name'=>'ki14b.pdf','department_id'=>1),$db,'schedules')){
   $success = false;
 }
-if(!create_group(array('group_title'=>'КІ-13а','pdf_url'=>'assets/pdf/schedule/ki13a.pdf','department_id'=>1),$db,'schedules')){
+if(!create_group(array('group_title_uk'=>'КІ-13а','group_title_ru'=>'КИ-13а','group_title_en'=>'КІ-13а','pdf_name'=>'ki13a.pdf','department_id'=>1),$db,'schedules')){
   $success = false;
 }
-if(!create_group(array('group_title'=>'КІ-13б','pdf_url'=>'assets/pdf/schedule/ki13b.pdf','department_id'=>1),$db,'schedules')){
+if(!create_group(array('group_title_uk'=>'КІ-13б','group_title_ru'=>'КИ-13б','group_title_en'=>'КІ-13б','pdf_name'=>'ki13b.pdf','department_id'=>1),$db,'schedules')){
   $success = false;
 }
-if(!create_group(array('group_title'=>'КІм-16а','pdf_url'=>'assets/pdf/schedule/kim16a.pdf','department_id'=>1),$db,'schedules')){
+if(!create_group(array('group_title_uk'=>'КІм-16а','group_title_ru'=>'КИм-16а','group_title_en'=>'КІм-16а','pdf_name'=>'kim16a.pdf','department_id'=>1),$db,'schedules')){
   $success = false;
 }
-if(!create_group(array('group_title'=>'МІКм-16а','pdf_url'=>'assets/pdf/schedule/mikm16a.pdf','department_id'=>1),$db,'schedules')){
-  $success = false;
-}
-
-
-if(!create_group(array('group_title'=>'КН-16','pdf_url'=>'assets/pdf/schedule/kn16.pdf','department_id'=>2),$db,'schedules')){
-  $success = false;
-}
-if(!create_group(array('group_title'=>'КН-15','pdf_url'=>'assets/pdf/schedule/kn15.pdf','department_id'=>2),$db,'schedules')){
-  $success = false;
-}
-if(!create_group(array('group_title'=>'КН-14','pdf_url'=>'assets/pdf/schedule/kn14.pdf','department_id'=>2),$db,'schedules')){
-  $success = false;
-}
-if(!create_group(array('group_title'=>'КН-13а','pdf_url'=>'assets/pdf/schedule/kn13a.pdf','department_id'=>2),$db,'schedules')){
-  $success = false;
-}
-if(!create_group(array('group_title'=>'КН-13б','pdf_url'=>'assets/pdf/schedule/kn13b.pdf','department_id'=>2),$db,'schedules')){
-  $success = false;
-}
-if(!create_group(array('group_title'=>'КНм-16','pdf_url'=>'assets/pdf/schedule/knm16.pdf','department_id'=>2),$db,'schedules')){
+if(!create_group(array('group_title_uk'=>'МІКм-16а','group_title_ru'=>'МИКм-16а','group_title_en'=>'МІКм-16а','pdf_name'=>'mikm16a.pdf','department_id'=>1),$db,'schedules')){
   $success = false;
 }
 
-if(!create_group(array('group_title'=>'ИПЗ-16','pdf_url'=>'assets/pdf/schedule/ipz16.pdf','department_id'=>3),$db,'schedules')){
+
+if(!create_group(array('group_title_uk'=>'КН-16','group_title_ru'=>'КН-16','group_title_en'=>'КН-16','pdf_name'=>'kn16.pdf','department_id'=>2),$db,'schedules')){
   $success = false;
 }
-if(!create_group(array('group_title'=>'ПИ-15','pdf_url'=>'assets/pdf/schedule/pi15.pdf','department_id'=>3),$db,'schedules')){
+if(!create_group(array('group_title_uk'=>'КН-15','group_title_ru'=>'КН-15','group_title_en'=>'КН-15','pdf_name'=>'kn15.pdf','department_id'=>2),$db,'schedules')){
   $success = false;
 }
-if(!create_group(array('group_title'=>'ПИ-14','pdf_url'=>'assets/pdf/schedule/pi14.pdf','department_id'=>3),$db,'schedules')){
+if(!create_group(array('group_title_uk'=>'КН-14','group_title_ru'=>'КН-14','group_title_en'=>'КН-14','pdf_name'=>'kn14.pdf','department_id'=>2),$db,'schedules')){
   $success = false;
 }
-if(!create_group(array('group_title'=>'ИПЗ-13','pdf_url'=>'assets/pdf/schedule/ipz13.pdf','department_id'=>3),$db,'schedules')){
+if(!create_group(array('group_title_uk'=>'КН-13а','group_title_ru'=>'КН-13а','group_title_en'=>'КН-13а','pdf_name'=>'kn13a.pdf','department_id'=>2),$db,'schedules')){
   $success = false;
 }
-if(!create_group(array('group_title'=>'ПЗС-13','pdf_url'=>'assets/pdf/schedule/pzs13.pdf','department_id'=>3),$db,'schedules')){
+if(!create_group(array('group_title_uk'=>'КН-13б','group_title_ru'=>'КН-13б','group_title_en'=>'КН-13б','pdf_name'=>'kn13b.pdf','department_id'=>2),$db,'schedules')){
   $success = false;
 }
-if(!create_group(array('group_title'=>'ИПЗм-16','pdf_url'=>'assets/pdf/schedule/ipzm16.pdf','department_id'=>3),$db,'schedules')){
+if(!create_group(array('group_title_uk'=>'КНм-16','group_title_ru'=>'КНм-16','group_title_en'=>'КНм-16','pdf_name'=>'knm16.pdf','department_id'=>2),$db,'schedules')){
   $success = false;
 }
 
-if(!create_group(array('group_title'=>'ФИЛ-16','pdf_url'=>'assets/pdf/schedule/fil16.pdf','department_id'=>4),$db,'schedules')){
+if(!create_group(array('group_title_uk'=>'ІПЗ-16','group_title_ru'=>'ИПЗ-16','group_title_en'=>'ИПЗ-16','pdf_name'=>'ipz16.pdf','department_id'=>3),$db,'schedules')){
   $success = false;
 }
-if(!create_group(array('group_title'=>'ФИР-15','pdf_url'=>'assets/pdf/schedule/fir15.pdf','department_id'=>4),$db,'schedules')){
+if(!create_group(array('group_title_uk'=>'ПІ-15','group_title_ru'=>'ПИ-15','group_title_en'=>'ПИ-15','pdf_name'=>'pi15.pdf','department_id'=>3),$db,'schedules')){
   $success = false;
 }
-if(!create_group(array('group_title'=>'РЕЛм-16','pdf_url'=>'assets/pdf/schedule/relm16.pdf','department_id'=>4),$db,'schedules')){
+if(!create_group(array('group_title_uk'=>'ПІ-14','group_title_ru'=>'ПИ-14','group_title_en'=>'ПИ-14','pdf_name'=>'pi14.pdf','department_id'=>3),$db,'schedules')){
   $success = false;
 }
-if(!create_group(array('group_title'=>'Денна форма','pdf_url'=>'assets/pdf/schedule/session-main.pdf','department_id'=>6),$db,'schedules')){
+if(!create_group(array('group_title_uk'=>'ІПЗ-13','group_title_ru'=>'ИПЗ-13','group_title_en'=>'ИПЗ-13','pdf_name'=>'ipz13.pdf','department_id'=>3),$db,'schedules')){
   $success = false;
 }
-if(!create_group(array('group_title'=>'Заочна форма','pdf_url'=>'assets/pdf/schedule/session-remote.pdf','department_id'=>6),$db,'schedules')){
+if(!create_group(array('group_title_uk'=>'ПЗС-13','group_title_ru'=>'ПЗС-13','group_title_en'=>'ПЗС-13','pdf_name'=>'pzs13.pdf','department_id'=>3),$db,'schedules')){
+  $success = false;
+}
+if(!create_group(array('group_title_uk'=>'ІПЗм-16','group_title_ru'=>'ИПЗм-16','group_title_en'=>'ИПЗм-16','pdf_name'=>'ipzm16.pdf','department_id'=>3),$db,'schedules')){
   $success = false;
 }
 
-if(!create_group(array('group_title'=>'Денна форма','pdf_url'=>'assets/pdf/schedule/teacher-schedule.pdf','department_id'=>5),$db,'schedules')){
+if(!create_group(array('group_title_uk'=>'ФІЛ-16','group_title_ru'=>'ФИЛ-16','group_title_en'=>'ФИЛ-16','pdf_name'=>'fil16.pdf','department_id'=>4),$db,'schedules')){
   $success = false;
 }
-if(!create_group(array('group_title'=>'Сесія','pdf_url'=>'assets/pdf/schedule/teacher-session.pdf','department_id'=>5),$db,'schedules')){
+if(!create_group(array('group_title_uk'=>'ФІР-15','group_title_ru'=>'ФИР-15','group_title_en'=>'ФИР-15','pdf_name'=>'fir15.pdf','department_id'=>4),$db,'schedules')){
+  $success = false;
+}
+if(!create_group(array('group_title_uk'=>'РЕЛм-16','group_title_ru'=>'РЕЛм-16','group_title_en'=>'РЕЛм-16','pdf_name'=>'relm16.pdf','department_id'=>4),$db,'schedules')){
+  $success = false;
+}
+if(!create_group(array('group_title_uk'=>'Денна форма','group_title_ru'=>'Дневная форма','group_title_en'=>'Денна форма','pdf_name'=>'session-main.pdf','department_id'=>6),$db,'schedules')){
+  $success = false;
+}
+if(!create_group(array('group_title_uk'=>'Заочна форма','group_title_ru'=>'Заочная форма','group_title_en'=>'Заочна форма','pdf_name'=>'session-remote.pdf','department_id'=>6),$db,'schedules')){
+  $success = false;
+}
+
+if(!create_group(array('group_title_uk'=>'Денна форма','group_title_ru'=>'Денна форма','group_title_en'=>'Денна форма','pdf_name'=>'teacher-schedule.pdf','department_id'=>5),$db,'schedules')){
+  $success = false;
+}
+if(!create_group(array('group_title_uk'=>'Сесія','group_title_ru'=>'Сессия','group_title_en'=>'Session','pdf_name'=>'teacher-session.pdf','department_id'=>5),$db,'schedules')){
   $success = false;
 }
 

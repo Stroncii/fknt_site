@@ -26,7 +26,7 @@
 							    	<ul class="nav nav-pills schedule" role="tablist">
 										<li ng-class="{active:!$index}" ng-repeat="unit in item.pills">
 				                            <a data-target="#{{unit.pdf.slice(0,unit.pdf.length-4)}}" role="tab" data-toggle="tab">
-				                                {{unit.group}}
+				                                {{unit.group[language]}}
 				                            </a>
 				                        </li>
 									</ul>

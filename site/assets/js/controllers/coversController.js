@@ -12,12 +12,14 @@ angular.module('app')
  }
 
  $scope.editNewsItem = function (item) {
+     
      $scope.uploader.formData = [{
-               news_id: $scope.editedItem.id
+               news_id: item.id
      }]
      $scope.editedItem = angular.copy (item);
      $scope.mode = 'edit';
      console.log('edit ' + item.id);
+     console.log( $scope.editedItem);     
  }
 
  $scope.cancel = function () {
@@ -37,8 +39,10 @@ angular.module('app')
  }
 
  $scope.changeType = (type) => {
+        console.log()
         $scope.cover_type = type;
         console.log(type);
+       
         if ($scope.cover_type == 'full') {
             $scope.uploader.url = '/objects/news/full_cover.php'
         } else {
@@ -46,7 +50,7 @@ angular.module('app')
         }
         $scope.uploader.formData = [{
             news_id: $scope.editedItem.id
-        }]
+        }];
  };
 
  

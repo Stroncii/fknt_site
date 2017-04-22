@@ -73,7 +73,10 @@ angular.module('app')
  init();
 
  var uploader = $scope.uploader = new FileUploader({
-            url: '/objects/news/full_cover.php'
+            url: '/objects/news/full_cover.php',
+            formData: [{
+                news_id: "1"
+            }]
         });
 
         // FILTERS

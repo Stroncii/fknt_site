@@ -1,33 +1,67 @@
-<?php 
-// include database and object files 
+<?php
+header("Access-Control-Allow-Origin: *");
+header("Content-Type: multipart/form-data\n; charset=UTF-8");
+// include database and object file
 include_once '../../config/database.php';
 include_once 'plan.php';
  
-// get database connection 
-$database = new Database(); 
+// get database connection
+$database = new Database();
 $db = $database->getConnection();
  
-// prepare product object
+// instantiate product object
 $plan = new Plan($db);
  
-// get id of product to be edited
-$data = json_decode(file_get_contents("php://input"));     
- 
-// set ID property of product to be edited
-$plan->id = $data->id;
- 
-// set product property values
-$plan->group_title = $data['group_title'];
-$plan->pdf_url = $data['pdf_url'];
-$plan->department_id = $data['department_id'];
- 
-// update the product
-if($plan->update()){
-    echo "Plan was updated.";
+if(isset($_POST['department_id'])){
+	$plan->department_id = $_POST['department_id'];
 }
+if(isset($_POST['group_title_uk'])){
+	$plan->group_title_uk = $_POST['title_uk'];
+}
+if(isset($_POST['group_title_ru'])){
+	$plan->group_title_ru = $_POST['title_ru'];
+}
+if(isset($_POST['group_title_en'])){
+	$plan->group_title_en = $_POST['title_en'];
+}
+if(isset($_POST['id'])){
+	$plan->id = $_POST['id'];
+}
+
+$pdf_name = "";
+
+if ( !empty( $_FILES ) ) {
+
+	$pdf_name = $_FILES[ 'file' ][ 'name' ];
+	$tempPath = $_FILES[ 'file' ][ 'tmp_name' ];
+	$uploadPath = $_SERVER['DOCUMENT_ROOT'] .'/assets/pdf/schedule/' . $pdf_name;
+
+	move_uploaded_file( $tempPath, $uploadPath );
+
+	echo "PDF was uploaded. ";
+	
+    
+
+} else {
+
+    echo 'No files uploaded. ';
+    unset($pdf_name);
+
+}
+
+	if(isset($pdf_name)){
+		$plan->pdf_name = $pdf_name;
+	}
+	 
+	// create the product
+	if($plan->update()){
+	    echo "Plan was updated.";
+	}
  
-// if unable to update the product, tell the user
+// if unable to create the product, tell the user
 else{
     echo "Unable to update plan.";
 }
+// set product property values
+
 ?>

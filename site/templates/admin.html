@@ -343,11 +343,13 @@
 
                         <div ng-if="mode == 'edit'">
                             <h3>{{editedItem.title}}</h3>
-                            <h4>Full cover</h4>
-                            <div class="col-md-5 news-cover image-container">
-                                <img ng-src="{{editedItem.full_cover}}" class="image" alt="{{item.title}}">
-                                <div class="overlay">
-                                    <button ng-click="deleteFullCover()" class="btn btn-danger text">Удалить</button>                                
+                            <div class="col-md-12">
+                                <h4>Full cover</h4>
+                                <div class="col-md-5 news-cover image-container">
+                                    <img ng-src="{{editedItem.full_cover}}" class="image" alt="{{item.title}}">
+                                    <div class="overlay">
+                                        <button ng-click="deleteFullCover()" class="btn btn-danger text">Удалить</button>                                
+                                    </div>
                                 </div>
                             </div>
 

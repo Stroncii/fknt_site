@@ -6,8 +6,10 @@ class Plan{
  
     // object properties 
     public $id;
-    public $group_title;
-    public $pdf_url;
+    public $group_title_uk;
+    public $group_title_ru;
+    public $group_title_en;
+    public $pdf_name;
     public $department_id;
     public $position;
  
@@ -23,19 +25,23 @@ function create(){
     $query = "INSERT INTO 
                 " . $this->table_name . "
             SET 
-                group_title=:group_title, pdf_url=:pdf_url, department_id=:department_id";
+                group_title_uk=:group_title_uk, group_title_ru=:group_title_ru, group_title_en=:group_title_en, pdf_name=:pdf_name, department_id=:department_id";
      
     // prepare query
     $stmt = $this->conn->prepare($query);
  
     // posted values
-    $this->group_title=htmlspecialchars(strip_tags($this->group_title));
-    $this->pdf_url=htmlspecialchars(strip_tags($this->pdf_url));
+    $this->group_title_uk=htmlspecialchars(strip_tags($this->group_title_uk));
+    $this->group_title_ru=htmlspecialchars(strip_tags($this->group_title_ru));
+    $this->group_title_en=htmlspecialchars(strip_tags($this->group_title_en));
+    $this->pdf_name=htmlspecialchars(strip_tags($this->pdf_name));
     $this->department_id=htmlspecialchars(strip_tags($this->department_id));
  
     // bind values
-    $stmt->bindParam(":group_title", $this->group_title);
-    $stmt->bindParam(":pdf_url", $this->pdf_url);
+    $stmt->bindParam(":group_title_uk", $this->group_title_uk);
+    $stmt->bindParam(":group_title_ru", $this->group_title_ru);
+    $stmt->bindParam(":group_title_en", $this->group_title_en);
+    $stmt->bindParam(":pdf_name", $this->pdf_name);
     $stmt->bindParam(":department_id", $this->department_id);
      
     // execute query

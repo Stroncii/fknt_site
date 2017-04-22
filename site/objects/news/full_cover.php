@@ -22,11 +22,7 @@ if ( !empty( $_FILES ) ) {
 
 	echo "Image was uploaded and news id was ".$strr;
 	
-	 
-	// if unable to create the product, tell the user
-	else{
-	    echo "Unable to upload image.";
-	}
+	
     
 
 } else {

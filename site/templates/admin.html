@@ -478,18 +478,65 @@
 
              <div role="tabpanel" ng-controller="scheduleController" id="schedules" class="tab-pane fade">
                         <h2>Schedules</h2>    
-                        <div class="col-md-12">
-                            <label class="col-md-3" for="group_en">Русский<input ng-model="editedGroup.name_ru" class="form-control" type="text" name="group_ru"></label>
-                            <label class="col-md-3" for="group_ru">Английский<input ng-model="editedGroup.name_en" class="form-control" type="text" name="group_en"></label>
-                            <label class="col-md-3" for="group_uk">Украинский<input ng-model="editedGroup.name_uk" class="form-control" type="text" name="group_uk"></label>
+
+                            <label class="col-md-3" for="group_en">Русский<input ng-model="editedGroup.ru" class="form-control" type="text" name="group_ru"></label>
+                            <label class="col-md-3" for="group_ru">Английский<input ng-model="editedGroup.en" class="form-control" type="text" name="group_en"></label>
+                            <label class="col-md-3" for="group_uk">Украинский<input ng-model="editedGroup.uk" class="form-control" type="text" name="group_uk"></label>
                             <div class="row">
-                                <button type="button" ng-click="addGroup()" class="btn btn-success btn-s" ng-disabled="!editedGroup.name_ru.length || !editedGroup.name_ua.length || !editedGroup.name_en.length" ng-if="mode == 'add'">  Добавить </button>  
-                                <button type="button" ng-click="changeGroup()" class="btn btn-success btn-s" ng-if="mode == 'edit'">  Обновить </button>  
-                                <button type="button" ng-click="cancelGroup()" class="btn btn-default btn-s">   Отмена </button>
-                            </div>                    
-                        </div>
+                                <button type="button" ng-click="add()" class="btn btn-success btn-s" ng-disabled="!editedGroup.ru.length || !editedGroup.uk.length || !editedGroup.en.length" ng-if="mode == 'add'">  Добавить </button>  
+                                <button type="button" ng-click="change()" class="btn btn-success btn-s" ng-disabled="!editedGroup.ru.length || !editedGroup.uk.length || !editedGroup.en.length" ng-if="mode == 'edit'">  Обновить </button>  
+                                <button type="button" ng-click="cancel()" class="btn btn-default btn-s">   Отмена </button>
+                            </div>  
+
+                            <div class="col-md-9" style="margin-bottom: 40px">
+
+                                <h3>Upload queue</h3>
+                                <p>Queue length: {{ uploader.queue.length }}</p>
+
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th width="50%">Name</th>
+                                            <th ng-show="uploader.isHTML5">Size</th>
+                                            <th ng-show="uploader.isHTML5">Progress</th>
+                                            <th>Status</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="item in uploader.queue">
+                                            <td><strong>{{ item.file.name }}</strong></td>
+                                            <td ng-show="uploader.isHTML5" nowrap>{{ item.file.size/1024/1024|number:2 }} MB</td>
+                                            <td ng-show="uploader.isHTML5">
+                                                <div class="progress" style="margin-bottom: 0;">
+                                                    <div class="progress-bar" role="progressbar" ng-style="{ 'width': item.progress + '%' }"></div>
+                                                </div>
+                                            </td>
+                                            <td class="text-center">
+                                                <span ng-show="item.isSuccess"><i class="glyphicon glyphicon-ok"></i></span>
+                                                <span ng-show="item.isCancel"><i class="glyphicon glyphicon-ban-circle"></i></span>
+                                                <span ng-show="item.isError"><i class="glyphicon glyphicon-remove"></i></span>
+                                            </td>
+                                            <td nowrap>
+                                                <button type="button" class="btn btn-success btn-xs" ng-click="item.upload()" ng-disabled="item.isReady || item.isUploading || item.isSuccess !editedGroup.ru.length || !editedGroup.uk.length || !editedGroup.en.length">
+                                                    <span class="glyphicon glyphicon-upload"></span> Upload
+                                                </button>
+                                                <button type="button" class="btn btn-warning btn-xs" ng-click="item.cancel()" ng-disabled="!item.isUploading">
+                                                    <span class="glyphicon glyphicon-ban-circle"></span> Cancel
+                                                </button>
+                                                <button type="button" class="btn btn-danger btn-xs" ng-click="item.remove()">
+                                                    <span class="glyphicon glyphicon-trash"></span> Remove
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                  
+
+                        <br>
+                        <br>
                         <ul class="nav nav-tabs">
-							  <li ng-repeat="item in schedule" ng-class="{active:!$index}"><a data-toggle="tab" data-target="#tab{{$index}}">{{item.tabName[language]}}</a></li>							  
+							  <li ng-repeat="item in schedule" ng-class="{active:!$index}"><a ng-click="setActive(item.department_id)"data-toggle="tab" data-target="#tab{{$index}}">{{item.tabName[language]}}</a></li>							  
 							</ul>
 							<br>
 							<div class="tab-content">

@@ -12,20 +12,29 @@ $db = $database->getConnection();
 // instantiate product object
 $plan = new Plan($db);
  
-if(isset($_POST['department_id'])){
-	$plan->department_id = $_POST['department_id'];
+if(count($_POST)==0){
+	$_data = json_decode(file_get_contents("php://input"),true);
+	$data = $_data['formData'][0];
+
 }
-if(isset($_POST['title_uk'])){
-	$plan->group_title_uk = $_POST['title_uk'];
+else{
+	$data = $_POST;
 }
-if(isset($_POST['title_ru'])){
-	$plan->group_title_ru = $_POST['title_ru'];
+
+if(isset($data['department_id'])){
+	$plan->department_id = $data['department_id'];
 }
-if(isset($_POST['title_en'])){
-	$plan->group_title_en = $_POST['title_en'];
+if(isset($data['title_uk'])){
+	$plan->group_title_uk = $data['title_uk'];
 }
-if(isset($_POST['id'])){
-	$plan->id = $_POST['id'];
+if(isset($data['title_ru'])){
+	$plan->group_title_ru = $data['title_ru'];
+}
+if(isset($data['title_en'])){
+	$plan->group_title_en = $data['title_en'];
+}
+if(isset($data['id'])){
+	$plan->id = $data['id'];
 }
 
 $pdf_name = "";

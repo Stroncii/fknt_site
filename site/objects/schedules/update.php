@@ -39,19 +39,15 @@ if ( !empty( $_FILES ) ) {
 	move_uploaded_file( $tempPath, $uploadPath );
 
 	echo "PDF was uploaded. ";
-	
+	$plan->pdf_name = $pdf_name;
     
 
 } else {
 
     echo 'No files uploaded. ';
-    unset($pdf_name);
 
 }
 
-	if(isset($pdf_name)){
-		$plan->pdf_name = $pdf_name;
-	}
 	 
 	// create the product
 	if($plan->update()){

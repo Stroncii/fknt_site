@@ -1,24 +1,25 @@
 <?php 
 // include database and object file 
-include_once '/config/database.php';
-include_once '/news/news.php';
+include_once '../../config/database.php';
+include_once 'schedule.php';
  
-// get database connection 
-$database = new Database(); 
+// get database connection
+$database = new Database();
 $db = $database->getConnection();
  
-// prepare product object
-$news = new News($db);
+// instantiate product object
+$plan = new Schedule($db);
  
 // get product id
-$data = json_decode(file_get_contents("php://input"));     
+$data = json_decode(file_get_contents("php://input"),true);     
  
 // set product id to be deleted
-$news->id = $data->id;
+$plan->id = $data['id'];
+$plan->pdf_name = $data['pdf'];
  
 // delete the product
-if($news->delete()){
-    echo "News was deleted.";
+if($plan->delete()){
+    echo "Schedule was deleted.";
 }
  
 // if unable to delete the product

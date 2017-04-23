@@ -560,47 +560,47 @@ $translateProvider.translations('en', {
     'FOO': 'Deas\'s office of FCST',
 
     // HISTORY
-    'ET_FACULTY_TITLE': 'Электротехнический факультет',
-    'ET_FACULTY': 'В 1959 году в Донецком индустриальном институте был создан электротехнический факультет, первым деканом которого стал Матвей Борисович Шумяцкий (1912-1994). По его инициативе и при его активном участии многое было сделано для создания будущего факультета вычислительной техники и информатики.',
-    'FIRST_LAB_TITLE': 'Первая лабораторная работа по курсу "Математические машины и устройства"',
-    'FIRST_LAB': 'Важной вехой в истории факультета и института явился 1961 год, когда для студентов всех специальностей института начал читаться курс "Математические машины и программирование", подготовку которого осуществили доцент С. Буачидзе и ассистенты В.И. Назаренко и В.А. Святный. Приобретение в этом же году вычислительной машины "Минск-12" положило начало вычислительному центру ДПИ.',
-    'FIRST_SCIENCE_TITLE': 'Первая научно-исследовательская работа в области информатики',
-    'FIRST_SCIENCE': 'В 1962 г. была выполнена первая научно-исследовательская работа в области информатики по созданию систем управления с применением управляющих ЭВМ.',
-    'CT_CAF_TITLE': 'Кафедра вычислительной техники',
-    'CT_CAF': 'В 1963 г. была создана кафедра вычислительной техники (ВТ), которую возглавил доцент Л.П. Фельдман. В 1965 г. на этой кафедре была открыта специальность "Математические счетно-решающие приборы и устройства", а в 1971 г. - "Прикладная математика".',
-    'CTAI_FACULTY_TITLE': 'Факультет вычислительной техники и автоматизированных систем управления',
-    'CTAI_FACULTY': 'В связи с открытием новых специальностей и быстрым увеличением численности студентов в 1972 г. электротехнический факультет был разделен на два - энергетический и факультет вычислительной техники и автоматизированных систем управления (ФВТ и АСУ). Деканом ФВТ и АСУ был избран В.А. Святный. В составе этого факультета были выпускающие кафедры: вычислительной техники, АСУ, автоматики и телемеханики. В 1974 г. для подготовки специальности "Прикладная математика" создана кафедра прикладной математики во главе с профессором, доктором физико-математических наук Е.И. Харламовой. В 1975 г. кафедра ВТ была переименована в кафедру ЭВМ, а для подготовки студентов всех специальностей института в области информационных технологий была создана кафедра вычислительной техники в инженерных экономических расчетах.',
-    'CT_FACULTY_TITLE': 'Факультет вычислительной техники',
-    'CT_FACULTY': 'В 1977 г. на базе единого факультета "ВТ и АСУ" создается два новых: факультет ВТ и факультет АСУ. Деканом факультета ВТ стал В.И. Калашников, которого с 1981 г. сменил профессор кафедры ЭВМ В.А. Святный.',
-    'CTI_FACULTY_TITLE': 'Факультет вычислительной техники и информатики',
+    'ET_FACULTY_TITLE': 'Electrotechnical faculty',
+    'ET_FACULTY': 'In 1959, the Electrotechnical Faculty was established at the Donetsk Industrial Institute, the first dean of which was Matvey Borisovich Shumyatsky (1912-1994). On his initiative and with his active participation, much has been done to create the future of the Faculty of Computer Science and Informatics.',
+    'FIRST_LAB_TITLE': 'The first laboratory work on the course "Mathematical Machines and Devices"',
+    'FIRST_LAB': 'An important milestone in the history of the faculty and institute was 1961, when the course "Mathematical Machines and Programming" began to be read for students of all specialties of the Institute, which was prepared by assistant professor Sergey Buachidze and assistants Viktor Nazarenko and Vladimir Svyatny. The acquisition in the same year of the computer "Minsk-12" marked the beginning of the computer center of DPI.',
+    'FIRST_SCIENCE_TITLE': 'The first research work in the field of informatics',
+    'FIRST_SCIENCE': 'In 1962, the first research work was carried out in the field of computer science to create control systems with the use of control computers.',
+    'CT_CAF_TITLE': 'Department of Computing Machinery',
+    'CT_CAF': 'In 1963, the Department of Computing Machinery was created, headed by Associate Professor Lev Petrovich Feldman. In 1965 the specialty "Mathematical computing instruments and devices" was opened in this department, and in 1971 - "Applied Mathematics".',
+    'CTAI_FACULTY_TITLE': 'Faculty of Computer Science and Automated Control Systems',
+    'CTAI_FACULTY': 'Due to the opening of new specialties and the rapid increase in the number of students in 1972, the electrical engineering department was divided into two - Faculty of Energy and Faculty of Computing Machinery and Automated Control Systems. Vladimir Svyatny was elected as a Dean. In the structure of this faculty there were following departments: computer engineering, automated control systems, automatics and telemechanics. In 1974, for the preparation of the specialty "Applied Mathematics", the Department of Applied Mathematics was created, headed by Professor, Doctor of Physical and Mathematical Sciences Elena Kharlamova. In 1975 the Department of Computing Machinery was renamed to the Department of Electronic Computers, and for the preparation of students of all specialties of the institute in the field of information technology a Department of Computing Machinery was created in engineering economic calculations.',
+    'CT_FACULTY_TITLE': 'Faculty of Computer Science',
+    'CT_FACULTY': 'In 1977, on the basis of the unified faculty "Computing Machinery and Automated Control Systems" two new ones were created: the Faculty of Computer Science and the Faculty of Automated Control Systems. The dean of the Faculty of Computer Science became Victor Kalashnikov, who since 1981 was replaced by the professor of the Department of Electronic Computers Vladimir Svyatny.',
+    'CTI_FACULTY_TITLE': 'Faculty of Computer Science and Informatics',
     'CTI_FACULTY': 'В 1992 г. факультет ВТ переименован в факультет вычислительной техники и информатики, а кафедра ВТ и ИЕР переименована в кафедру вычислительной математики и программирования. В 1994 г. на факультете был открыт прием на специальность "Информационные системы в менеджменте", вместо которой по перечню 1997 г. в 1998 г. открыт прием по специальности "Экономическая кибернетика". В 1999 году впервые начат прием на специальность "Системное программирование".',
-    'CST_FACULTY': 'Факультет ВТИ переименован в факультет компьютерных наук и технологий.',
+    'CST_FACULTY': 'Faculty of Computer Science and Informatics was renamed to the Faculty of Computer Sciences and Technologies.',
 
     // NEWS
     'NEWS_BUTTON': 'Read More',
 
     // DEAN
-    'DEAN_TITLE': 'И.о. декана',
-    'DEAN_NAME': 'Ковалев Сергей Александрович',
-    'DEAN_STATUS': 'доцент, к.т.н., доцент кафедры компьютерной инженерии',
+    'DEAN_TITLE': 'Acting Dean',
+    'DEAN_NAME': 'Sergey Kovalev',
+    'DEAN_STATUS': 'Docent, Candidate of Engineering Sciences, Associate Professor at the Department of Computer Engineering',
     'DEAN_EMAIL': 'sergiy.kovalov@donntu.edu.ua',
 
-    'VICE_DEAN': 'Заместитель декана',
-    'VICE_DEAN_NAME': 'доцент, к.т.н., доцент кафедри прикладной математики и информатики',
-    'VICE_DEAN_STATUS': 'Маслова Наталья Александровна',
+    'VICE_DEAN': 'Vice Dean',
+    'VICE_DEAN_NAME': 'Docent, Candidate of Engineering Sciences, Associate Professor at the Department of Applied Mathematics and Informatics',
+    'VICE_DEAN_STATUS': 'Natalia Maslova',
     'VICE_DEAN_EMAIL': 'nataliia.maslova@donntu.edu.ua',
 
-    'VICE_WS_DEAN': 'Заместитель декана по учебно-воспитательной работе со студентами',
-    'VICE_WS_DEAN_NAME': 'Золотухина Оксана Анатольевна',
-    'VICE_WS_DEAN_STATUS': 'старший преподаватель кафедры прикладной математики и информатики',
+    'VICE_WS_DEAN': 'Vice Dean for educational work with students',
+    'VICE_WS_DEAN_NAME': 'Oksana Zolotukhina',
+    'VICE_WS_DEAN_STATUS': 'Senior Lecturer at the Department of Applied Mathematics and Informatics',
     'VICE_WS_DEAN_EMAIL': 'oksana.zolotukhina@donntu.edu.ua',
 
-    'DISPATCHER': 'Диспетчер',
-    'DISPATCHER_NAME': 'Горбань Яна Геннадиевна',
+    'DISPATCHER': 'Dispatcher',
+    'DISPATCHER_NAME': 'Yana Gorban',
     'DISPATCHER_EMAIL': 'yana.horban@donntu.edu.ua',
 
-    'SECRETARY': 'Секретарь-машинистка',
-    'SECRETARY_NAME': 'Бурлака Ольга Анатольевна',
+    'SECRETARY': 'Secretary',
+    'SECRETARY_NAME': 'Olga Burlaka',
     'SECRETARY_EMAIL': 'olha.burlaka@donntu.edu.ua',
 
 
@@ -654,7 +654,7 @@ $translateProvider.translations('en', {
     'PHMD6': 'история религий',
 
     //SCHEDULE
-    'DOWNLOAD': 'Загрузить',
+    'DOWNLOAD': 'Download',
     'PDF_ERROR': 'Файл не не может отобразиться, смотрите ',
 
      //process

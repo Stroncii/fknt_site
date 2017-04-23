@@ -15,7 +15,6 @@ $plan = new Plan($db);
 if(count($_POST)==0){
 	$_data = json_decode(file_get_contents("php://input"),true);
 	$data = $_data['formData'][0];
-
 }
 else{
 	$data = $_POST;
@@ -43,7 +42,7 @@ if ( !empty( $_FILES ) ) {
 
 	$pdf_name = $_FILES[ 'file' ][ 'name' ];
 	$tempPath = $_FILES[ 'file' ][ 'tmp_name' ];
-	$uploadPath = $_SERVER['DOCUMENT_ROOT'] .'/assets/pdf/schedule/' . $pdf_name;
+	$uploadPath = $_SERVER['DOCUMENT_ROOT'] .'/assets/pdf/plans/' . $pdf_name;
 
 	move_uploaded_file( $tempPath, $uploadPath );
 

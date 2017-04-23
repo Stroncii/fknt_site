@@ -14,9 +14,8 @@ angular.module('app')
 
   function getPlans () {
       plansFactory.getPlans().then((data) => { 
-          console.log('plans');
-          console.log(data);
         $scope.plans = data;
+        $scope.current_dep_id = data[0].department_id;
      });
   }
 

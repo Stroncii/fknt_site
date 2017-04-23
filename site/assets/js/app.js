@@ -569,12 +569,12 @@ $translateProvider.translations('en', {
     'CT_CAF_TITLE': 'Department of Computing Machinery',
     'CT_CAF': 'In 1963, the Department of Computing Machinery was created, headed by Associate Professor Lev Petrovich Feldman. In 1965 the specialty "Mathematical computing instruments and devices" was opened in this department, and in 1971 - "Applied Mathematics".',
     'CTAI_FACULTY_TITLE': 'Faculty of Computer Science and Automated Control Systems',
-    'CTAI_FACULTY': 'Due to the opening of new specialties and the rapid increase in the number of students in 1972, the electrical engineering department was divided into two - Faculty of Energy and Faculty of Computing Machinery and Automated Control Systems. Vladimir Svyatny was elected as a Dean. In the structure of this faculty there were following departments: computer engineering, automated control systems, automatics and telemechanics. In 1974, for the preparation of the specialty "Applied Mathematics", the Department of Applied Mathematics was created, headed by Professor, Doctor of Physical and Mathematical Sciences Elena Kharlamova. In 1975 the Department of Computing Machinery was renamed to the Department of Electronic Computers, and for the preparation of students of all specialties of the institute in the field of information technology a Department of Computing Machinery was created in engineering economic calculations.',
+    'CTAI_FACULTY': 'Due to the opening of new specialties and the rapid increase in the number of students in 1972, the electrical engineering department was divided into two - Faculty of Energy and Faculty of Computing Machinery and Automated Control Systems. Vladimir Svyatny was elected as a Dean. In the structure of this faculty there were following departments: computer engineering, automated control systems, automatics and telemechanics. In 1974, for the preparation of the specialty "Applied Mathematics", the Department of Applied Mathematics was created, headed by Professor, Doctor of Physical and Mathematical Sciences Elena Kharlamova. In 1975 the Department of Computing Machinery was renamed into the Department of Electronic Computers, and for the preparation of students of all specialties of the institute in the field of information technology a Department of Computing Machinery in Engineering Economic Calculations was created.',
     'CT_FACULTY_TITLE': 'Faculty of Computer Science',
     'CT_FACULTY': 'In 1977, on the basis of the unified faculty "Computing Machinery and Automated Control Systems" two new ones were created: the Faculty of Computer Science and the Faculty of Automated Control Systems. The dean of the Faculty of Computer Science became Victor Kalashnikov, who since 1981 was replaced by the professor of the Department of Electronic Computers Vladimir Svyatny.',
     'CTI_FACULTY_TITLE': 'Faculty of Computer Science and Informatics',
-    'CTI_FACULTY': 'В 1992 г. факультет ВТ переименован в факультет вычислительной техники и информатики, а кафедра ВТ и ИЕР переименована в кафедру вычислительной математики и программирования. В 1994 г. на факультете был открыт прием на специальность "Информационные системы в менеджменте", вместо которой по перечню 1997 г. в 1998 г. открыт прием по специальности "Экономическая кибернетика". В 1999 году впервые начат прием на специальность "Системное программирование".',
-    'CST_FACULTY': 'Faculty of Computer Science and Informatics was renamed to the Faculty of Computer Sciences and Technologies.',
+    'CTI_FACULTY': 'In 1992, Faculty of Computer Science was renamed into the Faculty of Computer Science and Informatics, and the Department of Computing Machinery in Engineering Economic Calculations was renamed into the Department of Computational Mathematics and Programming. In 1994, the faculty opened an admission to the specialty "Information systems in management", instead of which, according to the list of 1997 in 1998 an admission was opened on the specialty "Economic Cybernetics". In 1999, for the first time, the admission to the specialty "System Programming" was started.',
+    'CST_FACULTY': 'Faculty of Computer Science and Informatics was renamed into the Faculty of Computer Sciences and Technologies.',
 
     // NEWS
     'NEWS_BUTTON': 'Read More',
@@ -655,7 +655,7 @@ $translateProvider.translations('en', {
 
     //SCHEDULE
     'DOWNLOAD': 'Download',
-    'PDF_ERROR': 'Файл не не может отобразиться, смотрите ',
+    'PDF_ERROR': 'File can not be displayed, see ',
 
      //process
     'DAYFORM': 'Дневная форма',

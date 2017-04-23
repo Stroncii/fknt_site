@@ -487,7 +487,9 @@
                                 <button type="button" ng-click="change()" class="btn btn-success btn-s" ng-disabled="!editedGroup.ru.length || !editedGroup.uk.length || !editedGroup.en.length" ng-if="mode == 'edit'">  Обновить </button>  
                                 <button type="button" ng-click="cancel()" class="btn btn-default btn-s">   Отмена </button>
                             </div>  
-
+                            <div class="alert alert-danger" ng-if="saved">
+                                <strong>Info!</strong> Не забудьте загрузить картинку!
+                            </div>
                             <div class="col-md-12" style="margin-bottom: 40px">
                                 Single
                         <input type="file" nv-file-select="" accept="application/pdf" uploader="uploader" />

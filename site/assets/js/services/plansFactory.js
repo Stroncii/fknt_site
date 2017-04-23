@@ -57,11 +57,16 @@ angular.module('app').factory ('plansFactory', ['$http', function ($http) {
 
   fact.updatePlan = function (item, dep_id, group_id) {
       let plans = $http({
-            method: 'UPDATE',
+            method: 'POST',
             url: '/objects/plans/update.php',
             data: JSON.stringify({
-                id: item.group_id,
-                pdf: item.pdf
+                formData: [{
+                    department_id: dep_id,
+                    title_uk: item.uk,
+                    title_en: item.en,
+                    title_ru: item.ru,    
+                    id: group_id  
+                }]
             })
         }).then(function successCallback(response) {
             console.log('update');

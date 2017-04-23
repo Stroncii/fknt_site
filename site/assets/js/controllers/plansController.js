@@ -23,11 +23,10 @@ angular.module('app')
   setDefaults();
 
   $scope.editPill = function (pill) {
-    $scope.uploader.url = '/objects/здфты/update.php'
+    $scope.uploader.url = '/objects/plans/update.php'
     $scope.saved = true;
     $scope.editedPlan = angular.copy(pill.group);
     $scope.current_grop_id = pill.group_id;
-    console.log($scope.editedPlan);
     $scope.mode = 'edit';
   };
 

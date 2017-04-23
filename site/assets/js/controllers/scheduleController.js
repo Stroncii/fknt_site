@@ -1,8 +1,9 @@
 angular.module('app')
-.controller('scheduleController',['$scope', '$http', 'pdfFactory', '$sce' , function($scope, $http, pdfFactory, $sce){
+.controller('scheduleController',['$scope', '$http', 'pdfFactory', '$sce', 'FileUploader' , function($scope, $http, pdfFactory, $sce, FileUploader){
   
   function getDefaults () {
     $scope.mode = 'add';
+    $scope.saved = false;
     $scope.editedGroup = {
       uk: '',
       en: '',
@@ -22,6 +23,7 @@ angular.module('app')
 
   $scope.editPill = function (pill) {
     console.log(pill);
+    $scope.saved = false;
     $scope.editedGroup = angular.copy(pill.group);
     $scope.mode = 'edit';
   };
@@ -38,7 +40,15 @@ angular.module('app')
   };
 
   $scope.add = function () {
-
+    $scope.saved = true;
+    $scope.uploader.url = '/objects/schedules/create.php';
+    $scope.uploader.formData = [{
+      department_id: $scope.editedGroup.id,
+      title_uk: $scope.editedGroup.uk,
+      title_en: $scope.editedGroup.en,
+      title_ru: $scope.editedGroup.ru,      
+    }];
+    console.log($scope.uploader);
   };
 
 
@@ -46,7 +56,7 @@ angular.module('app')
 
 
         var uploader = $scope.uploader = new FileUploader({
-            url: 'upload.php'
+            url: '/objects/schedules/create.php'
         });
 
         // FILTERS

@@ -476,19 +476,21 @@
 
             <!-- SCHEDULES -->     
 
-             <div role="tabpanel" ng-controller="scheduleController" id="schedules" class="tab-pane fade">
+                <div role="tabpanel" ng-controller="scheduleController" id="schedules" class="tab-pane fade">
                         <h2>Schedules</h2>    
 
                             <label class="col-md-3" for="group_en">Русский<input ng-model="editedGroup.ru" class="form-control" type="text" name="group_ru"></label>
                             <label class="col-md-3" for="group_ru">Английский<input ng-model="editedGroup.en" class="form-control" type="text" name="group_en"></label>
                             <label class="col-md-3" for="group_uk">Украинский<input ng-model="editedGroup.uk" class="form-control" type="text" name="group_uk"></label>
                             <div class="row">
-                                <button type="button" ng-click="add()" class="btn btn-success btn-s" ng-disabled="!editedGroup.ru.length || !editedGroup.uk.length || !editedGroup.en.length" ng-if="mode == 'add'">  Добавить </button>  
+                                <button type="button" ng-click="add()" class="btn btn-success btn-s" ng-disabled="!editedGroup.ru.length || !editedGroup.uk.length || !editedGroup.en.length" ng-if="mode == 'add'">  Сохранить </button>  
                                 <button type="button" ng-click="change()" class="btn btn-success btn-s" ng-disabled="!editedGroup.ru.length || !editedGroup.uk.length || !editedGroup.en.length" ng-if="mode == 'edit'">  Обновить </button>  
                                 <button type="button" ng-click="cancel()" class="btn btn-default btn-s">   Отмена </button>
                             </div>  
 
-                            <div class="col-md-9" style="margin-bottom: 40px">
+                            <div class="col-md-12" style="margin-bottom: 40px">
+                                Single
+                        <input type="file" nv-file-select="" accept="application/pdf" uploader="uploader" />
 
                                 <h3>Upload queue</h3>
                                 <p>Queue length: {{ uploader.queue.length }}</p>
@@ -518,7 +520,7 @@
                                                 <span ng-show="item.isError"><i class="glyphicon glyphicon-remove"></i></span>
                                             </td>
                                             <td nowrap>
-                                                <button type="button" class="btn btn-success btn-xs" ng-click="item.upload()" ng-disabled="item.isReady || item.isUploading || item.isSuccess !editedGroup.ru.length || !editedGroup.uk.length || !editedGroup.en.length">
+                                                <button type="button" class="btn btn-success btn-xs" ng-click="item.upload()" ng-disabled="item.isReady || item.isUploading || item.isSuccess || !saved">
                                                     <span class="glyphicon glyphicon-upload"></span> Upload
                                                 </button>
                                                 <button type="button" class="btn btn-warning btn-xs" ng-click="item.cancel()" ng-disabled="!item.isUploading">

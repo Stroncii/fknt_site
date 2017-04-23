@@ -29,6 +29,12 @@ var app = angular.module('app', ['ngRoute', 'ngSanitize', 'pascalprecht.translat
     }, 
     template : "<div></div>"
   })
+  .when('/ki/:path',{
+    controller : function(){
+        window.location.replace('/ki/');
+    }, 
+    template : "<div></div>"
+  })
   .when('/philosophy', {
     templateUrl: 'templates/philosophy.html'
   })
@@ -515,42 +521,42 @@ $translateProvider.translations('en', {
     // HEADERS
 
     'TITLE': 'Faculty of Computer Sciences and Technologies',
-    'HISTORY': 'История',
-    'NEWS': 'Новости',
-    'STRUCTURE': 'Структура',
-    'STUDENTS': 'Студенту',
-    'ABITURIENTS': 'Абитуриенту',
-    'SCIENCE': 'Наука и сотрудничество',
-    'CONTACTS': 'Контакты',
-    'DEAN': 'Деканат',
-    'KI': 'Компьютерная инженерия',
-    'KI_FACULTY': 'Кафедра компьютерной инженерии',    
-    'PMI': 'Прикладная математика и информатика',
-    'PMI_FACULTY': 'Кафедра прикладной математики и информатики',
-    'KN': 'Компьютерные науки',
-    'KN_FACULTY': 'Кафедра компьютерных наук',
-    'PHILOSOPHY': 'Философия',
-    'PHILOSOPHY_FACULTY': 'Кафедра философии',
-    'SCHEDULE': 'Расписание занятий',
-    'PLANS': 'Рабочие планы',
-    'CONSULTATIONS': 'График консультаций',
-    'GRAPHICS': 'График учебного процесса',
-    'ORGANIZATIONS': 'Студенческие организации',
-    'DOCUMENTS': 'Документы',
-    'PORTAL': 'Портал абитуриента',
-    'SPECIALTIES': 'Специальности',
-    'ASPIRANTUR_TITLE': 'Аспирантура',
-    'INTERNATIONAL': 'Международное сотрудничество',
-    'BACHELOR': 'Данный уровень образования позволяет получить базовое высшее образование и успешно развиваться в карьерном плане',
-    'BACHELOR_TITLE': 'Бакалаврат',
-    'MASTER': 'Уровень образования, при котором студент имеет возможность не только стать первоклассным специалистом, но и заниматься наукой и преподавательской деятельностью',
-    'MASTER_TITLE': 'Магистратура',
-    'ASPIRANTUR': 'Аспирантура - выбор людей, которые никогда не останавливаются на достигнутом! Ведь нет предела совершенству',
-    'LEVELS_TITLE': 'Уровни образования',
-    'LEVELS': 'Уровни образования, которых могут достичь студенты, обучающиеся на факультете компьютерных наук и технологий',
-    'ONE_NEWS_BUTTON': 'Подробнее...',
-    'ALL_NEWS': 'Все новости',
-    'FOO': 'Деканат ФКНТ',
+    'HISTORY': 'History',
+    'NEWS': 'News',
+    'STRUCTURE': 'Strusture',
+    'STUDENTS': 'For Student',
+    'ABITURIENTS': 'For Applicant',
+    'SCIENCE': 'Science and Cooperation',
+    'CONTACTS': 'Contacts',
+    'DEAN': 'Dean\'s Office',
+    'KI': 'Computer Engineering',
+    'KI_FACULTY': 'Department of Computer Engineering',    
+    'PMI': 'Applied Mathematics and Informatics',
+    'PMI_FACULTY': 'Department of Applied Mathematics and Informatics',
+    'KN': 'Computer Sciences',
+    'KN_FACULTY': 'Department of Computer Sciences',
+    'PHILOSOPHY': 'Philosophy',
+    'PHILOSOPHY_FACULTY': 'Department of Philosophy',
+    'SCHEDULE': 'Schedule',
+    'PLANS': 'Work Plans',
+    'CONSULTATIONS': 'Consultations Schedule',
+    'GRAPHICS': 'Schedule of educational process',
+    'ORGANIZATIONS': 'Student Organizations',
+    'DOCUMENTS': 'Documents',
+    'PORTAL': 'Applicant Portal of DonNTU',
+    'SPECIALTIES': 'Specialties',
+    'ASPIRANTUR_TITLE': 'Postgraduate Studies',
+    'INTERNATIONAL': 'International Cooperation',
+    'BACHELOR': 'This level of education allows students to receive basic higher education and successfully develop their careers',
+    'BACHELOR_TITLE': 'Bachelor\'s Degree',
+    'MASTER': 'The level of education, in which the student has the opportunity not only to become a first-class specialist, but also to engage in science and teaching activities',
+    'MASTER_TITLE': 'Master\'s Degree',
+    'ASPIRANTUR': 'Postgraduate studies is a choice of people who never stop! There is no limit to perfection',
+    'LEVELS_TITLE': 'Education levels',
+    'LEVELS': 'Levels of education that can be achieved by students studying at the Faculty of Computer Sciences and Technologies',
+    'ONE_NEWS_BUTTON': 'Read More',
+    'ALL_NEWS': 'All News',
+    'FOO': 'Deas\'s office of FCST',
 
     // HISTORY
     'ET_FACULTY_TITLE': 'Электротехнический факультет',
@@ -570,7 +576,7 @@ $translateProvider.translations('en', {
     'CST_FACULTY': 'Факультет ВТИ переименован в факультет компьютерных наук и технологий.',
 
     // NEWS
-    'NEWS_BUTTON': 'Дальше',
+    'NEWS_BUTTON': 'Read More',
 
     // DEAN
     'DEAN_TITLE': 'И.о. декана',
@@ -687,11 +693,11 @@ $translateProvider.translations('en', {
 
 
  // CONTACTS
-    'ADRESS_TITLE': 'Адрес',
-    'ADRESS': 'г. Покровск, пл. Шибанкова, 2',
-    'REGYME_TITLE': 'Режим работы подразделений университета',
-    'REGYME': ' с 8:00 до 16:30',
-    'BUILDINGS': '3й корпус, ауд. 104',
+    'ADRESS_TITLE': 'Address',
+    'ADRESS': 'Pokrovsk, Shibankovа Square, 2',
+    'REGYME_TITLE': 'University departments working hours',
+    'REGYME': 'from 8:00 to 16:30',
+    'BUILDINGS': '3rd building, room 104',
 
 
     //ASPIRANTUR

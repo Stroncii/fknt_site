@@ -263,85 +263,85 @@ if(!execute_query($query,$db)){
 }
 
 
-if(!create_group(array('group_title_uk'=>'КІ-13а','group_title_ru'=>'КИ-13а','group_title_en'=>'КI-13а','pdf_name'=>'ki13a.pdf','department_id'=>1),$db,'plans')){
+if(!create_group(array('group_title_uk'=>'КІ-13а','group_title_ru'=>'КИ-13а','group_title_en'=>'KI-13а','pdf_name'=>'ki13a.pdf','department_id'=>1),$db,'plans')){
   $success = false;
 }
-if(!create_group(array('group_title_uk'=>'КІ-13б','group_title_ru'=>'КИ-13б','group_title_en'=>'КI-13b','pdf_name'=>'ki13b.pdf','department_id'=>1),$db,'plans')){
+if(!create_group(array('group_title_uk'=>'КІ-13б','group_title_ru'=>'КИ-13б','group_title_en'=>'KI-13b','pdf_name'=>'ki13b.pdf','department_id'=>1),$db,'plans')){
   $success = false;
 }
-if(!create_group(array('group_title_uk'=>'КІ-14а','group_title_ru'=>'КИ-14а','group_title_en'=>'КИ-14а','pdf_name'=>'ki14a.pdf','department_id'=>1),$db,'plans')){
+if(!create_group(array('group_title_uk'=>'КІ-14а','group_title_ru'=>'КИ-14а','group_title_en'=>'KI-14а','pdf_name'=>'ki14a.pdf','department_id'=>1),$db,'plans')){
   $success = false;
 }
-if(!create_group(array('group_title_uk'=>'КІ-14б','group_title_ru'=>'КИ-14б','group_title_en'=>'КИ-14б','pdf_name'=>'ki14b.pdf','department_id'=>1),$db,'plans')){
+if(!create_group(array('group_title_uk'=>'КІ-14б','group_title_ru'=>'КИ-14б','group_title_en'=>'KI-14b','pdf_name'=>'ki14b.pdf','department_id'=>1),$db,'plans')){
   $success = false;
 }
-if(!create_group(array('group_title_uk'=>'КІ-15','group_title_ru'=>'КИ-15','group_title_en'=>'КИ-15','pdf_name'=>'ki15.pdf','department_id'=>1),$db,'plans')){
+if(!create_group(array('group_title_uk'=>'КІ-15','group_title_ru'=>'КИ-15','group_title_en'=>'KI-15','pdf_name'=>'ki15.pdf','department_id'=>1),$db,'plans')){
   $success = false;
 }
-if(!create_group(array('group_title_uk'=>'КІ-16а','group_title_ru'=>'КИ-16а','group_title_en'=>'КИ-16а','pdf_name'=>'ki16a.pdf','department_id'=>1),$db,'plans')){
+if(!create_group(array('group_title_uk'=>'КІ-16а','group_title_ru'=>'КИ-16а','group_title_en'=>'KI-16а','pdf_name'=>'ki16a.pdf','department_id'=>1),$db,'plans')){
   $success = false;
 }
-if(!create_group(array('group_title_uk'=>'КІ-16б','group_title_ru'=>'КИ-16б','group_title_en'=>'КИ-16б','pdf_name'=>'ki16b.pdf','department_id'=>1),$db,'plans')){
+if(!create_group(array('group_title_uk'=>'КІ-16б','group_title_ru'=>'КИ-16б','group_title_en'=>'KI-16b','pdf_name'=>'ki16b.pdf','department_id'=>1),$db,'plans')){
   $success = false;
 }
-if(!create_group(array('group_title_uk'=>'КІм-16а','group_title_ru'=>'КИм-16а','group_title_en'=>'КИм-16а','pdf_name'=>'kim16a.pdf','department_id'=>1),$db,'plans')){
+if(!create_group(array('group_title_uk'=>'КІм-16а','group_title_ru'=>'КИм-16а','group_title_en'=>'KIm-16a','pdf_name'=>'kim16a.pdf','department_id'=>1),$db,'plans')){
   $success = false;
 }
-if(!create_group(array('group_title_uk'=>'КІм-16б','group_title_ru'=>'КИм-16б','group_title_en'=>'КИм-16б','pdf_name'=>'kim16b.pdf','department_id'=>1),$db,'plans')){
+if(!create_group(array('group_title_uk'=>'КІм-16б','group_title_ru'=>'КИм-16б','group_title_en'=>'KIm-16b','pdf_name'=>'kim16b.pdf','department_id'=>1),$db,'plans')){
   $success = false;
 }
-if(!create_group(array('group_title_uk'=>'КІс-16а','group_title_ru'=>'КИс-16а','group_title_en'=>'КИс-16а','pdf_name'=>'kis16a.pdf','department_id'=>1),$db,'plans')){
+if(!create_group(array('group_title_uk'=>'КІс-16а','group_title_ru'=>'КИс-16а','group_title_en'=>'KIs-16a','pdf_name'=>'kis16a.pdf','department_id'=>1),$db,'plans')){
   $success = false;
 }
-if(!create_group(array('group_title_uk'=>'КІс-16б','group_title_ru'=>'КИс-16б','group_title_en'=>'КИс-16б','pdf_name'=>'kis16b.pdf','department_id'=>1),$db,'plans')){
+if(!create_group(array('group_title_uk'=>'КІс-16б','group_title_ru'=>'КИс-16б','group_title_en'=>'KIs-16b','pdf_name'=>'kis16b.pdf','department_id'=>1),$db,'plans')){
   $success = false;
 }
-if(!create_group(array('group_title_uk'=>'КСм-15','group_title_ru'=>'КСм-15','group_title_en'=>'КСм-15','pdf_name'=>'ksm15.pdf','department_id'=>1),$db,'plans')){
+if(!create_group(array('group_title_uk'=>'КСм-15','group_title_ru'=>'КСм-15','group_title_en'=>'KSm-15','pdf_name'=>'ksm15.pdf','department_id'=>1),$db,'plans')){
   $success = false;
 }
-if(!create_group(array('group_title_uk'=>'СПм-15','group_title_ru'=>'СПм-15','group_title_en'=>'СПм-15','pdf_name'=>'spm15.pdf','department_id'=>1),$db,'plans')){
+if(!create_group(array('group_title_uk'=>'СПм-15','group_title_ru'=>'СПм-15','group_title_en'=>'SPm-15','pdf_name'=>'spm15.pdf','department_id'=>1),$db,'plans')){
   $success = false;
 }
-if(!create_group(array('group_title_uk'=>'МІКм-16а','group_title_ru'=>'МИКм-16а','group_title_en'=>'МИКм-16а','pdf_name'=>'mikm16a.pdf','department_id'=>1),$db,'plans')){
+if(!create_group(array('group_title_uk'=>'МІКм-16а','group_title_ru'=>'МИКм-16а','group_title_en'=>'MIKm-16a','pdf_name'=>'mikm16a.pdf','department_id'=>1),$db,'plans')){
   $success = false;
 }
-if(!create_group(array('group_title_uk'=>'МІКм-16б','group_title_ru'=>'МИКм-16б','group_title_en'=>'МИКм-16б','pdf_name'=>'mikm16b.pdf','department_id'=>1),$db,'plans')){
+if(!create_group(array('group_title_uk'=>'МІКм-16б','group_title_ru'=>'МИКм-16б','group_title_en'=>'MIKm-16b','pdf_name'=>'mikm16b.pdf','department_id'=>1),$db,'plans')){
   $success = false;
 }
-if(!create_group(array('group_title_uk'=>'КІз-15','group_title_ru'=>'КИз-15','group_title_en'=>'КИз-15','pdf_name'=>'kiz15.pdf','department_id'=>1),$db,'plans')){
+if(!create_group(array('group_title_uk'=>'КІз-15','group_title_ru'=>'КИз-15','group_title_en'=>'KIz-15','pdf_name'=>'kiz15.pdf','department_id'=>1),$db,'plans')){
   $success = false;
 }
-if(!create_group(array('group_title_uk'=>'КІз-16а','group_title_ru'=>'КИз-16а','group_title_en'=>'КИз-16а','pdf_name'=>'kiz16a.pdf','department_id'=>1),$db,'plans')){
+if(!create_group(array('group_title_uk'=>'КІз-16а','group_title_ru'=>'КИз-16а','group_title_en'=>'KIz-16а','pdf_name'=>'kiz16a.pdf','department_id'=>1),$db,'plans')){
   $success = false;
 }
-if(!create_group(array('group_title_uk'=>'КІз-16б','group_title_ru'=>'КИз-16б','group_title_en'=>'КИз-16б','pdf_name'=>'kiz16b.pdf','department_id'=>1),$db,'plans')){
+if(!create_group(array('group_title_uk'=>'КІз-16б','group_title_ru'=>'КИз-16б','group_title_en'=>'KIz-16б','pdf_name'=>'kiz16b.pdf','department_id'=>1),$db,'plans')){
   $success = false;
 }
-if(!create_group(array('group_title_uk'=>'КІзм-16а','group_title_ru'=>'КИзм-16а','group_title_en'=>'КИзм-16а','pdf_name'=>'kizm16a.pdf','department_id'=>1),$db,'plans')){
+if(!create_group(array('group_title_uk'=>'КІзм-16а','group_title_ru'=>'КИзм-16а','group_title_en'=>'KIzm-16а','pdf_name'=>'kizm16a.pdf','department_id'=>1),$db,'plans')){
   $success = false;
 }
-if(!create_group(array('group_title_uk'=>'КІзм-16б','group_title_ru'=>'КИзм-16б','group_title_en'=>'КИзм-16б','pdf_name'=>'kizm16b.pdf','department_id'=>1),$db,'plans')){
+if(!create_group(array('group_title_uk'=>'КІзм-16б','group_title_ru'=>'КИзм-16б','group_title_en'=>'KIzm-16б','pdf_name'=>'kizm16b.pdf','department_id'=>1),$db,'plans')){
   $success = false;
 }
-if(!create_group(array('group_title_uk'=>'КІзп-16','group_title_ru'=>'КИзп-16','group_title_en'=>'КИзп-16','pdf_name'=>'kizp16.pdf','department_id'=>1),$db,'plans')){
+if(!create_group(array('group_title_uk'=>'КІзп-16','group_title_ru'=>'КИзп-16','group_title_en'=>'KIzp-16','pdf_name'=>'kizp16.pdf','department_id'=>1),$db,'plans')){
   $success = false;
 }
-if(!create_group(array('group_title_uk'=>'КІзс16а','group_title_ru'=>'КИзс16а','group_title_en'=>'КИзс16а','pdf_name'=>'kizs16a.pdf','department_id'=>1),$db,'plans')){
+if(!create_group(array('group_title_uk'=>'КІзс16а','group_title_ru'=>'КИзс16а','group_title_en'=>'KIzs16a','pdf_name'=>'kizs16a.pdf','department_id'=>1),$db,'plans')){
   $success = false;
 }
-if(!create_group(array('group_title_uk'=>'КІзс16б','group_title_ru'=>'КИзс16б','group_title_en'=>'КИзс16б','pdf_name'=>'kizs16b.pdf','department_id'=>1),$db,'plans')){
+if(!create_group(array('group_title_uk'=>'КІзс16б','group_title_ru'=>'КИзс16б','group_title_en'=>'KIzs16b','pdf_name'=>'kizs16b.pdf','department_id'=>1),$db,'plans')){
   $success = false;
 }
-if(!create_group(array('group_title_uk'=>'КСз-12','group_title_ru'=>'КСз-12','group_title_en'=>'КСз-12','pdf_name'=>'ksz12.pdf','department_id'=>1),$db,'plans')){
+if(!create_group(array('group_title_uk'=>'КСз-12','group_title_ru'=>'КСз-12','group_title_en'=>'KSz-12','pdf_name'=>'ksz12.pdf','department_id'=>1),$db,'plans')){
   $success = false;
 }
-if(!create_group(array('group_title_uk'=>'КСз-13','group_title_ru'=>'КСз-13','group_title_en'=>'КСз-13','pdf_name'=>'ksz13.pdf','department_id'=>1),$db,'plans')){
+if(!create_group(array('group_title_uk'=>'КСз-13','group_title_ru'=>'КСз-13','group_title_en'=>'KSz-13','pdf_name'=>'ksz13.pdf','department_id'=>1),$db,'plans')){
   $success = false;
 }
-if(!create_group(array('group_title_uk'=>'МІКзм-16а','group_title_ru'=>'МИКзм-16а','group_title_en'=>'МИКзм-16а','pdf_name'=>'mikzm16a.pdf','department_id'=>1),$db,'plans')){
+if(!create_group(array('group_title_uk'=>'МІКзм-16а','group_title_ru'=>'МИКзм-16а','group_title_en'=>'MIKzm-16a','pdf_name'=>'mikzm16a.pdf','department_id'=>1),$db,'plans')){
   $success = false;
 }
-if(!create_group(array('group_title_uk'=>'МІКзм-16б','group_title_ru'=>'МИКзм-16б','group_title_en'=>'МИКзм-16б','pdf_name'=>'mikzm16b.pdf','department_id'=>1),$db,'plans')){
+if(!create_group(array('group_title_uk'=>'МІКзм-16б','group_title_ru'=>'МИКзм-16б','group_title_en'=>'MIKzm-16b','pdf_name'=>'mikzm16b.pdf','department_id'=>1),$db,'plans')){
   $success = false;
 }
 
@@ -770,11 +770,11 @@ if(!create_image(array('news_id'=>8),$db)){
 
 if(!create_news(array( 'title_uk'=>'Студент ФКНТ став одним зі 100 переможців конкурсу «Авіатор 2017»','title_ru'=>'Студент ФКНТ стал одним из 100 победителей конкурса «Авиатор 2017»','title_en'=>'Student of FCST became one of 100 winners of competition «Aviator 2017»', 
   'full_text_uk'=>'<p>Дванадцятого квітня, у всесвітній День авіації та космонавтики, благодійний Фонд Бориса Колеснікова підвів підсумки освітнього проекту «Авіатор 2017» і оголосив імена переможців.</p><p>Конкурс покликаний підтримати студентів технічних спеціальностей з усієї України та заохотити кращих з них поїздками на міжнародні профільні виставки до Франції та Великобританії.</p><p>Студенти Донецького національного технічного університету  також брали активну участь у конкурсі. Двоє з них – Максим Лебединський (ФКІТАЕР) і Андрій Бардаков (ФКНТ) дійшли навіть до п’ятого етапу та їздили до Харкова, де проходив захист їх власних проектів перед компетентним журі.</p><p>За результатами очного туру, Андрій Бардаков, ст. гр. КІ-14б, увійшов до числа ста переможців.</p><p>«Представлений мною проект полягав у поданні концепції мікропроцесорної системи управління сегментами крила зі змінним профілем. Захищати його було нескладно. Набагато складніше було його створити. Певних складнощів додало також обмеження за часом, що виділявся на доповідь (всього 5 хвилин). Що ж до конкуренції, я її не відчував, оскільки ми не чули доповідей інших учасників. Так, дещо страшно було виступати перед журі, до складу якого входили представники авіації, конструкторських бюро, однак, все вдалося. Також хочу висловити величезну подяку Василю Петровичу Блощицькому, без якого моя участь у конкурсі була б неможливою», – ділиться враженнями Андрій.</p><p>Уже в червні щасливчики відправляться до Франції, де проведуть чотири незабутні дні: на них очікує відвідування Ле Бурже, спілкування з однолітками з інших країн і кращими фахівцями світової авіаційної спільноти.</p>',
-  'full_text_ru'=>'<p>Двенадцатого апреля, во всемирный День авиации и космонавтики, благотворительный Фонд Бориса Колесникова подвел итоги образовательного проекта «Авиатор 2017» и объявил имена победителей.</p><p>Конкурс призван поддержать студентов технических специальностей со всей Украины и поощрить лучших из них поездками на международные профильные выставки во Францию и Великобританию.</p><p>Студенты Донецкого национального технического университета также принимали активное участие в конкурсе. Двое из них - Максим Лебединский (ФКИТАЕР) и Андрей Бардаков (ФКНТ) дошли даже до пятого этапа и ездили в Харьков, где проходила защита их собственных проектов перед компетентным жюри.</p><p>За результатами очного туру, Андрій Бардаков, ст. гр. КІ-14б, увійшов до числа ста переможців.</p><p>«Представлений мною проект полягав у поданні концепції мікропроцесорної системи управління сегментами крила зі змінним профілем. Захищати його було нескладно. Набагато складніше було його створити. Певних складнощів додало також обмеження за часом, що виділявся на доповідь (всього 5 хвилин). Що ж до конкуренції, я її не відчував, оскільки ми не чули доповідей інших учасників. Так, дещо страшно було виступати перед журі, до складу якого входили представники авіації, конструкторських бюро, однак, все вдалося. Також хочу висловити величезну подяку Василю Петровичу Блощицькому, без якого моя участь у конкурсі була б неможливою», – ділиться враженнями Андрій.</p><p>Уже в червні щасливчики відправляться до Франції, де проведуть чотири незабутні дні: на них очікує відвідування Ле Бурже, спілкування з однолітками з інших країн і кращими фахівцями світової авіаційної спільноти.</p>',
-  'full_text_en'=>'<p>On April 12, in the World Day of Aviation and Cosmonautics, the charitable foundation of Boris Kolesnikov summed up the educational project "Aviator 2017" and announced the names of the winners.</p><p>The contest is intended to support students of technical specialties from all over Ukraine and encourage the best of them to travel to international profile exhibitions in France and the UK.</p><p>Students of the Donetsk National Technical University also took an active part in the competition. Two of them - Maxim Lebedinsky (FKITAER) and Andrei Bardakov (FCST) even got to the fifth stage and went to Kharkov, where they defended their own projects in front of the competent jury.</p><p>За результатами очного туру, Андрій Бардаков, ст. гр. КІ-14б, увійшов до числа ста переможців.</p><p>«Представлений мною проект полягав у поданні концепції мікропроцесорної системи управління сегментами крила зі змінним профілем. Захищати його було нескладно. Набагато складніше було його створити. Певних складнощів додало також обмеження за часом, що виділявся на доповідь (всього 5 хвилин). Що ж до конкуренції, я її не відчував, оскільки ми не чули доповідей інших учасників. Так, дещо страшно було виступати перед журі, до складу якого входили представники авіації, конструкторських бюро, однак, все вдалося. Також хочу висловити величезну подяку Василю Петровичу Блощицькому, без якого моя участь у конкурсі була б неможливою», – ділиться враженнями Андрій.</p><p>Уже в червні щасливчики відправляться до Франції, де проведуть чотири незабутні дні: на них очікує відвідування Ле Бурже, спілкування з однолітками з інших країн і кращими фахівцями світової авіаційної спільноти.</p>',
+  'full_text_ru'=>'<p>Двенадцатого апреля, во всемирный День авиации и космонавтики, благотворительный Фонд Бориса Колесникова подвел итоги образовательного проекта «Авиатор 2017» и объявил имена победителей.</p><p>Конкурс призван поддержать студентов технических специальностей со всей Украины и поощрить лучших из них поездками на международные профильные выставки во Францию и Великобританию.</p><p>Студенты Донецкого национального технического университета также принимали активное участие в конкурсе. Двое из них - Максим Лебединский (ФКИТАЕР) и Андрей Бардаков (ФКНТ) дошли даже до пятого этапа и ездили в Харьков, где проходила защита их собственных проектов перед компетентным жюри.</p><p>По результатам очного тура, Андрей Бардаков, ст. гр. КИ-14б, вошел в число ста победителей.</p><p>«Представленный мной проект заключался в представлении концепции микропроцессорной системы управления сегментами крыла с переменным профилем. Защищать его было несложно. Гораздо сложнее было его создать. Определенных сложностей добавило также ограничение по времени, выделяемом на доклад (всего 5 минут). Что касается конкуренции, я ее не чувствовал, поскольку мы не слышали докладов других участников. Так, несколько страшно было выступать перед жюри, в состав которого входили представители авиации, конструкторских бюро, однако, все удалось. Также хочу выразить огромную благодарность Василию Петровичу Блощицкому, без которого мое участие в конкурсе было бы невозможным», - делится впечатлениями Андрей.</p><p>Уже в июне счастливчики отправятся во Францию, где проведут четыре незабываемых дня: их ожидает посещение Ле Бурже, общения со сверстниками из других стран и лучшими специалистами мирового авиационного сообщества.</p>',
+  'full_text_en'=>'<p>On April 12, in the World Day of Aviation and Cosmonautics, the charitable foundation of Boris Kolesnikov summed up the educational project "Aviator 2017" and announced the names of the winners.</p><p>The contest is intended to support students of technical specialties from all over Ukraine and encourage the best of them to travel to international profile exhibitions in France and the UK.</p><p>Students of the Donetsk National Technical University also took an active part in the competition. Two of them - Maxim Lebedinsky (FKITAER) and Andrei Bardakov (FCST) even got to the fifth stage and went to Kharkov, where they defended their own projects in front of the competent jury.</p><p>By the results of the on-site tour, Andrei Bardakov, a student of the KI-14b group, was among the hundred winners.</p><p>\"The project I presented was to introduce the concept of a microprocessor control system for wing segments with a variable profile. It was not difficult to defend it. It was much more difficult to create it. Certain limitations were also added by the time limit allocated to the report (only 5 minutes). As for the competition, I did not feel it, because we did not hear the reports of other participants. So, it was somewhat frightening to speak in front of the jury, which included representatives of aviation, design bureaus, however, everything was successful. I also want to express my deep gratitude to Vasily Petrovich Bloshchitsky, without whom my participation in the contest would be impossible\", - Andrii shares his impressions.</p><p>In June, the lucky ones will go to France, where they will spend four unforgettable days: they will visit Le Bourget, talk with peers from other countries and the best experts of the world aviation community.</p>',
   'short_text_uk'=>'<p>Дванадцятого квітня, у всесвітній День авіації та космонавтики, благодійний Фонд Бориса Колеснікова підвів підсумки освітнього проекту «Авіатор 2017» і оголосив імена переможців. За результатами очного туру, Андрій Бардаков, студент групи КІ-14б, увійшов до числа ста переможців.</p>',
-  'short_text_ru'=>'<p>Двенадцатого апреля, во всемирный День авиации и космонавтики, благотворительный Фонд Бориса Колесникова подвел итоги образовательного проекта «Авиатор 2017» и объявил имена победителей. За результатами очного туру, Андрій Бардаков, студент групи КІ-14б, увійшов до числа ста переможців.</p>',
-  'short_text_en'=>'<p>On April 12, in the World Day of Aviation and Cosmonautics, the charitable foundation of Boris Kolesnikov summed up the educational project "Aviator 2017" and announced the names of the winners. За результатами очного туру, Андрій Бардаков, студент групи КІ-14б, увійшов до числа ста переможців.</p>',
+  'short_text_ru'=>'<p>Двенадцатого апреля, во всемирный День авиации и космонавтики, благотворительный Фонд Бориса Колесникова подвел итоги образовательного проекта «Авиатор 2017» и объявил имена победителей. По результатам очного тура, Андрей Бардаков, ст. гр. КИ-14б, вошел в число ста победителей.</p>',
+  'short_text_en'=>'<p>On April 12, in the World Day of Aviation and Cosmonautics, the charitable foundation of Boris Kolesnikov summed up the educational project "Aviator 2017" and announced the names of the winners. By the results of the on-site tour, Andrei Bardakov, a student of the KI-14b group, was among the hundred winners.</p>',
   ),$db)){
 
   $success = false;

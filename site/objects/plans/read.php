@@ -49,6 +49,7 @@ if($num>0){
         $data .= '"ru":"'.$row['name_ru'].'",';
         $data .= '"en":"'.$row['name_en'].'"';
         $data .= '},';
+        $data .= '"department_id":"'.$row['id'].'",';
         $data .= '"pills":[';
         $y=1;
         $first = true;

@@ -484,7 +484,7 @@
                             <label class="col-md-3" for="group_uk">Украинский<input ng-change="somethingChanged()" ng-model="editedGroup.uk" class="form-control" type="text" name="group_uk"></label>
                             <div class="row">
                                 <button type="button" ng-click="add()" class="btn btn-success btn-s" ng-disabled="!editedGroup.ru.length || !editedGroup.uk.length || !editedGroup.en.length || saved" ng-if="mode == 'add'">  Сохранить </button>  
-                                <button type="button" ng-click="change()" class="btn btn-success btn-s" ng-disabled="!editedGroup.ru.length || !editedGroup.uk.length || !editedGroup.en.length" ng-if="mode == 'edit'">  Обновить </button>  
+                                <button type="button" ng-click="change()" class="btn btn-success btn-s" ng-disabled="!editedGroup.ru.length || !editedGroup.uk.length || !editedGroup.en.length || uploader.queue.length" ng-if="mode == 'edit'">  Обновить </button>  
                                 <button type="button" ng-click="cancel()" class="btn btn-default btn-s">   Отмена </button>
                             </div>  
                             <div class="alert alert-danger" ng-if="saved">

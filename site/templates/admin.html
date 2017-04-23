@@ -468,9 +468,114 @@
 
             <!--  PLANS  -->  
                 <div role="tabpanel" ng-controller="plansController" id="plans" class="tab-pane fade">
-                        <h2>Plans</h2>                                             
+                        <h2>Plans</h2>   
+                        
+                            <label class="col-md-3" for="plan_en">Русский<input ng-change="somethingChanged()" ng-model="editedPlan.ru" class="form-control" type="text" name="plan_ru"></label>
+                            <label class="col-md-3" for="plan_ru">Английский<input ng-change="somethingChanged()" ng-model="editedPlan.en" class="form-control" type="text" name="plan_en"></label>
+                            <label class="col-md-3" for="plan_uk">Украинский<input ng-change="somethingChanged()" ng-model="editedPlan.uk" class="form-control" type="text" name="_uk"></label>
+                            <div class="row">
+                                <button type="button" ng-click="add()" class="btn btn-success btn-s" ng-disabled="!editedPlan.ru.length || !editedPlan.uk.length || !editedPlan.en.length || saved" ng-if="mode == 'add'">  Сохранить </button>  
+                                <button type="button" ng-click="change()" class="btn btn-success btn-s" ng-disabled="!editedPlan.ru.length || !editedPlan.uk.length || !editedPlan.en.length || uploader.queue.length" ng-if="mode == 'edit'">  Обновить </button>  
+                                <button type="button" ng-click="cancel()" class="btn btn-default btn-s">   Отмена </button>
+                            </div>  
+                            <div class="alert alert-danger" ng-if="saved && mode == 'add'">
+                                <strong>Info!</strong> Не забудьте загрузить картинку!
+                            </div>
+                            <div class="col-md-12" style="margin-bottom: 40px">
+                                Single
+                                <input type="file" nv-file-select="" accept="application/pdf" uploader="uploader" />
+
+                                        <h3>Upload queue</h3>
+                                        <p>Queue length: {{ uploader.queue.length }}</p>
+
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th width="50%">Name</th>
+                                                    <th ng-show="uploader.isHTML5">Size</th>
+                                                    <th ng-show="uploader.isHTML5">Progress</th>
+                                                    <th>Status</th>
+                                                    <th>Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr ng-repeat="item in uploader.queue">
+                                                    <td><strong>{{ item.file.name }}</strong></td>
+                                                    <td ng-show="uploader.isHTML5" nowrap>{{ item.file.size/1024/1024|number:2 }} MB</td>
+                                                    <td ng-show="uploader.isHTML5">
+                                                        <div class="progress" style="margin-bottom: 0;">
+                                                            <div class="progress-bar" role="progressbar" ng-style="{ 'width': item.progress + '%' }"></div>
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <span ng-show="item.isSuccess"><i class="glyphicon glyphicon-ok"></i></span>
+                                                        <span ng-show="item.isCancel"><i class="glyphicon glyphicon-ban-circle"></i></span>
+                                                        <span ng-show="item.isError"><i class="glyphicon glyphicon-remove"></i></span>
+                                                    </td>
+                                                    <td nowrap>
+                                                        <button ng-if="mode=='add'" type="button" class="btn btn-success btn-xs" ng-click="item.upload()" ng-disabled="item.isReady || item.isUploading || item.isSuccess || !saved">
+                                                            <span class="glyphicon glyphicon-upload"></span> Upload
+                                                        </button>
+                                                        <button ng-if="mode=='edit'" type="button" class="btn btn-success btn-xs" ng-click="item.upload()" ng-disabled="item.isReady || item.isUploading || item.isSuccess || !editedPlan.uk || !editedPlan.ru || !editedPlan.en">
+                                                            <span class="glyphicon glyphicon-upload"></span> Upload
+                                                        </button>
+                                                        <button type="button" class="btn btn-warning btn-xs" ng-click="item.cancel()" ng-disabled="!item.isUploading">
+                                                            <span class="glyphicon glyphicon-ban-circle"></span> Cancel
+                                                        </button>
+                                                        <button type="button" class="btn btn-danger btn-xs" ng-click="item.remove()">
+                                                            <span class="glyphicon glyphicon-trash"></span> Remove
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                </table>
+                    
+
+                            <br>
+                            <br>
+                            <ul class="nav nav-tabs">
+                                <li ng-repeat="item in plans" ng-class="{active:!$index}"><a ng-click="setActive(item.department_id)" data-toggle="tab" data-target="#tab{{$index}}-panel">{{item.tabName[language]}}</a></li>							  
+                                </ul>
+                                <br>
+                                <div class="tab-content">
+                                    <div id="tab{{$index}}-panel"  ng-repeat="item in plans" ng-class="{active:!$index}" class="tab-pane fade in">
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>
+                                                    <strong>
+                                                        Title
+                                                    </strong>
+                                                    </td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr ng-repeat="pill in item.pills">
+                                                    <td>{{pill.group.ru}}</td>
+                                                    <td>
+                                                        <button ng-click="editPill(pill)" class="btn btn-success">Изменить</button>
+                                                     </td>
+                                                    <td>
+                                                        <button ng-click="deletePill(pill)" class="btn btn-danger">Удалить</button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+						    	</div>                                               
+                    </div>                                          
                         
                     </div>
+
+
+
+
+
+
+
+
 
 
 
@@ -492,90 +597,89 @@
                             </div>
                             <div class="col-md-12" style="margin-bottom: 40px">
                                 Single
-                        <input type="file" nv-file-select="" accept="application/pdf" uploader="uploader" />
+                                <input type="file" nv-file-select="" accept="application/pdf" uploader="uploader" />
 
-                                <h3>Upload queue</h3>
-                                <p>Queue length: {{ uploader.queue.length }}</p>
+                                        <h3>Upload queue</h3>
+                                        <p>Queue length: {{ uploader.queue.length }}</p>
 
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th width="50%">Name</th>
-                                            <th ng-show="uploader.isHTML5">Size</th>
-                                            <th ng-show="uploader.isHTML5">Progress</th>
-                                            <th>Status</th>
-                                            <th>Actions</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr ng-repeat="item in uploader.queue">
-                                            <td><strong>{{ item.file.name }}</strong></td>
-                                            <td ng-show="uploader.isHTML5" nowrap>{{ item.file.size/1024/1024|number:2 }} MB</td>
-                                            <td ng-show="uploader.isHTML5">
-                                                <div class="progress" style="margin-bottom: 0;">
-                                                    <div class="progress-bar" role="progressbar" ng-style="{ 'width': item.progress + '%' }"></div>
-                                                </div>
-                                            </td>
-                                            <td class="text-center">
-                                                <span ng-show="item.isSuccess"><i class="glyphicon glyphicon-ok"></i></span>
-                                                <span ng-show="item.isCancel"><i class="glyphicon glyphicon-ban-circle"></i></span>
-                                                <span ng-show="item.isError"><i class="glyphicon glyphicon-remove"></i></span>
-                                            </td>
-                                            <td nowrap>
-                                                <button ng-if="mode=='add'" type="button" class="btn btn-success btn-xs" ng-click="item.upload()" ng-disabled="item.isReady || item.isUploading || item.isSuccess || !saved">
-                                                    <span class="glyphicon glyphicon-upload"></span> Upload
-                                                </button>
-                                                <button ng-if="mode=='edit'" type="button" class="btn btn-success btn-xs" ng-click="item.upload()" ng-disabled="item.isReady || item.isUploading || item.isSuccess || !editedGroup.uk || !editedGroup.ru || !editedGroup.en">
-                                                    <span class="glyphicon glyphicon-upload"></span> Upload
-                                                </button>
-                                                <button type="button" class="btn btn-warning btn-xs" ng-click="item.cancel()" ng-disabled="!item.isUploading">
-                                                    <span class="glyphicon glyphicon-ban-circle"></span> Cancel
-                                                </button>
-                                                <button type="button" class="btn btn-danger btn-xs" ng-click="item.remove()">
-                                                    <span class="glyphicon glyphicon-trash"></span> Remove
-                                                </button>
-                                            </td>
-                                        </tr>
-                                    </tbody>
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th width="50%">Name</th>
+                                                    <th ng-show="uploader.isHTML5">Size</th>
+                                                    <th ng-show="uploader.isHTML5">Progress</th>
+                                                    <th>Status</th>
+                                                    <th>Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr ng-repeat="item in uploader.queue">
+                                                    <td><strong>{{ item.file.name }}</strong></td>
+                                                    <td ng-show="uploader.isHTML5" nowrap>{{ item.file.size/1024/1024|number:2 }} MB</td>
+                                                    <td ng-show="uploader.isHTML5">
+                                                        <div class="progress" style="margin-bottom: 0;">
+                                                            <div class="progress-bar" role="progressbar" ng-style="{ 'width': item.progress + '%' }"></div>
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <span ng-show="item.isSuccess"><i class="glyphicon glyphicon-ok"></i></span>
+                                                        <span ng-show="item.isCancel"><i class="glyphicon glyphicon-ban-circle"></i></span>
+                                                        <span ng-show="item.isError"><i class="glyphicon glyphicon-remove"></i></span>
+                                                    </td>
+                                                    <td nowrap>
+                                                        <button ng-if="mode=='add'" type="button" class="btn btn-success btn-xs" ng-click="item.upload()" ng-disabled="item.isReady || item.isUploading || item.isSuccess || !saved">
+                                                            <span class="glyphicon glyphicon-upload"></span> Upload
+                                                        </button>
+                                                        <button ng-if="mode=='edit'" type="button" class="btn btn-success btn-xs" ng-click="item.upload()" ng-disabled="item.isReady || item.isUploading || item.isSuccess || !editedGroup.uk || !editedGroup.ru || !editedGroup.en">
+                                                            <span class="glyphicon glyphicon-upload"></span> Upload
+                                                        </button>
+                                                        <button type="button" class="btn btn-warning btn-xs" ng-click="item.cancel()" ng-disabled="!item.isUploading">
+                                                            <span class="glyphicon glyphicon-ban-circle"></span> Cancel
+                                                        </button>
+                                                        <button type="button" class="btn btn-danger btn-xs" ng-click="item.remove()">
+                                                            <span class="glyphicon glyphicon-trash"></span> Remove
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
                                 </table>
-                  
+                    
 
-                        <br>
-                        <br>
-                        <ul class="nav nav-tabs">
-							  <li ng-repeat="item in schedule" ng-class="{active:!$index}"><a ng-click="setActive(item.department_id)"data-toggle="tab" data-target="#tab{{$index}}">{{item.tabName[language]}}</a></li>							  
-							</ul>
-							<br>
-							<div class="tab-content">
-							  	<div id="tab{{$index}}"  ng-repeat="item in schedule" ng-class="{active:!$index}" class="tab-pane fade in">
-                                      <table>
-                                        <thead>
-                                            <tr>
-                                                <td>
-                                                  <strong>
-                                                     Title
-                                                  </strong>
-                                                </td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr ng-repeat="pill in item.pills">
-                                                <td>{{pill.group.ru}}</td>
-                                                <td>
-                                                    <button ng-click="editPill(pill)" class="btn btn-success">Изменить</button>
-                                                </td>
-                                                <td>
-                                                    <button ng-click="deletePill(pill)" class="btn btn-danger">Удалить</button>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                      </table>
-							  	</div>
-							</div>                                         
-                        
-            </div>
+                            <br>
+                            <br>
+                            <ul class="nav nav-tabs">
+                                <li ng-repeat="item in schedule" ng-class="{active:!$index}"><a ng-click="setActive(item.department_id)"data-toggle="tab" data-target="#tab{{$index}}">{{item.tabName[language]}}</a></li>							  
+                                </ul>
+                                <br>
+                                <div class="tab-content">
+                                    <div id="tab{{$index}}"  ng-repeat="item in schedule" ng-class="{active:!$index}" class="tab-pane fade in">
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <td>
+                                                    <strong>
+                                                        Title
+                                                    </strong>
+                                                    </td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr ng-repeat="pill in item.pills">
+                                                    <td>{{pill.group.ru}}</td>
+                                                    <td>
+                                                        <button ng-click="editPill(pill)" class="btn btn-success">Изменить</button>
+                                                     </td>
+                                                    <td>
+                                                        <button ng-click="deletePill(pill)" class="btn btn-danger">Удалить</button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+						    	</div>                                               
+                    </div>
 
 
 

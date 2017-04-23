@@ -14,12 +14,13 @@ angular.module('app').factory ('plansFactory', ['$http', function ($http) {
     return plans;
   }
   
-  fact.deletePlan = function (id) {
+  fact.deletePlan = function (item) {
       let plans = $http({
             method: 'DELETE',
             url: '/objects/plans/delete.php',
             data: JSON.stringify({
-                id: id
+                id: item.group_id,
+                pdf: item.pdf
             })
         }).then(function successCallback(response) {
             return response.data;
@@ -34,7 +35,15 @@ angular.module('app').factory ('plansFactory', ['$http', function ($http) {
       let plans = $http({
             method: 'POST',
             url: '/objects/plans/create.php',
-            data: JSON.stringify(department)
+            data: JSON.stringify({
+                formData: [{
+                    department_id: dep_id,
+                    title_uk: item.uk,
+                    title_en: item.en,
+                    title_ru: item.ru,    
+                    id: group_id  
+                }]
+            })
         }).then(function successCallback(response) {
             console.log('add');
             console.log(response);
@@ -46,11 +55,14 @@ angular.module('app').factory ('plansFactory', ['$http', function ($http) {
     return plans;
   }
 
-  fact.updatePlan = function (department) {
+  fact.updatePlan = function (item, dep_id, group_id) {
       let plans = $http({
             method: 'UPDATE',
             url: '/objects/plans/update.php',
-            data: JSON.stringify(department)
+            data: JSON.stringify({
+                id: item.group_id,
+                pdf: item.pdf
+            })
         }).then(function successCallback(response) {
             console.log('update');
             console.log(response);

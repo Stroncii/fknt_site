@@ -40,14 +40,15 @@ if($num>0){
             $data .= '"id":"'  . $row['id'] . '",';
             $l = 1;
             foreach ($langs as $lang) {
+                $data .= '"'.$lang.'":';
                 $lang_info = "{";
                 $lang_info .= '"title":"'   . $row['title_'.$lang] . '",';
                 $lang_info .= '"synopsis":"'   . $row['short_text_'.$lang] . '",';
                 $lang_info .= '"content":"' . $row['full_text_'.$lang] . '"}';
-                $data .= '"'.$lang.'":'  . $lang_info . $l<count($langs) ? ',' : '';
+                $data .= $lang_info;
+                $data .= $l<count($langs) ? ',' : '';
                 $l++;
             }
-            $data .= ']';
         $data .= '}';
     }
 }

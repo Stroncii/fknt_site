@@ -80,10 +80,10 @@ function create(){
     $query = "UPDATE
                 " . $this->table_name . "
             SET
-                group_title_uk,group_title_ru,group_title_en,".($this->pdf_name==""?'':'pdf_name,')."department_id
+                group_title_uk=:group_title_uk, group_title_ru=:group_title_ru, group_title_en=:group_title_en, ".($this->pdf_name==""?'':'pdf_name=:pdf_name,')." department_id=:department_id
             WHERE
                 id = :id";
- 
+    //echo $query;
     // prepare query statement
     $stmt = $this->conn->prepare($query);
  
@@ -91,7 +91,7 @@ function create(){
     $this->group_title_uk=htmlspecialchars(strip_tags($this->group_title_uk));
     $this->group_title_ru=htmlspecialchars(strip_tags($this->group_title_ru));
     $this->group_title_en=htmlspecialchars(strip_tags($this->group_title_en));
-    $this->pdf_name=htmlspecialchars(strip_tags($this->pdf_name));
+    //$this->pdf_name=htmlspecialchars(strip_tags($this->pdf_name));
     $this->department_id=htmlspecialchars(strip_tags($this->department_id));
     $this->id=htmlspecialchars(strip_tags($this->id));
  
@@ -101,6 +101,7 @@ function create(){
     $stmt->bindParam(":group_title_en", $this->group_title_en);
     if($this->pdf_name!=""){
         $stmt->bindParam(":pdf_name", $this->pdf_name);
+        echo "wtf!";
     }
     $stmt->bindParam(":department_id", $this->department_id);
     $stmt->bindParam(':id', $this->id);

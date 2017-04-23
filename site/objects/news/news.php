@@ -72,7 +72,7 @@ function create(){
      
         // select all query
         $query = "SELECT
-                    id,title_uk,title_ru,title_en,full_text_uk,full_text_ru,full_text_en,short_text_uk,short_text_ru,short_text_en, images_nums
+                    id,title_uk,title_ru,title_en,full_text_uk,full_text_ru,full_text_en,short_text_uk,short_text_ru,short_text_en
                 FROM
                     " . $this->table_name . "
                 WHERE 

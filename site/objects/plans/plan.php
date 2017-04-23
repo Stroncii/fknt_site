@@ -80,7 +80,7 @@ function create(){
     $query = "UPDATE
                 " . $this->table_name . "
             SET
-                group_title_uk,group_title_ru,group_title_en,".($this->pdf_name==""?'':'pdf_name,')."department_id
+                group_title_uk=:group_title_uk, group_title_ru=:group_title_ru, group_title_en=:group_title_en, ".($this->pdf_name==""?'':'pdf_name=:pdf_name,')." department_id=:department_id
             WHERE
                 id = :id";
  

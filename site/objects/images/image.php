@@ -139,7 +139,7 @@ function delete(){
  
     // execute query
     if($stmt->execute()){
-        unlink('/assets/img/news/items/'.$id.'.jpg');
+        unlink($_SERVER['DOCUMENT_ROOT'] .'/assets/img/news/items/'.$id.'.jpg');
         return true;
     }
  

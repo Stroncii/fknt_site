@@ -122,12 +122,13 @@ function delete(){
  
     // sanitize
     $this->id=htmlspecialchars(strip_tags($this->id));
- 
+    $pdf = htmlspecialchars(strip_tags($this->pdf_name));
     // bind id of record to delete
     $stmt->bindParam(1, $this->id);
  
     // execute query
     if($stmt->execute()){
+        unlink($_SERVER['DOCUMENT_ROOT'] .'/assets/pdf/plans/'.$pdf);
         return true;
     }
  

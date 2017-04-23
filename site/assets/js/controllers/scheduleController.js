@@ -54,7 +54,7 @@ angular.module('app')
   $scope.change = function () {
     $scope.saved = true;
     pdfFactory.updateSchedule($scope.editedGroup, $scope.current_dep_id, $scope.current_grop_id).then((data) => {
-
+      getDefaults();
     })
   };
 

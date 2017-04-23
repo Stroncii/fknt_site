@@ -57,7 +57,7 @@ if($num>0){
             if ($pi['department_id']==$row['id']) {
                 $data .= !$first ? ',' : '';
                 $data .= '{';
-                $data .= '"group_id":"'.$row['id'].'",';
+                $data .= '"group_id":"'.$pi['id'].'",';
                 $data .= '"group":{';
                 $data .= '"uk":"'.$pi['group_title_uk'].'",';
                 $data .= '"ru":"'.$pi['group_title_ru'].'",';

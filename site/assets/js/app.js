@@ -30,7 +30,8 @@ var app = angular.module('app', ['ngRoute', 'ngSanitize', 'pascalprecht.translat
     template : "<div></div>"
   })
   .when('/ki/:path',{
-    controller : function(){
+    controller : function(path){
+      console.log('here ' + path)
         window.location.replace('/ki/');
     }, 
     template : "<div></div>"

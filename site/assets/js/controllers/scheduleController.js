@@ -91,6 +91,9 @@ angular.module('app')
             }
             console.info('onBeforeUploadItem', item);
         };
+        uploader.onCompleteItem = function(fileItem, response, status, headers) {
+            getDefaults();
+        };
       
         // an async filter
         uploader.filters.push({

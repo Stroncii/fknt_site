@@ -11,6 +11,7 @@ angular.module('app')
         $scope.plans = data;
      });
   }
+  
   getPlans();
 
 

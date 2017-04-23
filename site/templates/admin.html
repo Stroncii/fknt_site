@@ -20,7 +20,8 @@
                             <li><a data-toggle="tab" role="tab" data-target="#images">Images</a></li>
                             <li><a data-toggle="tab" role="tab" data-target="#departments">Departments</a></li>
                             <li><a data-toggle="tab" role="tab" data-target="#covers">Covers</a></li>                                                        
-                            <li><a data-toggle="tab" role="tab" data-target="#plans">Plans</a></li>                            
+                            <li><a data-toggle="tab" role="tab" data-target="#plans">Plans</a></li>       
+                            <li><a data-toggle="tab" role="tab" data-target="#schedules">Schedules</a></li>                                                                             
                         </ul>
 
                         <div class="tab-content">
@@ -468,35 +469,62 @@
             <!--  PLANS  -->  
                 <div role="tabpanel" ng-controller="plansController" id="plans" class="tab-pane fade">
                         <h2>Plans</h2>                                             
-                        <table class="table table-concested">
-                            <thead>
-                                <tr>
-                                    <td>Название</td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr ng-repeat="item in plans">
-                                    <td>{{item.tabname.ru}}</td>
-                                    <td>
-                                        <button type="button" class="btn btn-success btn-s">
-                                            Изменить
-                                        </button>
-                                    </td>
-                                    <td>
-                                        <button type="button" class="btn btn-danger btn-s">
-                                            Удалить
-                                        </button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        
                     </div>
 
 
 
-            <!-- SCHEDULES -->         
+            <!-- SCHEDULES -->     
+
+             <div role="tabpanel" ng-controller="scheduleController" id="schedules" class="tab-pane fade">
+                        <h2>Schedules</h2>    
+                        <div class="col-md-12">
+                            <label class="col-md-3" for="group_en">Русский<input ng-model="editedGroup.name_ru" class="form-control" type="text" name="group_ru"></label>
+                            <label class="col-md-3" for="group_ru">Английский<input ng-model="editedGroup.name_en" class="form-control" type="text" name="group_en"></label>
+                            <label class="col-md-3" for="group_uk">Украинский<input ng-model="editedGroup.name_uk" class="form-control" type="text" name="group_uk"></label>
+                            <div class="row">
+                                <button type="button" ng-click="addGroup()" class="btn btn-success btn-s" ng-disabled="!editedGroup.name_ru.length || !editedGroup.name_ua.length || !editedGroup.name_en.length" ng-if="mode == 'add'">  Добавить </button>  
+                                <button type="button" ng-click="changeGroup()" class="btn btn-success btn-s" ng-if="mode == 'edit'">  Обновить </button>  
+                                <button type="button" ng-click="cancelGroup()" class="btn btn-default btn-s">   Отмена </button>
+                            </div>                    
+                        </div>
+                        <ul class="nav nav-tabs">
+							  <li ng-repeat="item in schedule" ng-class="{active:!$index}"><a data-toggle="tab" data-target="#tab{{$index}}">{{item.tabName[language]}}</a></li>							  
+							</ul>
+							<br>
+							<div class="tab-content">
+							  	<div id="tab{{$index}}"  ng-repeat="item in schedule" ng-class="{active:!$index}" class="tab-pane fade in">
+                                      <table>
+                                        <thead>
+                                            <tr>
+                                                <td>
+                                                  <strong>
+                                                     Title
+                                                  </strong>
+                                                </td>
+                                                <td></td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr ng-repeat="pill in item.pills">
+                                                <td>{{pill.group.ru}}</td>
+                                                <td>
+                                                    <button ng-click="editPill(pill)" class="btn btn-success">Изменить</button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                      </table>
+							  	</div>
+							</div>                                         
+                        
+            </div>
+
+
+
+
+
+
+
                             </div>
                         </div>
                     </div>

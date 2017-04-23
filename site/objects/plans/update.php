@@ -1,6 +1,6 @@
 <?php
 header("Access-Control-Allow-Origin: *");
-header("Content-Type: multipart/form-data\n; charset=UTF-8");
+header("Content-Type: multipart/form-data; charset=UTF-8");
 // include database and object file
 include_once '../../config/database.php';
 include_once 'plan.php';

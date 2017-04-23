@@ -7,9 +7,11 @@ angular.module('app')
     en: 'English',
     de: 'Deutch'
   }
+
   $scope.changeLanguage = function(language) {
     $translate.use(language);
     $rootScope.language = language;
+    localStorage.setItem('fknt_language', language);
   };
 
   $scope.logout = function () {

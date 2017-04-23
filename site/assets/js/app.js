@@ -727,7 +727,7 @@ $translateProvider.translations('en', {
     'SHTUTGART2': 'Стажировка и получения соответствующих научных стипендий.' 
   });
 
-  $translateProvider.preferredLanguage('uk');
+  $translateProvider.preferredLanguage(localStorage.getItem('fknt_language') ? localStorage.getItem('fknt_language') : 'uk');
 
 
     // use the HTML5 History API
@@ -743,7 +743,7 @@ app.run(function($rootScope, $location, $anchorScroll, $translate) {
     console.log('change');
    // if($location.hash()) $anchorScroll();  
   });
-  $rootScope.language = 'uk';
+  $rootScope.language = localStorage.getItem('fknt_language') ? localStorage.getItem('fknt_language') : 'uk';
   
   if (sessionStorage.getItem('user')) {
     $rootScope.logged = true;

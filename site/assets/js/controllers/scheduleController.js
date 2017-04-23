@@ -51,6 +51,9 @@ angular.module('app')
     console.log($scope.uploader);
   };
 
+  $scope.somethingChanged = function () {
+    $scope.saved = false;
+  }
 
 
 

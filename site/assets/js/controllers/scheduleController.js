@@ -30,6 +30,12 @@ angular.module('app')
     $scope.mode = 'edit';
   };
 
+  $scope.deletePill = function (pill) {
+    pdfFactory.deleteSchedule(pill).then(() => {
+      getDefaults();
+    });
+  }
+
 
   $scope.setActive = function (id) {
     $scope.current_dep_id = id;

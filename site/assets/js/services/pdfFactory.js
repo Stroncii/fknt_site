@@ -38,6 +38,23 @@ angular.module('app').factory ('pdfFactory', ['$http', '$rootScope', function ($
     return schedule;
   };
 
+fact.deleteSchedule = function (item) {
+    let schedule = $http({
+            method: 'DELETE',
+            url: '/objects/schedules/delete.php',
+            //url: '/assets/pdf/schedule/tabs.json'
+            data: JSON.stringify({
+                id: item.group_id,
+                pdf: item.pdf
+            })
+        }).then(function successCallback(response) {
+            return response.data;
+        }, function errorCallback(response) {
+            //console.log("Error!");
+            //console.log(response);
+        });
+    return schedule;
+  };
 
 
 

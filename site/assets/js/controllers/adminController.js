@@ -44,6 +44,12 @@ angular.module('app')
         images_nums: '1'
     };
 
+    $scope.isAdded = {
+        ru: false,
+        uk: false,
+        en: false
+    }
+
     getUsers();
 
 };
@@ -96,7 +102,6 @@ function getUsers () {
   };
 
   function setDefaults () { 
-     console.log($scope.currentItem);
      $scope.isEditable = false;
      $scope.item = $scope.currentItem[$scope.lang];
   }
@@ -112,7 +117,7 @@ function getUsers () {
   $scope.addPart = function () {
     $scope.currentItem[$scope.lang] = $scope.item;
     $scope.setEditableStatus(false);
-    console.log($scope.currentItem);
+    $scope.isAdded[$scope.lang] = true;
   };
   
 

@@ -26,14 +26,25 @@
 
                         <div class="tab-content">
                             <div role="tabpanel" id="news" class="tab-pane fade in active">
-                                <h3>News</h3>
+                                    <h3>News</h3>
+                                        <div class="col-md-12">
+                                            <div class="alert alert-success" ng-if="isAdded.ru == true">
+                                                <strong>Русский язык добавлен</strong> 
+                                            </div>
+                                            <div class="alert alert-success" ng-if="isAdded.en == true">
+                                                <strong>Английский язык добавлен</strong> 
+                                            </div>
+                                            <div class="alert alert-success" ng-if="isAdded.uk == true">
+                                                <strong>Украинский язык добавлен</strong> 
+                                            </div>
+                                        </div>
                                         <label >
                                             <input type="radio" name="type" ng-model="mode" value="add" ng-disabled="isEditable"  ng-change="changeType()" > Add
                                         </label>
                                         <label >
                                             <input type="radio" name="type" ng-model="mode" value="edit" ng-disabled="isEditable" ng-change="changeType()"> Edit
                                         </label>
-                                    <form>
+                                        <form>
                                         <label><input type="radio" name="options" ng-model="lang" ng-disabled="isEditable" ng-change="changeLanguage()" value="uk" > Ukr
                                         </label>
                                         <label >

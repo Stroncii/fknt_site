@@ -15,13 +15,13 @@ $plan = new Schedule($db);
 if(isset($_POST['department_id'])){
 	$plan->department_id = $_POST['department_id'];
 }
-if(isset($_POST['group_title_uk'])){
+if(isset($_POST['title_uk'])){
 	$plan->group_title_uk = $_POST['title_uk'];
 }
-if(isset($_POST['group_title_ru'])){
+if(isset($_POST['title_ru'])){
 	$plan->group_title_ru = $_POST['title_ru'];
 }
-if(isset($_POST['group_title_en'])){
+if(isset($_POST['title_en'])){
 	$plan->group_title_en = $_POST['title_en'];
 }
 if(isset($_POST['id'])){

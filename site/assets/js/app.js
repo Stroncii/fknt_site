@@ -523,7 +523,7 @@ $translateProvider.translations('en', {
     'TITLE': 'Faculty of Computer Sciences and Technologies',
     'HISTORY': 'History',
     'NEWS': 'News',
-    'STRUCTURE': 'Strusture',
+    'STRUCTURE': 'Structure',
     'STUDENTS': 'For Student',
     'ABITURIENTS': 'For Applicant',
     'SCIENCE': 'Science and Cooperation',

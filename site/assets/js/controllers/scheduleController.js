@@ -92,6 +92,7 @@ angular.module('app')
             console.info('onBeforeUploadItem', item);
         };
         uploader.onCompleteItem = function(fileItem, response, status, headers) {
+            uploader.clearQueue();
             getDefaults();
         };
       

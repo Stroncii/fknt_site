@@ -22,10 +22,11 @@ angular.module('app')
   getDefaults();
 
   $scope.editPill = function (pill) {
-    console.log(pill);
+    $scope.uploader.url = '/objects/schedules/update.php'
     $scope.saved = true;
     $scope.editedGroup = angular.copy(pill.group);
     $scope.current_grop_id = pill.group_id;
+    console.log($scope.editedGroup);
     $scope.mode = 'edit';
   };
 
@@ -53,7 +54,7 @@ angular.module('app')
   $scope.change = function () {
     $scope.saved = true;
     pdfFactory.updateSchedule($scope.editedGroup, $scope.current_dep_id, $scope.current_grop_id).then((data) => {
-      console.log(data)
+
     })
   };
 
@@ -78,6 +79,18 @@ angular.module('app')
                 return this.queue.length < 10;
             }
         });
+        uploader.onBeforeUploadItem = function(item) {
+          if ($scope.mode = 'edit') {
+              item.formData = [{
+                department_id: $scope.current_dep_id,
+                title_uk: $scope.editedGroup.uk,
+                title_en: $scope.editedGroup.en,
+                title_ru: $scope.editedGroup.ru,
+                id: $scope.current_grop_id      
+            }];
+            }
+            console.info('onBeforeUploadItem', item);
+        };
       
         // an async filter
         uploader.filters.push({

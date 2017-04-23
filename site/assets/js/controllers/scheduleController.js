@@ -15,7 +15,7 @@ angular.module('app')
   function getSchedules () {
     pdfFactory.getSchedule().then((data) => {
       $scope.schedule = data;
-      $scope.editedGroup.id = data[0].department_id;
+      $scope.current_dep_id = data[0].department_id;
     });
   };
   
@@ -23,15 +23,15 @@ angular.module('app')
 
   $scope.editPill = function (pill) {
     console.log(pill);
-    $scope.saved = false;
+    $scope.saved = true;
     $scope.editedGroup = angular.copy(pill.group);
+    $scope.current_grop_id = pill.group_id;
     $scope.mode = 'edit';
   };
 
 
   $scope.setActive = function (id) {
-    $scope.editedGroup.id = id;
-    console.log($scope.editedGroup);
+    $scope.current_dep_id = id;
   };
 
   $scope.cancel = function () {
@@ -43,17 +43,23 @@ angular.module('app')
     $scope.saved = true;
     $scope.uploader.url = '/objects/schedules/create.php';
     $scope.uploader.formData = [{
-      department_id: $scope.editedGroup.id,
+      department_id: $scope.current_dep_id,
       title_uk: $scope.editedGroup.uk,
       title_en: $scope.editedGroup.en,
-      title_ru: $scope.editedGroup.ru,      
+      title_ru: $scope.editedGroup.ru      
     }];
-    console.log($scope.uploader);
+  };
+
+  $scope.change = function () {
+    $scope.saved = true;
+    pdfFactory.updateSchedule($scope.editedGroup, $scope.current_dep_id, $scope.current_grop_id).then((data) => {
+      console.log(data)
+    })
   };
 
   $scope.somethingChanged = function () {
     $scope.saved = false;
-  }
+  };
 
 
 

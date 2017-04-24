@@ -67,6 +67,10 @@ var app = angular.module('app', ['ngRoute', 'ngSanitize', 'pascalprecht.translat
     templateUrl: 'templates/specialties.html',
     controller: 'specialitiesController'
   })
+  .when('/specialties/:type/:item', {
+    templateUrl: 'templates/specialties.html',
+    controller: 'specialitiesController'
+  })
   .when('/cooperation', {
     templateUrl: 'templates/cooperation.html'
   })

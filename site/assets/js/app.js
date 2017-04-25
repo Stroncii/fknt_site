@@ -1,5 +1,5 @@
 var app = angular.module('app', ['ngRoute', 'ngSanitize', 'pascalprecht.translate', 'textAngular', 'angularFileUpload'])
-  .config( ['$routeProvider', '$locationProvider', '$translateProvider', function($routeProvider, $locationProvider, $translateProvider) {
+  .config( ['$routeProvider', '$locationProvider', '$translateProvider', function($routeProvider, $locationProvider, $translateProvider, $routeParams) {
   $routeProvider
   .when('/', {
     templateUrl: 'templates/main.html'
@@ -29,9 +29,30 @@ var app = angular.module('app', ['ngRoute', 'ngSanitize', 'pascalprecht.translat
     }, 
     template : "<div></div>"
   })
-  .when('/ki/:path',{
-    controller : function(path){
-      console.log('here ' + path)
+  .when('/ki/history',{
+    controller : function(){
+        localStorage.setItem('ki-path', 'history');
+        window.location.replace('/ki/');
+    }, 
+    template : "<div></div>"
+  })
+  .when('/ki/science',{
+    controller : function(){
+        localStorage.setItem('ki-path','science');
+        window.location.replace('/ki/');
+    }, 
+    template : "<div></div>"
+  })
+  .when('/ki/professors',{
+    controller : function(){
+        localStorage.setItem('ki-path', 'professors');
+        window.location.replace('/ki/');
+    }, 
+    template : "<div></div>"
+  })
+  .when('/ki/contacts',{
+    controller : function(){
+        localStorage.setItem('ki-path', 'contacts');
         window.location.replace('/ki/');
     }, 
     template : "<div></div>"
@@ -742,12 +763,22 @@ $translateProvider.translations('en', {
     }); 
 }]);
 
-app.run(function($rootScope, $location, $anchorScroll, $translate) {
+app.run(function($rootScope, $location, $anchorScroll, $translate, $routeParams) {
   //when the route is changed scroll to the proper element.
   $rootScope.$on('$routeChangeSuccess', function(newRoute, oldRoute) {
     console.log('change');
    // if($location.hash()) $anchorScroll();  
   });
+
+  $rootScope.$on('$routeChangeStart', function (event, newRoute, oldRoute) {
+    console.log('hoy');
+    console.log($routeParams);
+    if ($routeParams.path) {
+      console.log('there is path');
+      //event.preventDefault();
+    }
+  });
+
   $rootScope.language = localStorage.getItem('fknt_language') ? localStorage.getItem('fknt_language') : 'uk';
   
   if (sessionStorage.getItem('user')) {

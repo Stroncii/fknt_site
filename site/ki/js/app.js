@@ -7,7 +7,15 @@ var app = angular.module('appKI', ['ngRoute', 'ngSanitize', 'pascalprecht.transl
   .when ('/ki/history', {
       templateUrl: 'templates/history.html'
   })
-
+  .when ('/ki/professors', {
+      templateUrl: 'templates/professors.html'
+  })
+  .when ('/ki/science', {
+      templateUrl: 'templates/science.html'
+  })
+  .when ('/ki/contacts', {
+      templateUrl: 'templates/contacts.html'
+  })
 
 
 
@@ -47,14 +55,19 @@ $translateProvider.translations('en', {
     }); 
 }]);
 
-app.run(function($rootScope, $location, $anchorScroll, $translate) {
+app.run(function($rootScope, $location, $anchorScroll, $translate, $routeParams) {
     console.log('hey');
   //when the route is changed scroll to the proper element.
   $rootScope.$on('$routeChangeSuccess', function(newRoute, oldRoute) {
-    console.log('change');
+    
    // if($location.hash()) $anchorScroll();  
   });
   $rootScope.language = 'uk';
+
+  if (localStorage.getItem('ki-path')) {  
+    $location.url('/ki/' + localStorage.getItem('ki-path'));
+    localStorage.clear('ki-path');
+  }
   
   if (sessionStorage.getItem('user')) {
     $rootScope.logged = true;

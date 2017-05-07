@@ -122,7 +122,7 @@ var app = angular.module('app', ['ngRoute', 'ngSanitize', 'pascalprecht.translat
   $translateProvider.translations('uk', {
     // HEADERS
 
-    'TITLE': 'Факультет комп\'ютерних наук і технологій',
+    // 'TITLE': 'Факультет комп\'ютерних наук і технологій',
     'HISTORY': 'Історія',
     'NEWS': 'Новини',
     'STRUCTURE': 'Структура',
@@ -181,6 +181,7 @@ var app = angular.module('app', ['ngRoute', 'ngSanitize', 'pascalprecht.translat
 
     // NEWS
     'NEWS_BUTTON': 'Детальніше',
+    'NEWS_ITEM': 'Новина',
 
     // DEAN'S OFFICE
     'DEAN_TITLE': 'В.о. декана',
@@ -392,6 +393,8 @@ var app = angular.module('app', ['ngRoute', 'ngSanitize', 'pascalprecht.translat
 
     // NEWS
     'NEWS_BUTTON': 'Детальнее',
+    'NEWS_ITEM': 'Новость',
+    
 
     // DEAN
     'DEAN_TITLE': 'И.о. декана',
@@ -603,6 +606,8 @@ $translateProvider.translations('en', {
 
     // NEWS
     'NEWS_BUTTON': 'Read More',
+    'NEWS_ITEM': 'News',
+    
 
     // DEAN
     'DEAN_TITLE': 'Acting Dean',

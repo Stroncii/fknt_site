@@ -15,7 +15,7 @@ $data = json_decode(file_get_contents("php://input"),true);
 //$data = [12,13,11,2,3,1,4,5,6,7,8,9,10];
 // set ID property of product to be edited
 if(count($data)!=0){
-	$pos = range(count($data),1);
+	$pos = range(1,count($data));
 	$j = 0;
 	$cond = false;
 	foreach ($data as $v) {

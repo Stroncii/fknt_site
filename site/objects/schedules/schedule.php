@@ -59,7 +59,7 @@ function create(){
      
         // select all query
         $query = "SELECT
-                    id, group_title_uk,group_title_ru,group_title_en,pdf_name,department_id, sort_order
+                    id, sort_order, group_title_uk,group_title_ru,group_title_en,pdf_name,department_id
                 FROM
                     " . $this->table_name . "
                 ORDER BY

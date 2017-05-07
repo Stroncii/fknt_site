@@ -501,7 +501,7 @@ var app = angular.module('app', ['ngRoute', 'ngSanitize', 'pascalprecht.translat
     "DI4": "Положение о переводе на вакантные бюджетные места ДонНТУ",
     "DI5": "Положение о семестровом контроле в ГВУЗ «Донецкий Национальный Технический Университет» ",
     "DI6": 'Положение о порядке создания и организации работы Экзаменационной комиссии в ДонНТУ',
-    "DI7": 'Некоторые вопросы стипендиального обеспечения" ПОСТАНОВЛЕНИЕ от 28 декабря 2016 № 1050',
+    "DI7": '"Некоторые вопросы стипендиального обеспечения" ПОСТАНОВЛЕНИЕ от 28 декабря 2016 № 1050',
     "DI8": '"О размерах стипендий в государственных и коммунальных учебных заведениях, научных учреждениях" ПОСТАНОВЛЕНИЕ от 28 декабря 2016 № 1047',
     "DI9": '"Некоторые вопросы выплаты социальных стипендий студентам (курсантам) высших учебных заведений" ПОСТАНОВЛЕНИЕ от 28 декабря 2016 № 1045',
     "DI10": "Квитанция на оплату обучения",
@@ -529,17 +529,17 @@ var app = angular.module('app', ['ngRoute', 'ngSanitize', 'pascalprecht.translat
     "GAMEHUB1": 'Проект GameHub - сотрудничество в области компьютерной игровой индустрии (Испания, Польша, Австрия)',
     'GAMEHUB2': 'Проект GameHub инициировано для помощи украинским студентам инженерных специальностей получить знания и навыки в сфере компьютерного дизайна и разработки компьютерных игр, повышая тем самым их шансы на трудоустройство и самодостаточность.',
     'GAMEHUB3': 'Проект направлен на создание GameHub инфраструктуры, что будет способствовать повышению квалификации выпускников университетов и развития цифрового производства посредством предоставления образовательных ресурсов, консультирование факультетов университетов и центров по безработице. ',
-    'GAMEHUB4': 'Целевая группа проекта: представители высших учебных заведений - преподавательский состав и студенты; представители центров по безработице, ATO ветераны и инженеры, заинтересованы работать в сфере разработки игр. Проект будет способствовать профессиональному развитию целевой группы в цифровой индустрии, как части информационно-коммуникационных технологий. ',
+    'GAMEHUB4': 'Целевая группа проекта: представители высших учебных заведений - преподавательский состав и студенты; представители центров по безработице, ветераны ATO и инженеры, заинтересованные работать в сфере разработки игр. Проект будет способствовать профессиональному развитию целевой группы в цифровой индустрии, как части информационно-коммуникационных технологий. ',
     'GAMEHUB5': 'консорциум состоит из тринадцати партнеров',
     'GAMEHUB6': 'обладающих необходимым опытом в сфере бизнеса и образования. ',
     
     
-    'ERASMUS1': 'Участие в проекте Erasmus + - программе Европейского Союза по поддержке проектов в сфере образования, профессионального обучения, работы с молодежью. ',
+    'ERASMUS1': 'Участие в проекте Erasmus+ - программе Европейского Союза по поддержке проектов в сфере образования, профессионального обучения, работы с молодежью. ',
     'ERASMUS2': 'Проект ТЕМПУС (Польша, Франция, Германия)',
     'ERASMUS3': 'Целью данного TEMPUS-проекта является открытие новой специализации в рамках специальности 123 «Компьютерная инженерия». Специализация «Проектирование микросистем» разработана при участии четырех университетов из Украины и университетов из Лиона (Франция), Ильменау (Германия), Павии (Италия) и Лодзь (Польша). ',
 
-    'SHTUTGART1': 'Научно-исследовательские работы по Штутгартским, Гамбургским, Магдебургского университета (Германия). ',
-    'SHTUTGART2': 'Стажировка и получения соответствующих научных стипендий.' 
+    'SHTUTGART1': 'Научно-исследовательские работы c Штутгартским, Гамбургским, Магдебургского университета (Германия). ',
+    'SHTUTGART2': 'Стажировки и получение соответствующих научных стипендий.' 
   });
 
 $translateProvider.translations('en', {
@@ -630,92 +630,92 @@ $translateProvider.translations('en', {
 
 
     // PMI 
-    'HOD': 'Заведующий кафедрой',
-    'PMI_HEAD' : 'Ольга Дмитриева',
-    'PMI_HEAD_STATUS': 'д.т.н., проф.',
+    'HOD': 'Head of the Department',
+    'PMI_HEAD' : 'Olga Dmitrieva',
+    'PMI_HEAD_STATUS': 'Doctor of Engineering Sciences, Professor',
     'PMI_HEAD_EMAIL': 'olha.dmytriieva@donntu.edu.ua',
 
-    'SPHERES' : 'Сферы деятельности',
-    'S1': 'разработка, использование и сопровождение алгоритмического и программного обеспечения информационных систем;',
-    'S2': 'проектирование и разработка современных прикладных пакетов, баз данных и знаний;',
-    'S3': 'внедрение информационных технологий в задачах управления и принятия решений.',
+    'SPHERES' : 'Areas of activity',
+    'S1': 'Development, use and maintenance of algorithmic and software information systems;',
+    'S2': 'Design and development of modern application packages, databases and knowledge bases;',
+    'S3': 'Implementation of information technologies in the control tasks and decision-making.',
 
-    'MAIN_DISCIPLINES': 'Основные дисциплины:',
-    'MD1': 'языки и технологии программирования',
-    'MD2': 'методологии, технологии и среды проектирования, моделирования, разработки и тестирования программного обеспечения.',
+    'MAIN_DISCIPLINES': 'Main disciplines:',
+    'MD1': 'Languages and technologies of programming',
+    'MD2': 'Methodology, technology and environments for design, modeling, development and testing of software.',
    
    //KN
-    'KN_HEAD_STATUS': 'д.т.н., доц.',
-    'KN_HEAD': 'Евгений Фёдоров',
+    'KN_HEAD_STATUS': 'Doctor of Engineering Sciences, Docent',
+    'KN_HEAD': 'Evgeny Fedorov',
     'KN_HEAD_EMAIL': 'yevhen.fedorov@donntu.edu.ua',
 
-    'KNS1': 'проектирование и разработка информационных и управляющих систем;',
-    'KNS2': 'проектирование и разработка систем искусственного интеллекта;',
-    'KNS3': 'проектирование и разработка веб-ориентированных систем;',
-    'KNS4': 'моделирование и компьютерный дизайн;',
-    'KNS5': 'экологический и экономический мониторинг.',
+    'KNS1': 'Design and development of information and control systems;',
+    'KNS2': 'Design and development of artificial intelligence systems;',
+    'KNS3': 'Design and development of web-oriented systems;',
+    'KNS4': 'Simulation and computer design;',
+    'KNS5': 'Environmental and economic monitoring.',
 
-    'KNMD1': 'языки и технологии программирования;',
-    'KNMD2': 'аппаратные средства компьютерных систем;',
-    'KNMD3': 'средства моделирования и проектирования систем различной направленности и уровней сложности;',
-    'KNMD4': 'методы и средства искусственного интеллекта;',
-    'KNMD5': 'технологии сбора, обрабатывания и хранения данных;',
-    'KNMD6': 'проектирование и разработка мультимедийных систем и компьютерный дизайн.',
+    'KNMD1': 'Languages and technologies of programming;',
+    'KNMD2': 'Hardware of computer systems;',
+    'KNMD3': 'Tools for modeling and designing systems of various kinds and levels of complexity;',
+    'KNMD4': 'Methods and means of artificial intelligence;',
+    'KNMD5': 'Technologies of data collection, processing and storage;',
+    'KNMD6': 'Design and development of multimedia systems and computer design.',
 
     //PHILOSOPHY
-    'PH_HEAD_STATUS': 'д. богосл. н., к. филос. н., проф.',
-    'PH_HEAD': 'Николай Никульчев',
+    'PH_HEAD_STATUS': 'Doctor of Theological Sciences, Candidate of Philosophical Sciences, Professor',
+    'PH_HEAD': 'Nikolay Nikulchev',
     'PH_HEAD_EMAIL': 'mykola.nikulchev@donntu.edu.ua',
 
-    'PHS1': 'продолжение обучения в магистратуре, аспирантуре и докторантуре по философским специальностям;',
-    'PHS2': 'преподавательская деятельность;',
-    'PHS3': 'консультативная деятельность в различных областях науки, образования и культуры.',
+    'PHS1': 'Continuation of education in the magistracy, postgraduate and doctoral studies in philosophical specialties;',
+    'PHS2': 'Teaching activities;',
+    'PHS3': 'Advisory activities in various fields of science, education and culture.',
 
-    'PHMD1': 'полный курс по истории философии (изучаются по периодам на протяжении всего курса обучения);',
-    'PHMD2': 'история философии Украины;',
-    'PHMD3': 'история Философии России;',
-    'PHMD4': 'практическая и теоретическая философия;',
-    'PHMD5': 'логика (традиционная, классическая и неклассическая);',
-    'PHMD6': 'история религий',
+    'PHMD1': 'Full course on the history of philosophy (studied by periods during the entire course of study);',
+    'PHMD2': 'History of philosophy of Ukraine;',
+    'PHMD3': 'History of philosophy of Russia;',
+    'PHMD4': 'Practical and theoretical philosophy;',
+    'PHMD5': 'Logic (traditional, classical and non-classical);',
+    'PHMD6': 'History of religions',
 
     //SCHEDULE
     'DOWNLOAD': 'Download',
     'PDF_ERROR': 'File can not be displayed, see ',
 
      //process
-    'DAYFORM': 'Дневная форма',
-    'NIGHTFORM': 'Заочная форма',
-    '1COURSE': 'Первый курс',
-    '2COURSE': 'Второй курс',
-    '3COURSE': 'Третий курс',
-    '4COURSE': 'Четвертый курс',
-    '5COURSE': 'Магистры 1 года, специалисты',
-    '6COURSE': 'Магистры 2 года',
+    'DAYFORM': 'Full-time',
+    'NIGHTFORM': 'Extramural',
+    '1COURSE': 'First year',
+    '2COURSE': 'Second year',
+    '3COURSE': 'Third year',
+    '4COURSE': 'Fourth year',
+    '5COURSE': 'Masters 1 year, specialists',
+    '6COURSE': 'Masters 2 year',
 
      //ORGANIZATIONS
-    'SO_TITLE': 'Студенческое самоуправление',
-    'SO_DESCRIPTION': 'Если твоя жизнь скучна и однообразна, тебе скучно в университете, но ты считаешь что способен на большее, тогда мы поможем тебе. Присоединяйся к нам и добавь в свою жизнь ярких красок и незабываемых впечатлений.',
-    'SO_HEAD': 'Эля Пенар',
-    'SO_HEAD_STATUS': 'Глава студенческого самоуправления ДонНТУ',
-    'SO_FAC_HEAD': 'Артём Любимов',
-    'SO_FAC_HEAD_STATUS': 'Глава студенческого самоуправления ФКНТ',
-    'SR_DESCRIPTION': 'Хочешь стать крутым диджеем или классным ведущим? Хочешь попробовать себя журналистом? Приходи к нам, молодая команда студенческого радио ждет тебя!',
-    'SR_HEAD': 'Семён Лойко',
-    'SR_HEAD_STATUS': 'Глава студенческого радио',
+    'SO_TITLE': 'Student self-government',
+    'SO_DESCRIPTION': 'If your life is boring and monotonous, you are bored at the university, but you think you are capable of more, then we will help you. Join us and add to your life bright colors and unforgettable impressions.',
+    'SO_HEAD': 'Elia Penar',
+    'SO_HEAD_STATUS': 'Head of Student Self-Government of DonNTU',
+    'SO_FAC_HEAD': 'Artem Lyubimov',
+    'SO_FAC_HEAD_STATUS': 'Head of Student Self-Government of FCST',
+    'SR_DESCRIPTION': 'Do you want to become a cool DJ or a great leader? Do you want to try yourself as a journalist? Come to us, a young student radio team is waiting for you!',
+    'SR_HEAD': 'Semyon Loiko',
+    'SR_HEAD_STATUS': 'Head of student radio',
 
 
     //DOCUMENTS
     // DOCUMENTS
-    "DI1": "Положение об организации образовательного процесса в ДонНТУ",
-    "DI2": "Положение о восстановлении, переводы и отчисления студентов ДонНТУ",
-    "DI3": "Положение о дипломе с отличием ДонНТУ",
-    "DI4": "Положение о переводе на вакантные бюджетные места ДонНТУ",
-    "DI5": "Положение о семестровом контроле в ГВУЗ «Донецкий Национальный Технический Университет» ",
-    "DI6": 'Положение о порядке создания и организации работы Экзаменационной комиссии в ДонНТУ',
-    "DI7": 'Некоторые вопросы стипендиального обеспечения" ПОСТАНОВЛЕНИЕ от 28 декабря 2016 № 1050',
-    "DI8": '"О размерах стипендий в государственных и коммунальных учебных заведениях, научных учреждениях" ПОСТАНОВЛЕНИЕ от 28 декабря 2016 № 1047',
-    "DI9": '"Некоторые вопросы выплаты социальных стипендий студентам (курсантам) высших учебных заведений" ПОСТАНОВЛЕНИЕ от 28 декабря 2016 № 1045',
-    "DI10": "Квитанция на оплату обучения",
+    "DI1": "Regulations on the organization of the educational process in DonNTU",
+    "DI2": "Regulation on restoration, transfers and expulsion of DonNTU students",
+    "DI3": "Regulations on the Diploma with Honors of DonNTU",
+    "DI4": "Regulations on transfer to the vacant budget places of DonNTU",
+    "DI5": "Regulations on the semester control in the SHEE \"Donetsk National Technical University\"",
+    "DI6": 'Regulations on the procedure for creating and organizing the work of the Examination Commission in DonNTU',
+    "DI7": '"Some Issues of Scholarships" DECISION of December 28, 2016 № 1050',
+    "DI8": '"On the amount of scholarships in state and municipal educational institutions, scientific institutions" DECISION of December 28, 2016 № 1047',
+    "DI9": '"Some issues of payment of social scholarships to students (cadets) of higher educational institutions" DECISION of December 28, 2016 № 1045',
+    "DI10": "Receipt for tuition",
 
 
  // CONTACTS
@@ -727,30 +727,30 @@ $translateProvider.translations('en', {
 
 
     //ASPIRANTUR
-    'AIT1': 'В ГВУЗ «Донецкий национальный технический университет» действует аспирантура по специальностям',
-    'AIT2': '121 «Инженерия программного обеспечения»',
-    'AIT3': '122 «Компьютерные науки и информационные технологии»',
-    'AIT4': '123 «Компьютерная инженерия»',
-    'AIT5': '(область знаний 12 «Информационные технологии»)',
-    'AIT6': 'Также действует специализированный совет Д 11.052.03 по защите кандидатских и докторских диссертаций по специальностям',
-    'AIT7': '05.13.05 «Компьютерные системы и компоненты»',
-    'AIT8': '01.05.02 «Математическое моделирование и вычислительные методы»',
+    'AIT1': 'SHEE "Donetsk National Technical University" has postgraduate studies in the field of specialties',
+    'AIT2': '121 «Software Engineering»',
+    'AIT3': '122 «Computer Science and Information Technology»',
+    'AIT4': '123 «Computer Engineering»',
+    'AIT5': '(Field of knowledge 12 "Information Technology")',
+    'AIT6': 'There is also a specialized council D 11.052.03 on the defense of candidate and doctoral dissertations in the field of specialties',
+    'AIT7': '05.13.05 «Computer systems and components»',
+    'AIT8': '01.05.02 «Mathematical modeling and computational methods»',
 
      // COOPERATION
-    "GAMEHUB1": 'Проект GameHub - сотрудничество в области компьютерной игровой индустрии (Испания, Польша, Австрия)',
-    'GAMEHUB2': 'Проект GameHub инициировано для помощи украинским студентам инженерных специальностей получить знания и навыки в сфере компьютерного дизайна и разработки компьютерных игр, повышая тем самым их шансы на трудоустройство и самодостаточность.',
-    'GAMEHUB3': 'Проект направлен на создание GameHub инфраструктуры, что будет способствовать повышению квалификации выпускников университетов и развития цифрового производства посредством предоставления образовательных ресурсов, консультирование факультетов университетов и центров по безработице. ',
-    'GAMEHUB4': 'Целевая группа проекта: представители высших учебных заведений - преподавательский состав и студенты; представители центров по безработице, ATO ветераны и инженеры, заинтересованы работать в сфере разработки игр. Проект будет способствовать профессиональному развитию целевой группы в цифровой индустрии, как части информационно-коммуникационных технологий. ',
-    'GAMEHUB5': 'консорциум состоит из тринадцати партнеров',
-    'GAMEHUB6': 'обладающих необходимым опытом в сфере бизнеса и образования. ',
+    "GAMEHUB1": 'GameHub is a cooperation project in the field of computer game industry (Spain, Poland, Austria)',
+    'GAMEHUB2': 'The GameHub project was initiated to help Ukrainian engineering students acquire knowledge and skills in the field of computer design and computer games development, thereby increasing their chances of employment and self-sufficiency.',
+    'GAMEHUB3': 'The project is aimed at creating the GameHub infrastructure, which will help to upgrade the skills of university graduates and the development of digital production through the provision of educational resources, advising university departments and unemployment centers. ',
+    'GAMEHUB4': 'Target group of the project: representatives of higher education institutions - teaching staff and students; Representatives of unemployment centers, veterans of the anti-terrorist operation and engineers interested in working in the field of game development. The project will promote the professional development of the target group in the digital industry as part of information and communication technologies. ',
+    'GAMEHUB5': 'The consortium consists of thirteen partners',
+    'GAMEHUB6': ' who have the necessary expertise in the field of business and education. ',
     
     
-    'ERASMUS1': 'Участие в проекте Erasmus + - программе Европейского Союза по поддержке проектов в сфере образования, профессионального обучения, работы с молодежью. ',
-    'ERASMUS2': 'Проект ТЕМПУС (Польша, Франция, Германия)',
-    'ERASMUS3': 'Целью данного TEMPUS-проекта является открытие новой специализации в рамках специальности 123 «Компьютерная инженерия». Специализация «Проектирование микросистем» разработана при участии четырех университетов из Украины и университетов из Лиона (Франция), Ильменау (Германия), Павии (Италия) и Лодзь (Польша). ',
+    'ERASMUS1': 'Participation in the project Erasmus+ - the program of the European Union to support projects in the field of education, vocational training, work with young people. ',
+    'ERASMUS2': 'The TEMPUS project (Poland, France, Germany)',
+    'ERASMUS3': 'The purpose of this TEMPUS project is to open a new specialization in the specialty 123 "Computer Engineering". Specialization "Microsystem Design" was developed with the participation of four universities from Ukraine and universities from Lyon (France), Ilmenau (Germany), Pavia (Italy) and Lodz (Poland). ',
 
-    'SHTUTGART1': 'Научно-исследовательские работы по Штутгартским, Гамбургским, Магдебургского университета (Германия). ',
-    'SHTUTGART2': 'Стажировка и получения соответствующих научных стипендий.' 
+    'SHTUTGART1': 'Research work with Stuttgart, Hamburg, Magdeburg University (Germany). ',
+    'SHTUTGART2': 'Internships and scholarships.' 
   });
 
   $translateProvider.preferredLanguage(localStorage.getItem('fknt_language') ? localStorage.getItem('fknt_language') : 'uk');

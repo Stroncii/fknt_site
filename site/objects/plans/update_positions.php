@@ -12,7 +12,7 @@ $plan = new Plan($db);
  
 // get id of product to be edited
 $data = json_decode(file_get_contents("php://input"),true);   
-//$data = [12,13,11,2,3,1,4,5,6,7,8,9,10];
+//$data = [2,1,3,4,5,6,7,8];
 // set ID property of product to be edited
 if(count($data)!=0){
 	$pos = range(1,count($data));
@@ -25,6 +25,7 @@ if(count($data)!=0){
 			$cond = true;
 		    
 		}
+		echo $v.'-'.$pos[$j].' ';
 		$j++;
 	}
 	if($cond){

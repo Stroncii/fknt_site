@@ -180,7 +180,6 @@ $scope.updatePosition = function (event, ui) {
         positions.push(item.id);
     })
     appFactory.updatePositions(positions).then(function(data) {
-        setEditable(data);
         $rootScope.$broadcast('updateNews');
     });
 }

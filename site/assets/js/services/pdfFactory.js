@@ -56,6 +56,20 @@ fact.deleteSchedule = function (item) {
     return schedule;
   };
 
+  fact.updatePositions = function (item) {
+    let schedule = $http({
+            method: 'PUT',
+            url: '/objects/schedules/update_positions.php',
+            data: JSON.stringify(item)
+        }).then(function successCallback(response) {
+            console.log(response);       
+            return response.data;
+        }, function errorCallback(response) {
+            console.log(response);
+        });
+    return schedule;
+  };
+
 
 
 

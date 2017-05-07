@@ -63,6 +63,20 @@ angular.module('app')
     })
   };
 
+  $scope.updatePosition = function (event, ui) {
+    let positions = [];
+    let index = $scope.plans.findIndex((item) => {
+      if (item.department_id == $scope.current_dep_id) return true;
+    })
+    $scope.plans[index].pills.map((item, index) => {
+        positions.push(item.group_id);
+    })
+    plansFactory.updatePositions(positions).then((data) => {
+      console.log(data);
+    }); 
+    
+  }
+
   $scope.somethingChanged = function () {
     $scope.saved = false;
   };

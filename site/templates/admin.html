@@ -73,8 +73,8 @@
                                                 <td>Удалить</td>
                                             </tr>
                                         </thead>
-                                        <tbody>
-                                            <tr ng-repeat="item in allNews">
+                                        <tbody ui-sortable ui-sortable-stop="updatePosition" ng-model="allNews">
+                                            <tr ng-repeat="item in allNews" >
                                                 <td> {{ item.title }}</td>
                                                 <td><button ng-click="updateNewsItem(item.id)" ng-disabled="isEditable" class="btn btn-warning">Изменить</button></td>
                                                 <td><button ng-click="deleteNewsItem(item.id)" class="btn btn-danger">Удалить</button></td>                                        

@@ -1,4 +1,4 @@
-var app = angular.module('app', ['ngRoute', 'ngSanitize', 'pascalprecht.translate', 'textAngular', 'angularFileUpload'])
+var app = angular.module('app', ['ngRoute', 'ngSanitize', 'pascalprecht.translate', 'textAngular', 'angularFileUpload', 'ui.sortable'])
   .config( ['$routeProvider', '$locationProvider', '$translateProvider', function($routeProvider, $locationProvider, $translateProvider, $routeParams) {
   $routeProvider
   .when('/', {

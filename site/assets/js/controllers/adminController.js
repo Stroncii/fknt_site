@@ -173,4 +173,17 @@ $rootScope.$on('updateUser', function () {
 
 
 
+// DAD
+$scope.updatePosition = function (event, ui) {
+    let positions = [];
+    $scope.allNews.map((item, index) => {
+        positions.push(item.id);
+    })
+    appFactory.updatePositions(positions).then(function(data) {
+        setEditable(data);
+        $rootScope.$broadcast('updateNews');
+    });
+}
+
+
 }])

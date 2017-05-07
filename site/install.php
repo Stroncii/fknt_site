@@ -245,7 +245,7 @@ $query = "DROP TABLE IF EXISTS `plans`; CREATE TABLE IF NOT EXISTS `plans` (
   `group_title_en` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `pdf_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `department_id` int(10) unsigned NOT NULL,
-  `position` int(10) unsigned NOT NULL DEFAULT 0,
+  `sort_order` int(10) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1;";
 
@@ -417,7 +417,7 @@ $query = "DROP TABLE IF EXISTS schedules; CREATE TABLE IF NOT EXISTS `schedules`
   `group_title_en` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `pdf_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `department_id` int(10) unsigned NOT NULL,
-  `position` int(10) unsigned NOT NULL DEFAULT 0,
+  `sort_order` int(10) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1;";
 
@@ -525,6 +525,7 @@ $query = "DROP TABLE IF EXISTS news; CREATE TABLE IF NOT EXISTS `news` (
   `short_text_en` text COLLATE utf8_unicode_ci NOT NULL,
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `sort_order` int(10) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1;";
 

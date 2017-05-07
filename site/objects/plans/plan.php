@@ -59,11 +59,11 @@ function create(){
 	 
 	    // select all query
 	    $query = "SELECT
-	                id, group_title_uk,group_title_ru,group_title_en,pdf_name,department_id, position
+	                id, sort_order, group_title_uk,group_title_ru,group_title_en,pdf_name,department_id
 	            FROM
 	                " . $this->table_name . "
 	            ORDER BY
-	                id ASC";
+	                coalesce(sort_order, id) ASC";
 	 
 	    // prepare query statement
 	    $stmt = $this->conn->prepare( $query );

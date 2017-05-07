@@ -42,7 +42,8 @@ if($num>0){
             $data .= '"synopsis":"'   . $row['short_text_'.$lang] . '",';
             $data .= '"content":"' . $row['full_text_'.$lang] . '",';
             $data .= '"cover":"/assets/img/news/covers/' . $row['id'] . '.jpg",';
-            $data .= '"full_cover":"/assets/img/news/covers/' . $row['id'] . '_full.jpg"';
+            $data .= '"full_cover":"/assets/img/news/covers/' . $row['id'] . '_full.jpg",';
+            $data .= '"sort_order":"' . $row['sort_order'] . '"';
         $data .= '}';
  
         $data .= $x<$num ? ',' : '';

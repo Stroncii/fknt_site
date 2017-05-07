@@ -72,6 +72,14 @@
                             <li><a href="/ki/science">{{'SCIENCE' | translate}}</a></li>
                             <li><a href="/ki/professors">{{'PROFESSORS' | translate}}</a></li>
                             <li><a href="/ki/contacts">{{'CONTACTS' | translate}}</a></li>
+                            <li class="dropdown">
+						        <a class="dropdown-toggle" data-toggle="dropdown"> <img src="../assets/img/flags/{{language}}.png" alt="">язык  <span class="caret"></span></a>
+                                <ul class="">
+                                    <li><a ng-click="changeLanguage('uk')" ng-if="language != 'uk'"> <img src="../assets/img/flags/uk.png" alt=""> </a></li>
+                                    <li><a ng-click="changeLanguage('ru')" ng-if="language != 'ru'"> <img src="../assets/img/flags/ru.png" alt=""> </a></li>
+                                    <li><a ng-click="changeLanguage('en')" ng-if="language != 'en'"> <img src="../assets/img/flags/en.png" alt=""> </a></li>
+                                </ul>
+					        </li>
                         </ul>
                     </div>
                 </nav>

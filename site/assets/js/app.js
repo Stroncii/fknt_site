@@ -766,7 +766,6 @@ $translateProvider.translations('en', {
 app.run(function($rootScope, $location, $anchorScroll, $translate, $routeParams) {
   //when the route is changed scroll to the proper element.
   $rootScope.$on('$routeChangeSuccess', function(newRoute, oldRoute) {
-    console.log('change');
    // if($location.hash()) $anchorScroll();  
   });
 
@@ -774,7 +773,6 @@ app.run(function($rootScope, $location, $anchorScroll, $translate, $routeParams)
     console.log('hoy');
     console.log($routeParams);
     if ($routeParams.path) {
-      console.log('there is path');
       //event.preventDefault();
     }
   });
@@ -784,7 +782,6 @@ app.run(function($rootScope, $location, $anchorScroll, $translate, $routeParams)
   if (sessionStorage.getItem('user')) {
     $rootScope.logged = true;
     $rootScope.user = sessionStorage.getItem('user');
-    console.log($rootScope.user);
   }
 });
 

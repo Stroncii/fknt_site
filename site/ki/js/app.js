@@ -586,7 +586,16 @@ app.run(function($rootScope, $location, $anchorScroll, $translate, $routeParams)
     
    // if($location.hash()) $anchorScroll();  
   });
-  $rootScope.language = 'uk';
+
+  $rootScope.language = localStorage.getItem('ki_language') ? localStorage.getItem('ki_language') : 'uk';
+
+  $rootScope.changeLanguage = function(language) {
+    $translate.use(language);
+    $rootScope.language = language;
+    localStorage.setItem('fknt_language', language);
+  };
+  $translate.use('ru');
+  
 
   if (localStorage.getItem('ki-path')) {  
     $location.url('/ki/' + localStorage.getItem('ki-path'));

@@ -1132,3 +1132,6 @@ article {
 .last-years p,.last-years li{
   font-size: 18px;
 }
+.dropdown-menu{
+  min-width: 60px;
+}

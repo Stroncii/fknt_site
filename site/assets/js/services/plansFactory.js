@@ -79,5 +79,20 @@ angular.module('app').factory ('plansFactory', ['$http', function ($http) {
     return plans;
   }
 
+    fact.updatePositions = function (item) {
+        let plan = $http({
+                method: 'PUT',
+                url: '/objects/plans/update_positions.php',
+                data: JSON.stringify(item)
+            }).then(function successCallback(response) {
+                console.log(response);       
+                return response.data;
+            }, function errorCallback(response) {
+                console.log(response);
+            });
+        return plan;
+    };
+
+
   return fact;
 }]);

@@ -17,6 +17,7 @@ class News{
     public $short_text_en;
     public $created;
     public $modified;
+    public $sort_order;
  
     // constructor with $db as database connection 
     public function __construct($db){ 
@@ -90,11 +91,11 @@ function create(){
 	 
 	    // select all query
 	    $query = "SELECT
-	                id, title_".$lang.", short_text_".$lang.", full_text_".$lang."
+	                id,sort_order, title_".$lang.", short_text_".$lang.", full_text_".$lang."
 	            FROM
 	                " . $this->table_name . "
 	            ORDER BY
-	                id DESC";
+	                coalesce(sort_order, id) DESC";
 	 
 	    // prepare query statement
 	    $stmt = $this->conn->prepare( $query );
@@ -112,7 +113,7 @@ function create(){
 	            FROM
 	                " . $this->table_name . "
 	            ORDER BY
-	                id DESC
+	                coalesce(sort_order, id) DESC
 	            LIMIT 0,4";
 	 
 	    // prepare query statement
@@ -147,7 +148,7 @@ function create(){
     $query = "UPDATE
                 " . $this->table_name . "
             SET
-                title_uk=:title_uk, title_ru=:title_ru, title_en=:title_en, full_text_uk=:full_text_uk, full_text_ru=:full_text_ru, full_text_en=:full_text_en, short_text_uk=:short_text_uk, short_text_ru=:short_text_ru, short_text_en=:short_text_en
+                title_uk=:title_uk, title_ru=:title_ru, title_en=:title_en, full_text_uk=:full_text_uk, full_text_ru=:full_text_ru, full_text_en=:full_text_en, short_text_uk=:short_text_uk, short_text_ru=:short_text_ru, short_text_en=:short_text_en,modified=NOW()
             WHERE
                 id = :id";
  
@@ -175,6 +176,32 @@ function create(){
     $stmt->bindParam(":short_text_uk", $this->short_text_uk);
     $stmt->bindParam(":short_text_ru", $this->short_text_ru);
     $stmt->bindParam(":short_text_en", $this->short_text_en);
+    $stmt->bindParam(':id', $this->id);
+ 
+    // execute the query
+    if($stmt->execute()){
+        return true;
+    }else{
+        return false;
+    }
+}
+function updatePosition(){
+    // update query
+    $query = "UPDATE
+                " . $this->table_name . "
+            SET
+                sort_order=:sort_order
+            WHERE
+                id = :id";
+ 
+    // prepare query statement
+    $stmt = $this->conn->prepare($query);
+ 
+    // sanitize
+    $this->sort_order=htmlspecialchars(strip_tags($this->sort_order));
+ 
+    // bind new values
+    $stmt->bindParam(":sort_order", $this->sort_order);
     $stmt->bindParam(':id', $this->id);
  
     // execute the query

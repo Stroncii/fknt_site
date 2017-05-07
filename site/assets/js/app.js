@@ -122,7 +122,7 @@ var app = angular.module('app', ['ngRoute', 'ngSanitize', 'pascalprecht.translat
   $translateProvider.translations('uk', {
     // HEADERS
 
-    // 'TITLE': 'Факультет комп\'ютерних наук і технологій',
+    'TITLE': 'Факультет комп\'ютерних наук і технологій',
     'HISTORY': 'Історія',
     'NEWS': 'Новини',
     'STRUCTURE': 'Структура',

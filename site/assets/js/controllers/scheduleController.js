@@ -70,14 +70,19 @@ angular.module('app')
 
   $scope.updatePosition = function (event, ui) {
     let positions = [];
-    $scope.schedule[$scope.current_dep_id].pills.map((item, index) => {
+    console.log($scope.schedule);
+    let index = $scope.schedule.findIndex((item) => {
+      if (item.department_id == $scope.current_dep_id) return true;
+    })
+    console.log(index);
+    $scope.schedule[index].pills.map((item, index) => {
         positions.push(item.group_id);
     })
     pdfFactory.updatePositions(positions).then((data) => {
       console.log(data);
-    })
+    }); 
     
-}
+  }
 
 
 

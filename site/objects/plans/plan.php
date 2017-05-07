@@ -11,7 +11,7 @@ class Plan{
     public $group_title_en;
     public $pdf_name;
     public $department_id;
-    public $position;
+    public $sort_order;
  
     // constructor with $db as database connection 
     public function __construct($db){ 
@@ -102,6 +102,32 @@ function create(){
         $stmt->bindParam(":pdf_name", $this->pdf_name);
     }
     $stmt->bindParam(":department_id", $this->department_id);
+    $stmt->bindParam(':id', $this->id);
+ 
+    // execute the query
+    if($stmt->execute()){
+        return true;
+    }else{
+        return false;
+    }
+}
+function updatePosition(){
+    // update query
+    $query = "UPDATE
+                " . $this->table_name . "
+            SET
+                sort_order=:sort_order
+            WHERE
+                id = :id";
+ 
+    // prepare query statement
+    $stmt = $this->conn->prepare($query);
+ 
+    // sanitize
+    $this->sort_order=htmlspecialchars(strip_tags($this->sort_order));
+ 
+    // bind new values
+    $stmt->bindParam(":sort_order", $this->sort_order);
     $stmt->bindParam(':id', $this->id);
  
     // execute the query

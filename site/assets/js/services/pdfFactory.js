@@ -55,6 +55,7 @@ fact.deleteSchedule = function (item) {
         });
     return schedule;
   };
+  
 
   fact.updatePositions = function (item) {
     let schedule = $http({

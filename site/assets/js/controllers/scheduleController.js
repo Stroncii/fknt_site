@@ -70,7 +70,7 @@ angular.module('app')
 
   $scope.updatePosition = function (event, ui) {
     let positions = [];
-    $scope.schedule[$scope.current_dep_id-1].pills.map((item, index) => {
+    $scope.schedule[$scope.current_dep_id].pills.map((item, index) => {
         positions.push(item.group_id);
     })
     pdfFactory.updatePositions(positions).then((data) => {

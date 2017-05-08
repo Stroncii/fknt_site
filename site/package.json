@@ -23,5 +23,15 @@
     "angular-ui-sortable": "^0.17.1",
     "bootstrap": "^3.3.7",
     "textangular": "^1.5.16"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.24.1",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-ngmin": "^0.3.0",
+    "gulp-uglify": "^2.1.2",
+    "gulp-usemin": "^0.3.28"
   }
 }

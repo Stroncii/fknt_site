@@ -51,7 +51,7 @@ $(document).ready(function(){
 
 });
 
-materialKit = {
+var materialKit = {
     misc:{
         navbar_menu_visible: 0
     },
@@ -95,7 +95,7 @@ materialKit = {
 
 var big_image;
 
-materialKitDemo = {
+var materialKitDemo = {
     checkScrollForParallax: debounce(function(){
         var current_scroll = $(this).scrollTop();
 

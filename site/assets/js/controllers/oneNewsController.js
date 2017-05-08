@@ -5,7 +5,7 @@ angular.module('app')
   //console.log('lalo4ka');
   //console.log($routeParams);
 
-  getOneNews = function () {
+  const getOneNews = function () {
     appFactory.getOneNewsItem($routeParams.id, $rootScope.language).then((data) => {
         $scope.item = data;
         if (!data) {

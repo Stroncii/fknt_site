@@ -1,9 +1,6 @@
 angular.module('app')
 .controller('oneNewsController',['$scope', '$http', 'appFactory', '$routeParams', '$location', '$rootScope' , function($scope, $http, appFactory, $routeParams, $location, $rootScope){
-  
 
-  //console.log('lalo4ka');
-  //console.log($routeParams);
 
   const getOneNews = function () {
     appFactory.getOneNewsItem($routeParams.id, $rootScope.language).then((data) => {
@@ -20,7 +17,6 @@ angular.module('app')
   $rootScope.$watch('language', function(newValue, oldValue) {
      if (oldValue && oldValue != newValue) {
        getOneNews();
-       console.log($scope.item);
      }
   });
 

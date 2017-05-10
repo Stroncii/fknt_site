@@ -19,14 +19,12 @@ angular.module('app')
 
   $scope.deleteDepartment = function (id) {
       departmentsFactory.deleteDepartment(id).then((data) => {
-        console.log(data);
         getDepartments();
       })
   };
 
   $scope.addDepartment = function () {
         departmentsFactory.addDepartment($scope.department).then((data) => {
-            console.log(data);
             getDepartments();
       })
   }
@@ -38,7 +36,6 @@ angular.module('app')
   
   $scope.changeDepartment = function () {
      departmentsFactory.updateDepartment($scope.department).then((data) => {
-        console.log(data);
         setDefaults();
         getDepartments();
       })

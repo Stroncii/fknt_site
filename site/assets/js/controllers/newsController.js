@@ -22,7 +22,6 @@ angular.module('app')
 
   function getNews () {
      appFactory.getNews($rootScope.language).then(function(data) {
-        console.log(data);
         $scope.firstNews = data.news[0];
         $scope.news = data.news;
         $scope.news = $scope.news.slice(-($scope.news.length-1));

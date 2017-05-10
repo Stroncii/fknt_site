@@ -72,7 +72,6 @@ angular.module('app')
         positions.push(item.group_id);
     })
     plansFactory.updatePositions(positions).then((data) => {
-      console.log(data);
     }); 
     
   }
@@ -94,7 +93,6 @@ angular.module('app')
         uploader.filters.push({
             name: 'syncFilter',
             fn: function(item /*{File|FileLikeObject}*/, options) {
-                console.log('syncFilter');
                 return this.queue.length < 10;
             }
         });
@@ -108,7 +106,6 @@ angular.module('app')
                 id: $scope.current_grop_id      
             }];
             }
-            console.info('onBeforeUploadItem', item);
         };
         uploader.onCompleteItem = function(fileItem, response, status, headers) {
             uploader.clearQueue();
@@ -119,7 +116,6 @@ angular.module('app')
         uploader.filters.push({
             name: 'asyncFilter',
             fn: function(item /*{File|FileLikeObject}*/, options, deferred) {
-                console.log('asyncFilter');
                 setTimeout(deferred.resolve, 1e3);
             }
         });

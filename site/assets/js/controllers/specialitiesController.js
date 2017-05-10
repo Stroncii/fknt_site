@@ -8,8 +8,6 @@ angular.module('app')
   
   
   $scope.type = $routeParams.type || 'bachelor';
-  console.log($routeParams);
-  console.log($location.hash());
     $scope.activeTab = $scope.type;
   if($routeParams.item) {
     $anchorScroll.yOffset = 150;

@@ -26,7 +26,6 @@ angular.module('app')
     $scope.saved = true;
     $scope.editedGroup = angular.copy(pill.group);
     $scope.current_grop_id = pill.group_id;
-    console.log($scope.editedGroup);
     $scope.mode = 'edit';
   };
 
@@ -70,16 +69,13 @@ angular.module('app')
 
   $scope.updatePosition = function (event, ui) {
     let positions = [];
-    console.log($scope.schedule);
     let index = $scope.schedule.findIndex((item) => {
       if (item.department_id == $scope.current_dep_id) return true;
     })
-    console.log(index);
     $scope.schedule[index].pills.map((item, index) => {
         positions.push(item.group_id);
     })
     pdfFactory.updatePositions(positions).then((data) => {
-      console.log(data);
     }); 
     
   }
@@ -97,7 +93,6 @@ angular.module('app')
         uploader.filters.push({
             name: 'syncFilter',
             fn: function(item /*{File|FileLikeObject}*/, options) {
-                console.log('syncFilter');
                 return this.queue.length < 10;
             }
         });
@@ -111,7 +106,6 @@ angular.module('app')
                 id: $scope.current_grop_id      
             }];
             }
-            console.info('onBeforeUploadItem', item);
         };
         uploader.onCompleteItem = function(fileItem, response, status, headers) {
             uploader.clearQueue();
@@ -122,7 +116,6 @@ angular.module('app')
         uploader.filters.push({
             name: 'asyncFilter',
             fn: function(item /*{File|FileLikeObject}*/, options, deferred) {
-                console.log('asyncFilter');
                 setTimeout(deferred.resolve, 1e3);
             }
         });

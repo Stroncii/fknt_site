@@ -22,7 +22,6 @@ angular.module('app')
                 $scope.error = 'error';
             }
         }, () => {
-            console.log('naaahooooooooy');
         });
 
     }

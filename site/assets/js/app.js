@@ -781,8 +781,6 @@ app.run(function($rootScope, $location, $anchorScroll, $translate, $routeParams)
   });
 
   $rootScope.$on('$routeChangeStart', function (event, newRoute, oldRoute) {
-    console.log('hoy');
-    console.log($routeParams);
     if ($routeParams.path) {
       //event.preventDefault();
     }

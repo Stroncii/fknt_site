@@ -584,7 +584,6 @@ $translateProvider.translations('en', {
 }]);
 
 app.run(function($rootScope, $location, $anchorScroll, $translate, $routeParams) {
-    console.log('hey');
   //when the route is changed scroll to the proper element.
   $rootScope.$on('$routeChangeSuccess', function(newRoute, oldRoute) {
     
@@ -593,7 +592,6 @@ app.run(function($rootScope, $location, $anchorScroll, $translate, $routeParams)
 
   $rootScope.language = localStorage.getItem('fknt_language') ? localStorage.getItem('fknt_language') : 'uk';
   $translate.use($rootScope.language);
-  console.log($rootScope.language);
   
 
   $rootScope.changeLanguage = function(language) {

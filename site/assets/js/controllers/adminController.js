@@ -162,7 +162,6 @@ function getUsers () {
   };
 
   $scope.setUserMode = () => {
-      console.log('dauni');
       userInit();
   };
 

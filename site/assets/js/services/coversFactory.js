@@ -9,11 +9,8 @@ angular.module('app').factory ('coversFactory', ['$http', function ($http) {
             news_id: id
         }) 
     }).then (function successCallback(response) { 
-            console.log('small cover deleted');
             return response.data;
         }, function errorCallback(response) {
-            console.log('ERROR!');
-            console.log(response);
         });
 
         return del;
@@ -27,11 +24,8 @@ angular.module('app').factory ('coversFactory', ['$http', function ($http) {
             news_id: id
         }) 
     }).then (function successCallback(response) { 
-            console.log('full cover deleted');
             return response.data;
         }, function errorCallback(response) {
-            console.log('ERROR!');
-            console.log(response);
         });
 
         return del;

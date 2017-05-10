@@ -9,11 +9,9 @@ angular.module('app').factory ('loginFactory', ['$http', function ($http) {
                 username: user.user,
                 password: user.password
             })
-        }).then(function successCallback(response) {
-            console.log(response);       
+        }).then(function successCallback(response) {     
             return response.data;
         }, function errorCallback(response) {
-            console.log(response);
         });
     return log;
   };

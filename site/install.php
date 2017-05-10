@@ -905,6 +905,26 @@ if(!create_image(array('news_id'=>13),$db)){
 if(!create_image(array('news_id'=>13),$db)){
   $success = false;
 }
+if(!create_news(array( 'title_uk'=>'Олімпіада з німецької мови','title_ru'=>'Олимпиада по немецкому языку','title_en'=>'German language competition', 
+  'full_text_uk'=>'<p>25-27 квітня на базі Національного технічного університету «Харківський політехнічний інститут» відбувся II етап Всеукраїнської олімпіади з дисципліни «Німецька мова» для студентів немовних спеціальностей. ДонНТУ на ній представила студентка IV курсу ФКНТ Нещадіна Галина (КІ-13б).</p><p>За традицією, олімпіада відбувалася у два тури: письмовий та усний. У письмовому турі, завданнями якого були аудіювання, читання мовчки та твір, взяли участь 29 студентів із 15 міст України. До усного ж пройшли лише 12 кращих, що продовжили боротьбу за призові місця у форматі парної дискусії на певну тему.</p><p>Представниця нашого ВНЗ увійшла до п’ятірки найсильніших учасників за результатами обох турів та стала одним із переможців у категорії «Найкращий твір».</p><p>На церемонії нагородження слово було надано лектору DAAD у Харкові г-ну Седрику Райхелю. Він висловив подяку фіналістам олімпіади, подарував пам’ятні сувеніри від DAAD та нагадав про можливості отримання стипендій на навчання або освітні курси у Німеччині.</p>',
+  'full_text_ru'=>'<p>25-27 апреля на базе Национального технического университета \"Харьковский политехнический институт\" состоялся II этап Всеукраинской олимпиады по дисциплине «Немецкий язык» для студентов неязыковых специальностей. На ней ДонНТУ представила студентка IV курса ФКНТ Нещадина Галина (КИ-13б).</p><p>По традиции, олимпиада проходила в два тура: письменный и устный. В письменном туре, задачами которого были аудирование, чтение молча и сочинение, приняли участие 29 студентов из 15 городов Украины. К устному же прошли только 12 лучших, которые продолжили борьбу за призовые места в формате парной дискуссии на определенную тему.</p><p>Представительница нашего вуза вошла в пятерку сильнейших участников по результатам обоих туров и стала одним из победителей в категории «Лучшее сочинение».</p><p>На церемонии награждения слово было предоставлено лектору DAAD в Харькове Седрику Райхелю. Он выразил благодарность финалистам олимпиады, подарил памятные сувениры от DAAD и напомнил о возможности получения стипендий на обучение или образовательные курсы в Германии.</p>',
+  'full_text_en'=>'<p>April 25-27, the II stage of the All-Ukrainian competition in the discipline \"German language\" for students of non-linguistic specialties was held on the basis of the National Technical University "Kharkov Polytechnic Institute". DonNTU was represented by a fourth-year student of the FCST Galina Neshchadina (KI-13b).</p><p>Traditionally, the competition was held in two rounds: written and oral. 29 students from 15 cities of Ukraine took part in the written tour, the tasks of which were listening, reading and writing. Only the top twelve passed to the oral one, where they continued their fight for the prize places in the format of a paired discussion on a certain topic.</p><p>A representative of our university entered the top-five of the strongest participants in the results of both rounds and became one of the winners in the category "Best composition".</p><p>At the awards ceremony the floor was given to DAAD lecturer in Kharkov Cedric Raichel. He expressed his gratitude to the finalists of the competition, presented souvenirs from the DAAD and reminded about the availability of scholarships fors educational courses in Germany.</p>',
+  'short_text_uk'=>'<p>25-27 квітня на базі Національного технічного університету «Харківський політехнічний інститут» відбувся II етап Всеукраїнської олімпіади з дисципліни «Німецька мова» для студентів немовних спеціальностей. ДонНТУ на ній представила студентка IV курсу ФКНТ Нещадіна Галина (КІ-13б).</p>',
+  'short_text_ru'=>'<p>25-27 апреля на базе Национального технического университета \"Харьковский политехнический институт\" состоялся II этап Всеукраинской олимпиады по дисциплине «Немецкий язык» для студентов неязыковых специальностей. На ней ДонНТУ представила студентка IV курса ФКНТ Нещадина Галина (КИ-13б).</p>',
+  'short_text_en'=>'<p>April 25-27, the II stage of the All-Ukrainian competition in the discipline \"German language\" for students of non-linguistic specialties was held on the basis of the National Technical University "Kharkov Polytechnic Institute". DonNTU was represented by a fourth-year student of the FCST Galina Neshchadina (KI-13b).</p>'
+  ),$db)){
+
+  $success = false;
+}
+if(!create_image(array('news_id'=>14),$db)){
+  $success = false;
+}
+if(!create_image(array('news_id'=>14),$db)){
+  $success = false;
+}
+if(!create_image(array('news_id'=>14),$db)){
+  $success = false;
+}
 /*
 if(!create_news(array( 'title_uk'=>'','title_ru'=>'','title_en'=>'', 
   'full_text_uk'=>'<p></p>',

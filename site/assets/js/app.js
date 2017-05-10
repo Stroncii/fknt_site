@@ -112,6 +112,12 @@ var app = angular.module('app', ['ngRoute', 'ngSanitize', 'pascalprecht.translat
     templateUrl: 'templates/login.html',
     controller: 'loginController'
   })
+  .when('/dist', {
+    template : "<div></div>",    
+    controller: function () {
+      document.location.href = 'http://192.168.19.80:37816';
+    }
+  })
   .otherwise('/error');
 
 

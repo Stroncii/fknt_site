@@ -20,7 +20,7 @@ angular.module('app')
   });
 
   $rootScope.$on('$routeChangeSuccess', function(newRoute, oldRoute) {
-     if (oldValue && oldValue != newValue) {
+     if (oldRoute && oldRoute != newRoute) {
         listener();       
      }
   });

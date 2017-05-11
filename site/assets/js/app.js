@@ -333,11 +333,7 @@ var app = angular.module('app', ['ngRoute', 'ngSanitize', 'pascalprecht.translat
     'ERASMUS3': 'Метою зазначеного TEMPUS-проекту є відкриття нової спеціалізації в рамках спеціальності 123 «Комп’ютерна інженерія». Спеціалізація «Проектування мікросистем» розроблена при участі чотирьох університетів з України та університетів з Ліону (Франція), Ільменау (Німеччина), Павії (Італія) та Лодзю (Польща).',
 
     'SHTUTGART1': 'Науково-дослідницькі роботи з Штутгартським, Гамбурзьким, Магдебурзьким університетами (Німеччина).',    
-    'SHTUTGART2': 'Стажування та отримання відповідних наукових стипендій.' ,
-
-    'error_title': 'Помилка',
-    'error_text': 'Нажаль такої сторінки не існує. Перевірте коректність адреси',
-    'TMP': 'До головної сторінки'    
+    'SHTUTGART2': 'Стажування та отримання відповідних наукових стипендій.'  
     
   });
  
@@ -552,11 +548,7 @@ var app = angular.module('app', ['ngRoute', 'ngSanitize', 'pascalprecht.translat
     'ERASMUS3': 'Целью данного TEMPUS-проекта является открытие новой специализации в рамках специальности 123 «Компьютерная инженерия». Специализация «Проектирование микросистем» разработана при участии четырех университетов из Украины и университетов из Лиона (Франция), Ильменау (Германия), Павии (Италия) и Лодзь (Польша). ',
 
     'SHTUTGART1': 'Научно-исследовательские работы c Штутгартским, Гамбургским, Магдебургского университета (Германия). ',
-    'SHTUTGART2': 'Стажировки и получение соответствующих научных стипендий.',
-
-    'error_title': 'Ошибка',
-    'error_text': 'К сожалению искомая страница не существует. Проверьте корректность адреса',
-    'TMP': 'На главную страницу'   
+    'SHTUTGART2': 'Стажировки и получение соответствующих научных стипендий.' 
   });
 
 $translateProvider.translations('en', {
@@ -769,11 +761,7 @@ $translateProvider.translations('en', {
     'ERASMUS3': 'The purpose of this TEMPUS project is to open a new specialization in the specialty 123 "Computer Engineering". Specialization "Microsystem Design" was developed with the participation of four universities from Ukraine and universities from Lyon (France), Ilmenau (Germany), Pavia (Italy) and Lodz (Poland). ',
 
     'SHTUTGART1': 'Research work with Stuttgart, Hamburg, Magdeburg University (Germany). ',
-    'SHTUTGART2': 'Internships and scholarships.',
-
-    'error_title': 'Error',
-    'error_text': 'Unfortunatelly the sought page does not exist. Please check the address',
-    'TMP': 'To the main page'  
+    'SHTUTGART2': 'Internships and scholarships.' 
   });
 
   $translateProvider.preferredLanguage(localStorage.getItem('fknt_language') ? localStorage.getItem('fknt_language') : 'uk');

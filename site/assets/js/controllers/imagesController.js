@@ -100,7 +100,6 @@ angular.module('app')
             console.info('onProgressItem', fileItem, progress);
         };
         uploader.onProgressAll = function(progress) {
-            console.info('onProgressAll', progress);
         };
         uploader.onSuccessItem = function(fileItem, response, status, headers) {
             console.info('onSuccessItem', fileItem, response, status, headers);

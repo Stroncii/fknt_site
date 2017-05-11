@@ -18,15 +18,13 @@ var ngmin = require('gulp-ngmin');
     });
 
     gulp.task('minifylibs', function() {
-        console.log('min');
         var options = {
             mangle: false
         };
-        return gulp.src([ 'assets/js/**/*.min.js'])
+        return gulp.src('assets/js/**/*.min.js')
         .pipe(babel({
             presets: ['es2015']
         }))
-        .pipe(uglify(options))
         .pipe(concat('libs.js'))
         .pipe(gulp.dest('build/js'));
     });

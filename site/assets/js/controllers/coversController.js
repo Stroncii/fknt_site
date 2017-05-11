@@ -3,7 +3,6 @@ angular.module('app')
   
  function init () {
      $scope.cover_type = 'full';
-     console.log('covers');
      $scope.mode = 'choose';
      $scope.editedItem = {};
     appFactory.getNews($rootScope.language).then(function(data) {
@@ -17,9 +16,7 @@ angular.module('app')
                news_id: item.id
      }]
      $scope.editedItem = angular.copy (item);
-     $scope.mode = 'edit';
-     console.log('edit ' + item.id);
-     console.log( $scope.editedItem);     
+     $scope.mode = 'edit'; 
  }
 
  $scope.cancel = function () {
@@ -28,20 +25,16 @@ angular.module('app')
 
  $scope.deleteSmallCover = function () {
     coversFactory.deleteSmallCover($scope.editedItem.id).then((data) => {
-        console.log(data);
     });
  }
 
  $scope.deleteFullCover = function () {
     coversFactory.deleteFullCover($scope.editedItem.id).then((data) => {
-        console.log(data);
     });
  }
 
  $scope.changeType = (type) => {
-        console.log()
         $scope.cover_type = type;
-        console.log(type);
        
         if ($scope.cover_type == 'full') {
             $scope.uploader.url = '/objects/news/full_cover.php'

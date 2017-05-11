@@ -4,7 +4,6 @@ angular.module('app').factory ('appFactory', ['$http', function ($http) {
   fact.corp = 4;
 
   fact.getOneNewsItem = function (id, language) {
-      //console.log(`Hey! Our Id is ${id}`);
         return $http({
             method: 'GET',
             url: '/objects/news/read_one.php?language=' + language + '&id=' + id
@@ -19,42 +18,32 @@ angular.module('app').factory ('appFactory', ['$http', function ($http) {
             method: 'GET',
             url: '/objects/news/read_full.php?id=' + id
         }).then(function successCallback(response) { 
-            console.log(`What does we have here? Id is ${id}`); 
-            console.log(response)
             return response.data;
         }, function errorCallback(response) {
-            console.log('ERROR!');
-            console.log(response);
         });
     return news;
   };
 
   fact.addNewsItem = function (item) {
-      console.log('add news');
     let news = $http({
             method: 'POST',
             url: '/objects/news/create.php',
             data: JSON.stringify(item)
         }).then(function successCallback(response) {
-            console.log(response);       
             return response.data;
         }, function errorCallback(response) {
-            console.log(response);
         });
     return news;
   };
 
   fact.updateNews = function (item) {
-      console.log('add news');
     let news = $http({
             method: 'PUT',
             url: '/objects/news/update.php',
             data: JSON.stringify(item)
         }).then(function successCallback(response) {
-            console.log(response);       
             return response.data;
         }, function errorCallback(response) {
-            console.log(response);
         });
     return news;
   };
@@ -74,7 +63,6 @@ angular.module('app').factory ('appFactory', ['$http', function ($http) {
   };
 
   fact.getNews = function (language) {
-      console.log(`What language is it ${language}`);
       let news = $http({
             method: 'GET',
             url: '/objects/news/read.php?language=' + language
@@ -97,16 +85,13 @@ angular.module('app').factory ('appFactory', ['$http', function ($http) {
   };
 
   fact.updatePositions = function (item) {
-      console.log('add news');
     let news = $http({
             method: 'PUT',
             url: '/objects/news/update_positions.php',
             data: JSON.stringify(item)
         }).then(function successCallback(response) {
-            console.log(response);       
             return response.data;
         }, function errorCallback(response) {
-            console.log(response);
         });
     return news;
   };

@@ -1,6 +1,5 @@
 angular.module('app').factory('usersFactory', ['$http', function ($http) {
   var fact = {};
-  console.log('dauni');
 
 
   fact.getUsers = function () {
@@ -11,8 +10,6 @@ angular.module('app').factory('usersFactory', ['$http', function ($http) {
         }).then(function successCallback(response) { 
             return response.data;
         }, function errorCallback(response) {
-            console.log('ERROR!');
-            console.log(response);
         });
     return users;
   };
@@ -23,11 +20,8 @@ angular.module('app').factory('usersFactory', ['$http', function ($http) {
             url: '/objects/users/create.php',
             data: JSON.stringify(user)
         }).then(function successCallback(response) { 
-            console.log('yololo');
             return response.data;
         }, function errorCallback(response) {
-            console.log('ERROR!');
-            console.log(response);
         });
     return users;
   };
@@ -38,12 +32,8 @@ angular.module('app').factory('usersFactory', ['$http', function ($http) {
             url: '/objects/users/update.php',
             data: JSON.stringify(user)
         }).then(function successCallback(response) { 
-            console.log('chaaanged!');
-            console.log(response);
             return response.data;
         }, function errorCallback(response) {
-            console.log('ERROR!');
-            console.log(response);
         });
     return users;
   };
@@ -56,12 +46,9 @@ angular.module('app').factory('usersFactory', ['$http', function ($http) {
             data: JSON.stringify({
                 id: id
             })
-        }).then(function successCallback(response) { 
-            console.log('yololo');
+        }).then(function successCallback(response) {
             return response.data;
         }, function errorCallback(response) {
-            console.log('ERROR!');
-            console.log(response);
         });
     return users;
   }

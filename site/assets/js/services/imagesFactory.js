@@ -7,8 +7,6 @@ angular.module('app').factory ('imagesFactory', ['$http', function ($http) {
             method: 'GET',
             url: '/objects/images/readAll.php'
         }).then(function successCallback(response) { 
-            console.log('images');
-            console.log(response);
             return response.data;
         }, function errorCallback(response) {
             console.log('ERROR!');

@@ -9,8 +9,6 @@ angular.module('app').factory ('pdfFactory', ['$http', '$rootScope', function ($
         }).then(function successCallback(response) {
             return response.data;
         }, function errorCallback(response) {
-            //console.log("Error!");
-            //console.log(response);
         });
     return schedule;
   };
@@ -32,8 +30,6 @@ angular.module('app').factory ('pdfFactory', ['$http', '$rootScope', function ($
         }).then(function successCallback(response) {
             return response.data;
         }, function errorCallback(response) {
-            //console.log("Error!");
-            //console.log(response);
         });
     return schedule;
   };
@@ -50,8 +46,6 @@ fact.deleteSchedule = function (item) {
         }).then(function successCallback(response) {
             return response.data;
         }, function errorCallback(response) {
-            //console.log("Error!");
-            //console.log(response);
         });
     return schedule;
   };
@@ -63,10 +57,8 @@ fact.deleteSchedule = function (item) {
             url: '/objects/schedules/update_positions.php',
             data: JSON.stringify(item)
         }).then(function successCallback(response) {
-            console.log(response);       
             return response.data;
         }, function errorCallback(response) {
-            console.log(response);
         });
     return schedule;
   };
@@ -91,8 +83,6 @@ fact.deleteSchedule = function (item) {
         }).then(function successCallback(response) {
             return response.data;
         }, function errorCallback(response) {
-            //console.log("Error!");
-            //console.log(response);
         });
     return works;
   };
@@ -104,8 +94,6 @@ fact.deleteSchedule = function (item) {
         }).then(function successCallback(response) {
             return response.data;
         }, function errorCallback(response) {
-            //console.log("Error!");
-            //console.log(response);
         });
     return deps;
   }

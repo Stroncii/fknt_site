@@ -8,8 +8,7 @@ angular.module('app').factory ('departmentsFactory', ['$http', function ($http) 
         }).then(function successCallback(response) {
             return response.data;
         }, function errorCallback(response) {
-            //console.log("Error!");
-            //console.log(response);
+
         });
     return deps;
   }
@@ -24,8 +23,7 @@ angular.module('app').factory ('departmentsFactory', ['$http', function ($http) 
         }).then(function successCallback(response) {
             return response.data;
         }, function errorCallback(response) {
-            //console.log("Error!");
-            //console.log(response);
+
         });
     return deps;
   }
@@ -36,12 +34,9 @@ angular.module('app').factory ('departmentsFactory', ['$http', function ($http) 
             url: '/objects/departments/create.php',
             data: JSON.stringify(department)
         }).then(function successCallback(response) {
-            console.log('add');
-            console.log(response);
             return response.data;
         }, function errorCallback(response) {
-            //console.log("Error!");
-            //console.log(response);
+
         });
     return deps;
   }
@@ -52,12 +47,8 @@ angular.module('app').factory ('departmentsFactory', ['$http', function ($http) 
             url: '/objects/departments/update.php',
             data: JSON.stringify(department)
         }).then(function successCallback(response) {
-            console.log('update');
-            console.log(response);
             return response.data;
         }, function errorCallback(response) {
-            //console.log("Error!");
-            //console.log(response);
         });
     return deps;
   }

@@ -2,7 +2,6 @@ angular.module('app')
 .controller('imagesController',['$scope', '$http', 'imagesFactory', '$sce', '$translate', '$rootScope', 'FileUploader', 'appFactory', function($scope, $http, imagesFactory, $sce, $translate, $rootScope, FileUploader, appFactory){
   
  function init () {
-     console.log('initialization group');
      getImages();
      getUnusedImages();
      $scope.mode = 'add';
@@ -16,7 +15,6 @@ angular.module('app')
  }
 
  $scope.changeMode = function(type) {
-     console.log('change');
      $scope.mode = type;
  }
 
@@ -34,7 +32,6 @@ angular.module('app')
  };
 
  $scope.editNewsImages = function (id) {
-     console.log('lalka');
      $scope.choose.mode = 'edit';
      $scope.choose.id = id;
      getUnusedImages();
@@ -47,7 +44,6 @@ angular.module('app')
    imagesFactory.updateImage(path, "").then((data)=> {
         $scope.editNewsImages($scope.choose.id);
     }, () => {
-        console.log('error')
     });
 
  };

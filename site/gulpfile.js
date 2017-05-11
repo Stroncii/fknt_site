@@ -28,3 +28,16 @@ var ngmin = require('gulp-ngmin');
         .pipe(concat('libs.js'))
         .pipe(gulp.dest('build/js'));
     });
+
+    gulp.task('test', function() {
+        var options = {
+            mangle: false
+        };
+        return gulp.src([ 'assets/js/**/*.js'])
+        .pipe(babel({
+            presets: ['es2015']
+        }))
+        .pipe(uglify(options))
+        .pipe(concat('build.js'))
+        .pipe(gulp.dest('build/js'));
+    });

@@ -14,30 +14,5 @@ var ngmin = require('gulp-ngmin');
         }))
         .pipe(uglify(options))
         .pipe(concat('build.js'))
-        .pipe(gulp.dest('build/js'));
-    });
-
-    gulp.task('minifylibs', function() {
-        var options = {
-            mangle: false
-        };
-        return gulp.src('assets/js/**/*.min.js')
-        .pipe(babel({
-            presets: ['es2015']
-        }))
-        .pipe(concat('libs.js'))
-        .pipe(gulp.dest('build/js'));
-    });
-
-    gulp.task('test', function() {
-        var options = {
-            mangle: false
-        };
-        return gulp.src([ 'assets/js/**/*.js'])
-        .pipe(babel({
-            presets: ['es2015']
-        }))
-        .pipe(uglify(options))
-        .pipe(concat('build.js'))
-        .pipe(gulp.dest('build/js'));
+        .pipe(gulp.dest('assets/js'));
     });

@@ -4,7 +4,7 @@
 class Database{ 
  
     // specify your own database credentials 
-    private $host = "sql200.byethost18.com"; 
+    /*private $host = "sql200.byethost18.com"; 
     private $db_name = "b18_19812321_knt"; 
     private $username = "b18_19812321"; 
     private $password = "ab07You09";
@@ -12,10 +12,10 @@ class Database{
     private $db_name = "knt"; 
     private $username = "knt"; 
     private $password = "dYWpTrwq";*/
-    /*private $host = "localhost";
+    private $host = "localhost";
    	private $db_name = "knt"; 
     private $username = "root"; 
-    private $password = "root"; */
+    private $password = "root"; 
     public $conn; 
  
 

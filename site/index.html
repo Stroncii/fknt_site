@@ -22,7 +22,7 @@
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
     <link href="assets/css/material-kit.css" rel="stylesheet"/>
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-	<link rel='stylesheet' href='/node_modules/textangular/dist/textAngular.css'>
+	<link rel='stylesheet' href='/assets/css/textAngular.css'>
 
 </head>
 
@@ -92,7 +92,7 @@
     					</a>
     				</li>
 					<li class="dropdown">
-						<a class="dropdown-toggle" data-toggle="dropdown"> <img src="assets/img/flags/{{language}}.png" alt="">  <span class="caret"></span></a>
+						<a class="dropdown-toggle" data-toggle="dropdown"> <img ng-src="assets/img/flags/{{language}}.png" alt="">  <span class="caret"></span></a>
                             <ul class="dropdown-menu language-dropdown">
                                 <li><a ng-click="changeLanguage('uk')" ng-if="language != 'uk'"> <img src="assets/img/flags/uk.png" alt=""> </a></li>
                                 <li><a ng-click="changeLanguage('ru')" ng-if="language != 'ru'"> <img src="assets/img/flags/ru.png" alt=""> </a></li>

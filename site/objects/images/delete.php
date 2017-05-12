@@ -11,15 +11,17 @@ $db = $database->getConnection();
 $image = new Image($db);
  
 // get product id
-$data = json_decode(file_get_contents("php://input"),true);     
- 
-// set product id to be deleted
+$data = json_decode(file_get_contents("php://input"),true); 
+//$data = array();
+//$data['path'] = "/assets/img/news/items/74.jpg"; 
 
-$image->id = explode('.',explode('/',$data['path'])[5])[0];
- 
+// set product id to be deleted
+$part1 = explode('/',$data['path']);
+$part2 = explode('.',$part1[5]);
+$image->id = $part2[0];
 // delete the product
 if($image->delete()){
-    echo "Image was deleted.";
+    echo "Image was deleted .".$part2[0];
 }
  
 // if unable to delete the product

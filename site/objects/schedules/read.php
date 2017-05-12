@@ -1,8 +1,8 @@
 <?php
 header("Access-Control-Allow-Origin: *");
-/*header("Content-Type: application/json; charset=UTF-8");
+header("Content-Type: application/json; charset=UTF-8");
 header("Cache-control: public");
-header("Expires: " . gmdate("D, d M Y H:i:s", time() + 14*60*60*24) . " GMT"); */
+header("Expires: " . gmdate("D, d M Y H:i:s", time() + 14*60*60*24) . " GMT"); 
 // include database and object files
 include_once '../../config/database.php';
 include_once 'schedule.php';
@@ -15,21 +15,23 @@ $db = $database->getConnection();
 $plan = new Schedule($db);
 $department = new Department($db);
 // query products
+
+
 $deps = $department->read();
-//$dep = $deps->fetch(PDO::FETCH_ASSOC);
-//$stmt = $plan->read();
+
 $num = $deps->rowCount();
+
 $stmt = $plan->read();
 $p_num = $stmt->rowCount();
 if($p_num>0){
-    $plan_info = [];
+    $plan_info = array();
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
         extract($row);
         array_push($plan_info,$row);
     }
 }
 $data="";
- 
+
 // check if more than 0 record found
 if($num>0){
  
@@ -72,11 +74,7 @@ if($num>0){
         }
 
         $data .= ']}';
-        /*$data .= '{';
-            $data .= '"group_title":"'  . $row['group_title'] . '",';
-            $data .= '"pdf_url":"'   . $row['pdf_url'] . '",';
-            $data .= '"department_id":"'   . $row['department_id'] . '"';
-        $data .= '}';*/
+        
  
         $data .= $x<$num ? ',' : '';
  

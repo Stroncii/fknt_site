@@ -22,7 +22,7 @@ $num = $deps->rowCount();
 $stmt = $plan->read();
 $p_num = $stmt->rowCount();
 if($p_num>0){
-    $plan_info = [];
+    $plan_info = array();
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
         extract($row);
         array_push($plan_info,$row);
